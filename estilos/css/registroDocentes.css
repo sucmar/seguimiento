@@ -1,0 +1,169 @@
+/*.registroDocentes-cuerpo{
+	width: 100%;
+	margin: auto;
+	margin-top: 0px;
+	background-color: #E2ECEE;
+
+}
+
+.registroDocentes{
+
+	margin: auto;
+	width: 80%;
+	border: 1px solid #CED5D7;
+	border-radius: 6px;
+	padding: 45px 45px 20px;
+	margin-top: 20px;
+	background-color: white;
+	box-shadow: 0px 5px 10px #B5C1C5,0 0 0 10px #EEF5F7 inset;
+
+}
+
+.registroDocentes fieldset{
+	width: 100%;
+	height: 530px;
+	margin: auto;
+	display: flex;
+
+}
+
+.registroDocentes legend{
+	font-size: 18px;
+	margin: auto;
+}
+
+.registroDocentes label{
+	width: 100%;
+	display: block;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.registroDocentes div{
+	
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 30%;
+	height: 70px;
+	flex-grow: <3>;
+	float: left;
+
+}
+
+.registroDocentes input[type="text"] ,[type="date"] ,[type="email"]{
+	padding: 7px 6px;
+	width: 100%;
+	border:1px solid #CED5D7;
+	resize: none;
+	box-shadow: 0 0 0 3px #EEF5F7;
+	margin: 5px 0;
+}
+
+.registroDocentes input[type='text']:focus{
+    outline: none;
+    box-shadow:0 0 0 3px #dde9ec;
+}
+
+.registroDocentes select {
+    border: 1px solid #CED5D7;
+    box-shadow:0 0 0 3px #EEF5F7;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px white;
+}
+
+.registroDocentes input[type='submit']{
+    width: 80px;
+    height: 30px;
+    color: white;
+    border: 1px solid #CED5D7;
+    box-shadow:0 0 0 3px #EEF5F7;
+    border-radius: 4px;
+    font-weight: bold;
+    
+    background-color: #5CB85C;
+
+    /*background: #449D44;
+    flex-grow: <number>; /* default 0 
+    text-shadow: 1px 1px 0px white;
+    background: -moz-linear-gradient(top, #e4f1f6 0%, #cfe6ef 100%);
+    background: -webkit-linear-gradient(top, #e4f1f6 0%,#cfe6ef 100%);*/
+/*
+}
+.registroDocentes input[type='submit']:hover{
+    background: #edfcff;
+    background: -moz-linear-gradient(top, #edfcff 0%, #cfe6ef 100%);
+    background: -webkit-linear-gradient(top, #edfcff 0%,#cfe6ef 100%);
+}
+
+.registroDocentes input[type='submit']:active{
+    background: #cfe6ef;
+    background: -moz-linear-gradient(top, #cfe6ef 0%, #edfcff 100%);
+    background: -webkit-linear-gradient(top, #cfe6ef 0%,#edfcff 100%);
+}
+
+#tipoRegistroD {
+	width: 100%;
+
+}
+#Departamento{
+	margin-top: 2px;
+}
+
+#boton{
+
+	width: 100px;
+	height: 60px;
+	float: right;
+}
+*/
+
+div.nt-form-docente {
+	margin: auto;
+	width: 60%;
+	margin-top: 30px;
+	border: 1px solid #CED5D7;
+	border-radius: 6px;
+	box-shadow: 0px 5px 10px #B5C1C5,0 0 0 10px #EEF5F7 inset;
+	font-size: 12px
+
+}
+
+div.nt-form-auxiliar{
+	margin: auto;
+	width: 55%;
+	margin-top: 30px;
+	border: 1px solid #CED5D7;
+	border-radius: 6px;
+	box-shadow: 0px 5px 10px #B5C1C5,0 0 0 10px #EEF5F7 inset;
+	font-size: 12px
+}
+div.from-group{
+	padding:0px 20px 0px 3px;
+	margin: auto;
+	width: 33%;
+}
+
+div.div-form-ci{
+	width: 55%;
+	padding-left: 0px;
+	padding-right: 1px;
+	font-size: 11px;
+}
+div.div-form-sel{
+	width: 45%;
+	padding-right: 1px;
+	padding-left: 0px;
+
+}
+
+
+
+
+
+div.div-form-nota{
+	padding-left: 15px;
+}
+
