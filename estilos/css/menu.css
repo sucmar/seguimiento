@@ -1,22 +1,20 @@
 
-
 div.nt-menu-cuerpo {
-	font-family: verdana, arial, helvetica, sans-serif;
-	margin-top: 8%;
+  font-family: verdana, arial, helvetica, sans-serif;
+  margin-top: 8%;
 }
 
 div.nt-menu-cuerpo div.row {
-	margin: auto;
-	float: right;
-	text-align: center;
-	width: 90%;
+  margin: auto;
+  float: right;
+  text-align: center;
 
 }
 
 div.nt-menu-cuerpo div.row div.col-sm-2 a img {
-	margin: auto;
-	height: 150px;
-	width: 150px;
+  margin: auto;
+  height: 150px;
+  width: 150px;
 }
 
 div.nt-menu-cuerpo div.row div.col-sm-2:hover {
@@ -26,25 +24,24 @@ div.nt-menu-cuerpo div.row div.col-sm-2:hover {
 /*
 */
 div.nt-menu-pie {
-	margin-top: -200px;
-	margin-left: 20px;
-	border: 5px;
+  margin-top: -200px;
+  margin-left: 20px;
+  border: 5px;
 }
 
 div.nt-menu-pie div.row ul li {
-	list-style: none;
-	padding-bottom: 35px; 
+  list-style: none;
+  padding-bottom: 35px; 
 }
 div.nt-menu-pie div.row ul li a {
-	font-family: verdana, arial, helvetica, sans-serif;
-	text-decoration: none;
-	font-size: 13px
-	width: 100px;
-	color: #EF5350;
-	display: block;
+  font-family: verdana, arial, helvetica, sans-serif;
+  text-decoration: none;
+  font-size: 13px
+  width: 100px;
+  color: #0259A0;
+  display: block;
 }
 
 div.nt-menu-pie div.row ul li a i {
-	color: #EF5350;
+  color: #0259A0;
 }
-
