@@ -2,7 +2,7 @@
         <div class="row">
 
             <div class="col-sm-4">
-                    <a class=" navbar-left" href="?view=secretaria">
+                    <a class=" navbar-left" href="espacioSecretaria.php">
                     <i class="fa fa-home fa-3x inicio" aria-hidden="true"></i>
                     </a>
             </div>

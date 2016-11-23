@@ -2,7 +2,7 @@
 
 <?php include('views/global/title.view.php')?>
 
-
+<div class="contenedor">
     <div class="container nt-form-auxiliar">
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
@@ -104,4 +104,5 @@
         </div>
         </form>
 
+    </div>
     </div>
