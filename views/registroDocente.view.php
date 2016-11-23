@@ -1,7 +1,7 @@
 <?php include("views/global/header.view.php")?>
 
 <?php include('views/global/title.view.php')?>
-
+<div class="contenedor">
   <div class="container nt-form-docente ">
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
@@ -108,12 +108,7 @@
             
                 <button href="registroDocente.php" class="btn btn-success cancelar" >Cancelar</button>
             </div>  
-            /**<?php if(!empty($errores)): ?>
-                <div class="col-md-8 div-form-nota">
-                    <ul>
-                        <?php echo $errores; ?>           
-                    </ul>
-                </div>
-            <?php endif; ?>*/
+
         </form>
     </div>
+</div>
