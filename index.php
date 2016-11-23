@@ -2,4 +2,4 @@
 
 	require 'views/vistaPrincipal.view.php';
 
-	
+?>	
