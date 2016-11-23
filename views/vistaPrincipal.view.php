@@ -107,29 +107,7 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
   }
 </style>
 
-<div class="container nt-menu-subpie site-footer">
-    <div class="row">
-
-      <div class="col-sm-4">
-      </div>
-
-      <div class="col-sm-4">
-        <b>Copyright ©2016 - Nextsoft - Derechos Reservados</b><br>
-        <b>Desarrollado por</b> <a target="_blank" href=""><u>NextSoft srl.</u></a><br>
-        <a href=""><u>nextsoft@gmail.com</u></a>
-      </div>
-      <div class="col-sm-4">
-        <b>Paginas Relacionas:</b>
-        <a target="_blank" href="http://www.umss.edu/"><u>UMSS</u></a>
-        <a target="_blank" href="http://websis.umss.edu.bo/"><u>WebSISS</u></a>
-        <a target="_blank" href="http://www.memi.umss.edu.bo"><u>MEMI</u></a>
-        <a target="_blank" href="http://enlinea.umss.edu.bo/moodle2/"><u>Moodle</u></a><br>
-        <a target="_blank" href="http://www.fcyt.umss.edu/"><u>Facultad de Ciencias y Tecnologia</u></a><br>
-        <b>Contactos: Departamento</b>
-        <a target="_blank" href="http://cs.umss.edu.bo/"><u>dpto.inf.sis@cs.umss.edu.bo</u></a> 
-      </div>
-    </div>
-</div>
+<?php include('views/global/subtitle.view.php')?>
 
 <style type="text/css">
   
