@@ -15,7 +15,7 @@
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$usuario = filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
 		$password = $_POST['password'];
-		// $password = hash('sha512', $password);
+		$password = hash('sha512', $password);
 
 		// echo "$usuario - $password";
 
@@ -27,7 +27,7 @@
 			echo "ERROR:". $e->getMessage();;
 
 		}
-		$statement = $conexion->prepare('SELECT * FROM USUARIO WHERE CUENTA = :usuario AND CONTRASENIA= :password');
+		$statement = $conexion->prepare('SELECT * FROM usuario WHERE CUENTA = :usuario AND CONTRASENIA= :password');
 
 		$statement->execute(array(
 			':usuario' => $usuario,

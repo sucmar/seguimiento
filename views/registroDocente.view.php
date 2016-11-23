@@ -2,12 +2,12 @@
 
 <?php include('views/global/title.view.php')?>
 <div class="contenedor">
-  <div class="container nt-form-docente ">
-        
+    <div class="container nt-form-docente ">
+
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
 
-        <fieldset class="form-group ">
-            <LEGEND>Registro de Docentes</LEGEND>                
+            <fieldset class="form-group ">
+                <LEGEND>Registro de Docentes</LEGEND>
                 <div class="form-group div-form-nom col-md-3">
                     <label for="lab-nombre">(*) Nombres:</label>
                     <input type="text" class="form-control" id="nombres" name="nombre" placeholder="nombres">
@@ -22,8 +22,8 @@
                     <label for="lab-ape-mat" >Apellido Materno</label>
                     <input type="text" class="form-control" id="ape-mat" name="apeMaterno" placeholder="apellido materno">
                 </div>
-            
-                <div class="col-md-3">   
+
+                <div class="col-md-3">
                     <div class="form-group col-xs-2 div-form-ci">
                         <label for="lab-ci"> (*) C.I.:</label>
                         <input type="text" class="form-control" id="ci" name="ci" placeholder="carnet">
@@ -32,19 +32,19 @@
                     <div class="form-group col-xs-2 div-form-sel">
                         <label for="lab-expendido">Expedido:</label>
                         <select class="form-control sel-expendido" name='departamento' id='departamento'>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>  
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option> 
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>  
-                                <option value='chq'>CHQ</option>
+                            <option value='lpz'>LPZ</option>
+                            <option value='cbba'>CBBA</option>
+                            <option value='scz'>SCZ</option>
+                            <option value='pts'>PTS</option>
+                            <option value='tja'>TJA</option>
+                            <option value='oru'>ORU</option>
+                            <option value='ben'>BEN</option>
+                            <option value='pdo'>PDO</option>
+                            <option value='chq'>CHQ</option>
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="form-group div-form-fec-nac col-md-3">
                     <label for="lab-fec-nac">(*) Fecha de Nacimiento:</label>
                     <input type="text" class="form-control" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
@@ -95,19 +95,19 @@
                         <option value="exclusivo">Exclusivo</option>
                     </select>
                 </div>
-                
+
                 <div class="col-md-8 div-form-nota">
                     <br>
-                    <label for="lab-nota">NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</label> 
+                    <label for="lab-nota">NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</label>
 
                 </div>
-                 
-        </fieldset>
-            <div class=" form-group div-btn col-md-offset-4">    
+
+            </fieldset>
+            <div class=" form-group div-btn col-md-offset-4">
                 <button type="submit" id="button" value="aceptar" class="btn btn-success registrar" >Registrar</button>
-            
+
                 <button href="registroDocente.php" class="btn btn-success cancelar" >Cancelar</button>
-            </div>  
+            </div>
 
         </form>
     </div>
