@@ -41,14 +41,13 @@
         <a href=""><u>nextsoft@gmail.com</u></a>
       </div>
       <div class="der">
-        <b>Paginas Relacionas:</b>
-        <a target="_blank" href="http://www.umss.edu/"><u>UMSS</u></a>
-        <a target="_blank" href="http://websis.umss.edu.bo/"><u>WebSISS</u></a>
-        <a target="_blank" href="http://www.memi.umss.edu.bo"><u>MEMI</u></a>
-        <a target="_blank" href="http://enlinea.umss.edu.bo/moodle2/"><u>Moodle</u></a><br>
-        <a target="_blank" href="http://www.fcyt.umss.edu/"><u>Facultad de Ciencias y Tecnologia</u></a><br>
-        <b>Contactos: Departamento</b>
-        <a href=""><u>dpto.inf.sis@cs.umss.edu.bo</u></a> 
+         <b>Paginas Relacionas:</b><br>
+                <a target="_blank" href="http://www.cs.umss.edu.bo/"><img src="images/infsis.png" class="img-rounded icono-relacion"></a>
+                <a target="_blank" href="http://websis.umss.edu.bo/"> <img src="images/Websiss_umss.jpg" class="img-rounded icono-relacion"></a>
+                <a target="_blank" href="http://www.memi.umss.edu.bo/"><img src="images/memi.gif" class="img-rounded icono-relacion"></a>
+                <a target="_blank" href="http://enlinea.umss.edu.bo/moodle2/"><img src="images/Moodle.jpe" class="img-rounded icono-relacion"></a>
+                <a target="_blank" href="http://www.fcyt.umss.edu.bo/"><img src="images/fcyt_umss.jpg" class="img-rounded icono-relacion"></a>
+                <a target="_blank" href="http://www.umss.edu.bo/"><img src="images/UMSS.png" class="img-rounded icono-relacion"></a>
       </div>
 
     </div>
