@@ -8,7 +8,16 @@
         <div class= "titulo">
         <h4 class="nombre"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
         </div>
-        <div class= "salir"></div>
+        <div class="col-sm-4">
+                
+                <form action="./cerrar.php" class="navbar-form navbar-right" >
+                <p id="nombre-usuario" style="color: white"><?php echo $_SESSION['usuario']?>        
+                    <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                </p>
+                <input type="submit" class="btn btn-success" name="" value="salir">
+                </form>
+                
+            </div>
     </div>
 
 
