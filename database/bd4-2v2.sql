@@ -1,9 +1,50 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     14/11/2016 18:46:26                          */
+/* Created on:     23/11/2016 15:54:38                          */
 /*==============================================================*/
 
 
+drop table if exists AUXILIAR;
+
+drop table if exists CARGO;
+
+drop table if exists CARRERA;
+
+drop table if exists CURSO;
+
+drop table if exists DOCENTE;
+
+drop table if exists DOC_AUX;
+
+drop table if exists HORARIO_DOC;
+
+drop table if exists MATERIA;
+
+drop table if exists MATERIA_DICTA;
+
+drop table if exists NOMBRAMIENTO_AUX;
+
+drop table if exists NOMBRAMIENTO_DOC;
+
+drop table if exists PLAN;
+
+drop table if exists RESERVA;
+
+drop table if exists SALA;
+
+drop table if exists SEGUIMIENTO_AUX;
+
+drop table if exists SEGUIMIENTO_DOC;
+
+drop table if exists SEGUIMIENTO_EXCLU_DOC;
+
+drop table if exists SESION;
+
+drop table if exists TABLA_HORARIO;
+
+drop table if exists TIENE;
+
+drop table if exists USUARIO;
 
 /*==============================================================*/
 /* Table: AUXILIAR                                              */
@@ -44,10 +85,11 @@ create table CARGO
 create table CARRERA
 (
    ID_CARRERA           int(10) not null auto_increment,
-   NOMBRE_CARRERA       varchar(50),
+   NOMBRE_CARRERA       varchar(100),
    SIGLA_CARRERA        varchar(20),
-   FACULTAD             varchar(50),
-   DEPTO_CARRERA        varchar(50),
+   FACULTAD             varchar(100),
+   DEPTO_CARRERA        varchar(100),
+   ATTRIBUTE_139        char(10),
    primary key (ID_CARRERA)
 );
 
@@ -60,9 +102,9 @@ create table CURSO
    NOMBRE_CURSO         varchar(50) not null,
    TOTAL_HORAS_CURSO    int,
    COSTO_CURSO          int,
-   PERIODO_CURSO        varchar(50),
+   PERIODO_CURSO        varchar(25),
    OBS_CURSO            varchar(50),
-   NIVEL_CURSO          varchar(50),
+   NIVEL_CURSO          varchar(25),
    ESTADO_CURSO         varchar(50),
    primary key (ID_CURSO)
 );
@@ -73,7 +115,6 @@ create table CURSO
 create table DOCENTE
 (
    ID_DOC               int(10) not null auto_increment,
-   ID_AUX               int(10) not null,
    CI_DOC               int,
    NOMBRE_DOC           varchar(50),
    APELLPA_DOC          varchar(50),
@@ -85,10 +126,20 @@ create table DOCENTE
    EXTENSIOIN_CI_DOC    varchar(25),
    CORREO_DOC           varchar(50),
    GENERO_DOC           varchar(20),
-   DIRECCION_DOC        varchar(100),
-   TIEMPO_DEDICACION_DOC varchar(200),
+   DIRECCION_DOC        varchar(80),
+   TIEMPO_DEDICACION_DOC varchar(50),
    CARGO_DOC            varchar(100),
    primary key (ID_DOC)
+);
+
+/*==============================================================*/
+/* Table: DOC_AUX                                               */
+/*==============================================================*/
+create table DOC_AUX
+(
+   ID_DOC               int(10) not null,
+   ID_AUX               int(10) not null,
+   primary key (ID_DOC, ID_AUX)
 );
 
 /*==============================================================*/
@@ -113,7 +164,7 @@ create table MATERIA
    NOMBRE_MATERIA       varchar(50) not null,
    SIGLA_MATERIA        int not null,
    TIPO_MATERIA         varchar(50) not null,
-   NIVEL_MATERIA        varchar(50) not null,
+   NIVEL_MATERIA        varchar(20) not null,
    primary key (ID_MATERIA)
 );
 
@@ -142,10 +193,10 @@ create table NOMBRAMIENTO_AUX
    DEPTO_AUX            varchar(50),
    FACULTAD_AUX         varchar(50),
    FECHA_NOMBRAMIENTO_AUX date,
-   DURACION_AUX         varchar(50),
+   DURACION_AUX         varchar(30),
    GESTION_AUX          varchar(20),
    HRS_SEMANA_AUX       int,
-   CATEGORIA_AUX        varchar(50),
+   CATEGORIA_AUX        varchar(30),
    primary key (ID_NOMBRAMIENTO_AUX)
 );
 
@@ -167,7 +218,7 @@ create table PLAN
 (
    ID_PLAN              int(10) not null auto_increment,
    ID_CARRERA           int(10) not null,
-   NOMBRE_PLAN          varchar(50),
+   NOMBRE_PLAN          varchar(20),
    CODIGO_SIS           int,
    primary key (ID_PLAN)
 );
@@ -181,14 +232,14 @@ create table RESERVA
    ID_SALA              int(10) not null,
    ID_CURSO             int not null,
    ID_MATERIA           int(10) not null,
-   ASUNTO               varchar(50),
+   ASUNTO               varchar(25),
    CANT_EQUI            int,
-   RESPONSABLE          varchar(50),
+   RESPONSABLE          varchar(30),
    COSTO_RESERVA        int,
    MONEDA               varchar(20),
    HORARIO_FIJO         date,
    TELEFONO_RESP        int,
-   DIRECCION_RESP       varchar(100),
+   DIRECCION_RESP       varchar(50),
    FECHA_INICIAL_RESERVA date,
    FECHA_FINAL_RESERVA  date,
    primary key (ID_RESERVA)
@@ -225,11 +276,11 @@ create table SEGUIMIENTO_DOC
 (
    ID_SEGUIMIENTO_DOC   int(10) not null auto_increment,
    ID_DOC               int(10) not null,
-   ASIST                varchar(20),
-   ADJ                  varchar(20),
-   CAT                  varchar(20),
-   AUX_DOC              varchar(20),
-   OTRO_CARGO           varchar(50),
+   ASIST                varchar(15),
+   ADJ                  varchar(15),
+   CAT                  varchar(15),
+   AUX_DOC              varchar(15),
+   OTRO_CARGO           varchar(25),
    HRS_TEORIA           time,
    HRS_INVES            time,
    HRS_EXT              time,
@@ -242,8 +293,8 @@ create table SEGUIMIENTO_DOC
    HRS_TRAB_SEM         time,
    HRS_TRAB_MES         time,
    HRS_AUTO             time,
-   DEDICACION_EXCLUSIVA varchar(100),
-   OBSERVACION          varchar(200),
+   DEDICACION_EXCLUSIVA varchar(50),
+   OBSERVACION          varchar(100),
    primary key (ID_SEGUIMIENTO_DOC)
 );
 
@@ -282,7 +333,7 @@ create table TABLA_HORARIO
    ID_TABLA_HORARIO     int(0) not null auto_increment,
    ID_MATERIA_DICTA     int(10) not null,
    ID_SESION            int(10) not null,
-   RANGO                varchar(30),
+   RANGO                varchar(15),
    DIA                  date,
    primary key (ID_TABLA_HORARIO)
 );
@@ -309,7 +360,7 @@ create table USUARIO
    APELLMA_USUARIO      varchar(50) not null,
    ESTADO_USUARIO       varchar(100),
    GENERO_USUARIO       varchar(15),
-   CUENTA               varchar(100),
+   CUENTA               varchar(50),
    CONTRASENIA          varchar(500),
    primary key (ID_USUARIO)
 );
@@ -317,7 +368,10 @@ create table USUARIO
 alter table CARGO add constraint FK_RELATIONSHIP_20 foreign key (ID_USUARIO)
       references USUARIO (ID_USUARIO) on delete restrict on update restrict;
 
-alter table DOCENTE add constraint FK_RELATIONSHIP_21 foreign key (ID_AUX)
+alter table DOC_AUX add constraint FK_RELATIONSHIP_21 foreign key (ID_DOC)
+      references DOCENTE (ID_DOC) on delete restrict on update restrict;
+
+alter table DOC_AUX add constraint FK_RELATIONSHIP_22 foreign key (ID_AUX)
       references AUXILIAR (ID_AUX) on delete restrict on update restrict;
 
 alter table HORARIO_DOC add constraint FK_RELATIONSHIP_10 foreign key (ID_MATERIA_DICTA)
