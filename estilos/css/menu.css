@@ -1,8 +1,8 @@
 
 
 div.nt-menu-cuerpo {
-	font-family: verdana, arial, helvetica, sans-serif;
-	margin-top: 8%;
+  font-family: verdana, arial, helvetica, sans-serif;
+  margin-top: 8%;
 }
 
 div.nt-menu-cuerpo div.row {
@@ -38,7 +38,7 @@ div.nt-menu-pie div.row ul li {
 div.nt-menu-pie div.row ul li a {
 	font-family: verdana, arial, helvetica, sans-serif;
 	text-decoration: none;
-	font-size: 13px
+	font-size: 13px;
 	width: 100px;
 	color: #EF5350;
 	display: block;

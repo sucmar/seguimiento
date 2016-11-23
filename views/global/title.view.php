@@ -1,3 +1,4 @@
+
 <div class="container nt-menu-titulo">
         <div class="row">
 
@@ -12,7 +13,7 @@
             <div class="col-sm-4">
                 
                 <form action="./cerrar.php" class="navbar-form navbar-right" >
-                <p style="color: white">administrador        
+                <p id="nombre-usuario" style="color: white"><?php echo $_SESSION['usuario']?>        
                     <i class="fa fa-user fa-2x" aria-hidden="true"></i>
                 </p>
                 <input type="submit" class="btn btn-success" name="" value="salir">
