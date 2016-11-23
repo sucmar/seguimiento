@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $errores .= '<li>por favor rellene los campos obligatorios</li>';
 
         echo $errores;
-    } else {
+    } else {        
         try {
             $conexion = new PDO('mysql:host=localhost;dbname=seg','root','');
         }catch(PDOExeption $e){
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     if ($errores == ''){
-        $statement = $conexion->prepare('INSERT INTO docente (ID_DOC,CI_DOC,NOMBRE_DOC,APELLPA_DOC,APELLMA_DOC,FECHA_NACIMIENTO_DOC,TELEFONO_DOC,CELULAR_DOC,EXTENSION_CI_DOC,CORREO_DOC,GENERO_DOC,DIRECCION_DOC,TIEMPO_DEDICACION_DOC,CARGO_DOC,PROFESION_DOC) VALUES (null, :ci, :nombres, :apellPa, :apellMat, :fechaNacimineto, :telefono, :celular, :extensionCi, :correo, :genero, :direccion, :tiempoDedicacion, :cargo, :profesion)');
+        $statement = $conexion->prepare('INSERT INTO DOCENTE (ID_DOC,CI_DOC,NOMBRE_DOC,APELLPA_DOC,APELLMA_DOC,FECHA_NACIMIENTO_DOC,TELEFONO_DOC,CELULAR_DOC,EXTENSION_CI_DOC,CORREO_DOC,GENERO_DOC,DIRECCION_DOC,TIEMPO_DEDICACION_DOC,CARGO_DOC,PROFESION_DOC) VALUES (null, :ci, :nombres, :apellPa, :apellMat, :fechaNacimineto, :telefono, :celular, :extensionCi, :correo, :genero, :direccion, :tiempoDedicacion, :cargo, :profesion)');
 
         $statement->execute(array(
             ':ci'=>$ci,
