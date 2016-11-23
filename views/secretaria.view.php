@@ -2,7 +2,6 @@
 
 <?php include('views/global/title.view.php')?>
 
-
   <div class="container nt-menu-cuerpo">
     <div class="row navbar">
 
