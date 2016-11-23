@@ -1,13 +1,59 @@
 <?php include('views/global/header.view.php')?>
 
-<?php include('views/global/title.view.php')?>
+
+<div class="container nt-menu-titulo">
+        <div class="row">
+
+            <div class="col-sm-4">
+                <img src="images/logo2.png" class="img-responsive">  
+            </div>
+
+            <div class="col-sm-4">
+                <h4 class="titulo"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
+            </div>
+
+            
+
+        </div>
+    </div>
+
+<style type="text/css">
+
+* {
+    border: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #F5F5F5; 
+}
+
+div.nt-menu-titulo {
+    background-color: #3949AB;
+    border-bottom: 1px solid #BDBDBD;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    width: 100%;
+}
+
+img {
+    margin-left: 50px;
+    width: 60px;
+}
+
+div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
+    font-family: verdana, arial, helvetica, sans-serif;
+    margin-top: 25px;
+    text-align: center;
+    color: white;
+}
+</style>
 
 <div class="container">
 
   <div class="container text-center nt">
       <ul class="breadcrumb center-block">
           <li><a href="#">Inicio</a></li>
-          <li><a href="#">Docentes</a></li>
+          <li><a href="listaDocentes.php">Docentes</a></li>
           <li><a href="#">Informacion</a></li>
       </ul>
     <button id="button" class="btn btn-success">Ingresar</button>
