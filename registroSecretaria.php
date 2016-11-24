@@ -3,29 +3,23 @@
 	if (isset($_SESSION['usuario'])){
 		require 'views/registroSecretaria.view.php';
 	} else {
-		header('Location: login.php');
+		header('Location: espacioSecretaria.php');
 	}
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$nombres         = $_POST['nombre']; 
 		$apellidoPaterno = $_POST['apePaterno'];
 		$apellidoMaterno = $_POST['apeMaterno'];
-		$ci              = $_POST['ci'];
-		$expedido        = $_POST['departamento'];
-		$fechaNacimiento = $_POST['fecNacimiento'];
-		$sexo            = $_POST['sexo'];
-		$telFijo         = $_POST['telf'];
-		$celular         = $_POST['cel'];
-		$direcDomicilio  = $_POST['direccion'];
-		$correoElectronico=$_POST['correo'];
-		$profesion       =$_POST['profesion'];
-		$cargo           =$_POST['cargo'];
-		$dedicacion       =$_POST['dedicacion'];
+		$sexo              = $_POST['sexo'];
+		$carrera        = $_POST['carrera'];
+		$cuenta = $_POST['cuenta'];
+		$pass1            = $_POST['password1'];
+		$pass2         = $_POST['password2'];
 
-		echo "$nombres - $apellidoPaterno - $apellidoMaterno - $sexo - $dedicacion";
+		echo "$nombres - $apellidoPaterno - $apellidoMaterno - $pass1 - $pass2";
 		$errores = '';
 
-		if(empty($nombres) or empty($apellidoPaterno) or empty($ci) or empty($fechaNacimiento) or empty($celular) or empty($direcDomicilio) or empty($correoElectronico) or empty($profesion)){
+		if(empty($nombres) or empty($apellidoPaterno) or empty($sexo) or empty($cuenta) or empty($pass1) or empty($pass2) or empty($carrera)){
 			$errores .= '<li>por favor rellene los campos obligatorios</li>';
 
 			echo $errores;
@@ -38,26 +32,18 @@
 		}
 
 		if ($errores == ''){
-			$statement = $conexion->prepare('INSERT INTO DOCENTE (ID_DOC,CI_DOC,NOMBRE_DOC,APELLPA_DOC,APELLMA_DOC,FECHA_NACIMIENTO_DOC,TELEFONO_DOC,CELULAR_DOC,EXTENSION_CI_DOC,CORREO_DOC,GENERO_DOC,DIRECCION_DOC,TIEMPO_DEDICACION_DOC,CARGO_DOC,PROFESION_DOC) VALUES (null, :ci, :nombres, :apellPa, :apellMat, :fechaNacimineto, :telefono, :celular, :extensionCi, :correo, :genero, :direccion, :tiempoDedicacion, :cargo, :profesion)');
-
+			$statement = $conexion->prepare('INSERT INTO usuario (ID_USUARIO,ID_CARRERA,NOMBRE_USUARIO,APELLPA_USUARIO,APELLMA_USUARIO,ESTADO_USUARIO,GENERO_USUARIO,CUENTA,CONTRASENIA,ROL_USUARIO) 
+			VALUES (null, :carrera, :nombres, :apellPa, :apellMat, null, :sexo, :cuenta, :contrasenia, null)');
 			$statement->execute(array(
-				':ci'=>$ci, 
+				':carrera'=>$carrera, 
 				':nombres'=>$nombres, 
 				':apellPa'=>$apellidoPaterno, 
 				':apellMat'=>$apellidoMaterno , 
-				':fechaNacimineto'=>$fechaNacimiento, 
-				':telefono'=>$telFijo, 
-				':celular'=>$celular, 
-				':extensionCi'=>$expedido, 
-				':correo'=>$correoElectronico, 
-				':genero'=>$sexo , 
-				':direccion'=>$direcDomicilio, 
-				':tiempoDedicacion'=>$dedicacion, 
-				':cargo'=>$cargo, 
-				':profesion'=>$profesion 
+				':sexo'=>$sexo, 
+				':cuenta'=>$cuenta, 
+				':contrasenia'=>$pass1
 			));
 			echo 'datos insertados corectamente';
-			//header('Location: espacioSecretaria.php');
 		}
 	}
 ?>
