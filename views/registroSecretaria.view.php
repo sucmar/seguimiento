@@ -4,7 +4,7 @@
 <div class="contenedor">
   <div class="container nt-form-docente ">
         
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
 
         <fieldset class="form-group ">
             <LEGEND>Registro de Secreteria</LEGEND>                
@@ -32,21 +32,21 @@
                 
                 <div class="form-group div-form-ape-pat col-md-3">
                     <label for="lab-ape-pat">(*) Carrera</label>
-                    <input type="text" class="form-control" id="ape-pat" name="carrera" placeholder="carrera">
+                    <input type="text" class="form-control" id="carrera" name="carrera" placeholder="carrera">
                 </div>
                 <div class="form-group div-form-tel-fij col-md-3">
                     <label for="lab-tel-fij-doc">(*) Cuenta</label>
-                    <input type="text" class="form-control" id="tel-fij-doc" name="cuenta" placeholder="cuenta">
+                    <input type="text" class="form-control" id="cuenta" name="cuenta" placeholder="cuenta">
                 </div>
 
                 <div class="form-group form-doc-celular col-md-3">
                     <label for="lab-celular">(*) Contrasenia :</label>
-                    <input type="password" class="form-control" id="celular-doc" name="password1" placeholder="password">
+                    <input type="password" class="form-control" id="pass1" name="password1" placeholder="password">
                 </div>
 
                 <div class="form-group form-doc-celular col-md-3">
                     <label for="lab-celular">(*) Repetir Contrasenia :</label>
-                    <input type="password" class="form-control" id="celular-doc" name="password2" placeholder="password">
+                    <input type="password" class="form-control" id="pass2" name="password2" placeholder="password">
                 </div>
 
 
@@ -63,7 +63,65 @@
             
                 <button href="registroDocente.php" class="btn btn-success cancelar" >Cancelar</button>
             </div>  
-
+            <p id="error_para" ></p>
         </form>
     </div>
 </div>
+ <script type="text/javascript">
+function validate()
+{
+    var error="";
+    var nombres = document.getElementById( "nombres" );
+    if( nombres.value == "" )
+    {
+        error = " Tienes que escribir un nombre. ";
+        document.getElementById( "error_para" ).innerHTML = error;
+        return false;
+    }
+    var apePat = document.getElementById( "ape-pat" );
+    if( apePat.value == "" )
+    {
+        error = " Tienes que escribir un apellido paterno. ";
+        document.getElementById( "error_para" ).innerHTML = error;
+        return false;
+    }    
+    var apeMat = document.getElementById( "ape-mat" );
+    if( apeMat.value == "" )
+    {
+        error = " Tienes que escribir un apellido materno. ";
+        document.getElementById( "error_para" ).innerHTML = error;
+        return false;
+    } 
+    var carrera = document.getElementById( "carrera" ).value;
+    if( carrera == "" )
+    {
+        error = " Tienes que escribir una carrera. ";
+        document.getElementById( "error_para" ).innerHTML = error;
+        return false;
+    }     
+    var cuenta = document.getElementById( "cuenta" ).value;
+    if( cuenta == "" )
+    {
+        error = " Tienes que escribir una cuenta. ";
+        document.getElementById( "error_para" ).innerHTML = error;
+        return false;
+    }      
+    var pass1 = document.getElementById( "pass1" );
+    var pass2 = document.getElementById( "pass2" );
+    if( pass1.value == "" || pass2.value == "" )
+    {
+        error = " Tienes que escribir una contrasenia. ";
+        document.getElementById( "error_para" ).innerHTML = error;
+        return false;
+    } 
+    if (pass1.value != pass2.value){
+        error = " Tienes las contrasenias no son identicas, vuelva intentarlo. ";
+        document.getElementById( "error_para" ).innerHTML = error;
+        return false;
+    }    
+    else
+    {
+    return true;
+    }
+}
+</script>

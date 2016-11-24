@@ -119,6 +119,10 @@
 	float: right;
 }
 */
+#error_para{
+	color: red;
+	font-size: medium;
+}
 div.contenedor {
 	width: 100%;
 	height: 85%;
