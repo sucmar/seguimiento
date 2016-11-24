@@ -62,7 +62,7 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
  <div class="container nt-plantel-doc ">
     <div class="container col-md-12 table table-hover">
     <table class="table table-hover">
-      <LEGEND>LISTA DE DOCENTES</LEGEND>
+      <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
         <!--<tbody>
           <tr>  <th scope="row">  1 </th> <td>  Ing. Ayoroa Cardozo Jose Richard  </td> </tr>
           <tr>  <th scope="row">  2 </th> <td>  Msc. Costas Jáuregui Vladimir </td> </tr>
@@ -75,7 +75,15 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
           <tr>  <th scope="row">  9 </th> <td>  Ing. Villarroel Novillo Jimmy </td> </tr>
         </tbody>-->
       <tbody>
+      <tr>
+          <th> <strong>ID</strong> </th>
+          <td><strong>PROFESION </strong></td>
+          <td><strong>NOMBRE </strong></td>
+          <td> <strong>APELLIDO PATERNO</strong></td>
+          <td><strong>APELLIDO MATERNO</strong></td>
+      </tr>
         <?php foreach ($docentes as $docente):?>
+
             <tr>
               <th><?php echo $docente['ID_DOC'] ?></th>
               <td><?php echo $docente['PROFESION_DOC'] ?></td>

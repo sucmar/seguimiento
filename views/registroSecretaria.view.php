@@ -5,7 +5,9 @@
   <div class="container nt-form-docente ">
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
-
+            <?php if(!empty($errores)): ?>
+                <?php echo $errores ?>
+            <?php endif;?>
         <fieldset class="form-group ">
             <LEGEND>Registro de Secreteria</LEGEND>                
                 <div class="form-group div-form-nom col-md-3">
@@ -66,13 +68,16 @@
             <div class=" form-group div-btn col-md-offset-4">    
                 <button type="submit" id="button" value="aceptar" class="btn btn-success registrar" >Registrar</button>
             
-                <button href="registroDocente.php" class="btn btn-success cancelar" >Cancelar</button>
+                <button href="registroDocente.php" onclick="salir()" class="btn btn-success cancelar" >Cancelar</button>
             </div>  
             <p id="error_para" ></p>
         </form>
     </div>
 </div>
  <script type="text/javascript">
+     function salir() {
+         window.location = "http://localhost/seguimiento/registroSecretaria.php";
+     }
 function validate()
 {
     var error="";
@@ -126,7 +131,10 @@ function validate()
     }    
     else
     {
-    return true;
+        error = " Datos insertados correctamente ";
+        document.getElementById( "error_para" ).style.color = "blue"
+        document.getElementById( "error_para" ).innerHTML = error;
+              return true;
     }
 }
 </script>

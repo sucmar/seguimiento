@@ -106,7 +106,8 @@
             <div class=" form-group div-btn col-md-offset-4">
                 <button type="submit" id="button" value="aceptar" class="btn btn-success registrar" >Registrar</button>
 
-                <button href="registroDocente.php" class="btn btn-success cancelar" >Cancelar</button>
+                <button href="registroDocente.php" onclick="salir()" class="btn btn-success cancelar" >Cancelar</button>
+
             </div>
 
             <p id="error_para" ></p>
@@ -115,6 +116,9 @@
     </div>
 </div>
 <script type="text/javascript">
+    function salir() {
+        window.location = "http://localhost/seguimiento/espacioSecretaria.php";
+    }
 function validate()
 {
     var error="";
@@ -197,7 +201,10 @@ function validate()
     }
     else
     {
-    return true;
+        error = " Datos insertados correctamente ";
+        document.getElementById( "error_para" ).style.color = "blue"
+        document.getElementById( "error_para" ).innerHTML = error;
+        return true;
     }
 }
 </script>

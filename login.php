@@ -7,7 +7,9 @@
 	};
 	
 	if (isset($_SESSION['usuario'])){
-		if($_SESSION['usuario'] === 'admin') {
+		$user = $_SESSION['usuario'];
+		console_log($user);
+		if($user == 'admin') {
 			header ('Location: registroSecretaria.php');
 		} else {
  			header ('Location: espacioSecretaria.php');
@@ -44,7 +46,11 @@
 
 		if ($resultado != false){
 			$_SESSION['usuario'] = $usuario;
-			header ('Location: espacioSecretaria.php');
+			if($usuario === 'admin') {
+				header ('Location: registroSecretaria.php');
+			} else {
+				header ('Location: espacioSecretaria.php');
+			}
 		} else {
   echo '<script type="text/javascript">',
  		 'alert("Username and/or Password incorrect.\\nTry again.");',

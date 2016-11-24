@@ -1,9 +1,8 @@
 <?php session_start();
-
 	if (isset($_SESSION['usuario'])){
 		require 'views/registroSecretaria.view.php';
 	} else {
-		header('Location: espacioSecretaria.php');
+		//header('Location: espacioSecretaria.php');
 	}
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -17,7 +16,7 @@
 		$pass2         = $_POST['password2'];
 		switch ($carrera) {
 			case "ING. SISTEMAS":
-				echo "Your favorite color is red!";
+				//echo "Your favorite color is red!";
 				$carre = 1;
 				break;
 			case "ING. QUIMICA":
@@ -43,7 +42,7 @@
 		if(empty($nombres) or empty($apellidoPaterno) or empty($sexo) or empty($cuenta) or empty($pass1) or empty($pass2) ){
 			$errores .= '<li>por favor rellene los campos obligatorios</li>';
 
-			echo $errores;
+			//echo $errores;
 		} else {
 			try {
 				$conexion = new PDO('mysql:host=localhost;dbname=seg','root','');
@@ -76,6 +75,6 @@
 				':cuenta'=>$cuenta, 
 				':contrasenia'=>$pass1
 			));
-			echo 'datos insertados corectamente';
+			//echo 'datos insertados corectamente';
 		}
 	}
