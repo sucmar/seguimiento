@@ -12,11 +12,14 @@
 		$apellidoMaterno = $_POST['apeMaterno'];
 		$sexo              = $_POST['sexo'];
 		$carrera        = $_POST['carrera'];
-		$cuenta = $_POST['cuenta'];
+		$cuenta         = filter_var(strtolower($_POST['cuenta']), FILTER_SANITIZE_STRING);
 		$pass1            = $_POST['password1'];
 		$pass2         = $_POST['password2'];
 
-		echo "$nombres - $apellidoPaterno - $apellidoMaterno - $pass1 - $pass2";
+        $pass1         = hash('sha512', $pass1);
+        $pass2         = hash('sha512', $pass2);
+
+		//echo "$nombres - $apellidoPaterno - $apellidoMaterno - $pass1 - $pass2";
 		$errores = '';
 
 		if(empty($nombres) or empty($apellidoPaterno) or empty($sexo) or empty($cuenta) or empty($pass1) or empty($pass2) or empty($carrera)){
@@ -29,11 +32,23 @@
 			}catch(PDOExeption $e){
 				echo "Error: " . $e->getMessage();
 			}
+
+			$statement = $conexion->prepare('SELECT * FROM usuario WHERE CUENTA = :usuario LIMIT 1');
+            $statement->execute(array(':usuario' => $cuenta));
+
+            $resultado= $statement->fetch();
+            //print_r($resultado);
+
+            if($resultado != false){
+                $errores .= '<li>el nombre de usuario ya existe</li>';
+                echo 'el nombre de usarioya existe';
+            }
 		}
 
 		if ($errores == ''){
-			$statement = $conexion->prepare('INSERT INTO usuario (ID_USUARIO,ID_CARRERA,NOMBRE_USUARIO,APELLPA_USUARIO,APELLMA_USUARIO,ESTADO_USUARIO,GENERO_USUARIO,CUENTA,CONTRASENIA,ROL_USUARIO) 
-			VALUES (null, :carrera, :nombres, :apellPa, :apellMat, null, :sexo, :cuenta, :contrasenia, null)');
+			$statement = $conexion->prepare('INSERT INTO usuario (ID_USUARIO,ID_CARRERA,NOMBRE_USUARIO,APELLPA_USUARIO,
+                                            APELLMA_USUARIO,ESTADO_USUARIO,GENERO_USUARIO,CUENTA,CONTRASENIA) 
+			                                VALUES (null, :carrera, :nombres, :apellPa, :apellMat, null, :sexo, :cuenta, :contrasenia)');
 			$statement->execute(array(
 				':carrera'=>$carrera, 
 				':nombres'=>$nombres, 
@@ -46,4 +61,3 @@
 			echo 'datos insertados corectamente';
 		}
 	}
-?>
