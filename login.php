@@ -7,7 +7,11 @@
 	};
 	
 	if (isset($_SESSION['usuario'])){
-		header ('Location: espacioSecretaria.php');
+		if($_SESSION['usuario'] === 'admin') {
+			header ('Location: registroSecretaria.php');
+		} else {
+ 			header ('Location: espacioSecretaria.php');
+		}
 	}
 
 	$errores = '';
