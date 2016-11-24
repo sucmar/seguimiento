@@ -30,9 +30,14 @@
                     </select>
                 </div>
                 
-                <div class="form-group div-form-ape-pat col-md-3">
-                    <label for="lab-ape-pat">(*) Carrera</label>
-                    <input type="text" class="form-control" id="carrera" name="carrera" placeholder="carrera">
+
+                 <div class="form-group div-from-sexo col-md-3">
+                    <label for="lab-sexo">Carrera :</label>
+                    <select class="form-control" id="carrera" name="carrera" placeholder="carrera">
+                        <option>ING. SISTEMAS</option>
+                        <option>ING. QUIMICA</option>
+                        <option>ING. CIVIL</option>
+                    </select>
                 </div>
                 <div class="form-group div-form-tel-fij col-md-3">
                     <label for="lab-tel-fij-doc">(*) Cuenta</label>
