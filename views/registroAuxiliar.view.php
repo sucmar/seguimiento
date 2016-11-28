@@ -52,7 +52,7 @@
 
                     <div class="form-group div-form-fec-nac-aux col-md-3">
                         <label for="lab-fec-nav-aux">Fecha de Nacimiento:</label>
-                        <input type="date" class="form-control" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
+                        <input class="form-control" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
                     </div>
 
                     <div class="form-group div-from-sex-aux col-md-2">
@@ -179,7 +179,7 @@ function validate()
         return false;
     }     
     var email = document.getElementById( "email" );
-    if( email.value == "" || email.value.indexOf( "@" ) == -1 )
+    if( email.value == "" || email.value.indexOf( "@" ) == -1 || email.value.indexOf( "." ) == -1 )
     {
     error = " Tienes que ingresar un valido email. ";
     document.getElementById( "error_para" ).innerHTML = error;
