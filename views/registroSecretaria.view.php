@@ -47,12 +47,12 @@
                 </div>
 
                 <div class="form-group form-doc-celular col-md-3">
-                    <label for="lab-celular">(*) Contrasenia :</label>
+                    <label for="lab-celular">(*) Contraseña :</label>
                     <input type="password" class="form-control" id="pass1" name="password1" placeholder="password">
                 </div>
 
                 <div class="form-group form-doc-celular col-md-3">
-                    <label for="lab-celular">(*) Repetir Contrasenia :</label>
+                    <label for="lab-celular">(*) Repetir Contraseña :</label>
                     <input type="password" class="form-control" id="pass2" name="password2" placeholder="password">
                 </div>
 
@@ -68,14 +68,14 @@
             <div class=" form-group div-btn col-md-offset-4">    
                 <button type="submit" id="button" value="aceptar" class="btn btn-success registrar" >Registrar</button>
             
-                <button href="registroDocente.php" onclick="salir()" class="btn btn-success cancelar" >Cancelar</button>
+                 <button href="registroDocente.php" onclick="salir()" class="btn btn-success cancelar" >Cancelar</button>
             </div>  
             <p id="error_para" ></p>
         </form>
     </div>
 </div>
- <script type="text/javascript">
-     function salir() {
+ <script type="text/javascript">    
+  function salir() {
          window.location = "http://localhost/seguimiento/registroSecretaria.php";
      }
 function validate()
@@ -118,23 +118,29 @@ function validate()
     }      
     var pass1 = document.getElementById( "pass1" );
     var pass2 = document.getElementById( "pass2" );
+    var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
     if( pass1.value == "" || pass2.value == "" )
     {
-        error = " Tienes que escribir una contrasenia. ";
+        error = " Tienes que escribir una contraseña. ";
         document.getElementById( "error_para" ).innerHTML = error;
         return false;
     } 
     if (pass1.value != pass2.value){
-        error = " Tienes las contrasenias no son identicas, vuelva intentarlo. ";
+        error = " Tienes las contraseñas no son identicas, vuelva intentarlo. ";
         document.getElementById( "error_para" ).innerHTML = error;
         return false;
-    }    
+    }  
+    if(pass1.value == pass2.value) {
+        if(!pass1.value.match(passw))   
+        {   
+            error = " La constraseña debe tener al menos un digito, una letra mayuscula y minuscula. Debe contener al menos 8 caracteres. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+    }
     else
     {
-        error = " Datos insertados correctamente ";
-        document.getElementById( "error_para" ).style.color = "blue"
-        document.getElementById( "error_para" ).innerHTML = error;
-              return true;
+    return true;
     }
 }
 </script>
