@@ -14,7 +14,7 @@
 
             <div class="col-sm-4">
                 
-                <form action="./cerrar.php" class="navbar-form navbar-right" >
+                <form action="./espacioSecretaria.php" class="navbar-form navbar-right" >
                 <p style="color: white">        
                     <i class="fax" aria-hidden="true"></i>
                 </p>

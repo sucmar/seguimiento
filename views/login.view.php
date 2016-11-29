@@ -7,7 +7,7 @@
 <body class="nt-background" name="seguimiento">
     <div class= "nt-header">
         <div class= "logo">
-        <img src="images/logo2.png" class= "imagen"></img>
+        <img src="images/logo2.png" class= "imagen">
         </div>
         <div class= "titulo">
         <h4 class="nombre"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>

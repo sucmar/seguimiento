@@ -1,5 +1,5 @@
 <?php session_start();
-	//require 'funciones.php';	
+	//require 'funciones.php';
 	function console_log( $data ){
 		echo '<script>';
 		echo 'console.log('. json_encode( $data ) .')';
@@ -59,5 +59,6 @@
 		}
 	}	
 	require 'views/login.view.php';
+
 ?>
 
