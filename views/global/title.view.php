@@ -1,3 +1,4 @@
+
 <div class="container nt-menu-titulo">
         <div class="row">
             <div class="col-sm-4">
@@ -15,6 +16,9 @@
                 <input type="submit" class="btn btn-success" name="" value="salir">
                 </form>
             </div>
+
+            <div class="col-sm-4" id="hora"></div>
+
         </div>
     </div>
 <style type="text/css">

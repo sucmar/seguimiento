@@ -19,4 +19,19 @@
     <script src="estilos/js/jquery.min.js"></script>
     <script src="estilos/js/jquery-ui.min.js"></script>
     <script src="estilos/js/moment.js"></script>
+    <script>
+        $('document').ready(function () {
+            function hora() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'funciones.php',
+                    success: function ($hora) {
+                        $('#hora').html($hora);
+                        setTimeout(hora(),1000);
+                    }
+                });
+            }
+            setTimeout(hora(),1000);
+        });
+    </script>
 </head>

@@ -1,4 +1,7 @@
 <?php
+
+    $hora = date('H:i:s', time());
+    echo $hora;
     function conexion ( $base, $usuario, $pass ) {
         try {
             $conexion =  new PDO("mysql:host=localhost;dbname=$base", $usuario, $pass);
@@ -8,8 +11,5 @@
         }
     }
 
-    function hora (){
-        $time = time();
-        echo date("d-m-Y (H:i:s)", $time);
-    }
+
 
