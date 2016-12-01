@@ -1,5 +1,4 @@
 <?php
-
     $hora = date('H:i:s', time());
     echo $hora;
     function conexion ( $base, $usuario, $pass ) {
@@ -10,6 +9,10 @@
             return false;
         }
     }
+
+
+
+
 
 
 

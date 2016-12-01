@@ -9,11 +9,11 @@
 		$nombres         = $_POST['nombre']; 
 		$apellidoPaterno = $_POST['apePaterno'];
 		$apellidoMaterno = $_POST['apeMaterno'];
-		$sexo              = $_POST['sexo'];
-		$carrera        = $_POST['carrera'];
-		$cuenta         = filter_var(strtolower($_POST['cuenta']), FILTER_SANITIZE_STRING);
-		$pass1            = $_POST['password1'];
-		$pass2         = $_POST['password2'];
+		$sexo            = $_POST['sexo'];
+		$carrera         = $_POST['carrera'];
+		$cuenta          = filter_var(strtolower($_POST['cuenta']), FILTER_SANITIZE_STRING);
+		$pass1           = $_POST['password1'];
+		$pass2           = $_POST['password2'];
 		switch ($carrera) {
 			case "ING. SISTEMAS":
 				//echo "Your favorite color is red!";
@@ -67,7 +67,7 @@
                                             APELLMA_USUARIO,ESTADO_USUARIO,GENERO_USUARIO,CUENTA,CONTRASENIA) 
 			                                VALUES (null, :carre, :nombres, :apellPa, :apellMat, null, :sexo, :cuenta, :contrasenia)');
 			$statement->execute(array(
-				':carre'=>$carre, 
+				':carre'=>$carre,
 				':nombres'=>$nombres, 
 				':apellPa'=>$apellidoPaterno, 
 				':apellMat'=>$apellidoMaterno , 

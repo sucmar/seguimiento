@@ -21,7 +21,7 @@
         </div>
         <div class="contenedor-login">
             <form class="login" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" name="login">
-                <h3><strong>Iniciar sesion</strong></h3><br>
+                <h3><strong>Iniciar sesión</strong></h3><br>
                 <input type="text" class="usuario" placeholder="nombre de usuario" name="usuario"><br>
                 <input id= "password" type="password" class="password" placeholder="contraseña" name="password"><br>
                 <input id= "button" type="submit" class="ingresar" value="Ingresar" name="">

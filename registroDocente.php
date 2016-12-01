@@ -25,7 +25,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     echo "$nombres - $apellidoPaterno - $apellidoMaterno - $sexo - $dedicacion";
     $errores = '';
 
-    if(empty($nombres) or empty($apellidoPaterno) or empty($ci) or empty($fechaNacimiento) or empty($celular) or empty($direcDomicilio) or empty($correoElectronico) or empty($profesion)){
+    if(empty($nombres) or empty($apellidoPaterno) or empty($ci) or empty($fechaNacimiento)
+        or empty($celular) or empty($direcDomicilio) or empty($correoElectronico) or empty($profesion)){
         $errores .= '<li>por favor rellene los campos obligatorios</li>';
 
         echo $errores;
@@ -38,7 +39,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     if ($errores == ''){
-        $statement = $conexion->prepare('INSERT INTO DOCENTE (ID_DOC,CI_DOC,NOMBRE_DOC,APELLPA_DOC,APELLMA_DOC,FECHA_NACIMIENTO_DOC,TELEFONO_DOC,CELULAR_DOC,EXTENSION_CI_DOC,CORREO_DOC,GENERO_DOC,DIRECCION_DOC,TIEMPO_DEDICACION_DOC,CARGO_DOC,PROFESION_DOC) VALUES (null, :ci, :nombres, :apellPa, :apellMat, :fechaNacimineto, :telefono, :celular, :extensionCi, :correo, :genero, :direccion, :tiempoDedicacion, :cargo, :profesion)');
+        $statement = $conexion->prepare('INSERT INTO DOCENTE (ID_DOC,CI_DOC,NOMBRE_DOC,APELLPA_DOC,APELLMA_DOC,
+                                                              FECHA_NACIMIENTO_DOC,TELEFONO_DOC,CELULAR_DOC,
+                                                              EXTENSION_CI_DOC,CORREO_DOC,GENERO_DOC,DIRECCION_DOC,
+                                                              TIEMPO_DEDICACION_DOC,CARGO_DOC,PROFESION_DOC) 
+                                          VALUES (null, :ci, :nombres, :apellPa, :apellMat, :fechaNacimineto, 
+                                                        :telefono, :celular, :extensionCi, :correo, :genero, 
+                                                        :direccion, :tiempoDedicacion, :cargo, :profesion)');
 
         $statement->execute(array(
             ':ci'=>$ci,
@@ -60,4 +67,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //header('Location: espacioSecretaria.php');
     }
 }
+
 ?>

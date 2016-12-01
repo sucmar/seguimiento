@@ -1,6 +1,14 @@
 <?php include("views/global/header.view.php")?>
 
 <?php include('views/global/title.view.php')?>
+
+<div>
+    <form name="importar" method="post" action="./importar.php" enctype="multipart/form-data" >
+        <input id="file" type="file" name="file"/>
+        <input type='submit' name='enviar'  value="Importar"  />
+    </form>
+</div>
+
 <div class="contenedor">
     <div class="container nt-form-docente ">
 
@@ -79,7 +87,7 @@
                 </div>
 
                 <div class="form-group div-form-pro col-md-3">
-                    <label for="formGroupExampleInput2">(*) Profesion:</label>
+                    <label for="formGroupExampleInput2">(*) Profesión:</label>
                     <input type="text" class="form-control in-tit" id="profesion" name="profesion" placeholder="profesion">
                 </div>
 

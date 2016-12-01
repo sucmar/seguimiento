@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="form-group col-xs-2 div-form-sel">
-                            <label for="lab-exp">Expendido:</label>
+                            <label for="lab-exp">Expedido:</label>
                             <select class="form-control" name='departamento'>
                                     <option value='lpz'>LPZ</option>
                                     <option value='cbba'>CBBA</option>
@@ -51,7 +51,7 @@
                 </div>
 
                     <div class="form-group div-form-fec-nac-aux col-md-3">
-                        <label for="lab-fec-nav-aux">Fecha de Nacimiento:</label>
+                        <label for="lab-fec-nav-aux">(*)Fecha de Nacimiento:</label>
                         <input class="form-control" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
                     </div>
 
@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="form-group div-form-cor-elc col-md-3">
-                        <label for="lab-cor-elc">Correo Electronico</label>
+                        <label for="lab-cor-elc">Correo Electrónico</label>
                         <input type="mail" class="form-control" id="email" name="correo" placeholder="xyz@dominio.com">
                     </div>
 
