@@ -16,6 +16,10 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/registroDocentes.css">
 
     <link rel="stylesheet" type="text/css" href="estilos/css/listaUsuarios.css">
+
+    <link rel="stylesheet" type="text/css" href="estilos/css/seguimiento.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/registroRoles.css">
+
     <link rel="stylesheet" href="estilos/css/jquery-ui.css">    
     <script src="estilos/js/jquery.min.js"></script>
     <script src="estilos/js/jquery-ui.min.js"></script>
