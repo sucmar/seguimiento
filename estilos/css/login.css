@@ -1,6 +1,6 @@
 body.nt-background {
     margin: 1px;
-    background: white;
+    background: #F5F5F5;
     height: 100.1%;
     width: 99.9%;
     position: absolute;
@@ -14,7 +14,7 @@ body.nt-background div.nt-header{
     border: 2px solid #3949AB;
     background: #3949AB;
     height: 11%;
-    width: 100%;
+    width: 99.91%;
     display: flex;
 }
 body.nt-background div.nt-header div.logo{
@@ -75,6 +75,7 @@ body.nt-background div.nt-center div.contenedor-login form.login{
     background-color: black;
     opacity: 0.6;
     color: white;
+    border-radius: 10px;
 }
 body.nt-background div.nt-center div.contenedor-login form.login h3{
     margin-top: 15%;
@@ -91,6 +92,8 @@ body.nt-background div.nt-center div.contenedor-login form.login input.usuario{
     border: 1px solid black;
     height: 9%;
     width: 65%;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
 }
 body.nt-background div.nt-center div.contenedor-login form.login input.password{
     font-family: verdana, arial, helvetica, sans-serif;
@@ -100,6 +103,8 @@ body.nt-background div.nt-center div.contenedor-login form.login input.password{
     border: 1px solid black;
     height: 9%;
     width: 65%;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
 }
 body.nt-background div.nt-center div.contenedor-login form.login input.ingresar{
     font-family: verdana, arial, helvetica, sans-serif;
@@ -107,8 +112,9 @@ body.nt-background div.nt-center div.contenedor-login form.login input.ingresar{
     border: 1px solid black;
     height: 9%;
     width: 50%;
-     color: white;
-    background-color: #005DC4;
+    background-color: #047BDE;
+    border-radius: 4px;
+    color: white;
 }
 body.nt-background div.nt-footer {
     background-size: cover;
@@ -162,6 +168,13 @@ a img.icono-relacion {
     margin-left: 0px;
     margin-right: 0px;
     padding: 0px;
+}
+
+div.nt-pag-relacionada{
+    background-color: #F5F5F5;
+    margin-right: 100px;
+    margin-bottom: 10px;
+    text-align: right; 
 }
 
 @media only screen and (max-width: 768px) {

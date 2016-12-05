@@ -1,0 +1,100 @@
+
+* {
+    border: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #F5F5F5; 
+}
+
+/*INICIO NT-MENU-TITULO*/
+div.nt-menu-titulo {
+    background-color: #3949AB;
+    border-bottom: 1px solid #BDBDBD;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    width: 100%;
+}
+
+img {
+    margin-left: 50px;
+    width: 60px;
+}
+
+
+div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
+    font-family: verdana, arial, helvetica, sans-serif;
+    margin-top: 25px;
+    text-align: center;
+    color: white;
+}
+/*FIN NT-MENU-TITULO*/
+
+  div#timer {
+    font-size: 18px;
+    color: #337ab7;
+
+  }
+    
+  div.nt ul.breadcrumb {
+    margin-top: 10px;
+    width: 400px;
+    border: 1px solid #EF9A9A;
+    font-size: 20px;
+  }
+
+  div.nt button.btn {
+    float:right;
+    margin-right: -100px;
+  }
+
+  div.inicio {
+    margin-top: -40px;
+    border: 1px solid #9E9E9E;
+  }
+
+
+  img.logo3 {
+    width: 200px;
+    height: 200px;
+  }
+
+  div.cop {
+    margin-top: -10px;
+    border: 1px solid transparent;
+  }
+    
+
+
+    div.nt-pagina-relacionada {
+        margin-top: 150px;
+    }
+  
+div.nt-menu-subpie {
+  margin-top: 16.48%;
+  background-image: url("images/pie.png");
+  background-size: cover;
+  /*background-color: #3949AB;*/
+  border-top: 1px solid #BDBDBD;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+
+}
+
+div.col-sm-4 i.inicio {
+  margin-top: 7px;
+  margin-left: 80px;
+}
+
+div.col-sm-4 b {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  color: white;
+}
+div.col-sm-4 a {
+  color: white;
+  font-size: 13px;
+}
+
