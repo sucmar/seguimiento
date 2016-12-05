@@ -1,0 +1,178 @@
+body.nt-background {
+    margin: 1px;
+    background: white;
+    height: 100.1%;
+    width: 99.9%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -1px;
+    left: -1px;
+}
+body.nt-background div.nt-header{
+    margin: 0;
+    border: 2px solid #3949AB;
+    background: #3949AB;
+    height: 11%;
+    width: 100%;
+    display: flex;
+}
+body.nt-background div.nt-header div.logo{
+    width: 15%;
+    height: 100%;
+    display: flex;
+}
+body.nt-background div.nt-header div.logo img.imagen{
+    margin: auto;
+    width: 30%;
+    height: 100%;
+}
+body.nt-background div.nt-header div.titulo{
+    width: 70%;
+    height: 100%;
+    display: flex;
+}
+body.nt-background div.nt-header div.titulo h4.nombre{
+    font-family: verdana, arial, helvetica, sans-serif;
+    text-align: center;
+    color: white;
+    margin: auto;
+}
+body.nt-background div.nt-header div.salir{
+    width: 17%;
+    height: 100%;
+}
+body.nt-background div.nt-center{
+    background-color: #F5F5F5; 
+    height: 90%;
+    width: 100.1%;
+    display: flex;
+}
+body.nt-background div.nt-center div.imagen-secre{
+    height: 100%;
+    width: 60%;
+    display: flex;
+}
+body.nt-background div.nt-center div.imagen-secre img.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin: auto;
+}
+body.nt-background div.nt-center div.contenedor-login{
+    height: 100%;
+    width: 40%;
+    display: flex;
+}
+body.nt-background div.nt-center div.contenedor-login form.login{
+    font-family: verdana, arial, helvetica, sans-serif;
+    height: 60%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: black;
+    opacity: 0.6;
+    color: white;
+}
+body.nt-background div.nt-center div.contenedor-login form.login h3{
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 150%;
+    height: 10%;
+    width: 65%;
+    text-align: center;
+}
+body.nt-background div.nt-center div.contenedor-login form.login input.usuario{
+    font-family: verdana, arial, helvetica, sans-serif;
+    margin: auto;
+    border: 1px solid black;
+    height: 9%;
+    width: 65%;
+}
+body.nt-background div.nt-center div.contenedor-login form.login input.password{
+    font-family: verdana, arial, helvetica, sans-serif;
+    margin-top: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    height: 9%;
+    width: 65%;
+}
+body.nt-background div.nt-center div.contenedor-login form.login input.ingresar{
+    font-family: verdana, arial, helvetica, sans-serif;
+    margin: auto;
+    border: 1px solid black;
+    height: 9%;
+    width: 50%;
+     color: white;
+    background-color: #005DC4;
+}
+body.nt-background div.nt-footer {
+    background-size: cover;
+    height: 9%;
+    width: 100.1%;
+    border-top: 1px solid #BDBDBD;
+    text-align: center;
+    display: flex;
+}
+body.nt-background div.nt-footer div.izq {
+    height: 100%;
+    width: 33%;
+    text-align: center;
+    margin: auto;
+}
+body.nt-background div.nt-footer div.centro{
+    height: 100%;
+    width: 34%;
+    text-align: center;
+    margin: auto;
+}
+body.nt-background div.nt-footer div.centro b {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  color: white;
+}
+body.nt-background div.nt-footer div.centro a {
+  color: white;
+  font-size: 13px;
+}
+body.nt-background div.nt-footer div.der{
+    height: 100%;
+    width: 33%;
+    text-align: center;
+    margin: auto;
+}
+body.nt-background div.nt-footer div.der b {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  color: white;
+}
+body.nt-background div.nt-footer div.der a {
+  color: white;
+  font-size: 13px;
+}
+
+a img.icono-relacion {
+    border-radius: 5px;
+    width: 40px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+body.nt-background div.nt-center{
+        flex-direction: column;
+    }
+    body.nt-background div.nt-center div.imagen-secre{
+        display: none;
+    }  
+      body.nt-background div.nt-center div.contenedor-login{
+        width: 100%;
+    } 
+}

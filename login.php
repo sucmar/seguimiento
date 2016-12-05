@@ -1,8 +1,19 @@
 <?php session_start();
 	//require 'funciones.php';	
-
+	function console_log( $data ){
+		echo '<script>';
+		echo 'console.log('. json_encode( $data ) .')';
+		echo '</script>';
+	};
+	
 	if (isset($_SESSION['usuario'])){
-		header ('Location: espacioSecretaria.php');
+		$user = $_SESSION['usuario'];
+		console_log($user);
+		if($user == 'admin') {
+			header ('Location: registroSecretaria.php');
+		} else {
+ 			header ('Location: espacioSecretaria.php');
+		}
 	}
 
 	$errores = '';
@@ -12,11 +23,11 @@
 		$password = $_POST['password'];
 		$password = hash('sha512', $password);
 
-		echo "$usuario - $password";
+		// echo "$usuario - $password";
 
 		try {
 
-			$conexion = new PDO('mysql:host=localhost;dbname=seg','root', '');
+			$conexion = new PDO('mysql:host=localhost;dbname=seg','root','');
 
 		} catch(PDOException $e) {
 			echo "ERROR:". $e->getMessage();;
@@ -28,15 +39,25 @@
 			':usuario' => $usuario,
 			':password' => $password
 		));
-
+		console_log($usuario);
+		console_log($password);
 		$resultado = $statement->fetch();
-		var_dump($resultado);
+		// var_dump($resultado);
 
 		if ($resultado != false){
 			$_SESSION['usuario'] = $usuario;
-			header ('Location: espacioSecretaria.php');
+			if($usuario === 'admin') {
+				header ('Location: registroSecretaria.php');
+			} else {
+				header ('Location: espacioSecretaria.php');
+			}
 		} else {
-			$errores .= '<li>datos incorrectos</li>';
+  echo '<script type="text/javascript">',
+ 		 'alert("Username and/or Password incorrect.\\nTry again.");',
+  			'</script>';
+			console_log($resultado);
 		}
 	}	
 	require 'views/login.view.php';
+?>
+
