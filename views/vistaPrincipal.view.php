@@ -64,10 +64,21 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
       <p>Sistema web que permite la generación de formularios de seguimiento y solicitud de nombramiento de docentes que se realiza para su respectiva contratación y que es solicitada a cada carrera por la Dirección de Planificación Académica (DPA), requerido para los procesos administrativos de nombramiento del plantel docente, brindando ayuda a la secretaria encargada de procesar ambos formularios con el sistema</p>
       </div>
   </div>
+<div class="col-sm-4">
 
-  <div class="container cop">
+</div>
+  <div class="col-sm-4 container cop">
     <img class="img-circle img-responsive logo3 center-block" src="images/logo3.png">
   </div>
+
+    <div class="col-sm-4 pag-rel">
+    <a target="_blank" href="http://www.cs.umss.edu.bo/"><img src="images/infsis.png" class="img-rounded icono-relacion"></a>
+    <a target="_blank" href="http://websis.umss.edu.bo/"> <img src="images/Websiss_umss.jpg" class="img-rounded icono-relacion"></a>
+    <a target="_blank" href="http://www.memi.umss.edu.bo/"><img src="images/memi.gif" class="img-rounded icono-relacion"></a>
+    <a target="_blank" href="http://enlinea.umss.edu.bo/moodle2/"><img src="images/Moodle.jpe" class="img-rounded icono-relacion"></a>
+    <a target="_blank" href="http://www.fcyt.umss.edu.bo/"><img src="images/fcyt_umss.jpg" class="img-rounded icono-relacion"></a>
+    <a target="_blank" href="http://www.umss.edu.bo/"><img src="images/UMSS.png" class="img-rounded icono-relacion"></a>
+    </div>
 </div>
 <script>
   window.onload = function () {
@@ -118,6 +129,10 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
     font-size: 18px;
     color: #337ab7;
 
+  }
+
+  div.pag-rel {
+      margin-top: 150px;
   }
 
   div.nt ul.breadcrumb {

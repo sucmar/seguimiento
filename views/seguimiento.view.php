@@ -7,12 +7,12 @@
 			<fieldset>
 				<legend>Registro de Seguimiento de Docentes</legend>
 				<div class="form-group">
-					<label for="nom">Nombre del Profecional</label>
+					<label for="nom">Docente</label>
 				    <input type="text" name="" class="form-control" id="nom-prof" placeholder="Jane Doe">
 				</div>
 				<button type="submit" class="btn btn-success">Buscar</button>
 				<div class="form-group">
-				    <label for="tip-doc">Docente</label>
+				    <label for="tip-doc">Dedicación</label>
 				    <input type="text" class="form-control" id="tipo-doc" placeholder="Exclusivo/parcial">
 				</div>
 				<div class="form-group ">
@@ -177,9 +177,9 @@
 					</div>
 					<div class="form-group col-md-2">
 						<label for="mat">Tipo</label>
-					    <input type="text" class="form-control " id="tipo-d" placeholder="Exclusivo/parcial">
+					    <input type="text" class="form-control " id="tipo-d" placeholder="invitado/parcial">
 					</div>
-				</div>
+				</div>`
 			</fieldset>
 		</form>
 

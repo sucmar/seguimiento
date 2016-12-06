@@ -23,6 +23,8 @@
     <script src="estilos/js/jquery.min.js"></script>
     <script src="estilos/js/jquery-ui.min.js"></script>
     <script src="estilos/js/moment.js"></script>
+    <script src="estilos/js/timer.js"></script>
+
     <script>
         $('document').ready(function () {
             function hora() {

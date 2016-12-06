@@ -2,7 +2,9 @@
 <div class="container nt-menu-titulo">
         <div class="row">
             <div class="col-sm-4">
-                <img src="images/logo2.png" class="img-responsive">  
+                <img src="images/logo2.png" class="img-responsive">
+                <div class="col-sm-4 horaT" id="hora"></div>
+
             </div>
 
             <div class="col-sm-4">
@@ -15,9 +17,9 @@
                 </p>
                 <input type="submit" class="btn btn-success" name="" value="salir">
                 </form>
+
             </div>
 
-            <div class="col-sm-4" id="hora"></div>
 
         </div>
     </div>
@@ -30,6 +32,11 @@
 
     body {
         background-color: #F5F5F5;
+    }
+    div.horaT {
+        color: white;
+        float: left;
+        margin-left: -20px;
     }
 
     div.nt-menu-titulo {
