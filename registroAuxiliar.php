@@ -32,7 +32,7 @@ session_start();
             echo $errores;
         } else {
             try {
-                $conexion = new PDO('mysql:host=localhost;dbname=seg','root','');
+                $conexion = new PDO('mysql:host=localhost;dbname=bd_seguimiento','root','');
             }catch(PDOExeption $e){
                 echo "Error: " . $e->getMessage();
             }

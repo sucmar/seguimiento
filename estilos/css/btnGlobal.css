@@ -1,0 +1,29 @@
+button.btn-global 
+                {
+                background-color: #047BDE;
+                border-radius: 4px;
+                color: white;
+                border: 2px solid white;
+                
+}
+
+input.btn-global 
+                {
+                background-color: #047BDE;
+                border-radius: 4px;
+                color: white;
+                border: 2px solid white;
+                
+}
+
+input.input-global
+                {
+                border: 1px solid #cccccc;
+                border-radius: 4px;
+}
+
+select.select-global
+                {
+                border: 1px solid #cccccc;
+                border-radius: 4px;
+}

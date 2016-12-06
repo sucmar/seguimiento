@@ -23,8 +23,7 @@ div.nt-menu-cuerpo div.row div.col-sm-2:hover {
   background-color: #C5CAE9;
   border-radius: 15px;
 }
-/*
-*/
+
 div.nt-menu-pie {
 	margin-top: -200px;
 	margin-left: 20px;
@@ -40,11 +39,118 @@ div.nt-menu-pie div.row ul li a {
 	text-decoration: none;
 	font-size: 13px;
 	width: 100px;
-	color: #181243;
+	color: #0259A0;
 	display: block;
 }
 
 div.nt-menu-pie div.row ul li a i {
-	color: #181243;
+	color: #0259A0;
 }
+
+a img.icono-relacion {
+    border-radius: 5px;
+    width: 40px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+}
+
+div.nt-background {
+    margin: 1px;
+    background: white;
+    height: 100.1%;
+    width: 99.9%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -1px;
+    left: -1px;
+}
+div.nt-background div.nt-header{
+    margin: 0;
+    border: 2px solid #3949AB;
+    background: #3949AB;
+    height: 11%;
+    width: 100%;
+    display: flex;
+}
+div.nt-background div.nt-header div.logo{
+    width: 15%;
+    height: 100%;
+    display: flex;
+}
+div.nt-background div.nt-header div.logo img.imagen{
+    margin: auto;
+    width: 30%;
+    height: 100%;
+}
+div.nt-background div.nt-header div.titulo{
+    width: 70%;
+    height: 100%;
+    display: flex;
+}
+div.nt-background div.nt-header div.titulo h4.nombre{
+    font-family: verdana, arial, helvetica, sans-serif;
+    text-align: center;
+    color: white;
+    margin: auto;
+}
+div.nt-background div.nt-header div.salir{
+    width: 17%;
+    height: 100%;
+}
+div.contenedor-principal {
+    height: 90%;
+    width: 100.1%;  
+}
+div.nt-footer {
+    background-size: cover;
+    height: 9%;
+    width: 100.1%;
+    border-top: 1px solid #BDBDBD;
+    text-align: center;
+    display: flex;
+}
+div.nt-footer div.izq {
+    height: 100%;
+    width: 33%;
+    text-align: center;
+    margin: auto;
+    display:flex;
+}
+div.nt-footer div.izq a{
+    text-align: center;
+    margin-left: 20%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+div.nt-footer div.centro{
+    height: 100%;
+    width: 34%;
+    text-align: center;
+    margin: auto;
+}
+div.nt-footer div.centro b {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  color: white;
+}
+div.nt-footer div.centro a {
+  color: white;
+  font-size: 13px;
+}
+div.nt-footer div.der{
+    height: 100%;
+    width: 33%;
+    text-align: center;
+    margin: auto;
+}
+
+div.nt-pag-relacionada{
+    margin-right: 100px;
+    text-align: right; 
+    margin-bottom: 80px;
+}
+
 
