@@ -2,7 +2,7 @@
 
     require 'funciones.php';
 
-    $conexion = conexion('seg','root','');
+    $conexion = conexion('bd_seguimiento','root','');
 
     if (!$conexion) {
         die();

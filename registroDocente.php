@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo $errores;
     } else {        
         try {
-            $conexion = new PDO('mysql:host=localhost;dbname=seg','root','');
+            $conexion = new PDO('mysql:host=localhost;dbname=bd_seguimiento','root','');
         }catch(PDOExeption $e){
             echo "Error: " . $e->getMessage();
         }
@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             ':cargo'=>$cargo,
             ':profesion'=>$profesion
         ));
-        echo 'datos insertados corectamente';
+        echo 'datos insertados correctamente';
         //header('Location: espacioSecretaria.php');
     }
 }
