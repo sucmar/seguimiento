@@ -59,6 +59,18 @@ describe("Pruebas a validaciones de entrada", function() {
             expect(validarCarrera(nombre)).toBeFalsy();
             });
     });
+    describe("Deberia ser capaz de validar el email", function() {
+          it("Deberia el email ser valido", function() {
+              var email = "info@gmail.com";
+            //demonstrates use of custom matcher
+            expect(validarEmail(email)).toBeTruthy();
+            });
+          it("No deberia ser valido un email sin @ y .", function() {
+              var email = "asdcvcv";
+            //demonstrates use of custom matcher
+            expect(validarEmail(email)).toBeFalsy();
+            });
+    });
     describe("Deberia ser capaz de validar la contraseña", function() {
  
           it("Deberia la contraseña contener al menos un digito, una letra mayuscula, una letra minuscula", function() {
@@ -116,7 +128,15 @@ describe("Pruebas a validaciones de entrada", function() {
             expect(validarContrasenias(password1, password2)).toBeFalsy();
             });                                    
 
-    });        
+    });    
+  var validarEmail = function(email) {
+      if( email == "" || email.indexOf( "@" ) == -1 || email.indexOf( "." ) == -1 )
+        {
+        error = " Tienes que ingresar un valido email. ";
+        return false;
+        } 
+        return true;
+  };  
   var validarNombres = function (nombres) {
      if( nombres == "" )
     {

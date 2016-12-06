@@ -193,7 +193,7 @@ function validate()
         return false;
     } 
     var email = document.getElementById( "email" );
-    if( email.value == "" || email.value.indexOf( "@" ) == -1 )
+    if( email.value == "" || email.value.indexOf( "@" ) == -1 || email.value.indexOf( "." ) == -1 )
     {
     error = " Tienes que ingresar un valido email. ";
     document.getElementById( "error_para" ).innerHTML = error;
