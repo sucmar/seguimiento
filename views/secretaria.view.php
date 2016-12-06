@@ -8,16 +8,24 @@
         <div class= "titulo">
         <h4 class="nombre"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
         </div>
-        <div class="col-sm-4">
+                <div class="col-sm-4 dropdown">
+                        <form action="./cerrar.php" class="navbar-form navbar-right" >
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenuSalir">
+                        <p id="nombre-usuario" style="color: white"><?php echo $_SESSION['usuario']?>        
+                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                        </p>
                 
-                <form action="./cerrar.php" class="navbar-form navbar-right" >
-                <p id="nombre-usuario" style="color: white"><?php echo $_SESSION['usuario']?>        
-                    <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-                </p>
-                <input type="submit" class="btn btn-global" name="" value="salir">
-                </form>
-                
-            </div>
+                        <ul class="dropdown-menu inline-block" style="background-color:#0259A0" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="editarPerfil.php">Editar Perfil</a></li>
+
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="cerrar.php">salir</a></li>
+                        </ul>
+                            </a>
+                        <!-- 
+                        -->
+                        <input type="submit" class="btn btn-global" name="" value="salir">
+                        </form>
+                </div>
     </div>
 
 
@@ -27,16 +35,14 @@
 
 
       <div class="col-sm-2 dropdown">
-        <a href="" class="dropdown-toggle" data-toggle="dropdown"><img class="img-circle img-responsive" src="images/nombramiento.png"  id="dropdownMenu1">Nombramiento</a>
+            <a href="" class="dropdown-toggle" data-toggle="dropdown"><img class="img-circle img-responsive" src="images/nombramiento.png" id="dropdownMenu1">Nombramiento</a>
 
-        <span class="caret"></span>
-        <ul class="dropdown-menu inline-block" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="">Docente</a></li>
+            <span class="caret"></span>
+            <ul class="dropdown-menu inline-block" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Docente</a></li>
 
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="">Auxliar</a></li>
-
-        </ul>
-
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="">Auxliar</a></li>
+            </ul>
       </div>
 
 

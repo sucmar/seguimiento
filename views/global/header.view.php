@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/listaUsuarios.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/cargos.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/btnGlobal.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/editarPerfil.css">
+
     <!--FIN HOJAS DE ESTILO-->
 
     <link rel="stylesheet" href="estilos/css/jquery-ui.css">    

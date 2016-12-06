@@ -24,7 +24,7 @@
           <li><a href="listaDocentes.php">Docentes</a></li>
           <li><a href="#">Informacion</a></li>
       </ul>
-    <button id="button" class="btn btn-success">Ingresar</button>
+    <button id="button" class="btn btn-global">Ingresar</button>
   </div>
     
   <div class="jumbotron text-center inicio">
