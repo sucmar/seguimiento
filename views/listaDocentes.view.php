@@ -76,8 +76,6 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
         </tbody>-->
       <tbody>
       <tr>
-          <th> <strong>ID</strong> </th>
-          <td><strong>PROFESION </strong></td>
           <td><strong>NOMBRE </strong></td>
           <td> <strong>APELLIDO PATERNO</strong></td>
           <td><strong>APELLIDO MATERNO</strong></td>
@@ -85,8 +83,6 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
         <?php foreach ($docentes as $docente):?>
 
             <tr>
-              <th><?php echo $docente['ID_DOC'] ?></th>
-              <td><?php echo $docente['PROFESION_DOC'] ?></td>
               <td><?php echo $docente['NOMBRE_DOC'] ?></td>
               <td><?php echo $docente['APELLPA_DOC'] ?></td>
               <td><?php echo $docente['APELLMA_DOC'] ?></td>

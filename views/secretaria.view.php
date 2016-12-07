@@ -98,6 +98,8 @@
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="cargos.php">Registro Roles</a></li>
 
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="materias.php">Registro materias</a></li>
+
                     </ul>
 
                 </div>

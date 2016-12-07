@@ -2,8 +2,9 @@
 <?php include('views/global/title.view.php')?>
 
 	<div class="container seguimiento">
-		<form class="form-inline">
+		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" class="form-inline">
 			<fieldset >
+                <?php $NUM = 34 ?>
 				<legend>Registro de Seguimiento de Docentes</legend>
 				<div class="col-md-12">
 				<div class="col-md-3 form-group">
@@ -16,10 +17,10 @@
 					<button type="submit" class="btn btn-info btn-global btn-bs" > Buscar</button>
 				</div>
 				<div class="col-md-1 form-group">
-					<label class="lab"> Docente</label>
+					<label class="lab">Dedicación</label>
 				</div>
 				<div class="col-md-3 form-group">
-					<input type="text"  class="input-global form-control" name="">
+					<input type="text" disabled='disabled' class="input-global form-control" value="<?php echo $NUM ?>" name="">
 				</div>
 				</div>
 			</fieldset>
@@ -50,48 +51,19 @@
 			</div>
 			</fieldset>
 		</form>
-
 		<form class="form-inline">
 			<div class=" col-md-12">
 				<div class="form-group  tabla-cont table-hover col-md-4">
-				<table class="table table-hover ta-mat">  
+				<table class="table table-hover ta-mat">
 				    <tbody>
-				      <tr>
-				        <td>128912</td>
-				        <td>Algebra I</td>
-				      </tr>
-				      <tr>
-				        <td>21312</td>
-				        <td>Algebra II</td>
-				      </tr>
-				      <tr>
-				        <td>123123</td>
-				        <td>Ingles I</td>
-				      </tr>
-				      <tr>
-				        <td>128912</td>
-				        <td>Algebra I</td>
-				      </tr>
-				      <tr>
-				        <td>21312</td>
-				        <td>Algebra II</td>
-				      </tr>
-				      <tr>
-				        <td>123123</td>
-				        <td>Ingles I</td>
-				      </tr>
-						<tr>
-				        <td>128912</td>
-				        <td>Algebra I</td>
-				      </tr>
-				      <tr>
-				        <td>21312</td>
-				        <td>Algebra II</td>
-				      </tr>
-				      <tr>
-				        <td>123123</td>
-				        <td>Ingles I</td>
-				      </tr>
+                        <?php foreach ($materias as $materia):?>
+
+                            <tr>
+                                <th><?php echo $materia['SIGLA_MATERIA'] ?></th>
+                                <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
+                            </tr>
+                        <?php endforeach;?>
+
 				    </tbody>
 				</table>
 			 	</div>
