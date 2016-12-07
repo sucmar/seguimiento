@@ -7,6 +7,15 @@ button.btn-global
                 
 }
 
+a.btn-global 
+                {
+                background-color: #047BDE;
+                border-radius: 4px;
+                color: white;
+                border: 2px solid white;
+                
+}
+
 input.btn-global 
                 {
                 background-color: #047BDE;
