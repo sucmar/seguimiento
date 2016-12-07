@@ -10,8 +10,39 @@ div.seguimiento{
 	box-shadow: 0px 5px 10px #B5C1C5,0 0 0 10px #EEF5F7 inset;
 }
 
-div.lab-dic-mat{
-	margin-left: 30%;
+button.btn-global{
+	background-color: #047BDE;
+	border-radius: 4px;
+}
+
+input.input-global{
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+ }
+	
+label.lab{
+	float: right;
+}
+ button.btn-bs{
+ 	float: left;
+ }
+
+
+div.d-borde{
+	border:1px solid #CED5D7;
+}
+
+button.btn-peq{
+	margin: auto;
+}
+
+label.lb-seg{
+	width: 15px;
+}
+
+
+input.form-tam{
+	width: 100%;
 }
 
 div.tabla-cont{
@@ -20,9 +51,24 @@ div.tabla-cont{
 	height: 170px
 }
 
-button.btn-default{	
+input.form-hh{
+	width: 100%;
+}
+
+div.d-btn{
+	margin: auto;
+}
+
+
+
+/*----------------------*/
+div.lab-dic-mat{
 	margin-left: 30%;
 }
+
+
+
+
 
 div.col-d{
 	position: absolute;
@@ -51,7 +97,8 @@ div.form-hora{
 	padding-right: 0px;
 	padding-left: 0px;
 }
-
-button.reg-mat{
 	
-}
+
+
+
+

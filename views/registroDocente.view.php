@@ -91,11 +91,6 @@
                     <input type="text" class="form-control in-tit input-global" id="profesion" name="profesion" placeholder="profesion">
                 </div>
 
-                <div class="form-group div-form-car col-md-3">
-                    <label for="formGroupExampleInput2">Cargo:</label>
-                    <input type="text" class="form-control input-global" id="cargo" name="cargo" placeholder="cargo">
-                </div>
-
                 <div class="form-group div-form-ded col-md-3">
                     <label for="lab-ded">Dedicación:</label>
                     <select class="form-control select-global" name="dedicacion">
@@ -112,7 +107,7 @@
 
             </fieldset>
             <div class=" form-group div-btn col-md-offset-4">
-                <button type="submit" id="button" value="aceptar" class="btn registrar btn-global" >Registrar</button>
+                <button type="submit" class="btn registrar btn-global" >Registrar</button>
 
                 <button href="registroDocente.php" onclick="salir()" class="btn cancelar btn-global" >Cancelar</button>
 
