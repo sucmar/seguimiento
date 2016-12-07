@@ -34,7 +34,7 @@
                             <div class="modal-body">
                                 <form>
                                 <div class="form-group col-sm-6">
-                                <label>Criterio:</label>
+                                <label>(*) Criterio:</label>
                                 <input class="form-control input-global" type="text">
                                 </div>
                                 
@@ -75,7 +75,7 @@
                                   </table>
                                 </div>
                                 </form>
-                                <p>.....</p>
+                                <p><b>Los campos con (*) deben ser llenados obligatoriamente.</b></p>
                             </div>
                             
                             <div class="modal-footer">
