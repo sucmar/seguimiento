@@ -12,9 +12,84 @@
 				<div class="col-md-3 form-group">
 					<input type="text" class="input-global form-group form-control" name="nom">
 				</div>
-				<div class="col-md-2 form-group">
-					<button type="submit" class="btn btn-info btn-global btn-bs" > Buscar</button>
+                    
+                    
+				<div class="container col-md-2 form-group">
+                    
+                        <!-- Boton buscar -->
+                        <button type="button" class="btn btn-default btn-global" data-toggle="modal" data-target="#myModal">Buscar</button>
+                        <!-- Boton buscar -->
+
+                    
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                              
+                            <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">BUSQUEDA DOCENTE</h4>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <form>
+                                <div class="form-group col-sm-6">
+                                <label>Criterio:</label>
+                                <input class="form-control input-global" type="text">
+                                </div>
+                                
+                                <div class="form-group col-sm-6">
+                                <label>(*) Buscar por:</label>
+                                <select class="form-control select-global">
+                                    <option>NOMBRE</option>
+                                    <option>APELLIDO</option>
+                                </select>
+                                </div>
+                                    
+                                <div class="container col-sm-12">
+                                  <table class="table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th>Nombre</th>
+                                        <th>Apellido Paterno</th>
+                                        <th>Apellido Materno</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>Marco Antonio</td>
+                                        <td>Baltazar</td>
+                                        <td>Santos</td>
+                                      </tr>
+                                      <tr>
+                                        <td>meiu</td>
+                                        <td>Moe</td>
+                                        <td>maasdf</td>
+                                      </tr>
+                                      <tr>
+                                        <td>July</td>
+                                        <td>Dooley</td>
+                                        <td>july</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                </form>
+                                <p>.....</p>
+                            </div>
+                            
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default btn-global">Guardar</button>
+                              <button type="button" class="btn btn-default btn-global" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                      <!--Fin Modal -->
+
+                    
 				</div>
+                    
 				<div class="col-md-1 form-group">
 					<label class="lab"> Docente</label>
 				</div>
