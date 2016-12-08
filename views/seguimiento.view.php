@@ -1,6 +1,10 @@
 <?php include("views/global/header.view.php")?>
 <?php include('views/global/title.view.php')?>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<div class="container seguimiento">
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" class="form-inline">
 			<fieldset >
@@ -23,69 +27,60 @@
 
                     
                         <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                              
-                            <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">BUSQUEDA DOCENTE</h4>
-                            </div>
-                            
-                            <div class="modal-body">
-                                <form>
-                                <div class="form-group col-sm-6">
-                                <label>(*) Criterio:</label>
-                                <input class="form-control input-global" type="text">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">BUSQUEDA DOCENTE</h4>
                                 </div>
-                                
-                                <div class="form-group col-sm-6">
-                                <label>(*) Buscar por:</label>
-                                <select class="form-control select-global">
-                                    <option>NOMBRE</option>
-                                    <option>APELLIDO</option>
-                                </select>
+
+                                <div class="modal-body">
+                                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" name="search" id="search">
+                                        <div class="form-group col-sm-6">
+                                            <label>(*) Criterio:</label>
+                                            <input class="form-control input-global" type="text" name="buscar" id="buscar">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label>(*) Buscar por:</label>
+                                            <select class="form-control select-global">
+                                                <option>NOMBRE</option>
+                                                <option>APELLIDO</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="container col-sm-12">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Apellido Paterno</th>
+                                                    <th>Apellido Materno</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php foreach ($docentes as $docente):?>
+                                                    <tr>
+                                                        <th><?php echo $docente['NOMBRE_DOC'] ?></th>
+                                                        <td><?php echo $docente['APELLPA_DOC'] ?></td>
+                                                        <td><?php echo $docente['APELLMA_DOC'] ?></td>
+                                                    </tr>
+                                                <?php endforeach;?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </form>
+                                    <p><b>Los campos con (*) deben ser llenados obligatoriamente.</b></p>
                                 </div>
-                                    
-                                <div class="container col-sm-12">
-                                  <table class="table table-hover">
-                                    <thead>
-                                      <tr>
-                                        <th>Nombre</th>
-                                        <th>Apellido Paterno</th>
-                                        <th>Apellido Materno</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>Marco Antonio</td>
-                                        <td>Baltazar</td>
-                                        <td>Santos</td>
-                                      </tr>
-                                      <tr>
-                                        <td>meiu</td>
-                                        <td>Moe</td>
-                                        <td>maasdf</td>
-                                      </tr>
-                                      <tr>
-                                        <td>July</td>
-                                        <td>Dooley</td>
-                                        <td>july</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-default btn-global">Guardar</button>
+                                    <button type="button" class="btn btn-default btn-global" data-dismiss="modal">Close</button>
                                 </div>
-                                </form>
-                                <p><b>Los campos con (*) deben ser llenados obligatoriamente.</b></p>
-                            </div>
-                            
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default btn-global">Guardar</button>
-                              <button type="button" class="btn btn-default btn-global" data-dismiss="modal">Close</button>
                             </div>
                         </div>
-                        </div>
-                        </div>
+                    </div>
                       <!--Fin Modal -->
 
                     
@@ -671,7 +666,7 @@
 				<button type="submit" class="btn btn-info btn-global btn-bs" >Guardar</button>
 				</div>
 				<div class="col-md-2">
-				<button type="submit" class="btn btn-info btn-global btn-bs" > Salir </button>
+				<button class="btn btn-info btn-global btn-bs" href="espacioSecretaria.php"> Salir </button>
 				<div>
 			</div>
 		</form>

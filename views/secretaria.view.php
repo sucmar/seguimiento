@@ -100,6 +100,8 @@
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="materias.php">Registro materias</a></li>
 
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registroSecretaria.php">Registro secretaria</a></li>
+
                     </ul>
 
                 </div>

@@ -6,6 +6,8 @@ if (isset($_SESSION['usuario'])){
     header('Location: login.php');
 }
 
+print_r($_SESSION);
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nombres         = $_POST['nombre'];
     $apellidoPaterno = $_POST['apePaterno'];

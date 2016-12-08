@@ -26,7 +26,6 @@
 		// echo "$usuario - $password";
 
 		try {
-
 			$conexion = new PDO('mysql:host=localhost;dbname=bd_seguimiento','root','');
 
 		} catch(PDOException $e) {
@@ -39,13 +38,12 @@
 			':usuario' => $usuario,
 			':password' => $password
 		));
-		console_log($usuario);
-		console_log($password);
-		$resultado = $statement->fetch();
-		// var_dump($resultado);
 
+		$resultado = $statement->fetch();
+		 //var_dump($resultado);
 		if ($resultado != false){
 			$_SESSION['usuario'] = $usuario;
+			$_SESSION['privilegio'] = $resultado['TIPO_ROL'];
 			if($usuario === 'admin') {
 				header ('Location: registroSecretaria.php');
 			} else {

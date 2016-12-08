@@ -1,8 +1,9 @@
 <?php session_start();
-	if (isset($_SESSION['usuario'])){
+	if ($_SESSION['usuario'] == 'administrador'){
+	    //print_r($_SESSION['privilegio']);
 		require 'views/registroSecretaria.view.php';
 	} else {
-		//header('Location: espacioSecretaria.php');
+        header('Location: index.php');
 	}
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
