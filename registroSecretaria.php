@@ -3,7 +3,7 @@
 	    //print_r($_SESSION['privilegio']);
 		require 'views/registroSecretaria.view.php';
 	} else {
-        header('Location: index.php');
+        header('Location: espacioSecretaria.php');
 	}
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
