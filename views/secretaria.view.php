@@ -98,7 +98,7 @@
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="cargos.php">Registro Roles</a></li>
 
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="materias.php">Registro materias</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registroMaterias.php">Registro Materias</a></li>
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroSecretaria.php">Registro secretaria</a></li>
 
@@ -113,7 +113,7 @@
                 <ul>
 
                     <li>
-                        <a href="">
+                        <a href="#" onclick="window.open('manualPDF.pdf')">
                             <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
                             ManualPDF
                         </a>

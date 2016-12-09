@@ -15,7 +15,7 @@
 					<label class="lab control-label" > Nombre del Docente</label>
 				</div>
 				<div class="col-md-3 form-group">
-					<input type="text" class="input-global form-group form-control" name="nom">
+					<input type="text" disabled='disabled' class="input-global form-group form-control" name="nom" >
 				</div>
                     
                     
