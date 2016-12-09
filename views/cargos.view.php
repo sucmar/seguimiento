@@ -22,7 +22,7 @@
                 <input class="form-control input-global" type="text" name="nomTar">
             </div>
 
-            <div class="form-group col-sm-6">
+            <!--<div class="form-group col-sm-6">
                 <label>Tipo rol:</label>
                 <select class="form-control sel-expendido select-global" name='tipoRol' id='departamento'>
                     <option value='secretaria'>Secretaria</option>
@@ -30,12 +30,12 @@
                     <option value='superadministrador'>SuperAdministrador</option>
                     <option value='docente'>Docente</option>
                 </select>
-            </div>
+            </div>-->
 
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Tarea</th>
+                    <th>Rol</th>
                     <th>Descripcion</th>
                 </tr>
                 </thead>
