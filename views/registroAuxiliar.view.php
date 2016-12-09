@@ -7,8 +7,8 @@
 
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
 
-        <fieldset class="form-group">
-            <LEGEND>Registro de Auxiliares</LEGEND>
+            <fieldset class="form-group">
+                <LEGEND>Registro de Auxiliares</LEGEND>
                 <div class="">
                     <div class="form-group  div-form-nom-aux col-md-4">
                         <label for="lab-nom-aux">(*) Nombres:</label>
@@ -16,15 +16,15 @@
                     </div>
                 </div>
 
-                    <div class="form-group div-form-ape-pat col-md-4">
-                        <label for="lab-ape-pat-aux">(*) Apellido Paterno</label>
-                        <input type="text" class="form-control input-global" id="ape-pat" name="apePaterno" placeholder="apellido paterno">
-                    </div>
+                <div class="form-group div-form-ape-pat col-md-4">
+                    <label for="lab-ape-pat-aux">(*) Apellido Paterno</label>
+                    <input type="text" class="form-control input-global" id="ape-pat" name="apePaterno" placeholder="apellido paterno">
+                </div>
 
-                    <div class="form-group div-form-ape-mat col-md-4">
-                        <label for="lab-ape-mat-aux">Apellido Materno</label>
-                        <input type="text" class="form-control input-global" id="ape-mat" name="apeMaterno" placeholder="apellido materno">
-                    </div>
+                <div class="form-group div-form-ape-mat col-md-4">
+                    <label for="lab-ape-mat-aux">Apellido Materno</label>
+                    <input type="text" class="form-control input-global" id="ape-mat" name="apeMaterno" placeholder="apellido materno">
+                </div>
 
                 <div class="col-md-3">
                     <div>
@@ -36,57 +36,57 @@
                         <div class="form-group col-xs-2 div-form-sel">
                             <label for="lab-exp">Expendido:</label>
                             <select class="form-control select-global" name='departamento'>
-                                    <option value='lpz'>LPZ</option>
-                                    <option value='cbba'>CBBA</option>
-                                    <option value='scz'>SCZ</option>
-                                    <option value='pts'>PTS</option>
-                                    <option value='tja'>TJA</option>
-                                    <option value='oru'>ORU</option>
-                                    <option value='ben'>BEN</option>
-                                    <option value='pdo'>PDO</option>
-                                    <option value='chq'>CHQ</option>
+                                <option value='lpz'>LPZ</option>
+                                <option value='cbba'>CBBA</option>
+                                <option value='scz'>SCZ</option>
+                                <option value='pts'>PTS</option>
+                                <option value='tja'>TJA</option>
+                                <option value='oru'>ORU</option>
+                                <option value='ben'>BEN</option>
+                                <option value='pdo'>PDO</option>
+                                <option value='chq'>CHQ</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-            <div class="form-group div-form-fec-nac col-md-3">
-                <label for="lab-fec-nac">(*) Fecha de Nacimiento:</label>
-                <input type="text" class="form-control input-global" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
-            </div>
+                <div class="form-group div-form-fec-nac col-md-3">
+                    <label for="lab-fec-nac">(*) Fecha de Nacimiento:</label>
+                    <input type="text" class="form-control input-global" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
+                </div>
 
-                    <div class="form-group div-from-sex-aux col-md-2">
-                        <label for="lab-sex-aux">Sexo:</label>
-                        <select class="form-control select-global" name='sexo'>
-                            <option>F</option>
-                            <option>M</option>
-                        </select>
-                    </div>
+                <div class="form-group div-from-sex-aux col-md-2">
+                    <label for="lab-sex-aux">Sexo:</label>
+                    <select class="form-control select-global" name='sexo'>
+                        <option>F</option>
+                        <option>M</option>
+                    </select>
+                </div>
 
-                    <div class="form-group div-form-tel-aux col-md-2">
-                        <label for="lab-tel-aux">Teléfono Fijo</label>
-                        <input type="text" class="form-control input-global" id="telf" name="telf" placeholder="telefono">
-                    </div>
+                <div class="form-group div-form-tel-aux col-md-2">
+                    <label for="lab-tel-aux">Teléfono Fijo</label>
+                    <input type="text" class="form-control input-global" id="telf" name="telf" placeholder="telefono">
+                </div>
 
-                    <div class="form-group div-form-cel-aux col-md-2">
-                        <label for="lab-cel">Celular:</label>
-                        <input type="text" class="form-control input-global" id="cel" name="cel" placeholder="celular">
-                    </div>
+                <div class="form-group div-form-cel-aux col-md-2">
+                    <label for="lab-cel">Celular:</label>
+                    <input type="text" class="form-control input-global" id="cel" name="cel" placeholder="celular">
+                </div>
 
-                    <div class="form-group div-form-dir-dom col-md-3">
-                        <label for="lab-dir-dom">Dirección Domiciliaria:</label>
-                        <input type="text" class="form-control input-global" id="direccion" name="direccion" placeholder="direccion">
-                    </div>
+                <div class="form-group div-form-dir-dom col-md-3">
+                    <label for="lab-dir-dom">Dirección Domiciliaria:</label>
+                    <input type="text" class="form-control input-global" id="direccion" name="direccion" placeholder="direccion">
+                </div>
 
-                    <div class="form-group div-form-cor-elc col-md-3">
-                        <label for="lab-cor-elc">Correo Electronico</label>
-                        <input type="mail" class="form-control input-global" id="email" name="correo" placeholder="xyz@dominio.com">
-                    </div>
+                <div class="form-group div-form-cor-elc col-md-3">
+                    <label for="lab-cor-elc">Correo Electronico</label>
+                    <input type="mail" class="form-control input-global" id="email" name="correo" placeholder="xyz@dominio.com">
+                </div>
 
-                    <div class="form-group div-form-car col-md-3">
-                        <label for="lab-carrera">Carrera</label>
-                        <input type="text" class="form-control input-global" id="carrera" name="carrera" placeholder="carrera">
-                    </div>
+                <div class="form-group div-form-car col-md-3">
+                    <label for="lab-carrera">Carrera</label>
+                    <input type="text" class="form-control input-global" id="carrera" name="carrera" placeholder="carrera">
+                </div>
 
                 <div class="col-md-8">
                     <br>
@@ -94,19 +94,19 @@
                 </div>
 
 
-        </fieldset>
-        <div class=" form-group col-mod-4 col-md-offset-4">
-                    <button type="submit" class="btn registrar btn-global" >Registrar
-                    </button>
+            </fieldset>
+            <div class=" form-group col-mod-4 col-md-offset-4">
+                <button type="submit" class="btn registrar btn-global" >Registrar
+                </button>
 
-                    <button type="submit" onclick="salir()" class="btn cancelar btn-global" >Cancelar
-                    </button>
-        </div>
-                    <p id="error_para" ></p>
+                <button type="submit" onclick="salir()" class="btn cancelar btn-global" >Cancelar
+                </button>
+            </div>
+            <p id="error_para" ></p>
         </form>
 
     </div>
-    </div>
+</div>
 
     <script type="text/javascript">
         function salir() {
