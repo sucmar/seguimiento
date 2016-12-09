@@ -1,30 +1,5 @@
 <?php include("views/global/header.view.php")?>
-    <div class="nt-background" name="seguimiento">
-    <div class= "nt-header">
-        <div class= "logo">
-            <img src="images/logo2.png" class= "imagen">
-        </div>
-        <div class= "titulo">
-            <h4 class="nombre"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
-        </div>
-        <div class="col-sm-4 dropdown">
-            <form action="./cerrar.php" class="navbar-form navbar-right" >
-                <a href="" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenuSalir">
-                    <p id="nombre-usuario" style="color: white"><?php echo $_SESSION['usuario']?>
-                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-                    </p>
-
-                    <ul class="dropdown-menu inline-block" style="background-color:#0259A0" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="editarPerfil.php">Editar Perfil</a></li>
-
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="cerrar.php">salir</a></li>
-                    </ul>
-                </a>
-                <input type="submit" class="btn btn-global" name="" value="salir">
-            </form>
-        </div>
-    </div>
-
+<?php include("views/global/title.view.php")?>
 
     <div class="contenedor-principal">
         <div class="container nt-menu-cuerpo">
