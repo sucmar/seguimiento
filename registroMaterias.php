@@ -1,5 +1,13 @@
-<?php
+<?php session_start();
 
-	require 'views/registroMaterias.view.php';
+if (isset($_SESSION['usuario'])){
+    require 'views/registroMaterias.view.php';git
+} else {
+    header('Location: login.php');
+}
+
+
+
+
 
 ?>
