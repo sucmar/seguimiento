@@ -95,6 +95,10 @@
 				</div>
 			</fieldset>
 		</form>
+        
+        
+        
+        
 
 		<form class="form-inline">
 			<div class="col-md-12">
@@ -102,7 +106,7 @@
 					<label class=" control-label" > Materia</label>
 				</div>
 				<div class="col-md-3 form-group">
-					<input type="text" class="input-global form-group form-control" name="nom">
+					<input type="text" class="input-global form-group form-control" name="campoBuscador" id="searchTerm" onkeyup="doSearch()">
 				</div>
 				<div class="col-md-1 form-group">
 					<br>
@@ -119,13 +123,16 @@
 				</div>
 				
 			</div>
-			</fieldset>
 		</form>
 		<form class="form-inline">
 			<div class=" col-md-12">
 				<div class="form-group  tabla-cont table-hover col-md-4">
-				<table class="table table-hover ta-mat">
-				    <tbody>
+				<table id="datos" class="table table-hover ta-mat">
+                        
+                    	<tr>
+				        	<th>id</th><th>Materia</th>
+			         	</tr>
+                        
                         <?php foreach ($materias as $materia):?>
 
                             <tr>
@@ -134,7 +141,7 @@
                             </tr>
                         <?php endforeach;?>
 
-				    </tbody>
+                    
 				</table>
 			 	</div>
 
@@ -659,16 +666,19 @@
 
 		<form class="form-group form-inline">
 			<div class="col-md-12">
-				<div class="col-md-8">
-					
+
+                <div class="col-md-8">
 				</div>
 				<div class="col-md-2">
 				<button type="submit" class="btn btn-info btn-global btn-bs" >Guardar</button>
 				</div>
 				<div class="col-md-2">
 				<button class="btn btn-info btn-global btn-bs" href="espacioSecretaria.php"> Salir </button>
-				<div>
+                </div>
 			</div>
 		</form>
 
 	</div>
+
+
+

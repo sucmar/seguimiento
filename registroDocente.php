@@ -10,7 +10,7 @@
         $nombres         = $_POST['nombre'];
         $apellidoPaterno = $_POST['apePaterno'];
         $apellidoMaterno = $_POST['apeMaterno'];
-        $titulo          =$_POST['profesion'];
+        $titulo          = $_POST['profesion'];
         $ci              = $_POST['ci'];
         $expedido        = $_POST['departamento'];
         $fechaNacimiento = $_POST['fecNacimiento'];

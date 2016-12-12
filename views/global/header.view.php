@@ -26,16 +26,17 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/seguimiento.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/nombramiento.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registroMaterias.css">
-
     <!--FIN HOJAS DE ESTILO-->
 
-    <!---->
-
+    <!--INICIO JAVA SCRIPT-->
     <link rel="stylesheet" href="estilos/css/jquery-ui.css">    
     <script src="estilos/js/jquery.min.js"></script>
     <script src="estilos/js/jquery-ui.min.js"></script>
     <script src="estilos/js/moment.js"></script>
+    
     <script src="estilos/js/timer.js"></script>
+    <script src="estilos/js/buscaMaterias.js"></script>
+    <!--FIN JAVA SCRIPT-->
 
 
     <script>

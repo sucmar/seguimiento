@@ -5,22 +5,22 @@
     <fieldset>
     <legend>REGISTRO DE MATERIAS:</legend>
         
-        <form>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
             
             <div class="form-group col-sm-6">
                 <label>(*) Nombre Materia:</label>
-                <input class="form-control input-global" type="text">
+                <input class="form-control input-global" type="text" id="nombreMateria" name="nombreMateria">
             
             </div>
             
             <div class="form-group col-sm-6">
                 <label>(*) Sigla Materia:</label>
-                <input class="form-control input-global" type="text">
+                <input class="form-control input-global" type="text" id="siglaMateria" name="siglaMateria">
             </div>
             
             <div class="form-group col-sm-6">
                 <label>(*) Tipo Materia:</label>
-                <select class="form-control select-global">
+                <select class="form-control select-global" id="tipoMateria" name="tipoMateria">
                     <option>CURRICULAR</option>
                     <option>NO CURRICULAR</option>
                 </select>
@@ -28,7 +28,7 @@
             
             <div class="form-group col-sm-6">
                 <label>(*) Nivel Materia:</label>
-                <select class="form-control select-global">
+                <select class="form-control select-global" id="nivelMateria" name="nivelMateria">
                     <option>A</option>
                     <option>B</option>
                     <option>C</option>
@@ -46,8 +46,8 @@
             <p>NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</p>
             <center>
                     <div class="btn-inline">
-                    <button class="btn btn-default btn-global" type="button">Guardar</button>
-                    <button class="btn btn-default btn-global" type="button" >Cancelar</button>
+                    <button class="btn btn-default btn-global" type="submit">Guardar</button>
+                    <button class="btn btn-default btn-global" type="submit" >Cancelar</button>
                     </div>
             </center>
             
