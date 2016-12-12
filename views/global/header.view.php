@@ -1,4 +1,10 @@
 <head>
+    <script src="estilos/js/jquery.js"></script>
+    <script src="estilos/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="estilos/css/jquery-ui.css">
+    <script src="estilos/js/jquery-ui.min.js"></script>
+    <script src="estilos/js/moment.js"></script>
+    <script src="estilos/js/timer.js"></script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +13,10 @@
     <title>Sistema De Apoyo</title>
 
     <!--INICIO BOOTSTRAP FONT-AWESOME-->
-    <link rel="stylesheet" href="estilos/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="estilos/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="estilos/fonts/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="estilos/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="estilos/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="estilos/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="estilos/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="estilos/fonts/font-awesome/css/font-awesome.min.css">
     <!--FIN BOOTSTRAP FONT-AWESOME-->
 
     <!--INICIO HOJAS DE ESTILO-->
@@ -28,14 +34,6 @@
     <!--FIN HOJAS DE ESTILO-->
 
     <!---->
-
-    <link rel="stylesheet" href="estilos/css/jquery-ui.css">    
-    <script src="estilos/js/jquery.min.js"></script>
-    <script src="estilos/js/jquery-ui.min.js"></script>
-    <script src="estilos/js/moment.js"></script>
-    <script src="estilos/js/timer.js"></script>
-
-
     <script>
         $('document').ready(function () {
             function hora() {
