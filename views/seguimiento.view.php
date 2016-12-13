@@ -1,8 +1,6 @@
 <?php include("views/global/header.view.php")?>
 <?php include('views/global/title.view.php')?>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<div class="container seguimiento">
@@ -37,46 +35,37 @@
                                 </div>
 
                                 <div class="modal-body">
-                                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" name="search" id="search">
-                                        <div class="form-group col-sm-6">
+                                    <form>
+                                        <div class="form-group col-sm-12">
                                             <label>(*) Criterio:</label>
-                                            <input class="form-control input-global" type="text" name="buscar" id="buscar">
+                                            <input class="form-control input-global" type="text" id="buscado" onkeyup="buscar()">
                                         </div>
-                                        <div class="form-group col-sm-6">
-                                            <label>(*) Buscar por:</label>
-                                            <select class="form-control select-global">
-                                                <option>NOMBRE</option>
-                                                <option>APELLIDO</option>
-                                            </select>
-                                        </div>
-
                                         <div class="container col-sm-12">
-                                            <table class="table table-hover">
+                                            <table class="table table-hover" id="data">
                                                 <thead>
                                                 <tr>
-                                                    <th>Nombre</th>
-                                                    <th>Apellido Paterno</th>
-                                                    <th>Apellido Materno</th>
+                                                    <th>ID DOCENTE</th>
+                                                    <th>NOMBRE</th>
+                                                    <th>APELLIDO PATERNO</th>
+                                                    <th>APELLIDO MATERNO</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <?php foreach ($docentes as $docente):?>
                                                     <tr>
-                                                        <th><?php echo $docente['NOMBRE_DOC'] ?></th>
+                                                        <td id="ide"><?php echo $docente['ID_DOC'] ?></td>
+                                                        <td><?php echo $docente['NOMBRE_DOC'] ?></td>
                                                         <td><?php echo $docente['APELLPA_DOC'] ?></td>
                                                         <td><?php echo $docente['APELLMA_DOC'] ?></td>
+                                                        <td><a class="btn btn-primary btn-xs" id="boton">seleccionar</a></td>
                                                     </tr>
                                                 <?php endforeach;?>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </form>
+                                    <div id='response'></div>
                                     <p><b>Los campos con (*) deben ser llenados obligatoriamente.</b></p>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-default btn-global">Guardar</button>
-                                    <button type="button" class="btn btn-default btn-global" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -424,6 +413,7 @@
 				</div>
 			</div>		
 		</form>
+
 
 
 

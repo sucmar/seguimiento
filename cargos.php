@@ -1,4 +1,5 @@
 <?php session_start();
+    require 'views/cargos.view.php';
     require 'funciones.php';
     if ($_SESSION['usuario']){
         //print_r($_SESSION['privilegio']);
@@ -30,8 +31,6 @@
         $statement->execute();
         $roles = $statement->fetchAll();
 
-
-        require 'views/cargos.view.php';
     } else {
         header('Location: index.php');
     }
