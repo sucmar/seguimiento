@@ -46,6 +46,7 @@ input.form-tam{
 }
 
 div.tabla-cont{
+	background-color: white;
 	overflow:scroll;
 	border: 1px solid #CED5D7;
 	height: 170px

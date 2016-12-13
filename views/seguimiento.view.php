@@ -136,7 +136,7 @@
                         <?php foreach ($materias as $materia):?>
 
                             <tr>
-                                <th><?php echo $materia['SIGLA_MATERIA'] ?></th>
+                                <td><?php echo $materia['SIGLA_MATERIA'] ?></td>
                                 <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
                             </tr>
                         <?php endforeach;?>
