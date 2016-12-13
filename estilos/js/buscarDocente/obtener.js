@@ -6,7 +6,7 @@
 //esperamos a que carge el dom
 $(document).ready(function(){
     //cuando haga click
-    $("#resultado").click(function(){
+    $("tr").click(function(){
         //obtemos la variable
         var var_js = "";
         $(this).find("#ide").each(function(){

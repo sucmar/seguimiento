@@ -1,8 +1,6 @@
 <?php include("views/global/header.view.php")?>
 <?php include('views/global/title.view.php')?>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<div class="container seguimiento">
@@ -46,23 +44,27 @@
                                             <table class="table table-hover" id="data">
                                                 <thead>
                                                 <tr>
-                                                    <th>Nombre</th>
-                                                    <th>Apellido Paterno</th>
-                                                    <th>Apellido Materno</th>
+                                                    <th>ID DOCENTE</th>
+                                                    <th>NOMBRE</th>
+                                                    <th>APELLIDO PATERNO</th>
+                                                    <th>APELLIDO MATERNO</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <?php foreach ($docentes as $docente):?>
                                                     <tr>
+                                                        <td id="ide"><?php echo $docente['ID_DOC'] ?></td>
                                                         <td><?php echo $docente['NOMBRE_DOC'] ?></td>
                                                         <td><?php echo $docente['APELLPA_DOC'] ?></td>
                                                         <td><?php echo $docente['APELLMA_DOC'] ?></td>
+                                                        <td><a class="btn btn-primary btn-xs" id="boton">seleccionar</a></td>
                                                     </tr>
                                                 <?php endforeach;?>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </form>
+                                    <div id='response'></div>
                                     <p><b>Los campos con (*) deben ser llenados obligatoriamente.</b></p>
                                 </div>
                             </div>

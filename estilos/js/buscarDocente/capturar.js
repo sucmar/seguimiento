@@ -1,6 +1,3 @@
-/**
- * Created by ESTALIN on 12/11/2016.
- */
 $(document).ready(function(){
     var valores="";
     $("#resultado").click(function(){
