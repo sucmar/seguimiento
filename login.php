@@ -27,7 +27,7 @@
 
 		try {
 
-			$conexion = new PDO('mysql:host=localhost;dbname=bd_seguimiento','root','');
+			$conexion = new PDO('mysql:host=localhost;dbname=db_seguimiento','root','root');
 
 		} catch(PDOException $e) {
 			echo "ERROR:". $e->getMessage();;

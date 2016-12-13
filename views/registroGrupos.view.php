@@ -28,13 +28,15 @@
 				    <tbody>
                     <tr>
                     <th name="materia"><strong>MATERIA</strong> </th>
+                    <th name="materia"><strong>ID</strong> </th>
                     <td name="grupo"><strong>GRUPO</strong></td>
                     </tr>
 		<?php foreach ($grupos as $grupo):?>
              <tr>
-              <th><?php echo $nombreMateria ?></th>
+              <td><?php echo $nombreMateria ?></td>
+              <td><?php echo $grupo['ID_GRUPO'] ?></td>
               <td><?php echo $grupo['NOM_GRUPO'] ?></td>
-               
+              <td><button class="seleccionarGrupo">selecionar</button></td> 
             </tr>
         <?php endforeach;?>
 				    </tbody>
@@ -42,7 +44,7 @@
 				 </div>
 
         <div class="form-group col-sm-12" >
-            <label class:"form-control">Asignar grupo:</label>
+            <label class:"form-control">Asignar grupo</label>
                 </div>
                 
                 <div class="form-group col-sm-6" >
@@ -65,12 +67,24 @@
     background-color : white;
     font-weight: bold;
 }
+.seleccionarGrupo {
+    background-color : white;
+    font-weight: bold;
+}
 </style>
 <script>
 $('.seleccionar').click(function () {
     var id = $(this).closest("tr").find('td:eq(0)').text();
      $('#sig').val(id);
 });
+$('.seleccionarGrupo').click(function () {
+    var id = $(this).closest("tr").find('td:eq(1)').text();
+    $.cookie("idGrupo", id);
+    var nom = $(this).closest("tr").find('td:eq(2)').text();
+    $.cookie("nom_grupo_cookie", nom);
+    $.cookie("connected", true);
+});
+
 </script>
 
 
