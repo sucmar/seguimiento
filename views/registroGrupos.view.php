@@ -36,7 +36,7 @@
               <td><?php echo $nombreMateria ?></td>
               <td><?php echo $grupo['ID_GRUPO'] ?></td>
               <td><?php echo $grupo['NOM_GRUPO'] ?></td>
-              <td><button class="seleccionarGrupo">selecionar</button></td> 
+              <td><button  class="seleccionarGrupo">selecionar</button></td> 
             </tr>
         <?php endforeach;?>
 				    </tbody>

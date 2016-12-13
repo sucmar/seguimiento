@@ -1,13 +1,14 @@
 <?php
+	//header('Content-type: text/html; charset=utf-8');
 	require 'funciones.php';
+	
 	function console_log( $data ){
 			echo '<script>';
 			echo 'console.log('. json_encode( $data ) .')';
 			echo '</script>';
 		};
 
-    $conexion = conexion('db_seguimiento','root','root');
-
+    $conexion = conexion('bd_seguimiento','root','');
     if (!$conexion) {
         die();
     }
@@ -97,10 +98,9 @@
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
-	
-
-	
-	
+	if(isset($_POST['salir'])) {
+		 header('Location: espacioSecretaria.php');
+	}
     require 'views/registroGrupos.view.php';
 
 ?>	
