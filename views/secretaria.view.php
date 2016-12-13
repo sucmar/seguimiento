@@ -100,7 +100,9 @@
             <li role="presentation"><a role="menuitem" tabindex="-1" href="registroAuxiliar.php">Registro Auxiliar</a></li>
               
             <li role="presentation"><a role="menuitem" tabindex="-1" href="cargos.php">Registro Roles</a></li>
-              
+
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="registroGrupos.php">Registro Grupos</a></li>  
+
           </ul>
 
       </div>
