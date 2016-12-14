@@ -132,7 +132,7 @@
 						 <tr>
 						  <td name="sigla" id="sigla"><?php echo $materia['SIGLA_MATERIA'] ?></td>
 						  <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
-						  <td><button class="seleccionar">selecionar</button></td>
+						  <td><button class="seleccionar btn btn-primary btn-xs">selecionar</button></td>
 						</tr>
 					<?php endforeach;?>
 			       </tbody>
@@ -171,7 +171,7 @@
               			<td><?php echo $nombreMateria ?></td>
               			<td><?php echo $grupo['ID_GRUPO'] ?></td>
               			<td><?php echo $grupo['NOM_GRUPO'] ?></td>
-              			<td><button  class="seleccionarGrupo">selecionar</button></td> 
+              			<td><button  class="seleccionarGrupo btn btn-primary btn-xs">selecionar</button></td> 
             			</tr>
         				<?php endforeach;?>
 				    </tbody>
@@ -665,12 +665,7 @@
 
 	</div>
 
-<style>
-.seleccionar {
-    background-color : white;
-    font-weight: bold;
-}
-</style>
+
 <script>
 $('.seleccionar').click(function () {
     var id = $(this).closest("tr").find('td:eq(0)').text();
