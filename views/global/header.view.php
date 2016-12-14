@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="estilos/css/jquery-ui.css">    
     <script src="estilos/js/jquery.min.js"></script>
     <script src="estilos/js/jquery-ui.min.js"></script>
+    <script src="estilos/js/cookie/jquery.cookie.js" ></script>
     <script src="estilos/js/moment.js"></script>
     
     <script src="estilos/js/timer.js"></script>

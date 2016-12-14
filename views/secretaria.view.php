@@ -75,6 +75,8 @@
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroMaterias.php">Registro Materias</a></li>
 
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registroGrupos.php">Registro Grupos</a></li>
+
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroSecretaria.php">Registro secretaria</a></li>
 
                     </ul>

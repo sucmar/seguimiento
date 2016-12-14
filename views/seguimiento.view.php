@@ -127,6 +127,7 @@
                             <tr>
                                 <td><?php echo $materia['SIGLA_MATERIA'] ?></td>
                                 <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
+								<td><button  class="seleccionarG">selecionar</button></td>
                             </tr>
                         <?php endforeach;?>
 
@@ -136,13 +137,12 @@
 
 			 	<div class="form-group col-md-1  ">
 	                <select class="form-control sel-grupo" name='grupo' id='grupo'>
-	                    <option value='1'>1</option>
-	                    <option value='2'>2</option>
-	                    <option value='3'>3</option>  
-	                    <option value='4'>4</option>
-	                    <option value='5'>5</option> 
-	                    <option value='6'>6</option>
-	                </select>
+					
+					 <?php foreach ($grupos as $grupo):?>
+	                    <option><?php echo $grupo['NOM_GRUPO'] ?></option>
+					 <?php endforeach;?>
+	                
+					</select>
 	                <div class="input-group-btn-vertical">
 	                <br>
 					    <button class="btn btn-info btn-global btn-peq" type="button"><i class="glyphicon glyphicon-chevron-right"></i></button>
@@ -670,5 +670,16 @@
 
 	</div>
 
+<style>
+.seleccionar {
+    background-color : white;
+    font-weight: bold;
+}
+</style>
 
-
+<script>
+$('.seleccionarG').click(function () {
+    var sigla = $(this).closest("tr").find('td:eq(0)').text();
+     $.cookie("sigla_cookie", sigla);
+});
+</script>
