@@ -2,8 +2,8 @@
 
 		function doSearch()
 		{
-			var tableReg = document.getElementById('datos');
-			var searchText = document.getElementById('searchTerm').value.toLowerCase();
+			var tableReg = document.getElementById('tablaMateria');
+			var searchText = document.getElementById('buscarMateria').value.toLowerCase();
 			var cellsOfRow="";
 			var found=false;
 			var compareWith="";

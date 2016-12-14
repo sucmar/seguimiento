@@ -92,10 +92,10 @@
 		<form class="form-inline">
 			<div class="col-md-12">
 				<div class="col-md-1 form-group">
-					<label class=" control-label" > Materia</label>
+					<label class=" control-label" >Buscar Materia</label>
 				</div>
 				<div class="col-md-3 form-group">
-					<input type="text" class="input-global form-group form-control" name="campoBuscador" id="searchTerm" onkeyup="doSearch()">
+					<input type="text" class="input-global form-group form-control" name="campoBuscador" id="buscarMateria" onkeyup="doSearch()">
 				</div>
 				<div class="col-md-1 form-group">
 					<br>
@@ -113,108 +113,103 @@
 				
 			</div>
 		</form>
-		<form class="form-inline">
+		<form class="form-inline" action="seguimiento.php" method="post">
 			<div class=" col-md-12">
-				<div class="form-group  tabla-cont table-hover col-md-4">
-				<table id="datos" class="table table-hover ta-mat">
-                        
-                    	<tr>
-				        	<th>id</th><th>Materia</th>
-			         	</tr>
-                        
-                        <?php foreach ($materias as $materia):?>
+				
+				
+				
+				
+				
+				<div class="form-group  tabla-cont table-hover col-sm-4">
+				<table class="table table-hover ta-mat" id="tablaMateria">  
+					 <tr>
+                        <td> <strong>CODIGO</strong> </td>
+                        <td><strong>MATERIA </strong></td>
+                    </tr>
+                   <tbody>
+					 
+					<?php foreach ($materias as $materia):?>
+						 <tr>
+						  <td name="sigla" id="sigla"><?php echo $materia['SIGLA_MATERIA'] ?></td>
+						  <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
+						  <td><button class="seleccionar">selecionar</button></td>
+						</tr>
+					<?php endforeach;?>
+			       </tbody>
+	            </table>
+		 		</div>
+                
+				
+				<div class="btn-group input-group-btn-vertical col-sm-1" method="post">
+                    <input name="nom_grupo" class="form-control input-global" type="text" style="width:60px;">
+                    <input id="sig" type="hidden" name="sigla_post">
+                     <br>   
+                     <br>   
+					<button name="insert" class="btn btn-default btn-global" type="submit" ><i class="glyphicon glyphicon-chevron-right"></i></button>
+                     <br>   
+                     <br>   
 
-                            <tr>
-                                <td><?php echo $materia['SIGLA_MATERIA'] ?></td>
-                                <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
-								<td><button  class="seleccionarG">selecionar</button></td>
-                            </tr>
-                        <?php endforeach;?>
-
-                    
-				</table>
-			 	</div>
-
-			 	<div class="form-group col-md-1  ">
-	                <select class="form-control sel-grupo" name='grupo' id='grupo'>
-					
-					 <?php foreach ($grupos as $grupo):?>
-	                    <option><?php echo $grupo['NOM_GRUPO'] ?></option>
-					 <?php endforeach;?>
-	                
-					</select>
-	                <div class="input-group-btn-vertical">
-	                <br>
-					    <button class="btn btn-info btn-global btn-peq" type="button"><i class="glyphicon glyphicon-chevron-right"></i></button>
-					<br>
-					<br>
-					    <button class="btn btn-info btn-global btn-peq" type="button"><i class="glyphicon glyphicon-remove"></i></button>
-					</div> 
-					
-
-            	</div>
-
-            	<div class="form-group col-md-4 ">
-				 	<div class=" tabla-cont table-hover">
-				 	<table class="table table-hover ">
-				    <thead>
-				      <tr>
-				        <th>Sigla</th>
-				        <th>Materia</th>
-				        <th>Grupo</th>
-				      </tr>
-				    </thead>
+					<br>   
+					<button name="delete" class="btn btn-default btn-global" type="submit" ><i class="glyphicon glyphicon-remove"></i></button>
+                </div>
+				
+				
+				
+		
+				
+        		<div class="form-group  tabla-cont table-hover col-sm-4">
+					<table class="table table-hover ta-mat">  
 				    <tbody>
-				      <tr>
-				        <td>1213</td>
-				        <td>Ingles I</td>
-				        <td>1</td>
-				      </tr>
-				      <tr>
-				        <td>1213</td>
-				        <td>Ingles I</td>
-				        <td>1</td>
-				      </tr>
-				      <tr>
-				        <td>1213</td>
-				        <td>Ingles I</td>
-				        <td>1</td>
-				      </tr>
+                    <tr>
+                    <th name="materia"><strong>MATERIA</strong> </th>
+                    <th name="materia"><strong>ID</strong> </th>
+                    <td name="grupo"><strong>GRUPO</strong></td>
+                    </tr>
+					
+						<?php foreach ($grupos as $grupo):?>
+             			<tr>
+              			<td><?php echo $nombreMateria ?></td>
+              			<td><?php echo $grupo['ID_GRUPO'] ?></td>
+              			<td><?php echo $grupo['NOM_GRUPO'] ?></td>
+              			<td><button  class="seleccionarGrupo">selecionar</button></td> 
+            			</tr>
+        				<?php endforeach;?>
 				    </tbody>
 				  	</table>
-				 	</div>
-			 	</div>
+				</div>
 
-			 	<div class="form-group col-md-3 d-borde">
-					<div class="form-check">
-				    <label class="form-check-label">
+				
+
+			 			<div class="form-group d-borde col-sm-3">
+						<div class="form-check">
+				    	<label class="form-check-label">
 				      	<input type="checkbox" class="form-check-input">
-				      A (Asist.)
-				    </label>
-				 	</div>
-					<div class="form-check">
+				      		A (Asist.)
+				    		</label>
+						</div>
+						<div class="form-check">
 					    <label class="form-check-label">
 					      	<input type="checkbox" class="form-check-input">
 					      B(Adj.)
 					    </label>
-					</div>
-					<div class="form-check">
+						</div>
+						<div class="form-check">
 					    <label class="form-check-label">
 					      	<input type="checkbox" class="form-check-input">
 					      C(Cat.)
 					    </label>
-					</div>
-					<div class="form-check">
+						</div>
+						<div class="form-check">
 					    <label class="form-check-label">
 					      	<input type="checkbox" class="form-check-input">
 					      Aux. Doc.
 					    </label>
-					</div>
-					<div class="form-group ">
+						</div>
+						<div class="form-group ">
 						<label for="ot-ca">Otro Cargo Umss</label>
 				   		<input type="text" class="form-control " id="otro-car" placeholder="">
-					</div>
-				 </div>
+						</div>
+				 		</div>
 			</div>
 		</form>
 				
@@ -676,10 +671,17 @@
     font-weight: bold;
 }
 </style>
-
 <script>
-$('.seleccionarG').click(function () {
-    var sigla = $(this).closest("tr").find('td:eq(0)').text();
-     $.cookie("sigla_cookie", sigla);
+$('.seleccionar').click(function () {
+    var id = $(this).closest("tr").find('td:eq(0)').text();
+     $('#sig').val(id);
 });
+$('.seleccionarGrupo').click(function () {
+    var id = $(this).closest("tr").find('td:eq(1)').text();
+    $.cookie("idGrupo", id);
+    var nom = $(this).closest("tr").find('td:eq(2)').text();
+    $.cookie("nom_grupo_cookie", nom);
+    $.cookie("connected", true);
+});
+
 </script>

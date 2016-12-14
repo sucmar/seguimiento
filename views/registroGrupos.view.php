@@ -3,8 +3,8 @@
 <div class="nt-cargo">
      <fieldset>
         <legend>MATERIAS:</legend>
-        <div class="form-group  tabla-cont table-hover">
             <form action="registroGrupos.php"  method="post">
+        	<div class="form-group  tabla-cont table-hover">
 				<table class="table table-hover ta-mat">  
 					 <tr>
                         <td> <strong>CODIGO</strong> </td>
@@ -12,13 +12,13 @@
                     </tr>
                    <tbody>
 					 
-		<?php foreach ($materias as $materia):?>
-             <tr>
-              <td name="sigla" id="sigla"><?php echo $materia['SIGLA_MATERIA'] ?></td>
-              <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
-              <td><button class="seleccionar">selecionar</button></td>
-            </tr>
-        <?php endforeach;?>
+					<?php foreach ($materias as $materia):?>
+						 <tr>
+						  <td name="sigla" id="sigla"><?php echo $materia['SIGLA_MATERIA'] ?></td>
+						  <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
+						  <td><button class="seleccionar">selecionar</button></td>
+						</tr>
+					<?php endforeach;?>
 			       </tbody>
 	            </table>
 		 </div>
