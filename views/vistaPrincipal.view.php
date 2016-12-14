@@ -3,6 +3,7 @@
 
 <div class="container nt-menu-titulo">
         <div class="row">
+
             <div class="col-sm-4">
             <img src="images/logo2.png" class="img-responsive">  
             </div>
@@ -10,11 +11,11 @@
             <div class="col-sm-4">
             <h4 class="titulo"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
             </div>
+
+            
+
         </div>
 </div>
-
-
-
 <div class="container">
   <div id="timer"></div>
     
@@ -101,5 +102,10 @@
 </script>
 
 
+
+  
+
 <?php include('views/global/subtitle.view.php')?>
+
+
 <?php include('views/global/footer.view.php')?>

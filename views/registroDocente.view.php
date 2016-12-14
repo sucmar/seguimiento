@@ -1,6 +1,14 @@
 <?php include("views/global/header.view.php")?>
 
 <?php include('views/global/title.view.php')?>
+
+<div>
+    <form name="importar" method="post" action="./importar.php" enctype="multipart/form-data" >
+        <input id="file" type="file" name="file"/>
+        <input type='submit' name='enviar'  value="Importar"  />
+    </form>
+</div>
+
 <div class="contenedor">
     <div class="container nt-form-docente ">
 
@@ -83,11 +91,6 @@
                     <input type="text" class="form-control in-tit input-global" id="profesion" name="profesion" placeholder="profesion">
                 </div>
 
-                <div class="form-group div-form-car col-md-3">
-                    <label for="formGroupExampleInput2">Cargo:</label>
-                    <input type="text" class="form-control input-global" id="cargo" name="cargo" placeholder="cargo">
-                </div>
-
                 <div class="form-group div-form-ded col-md-3">
                     <label for="lab-ded">Dedicación:</label>
                     <select class="form-control select-global" name="dedicacion">
@@ -101,17 +104,11 @@
                     <label for="lab-nota">NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</label>
 
                 </div>
-
             </fieldset>
-            <div class=" form-group div-btn col-md-offset-4">
-                <button type="submit" id="button" value="aceptar" class="btn registrar btn-global" >Registrar</button>
-
-                <button href="registroDocente.php" onclick="salir()" class="btn cancelar btn-global" >Cancelar</button>
-
+            <div class=" form-group col-mod-4 col-md-offset-4">
+                <button type="submit" class="btn registrar btn-global" >Registrar</button>
+                <button type="submit" onclick="salir()" class="btn cancelar btn-global" >Cancelar</button>
             </div>
-
-            <p id="error_para" ></p>
-
         </form>
     </div>
 </div>
@@ -119,97 +116,97 @@
     function salir() {
         window.location = "http://localhost/seguimiento/espacioSecretaria.php";
     }
-function validate()
-{
-    var error="";
-    var nombres = document.getElementById( "nombres" );
-    if( nombres.value == "" )
+    function validate()
     {
-        error = " Tienes que escribir un nombre. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
+        var error="";
+        var nombres = document.getElementById( "nombres" );
+        if( nombres.value == "" )
+        {
+            error = " Tienes que escribir un nombre. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var apePat = document.getElementById( "ape-pat" );
+        if( apePat.value == "" )
+        {
+            error = " Tienes que escribir un apellido paterno. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var apeMat = document.getElementById( "ape-mat" );
+        if( apeMat.value == "" )
+        {
+            error = " Tienes que escribir un apellido materno. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var ci = document.getElementById( "ci" ).value;
+        if( isNaN(ci) )
+        {
+            error = " Tienes que escribir el carnet con digitos. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var fechaNac = document.getElementById( "fec-nac" ).value;
+        if( !moment(fechaNac, 'MM/DD/YYYY',true).isValid() )
+        {
+            error = " Tienes que escribir una correcta fecha. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var telef = document.getElementById( "tel-fij-doc" ).value;
+        if( isNaN(telef) )
+        {
+            error = " Tienes que escribir el telefono con digitos. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var celular = document.getElementById( "celular-doc" ).value;
+        if( isNaN(celular) )
+        {
+            error = " Tienes que escribir el celular con digitos. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var direccion = document.getElementById( "direccion" );
+        if( direccion.value == "" )
+        {
+            error = " Tienes que escribir una direccion. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var profesion = document.getElementById( "profesion" );
+        if( profesion.value == "" )
+        {
+            error = " Tienes que escribir una profesion. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var cargo = document.getElementById( "cargo" );
+        if( cargo.value == "" )
+        {
+            error = " Tienes que escribir un cargo. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var email = document.getElementById( "email" );
+        if( email.value == "" || email.value.indexOf( "@" ) == -1 )
+        {
+            error = " Tienes que ingresar un valido email. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        else
+        {
+            error = " Datos insertados correctamente ";
+            document.getElementById( "error_para" ).style.color = "blue"
+            document.getElementById( "error_para" ).innerHTML = error;
+            return true;
+        }
     }
-    var apePat = document.getElementById( "ape-pat" );
-    if( apePat.value == "" )
-    {
-        error = " Tienes que escribir un apellido paterno. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }    
-    var apeMat = document.getElementById( "ape-mat" );
-    if( apeMat.value == "" )
-    {
-        error = " Tienes que escribir un apellido materno. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }    
-    var ci = document.getElementById( "ci" ).value;
-    if( isNaN(ci) )
-    {
-        error = " Tienes que escribir el carnet con digitos. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }    
-    var fechaNac = document.getElementById( "fec-nac" ).value;
-    if( !moment(fechaNac, 'MM/DD/YYYY',true).isValid() )
-    {
-        error = " Tienes que escribir una correcta fecha. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }
-    var telef = document.getElementById( "tel-fij-doc" ).value;
-    if( isNaN(telef) )
-    {
-        error = " Tienes que escribir el telefono con digitos. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }   
-    var celular = document.getElementById( "celular-doc" ).value;
-    if( isNaN(celular) )
-    {
-        error = " Tienes que escribir el celular con digitos. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }   
-    var direccion = document.getElementById( "direccion" );
-    if( direccion.value == "" )
-    {
-        error = " Tienes que escribir una direccion. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }     
-    var profesion = document.getElementById( "profesion" );
-    if( profesion.value == "" )
-    {
-        error = " Tienes que escribir una profesion. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }     
-    var cargo = document.getElementById( "cargo" );    
-    if( cargo.value == "" )
-    {
-        error = " Tienes que escribir un cargo. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    } 
-    var email = document.getElementById( "email" );
-    if( email.value == "" || email.value.indexOf( "@" ) == -1 || email.value.indexOf( "." ) == -1 )
-    {
-    error = " Tienes que ingresar un valido email. ";
-    document.getElementById( "error_para" ).innerHTML = error;
-    return false;
-    }
-    else
-    {
-        error = " Datos insertados correctamente ";
-        document.getElementById( "error_para" ).style.color = "blue"
-        document.getElementById( "error_para" ).innerHTML = error;
-        return true;
-    }
-}
 </script>
-  <script>
-  $(document).ready(function() {
-    $("#fec-nac").datepicker();
-  });
-  </script>
+<script>
+    $(document).ready(function() {
+        $("#fec-nac").datepicker();
+    });
+</script>

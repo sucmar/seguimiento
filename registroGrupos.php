@@ -12,7 +12,7 @@
     if (!$conexion) {
         die();
     }
-    $statement = $conexion->prepare("SELECT SIGLA_MATERIA,NOMBRE_MATERIA FROM MATERIA ");
+    $statement = $conexion->prepare("SELECT SIGLA_MATERIA,NOMBRE_MATERIA FROM materia ");
     $statement->execute();
     $materias = $statement->fetchAll();
 	$siglaMateria;
@@ -22,7 +22,7 @@
 	$isSelected;
 	if(isset($_POST['sigla_post']) && $_POST['sigla_post'] != "" ){
 		$siglaMateria=$_POST['sigla_post'];
-		$materiaSeleccionada = $conexion->prepare("SELECT ID_MATERIA,NOMBRE_MATERIA FROM MATERIA WHERE SIGLA_MATERIA = $siglaMateria ");
+		$materiaSeleccionada = $conexion->prepare("SELECT ID_MATERIA,NOMBRE_MATERIA FROM materia WHERE SIGLA_MATERIA = $siglaMateria ");
 	$materiaSeleccionada->execute();
 	
     $materiaEncontrada = $materiaSeleccionada->fetch();
@@ -39,7 +39,7 @@
 	setcookie($cookie_nom_materia, $cookie_nomMateria);
 	setcookie('connected', false);
 
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM GRUPO WHERE ID_MATERIA = $idMateria ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria ");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 
@@ -48,7 +48,7 @@
 	if(isset($_POST['insert']) && isset($_COOKIE['idMateria']) && isset($_COOKIE['nomMateria'])) {
 		$idMateria1 = $_COOKIE['idMateria'];
 		$nom_grupo = $_POST['nom_grupo'];
-		$insert_query = 'INSERT INTO GRUPO (ID_GRUPO, ID_MATERIA, NOM_GRUPO) VALUES (NULL, :ID_MATERIA, :NOM_GRUPO)';
+		$insert_query = 'INSERT INTO grupo (ID_GRUPO, ID_MATERIA, NOM_GRUPO) VALUES (NULL, :ID_MATERIA, :NOM_GRUPO)';
 	    $statements = $conexion->prepare($insert_query);
         $statements->execute(array(
             ':ID_MATERIA'=>$idMateria1,
@@ -56,7 +56,7 @@
         ));
 		global $nombreMateria;
 	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM GRUPO WHERE ID_MATERIA = $idMateria1 ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
@@ -66,20 +66,20 @@
 	$idMateria1 = $_COOKIE['idMateria'];
 	global $nombreMateria;
 	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM GRUPO WHERE ID_MATERIA = $idMateria1 ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
 
 	if(isset($_POST['delete']) && isset($_COOKIE['idGrupo'])) {
 		$idGrupo = $_COOKIE['idGrupo'];
-     	$sql = "DELETE FROM GRUPO WHERE ID_GRUPO= $idGrupo";
+     	$sql = "DELETE FROM grupo WHERE ID_GRUPO= $idGrupo";
 	    $statements = $conexion->prepare($sql);
         $statements->execute();
 			$idMateria1 = $_COOKIE['idMateria'];
 	global $nombreMateria;
 	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM GRUPO WHERE ID_MATERIA = $idMateria1 ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
@@ -87,14 +87,14 @@
 	if(isset($_POST['modify']) && isset($_COOKIE['idGrupo']) && isset($_POST['nom_grupo'])) {
 		$idGrupo = $_COOKIE['idGrupo'];
 		$nom_grupo = $_POST['nom_grupo'];
-     	$sql = "UPDATE GRUPO SET NOM_GRUPO = $nom_grupo WHERE ID_GRUPO = $idGrupo";
+     	$sql = "UPDATE grupo SET NOM_GRUPO = $nom_grupo WHERE ID_GRUPO = $idGrupo";
 	    $statements = $conexion->prepare($sql);
         $statements->execute();
 
 			$idMateria1 = $_COOKIE['idMateria'];
 	global $nombreMateria;
 	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM GRUPO WHERE ID_MATERIA = $idMateria1 ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
