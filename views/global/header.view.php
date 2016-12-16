@@ -25,7 +25,9 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/editarPerfil.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/seguimiento.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/nombramiento.css">
-    <link rel="stylesheet" type="text/css" href="estilos/css/registroMaterias.css">
+<link rel="stylesheet" type="text/css" href="estilos/css/registroMaterias.css">
+<link rel="stylesheet" type="text/css" href="estilos/css/registroFacultad.css">
+
     <!--FIN HOJAS DE ESTILO-->
 
     <!--INICIO JAVA SCRIPT-->
