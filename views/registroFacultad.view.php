@@ -30,9 +30,59 @@
 			
 			
 			
-			<p>Enter a number and click OK:</p>
+			<p id="error_para"> Enter a number and click OK:</p>
 
         </form>
         
     </fieldset>
 </div>
+<script>
+   function validate()
+    {
+        var error="";
+        var nombres = document.getElementById( "nombreFacultad" );
+        if( nombres.value == "" )
+        {
+            error = " Tienes que escribir un nombre para la facultad ";
+            document.getElementById( "error_para" ).style.color = "red";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var ubicacion = document.getElementById( "ubicacionFacultad" );
+        if( ubicacion.value == "" )
+        {
+            error = " Tienes que escribir una ubicacion para la facultad ";
+            document.getElementById( "error_para" ).style.color = "red";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        else
+        {
+            error = " Datos insertados correctamente ";
+            document.getElementById( "error_para" ).style.color = "blue";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return true;
+        }
+    }
+  
+  
+  var validarNombres = function (nombres) {
+     if( nombres == "" )
+    {
+        error = " Tienes que escribir un nombre. ";
+        return false;
+    } else {
+        return true;
+    }
+  };
+  var validarUbicacion = function (nombres) {
+     if( nombres == "" )
+    {
+        error = " Tienes que escribir la ubicacion. ";
+        return false;
+    } else {
+        return true;
+    }
+  };
+</script>
+
