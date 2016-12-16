@@ -11,6 +11,7 @@ if (isset($_SESSION['usuario'])){
 }
 
 
+
 $statement = $conexion->prepare("SELECT ID_DOC, NOMBRE_DOC, APELLPA_DOC, APELLMA_DOC, TIPO_DOC FROM docente ");
 $statement->execute();
 $docentes = $statement->fetchAll();
@@ -119,5 +120,5 @@ if(isset($_COOKIE['sigla_cookie'])) {
     if(isset($_POST['salir'])) {
          header('Location: espacioSecretaria.php');
     }
-    
+
 require 'views/seguimiento.view.php';

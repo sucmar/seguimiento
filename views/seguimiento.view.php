@@ -13,7 +13,7 @@
 					<label class="lab control-label" > Nombre del Docente</label>
 				</div>
 				<div class="col-md-3 form-group">
-					<input type="text" disabled='disabled' class="input-global form-group form-control" name="nom" >
+					<input type="text" disabled='disabled' class="input-global form-group form-control" name="nom">
 				</div>
                     
                     
@@ -54,9 +54,9 @@
                                                 <?php foreach ($docentes as $docente):?>
                                                     <tr>
                                                         <td id="ide"><?php echo $docente['ID_DOC'] ?></td>
-                                                        <td><?php echo $docente['NOMBRE_DOC'] ?></td>
-                                                        <td><?php echo $docente['APELLPA_DOC'] ?></td>
-                                                        <td><?php echo $docente['APELLMA_DOC'] ?></td>
+                                                        <td id="nombre"><?php echo $docente['NOMBRE_DOC'] ?></td>
+                                                        <td id="apellidoP"><?php echo $docente['APELLPA_DOC'] ?></td>
+                                                        <td id="apellidoM"><?php echo $docente['APELLMA_DOC'] ?></td>
                                                         <td><a class="btn btn-primary btn-xs" id="boton">seleccionar</a></td>
                                                     </tr>
                                                 <?php endforeach;?>
