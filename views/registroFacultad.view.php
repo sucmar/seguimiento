@@ -5,7 +5,7 @@
     <fieldset>
     <legend>REGISTRO DE FACULTADES:</legend>
         
-        <form action="demo_form.asp" method="POST" onsubmit="return validate();">
+        <form action="" method="POST" onsubmit="return validate();">
             
             <div class="form-group col-sm-6">
                 <label>(*) Nombre Facultad:</label>
@@ -41,9 +41,11 @@
     {
         var error="";
         var nombres = document.getElementById( "nombreFacultad" );
-        if( nombres.value == "" )
+        var letters = /^[A-Za-z]+$/;
+                
+        if( nombres.value == "" || !nombres.value.match(letters))
         {
-            error = " Tienes que escribir un nombre para la facultad ";
+            error = " Nombre de facultad no deberia contener numeros o caracteres especiales ";
             document.getElementById( "error_para" ).style.color = "red";
             document.getElementById( "error_para" ).innerHTML = error;
             return false;
