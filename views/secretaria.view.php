@@ -78,7 +78,12 @@
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroGrupos.php">Registro Grupos</a></li>
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroSecretaria.php">Registro secretaria</a></li>
+						
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="registroFacultad.php">Registro Facultad</a></li>
 
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="registroCarrera.php">Registro Carrera</a></li>
+
+						
                     </ul>
 
                 </div>

@@ -5,7 +5,7 @@
     <fieldset>
     <legend>REGISTRO DE FACULTADES:</legend>
         
-        <form action="demo_form.asp" method="POST" onsubmit="return validate();">
+        <form action="" method="POST" onsubmit="return validate();">
             
             <div class="form-group col-sm-6">
                 <label>(*) Nombre Facultad:</label>
