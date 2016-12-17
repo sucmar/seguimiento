@@ -76,6 +76,7 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
         </tbody>-->
       <tbody>
       <tr>
+          <td><strong>CODIGO </strong></td>
           <td><strong>NOMBRE </strong></td>
           <td> <strong>APELLIDO PATERNO</strong></td>
           <td><strong>APELLIDO MATERNO</strong></td>
@@ -83,9 +84,12 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
         <?php foreach ($docentes as $docente):?>
 
             <tr>
-              <td><?php echo $docente['NOMBRE_DOC'] ?></td>
-              <td><?php echo $docente['APELLPA_DOC'] ?></td>
-              <td><?php echo $docente['APELLMA_DOC'] ?></td>
+              <td id="idDocente"><?php echo $docente['ID_DOCENTE'] ?></td>
+              <td ><?php echo $docente['NOMBRE_DOC'] ?></td>
+              <td><?php echo $docente['APELLPATERNO_DOC'] ?></td>
+              <td><?php echo $docente['APELLMATERNO_DOC'] ?></td>
+              <td><a id="modificar">modificar</a></td>
+              <td><a id="eliminar">eliminar</a></td>
             </tr>
         <?php endforeach;?>
       </tbody>

@@ -12,7 +12,7 @@ if (isset($_SESSION['usuario'])){
 
 
 
-$statement = $conexion->prepare("SELECT ID_DOC, NOMBRE_DOC, APELLPA_DOC, APELLMA_DOC, TIPO_DOC FROM docente ");
+$statement = $conexion->prepare("SELECT ID_DOCENTE, NOMBRE_DOC, APELLPATERNO_DOC, APELLMATERNO_DOC, DEDICACION_DOC FROM docente ");
 $statement->execute();
 $docentes = $statement->fetchAll();
 

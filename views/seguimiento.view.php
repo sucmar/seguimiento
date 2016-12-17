@@ -53,10 +53,10 @@
                                                 <tbody>
                                                 <?php foreach ($docentes as $docente):?>
                                                     <tr>
-                                                        <td id="ide"><?php echo $docente['ID_DOC'] ?></td>
+                                                        <td id="ide"><?php echo $docente['ID_DOCENTE'] ?></td>
                                                         <td id="nombre"><?php echo $docente['NOMBRE_DOC'] ?></td>
-                                                        <td id="apellidoP"><?php echo $docente['APELLPA_DOC'] ?></td>
-                                                        <td id="apellidoM"><?php echo $docente['APELLMA_DOC'] ?></td>
+                        0                                <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
+                                                        <td id="apellidoM"><?php echo $docente['APELLMATERNO_DOC'] ?></td>
                                                         <td><a class="btn btn-primary btn-xs" id="boton">seleccionar</a></td>
                                                     </tr>
                                                 <?php endforeach;?>
