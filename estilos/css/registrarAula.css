@@ -1,6 +1,6 @@
-div.nt-form-horario {
+div.nt-form-aulab {
 	margin: auto;
-	width: 30%;
+	width: 35%;
 	margin-top: 50px;
 	border: 1px solid #CED5D7;
 	border-radius: 6px;
@@ -11,3 +11,14 @@ div.nt-form-horario {
 }
 
 
+div.tab-aulab
+{
+	background-color: white;
+	overflow:scroll;
+	border: 1px solid #CED5D7;
+	height: 170px
+}
+tbody.tbody-aula
+{
+	overflow:scroll;
+}

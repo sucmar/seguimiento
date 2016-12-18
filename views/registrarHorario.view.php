@@ -18,9 +18,9 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label>Expresados en minutos</label>
+                    <label> En minutos</label>
                     <br>
-                <br>
+                    <br>
                 </div >
 
 
