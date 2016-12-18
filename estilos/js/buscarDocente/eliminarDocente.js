@@ -1,21 +1,19 @@
 $(document).ready(function(){
     //cuando haga click
-    $("#eliminar").click(function(){
-        //obtemos la variable
-        var var_js = "";
-        $("#idDocente")
-        //var var_js = $("#ide").val();
-        //console.log("ese"+var_js);
-        //creamos una peticion get via ajax a js2php.php
+    $("#tablaDocente").on('click','.eliminar', function () {
+        var currentRow=$(this).closest("tr");
+        var columna = currentRow.find(".idDocente").html();
+        console.log(columna);
+
         $.ajax({
             type: 'GET',
-            url: "capturado.php?var_js="+ var_js,
+            url: "capturado.php?var_js="+ columna,
             success: function(data){
-                $("#response") .html(data)
+                $("#respuesta") .html(data)
             },
             error: function(data){
-                $("#response") .html(data)
+                $("#respuesta") .html(data)
             }
         });
-    })
+    });
 });
