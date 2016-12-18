@@ -7,7 +7,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: 'GET',
-            url: "capturado.php?var_js="+ columna,
+            url: "capturado.php?valorDocente="+ columna,
             success: function(data){
                 $("#respuesta") .html(data)
             },
