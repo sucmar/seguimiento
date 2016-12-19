@@ -30,7 +30,7 @@
 			
 			
 			
-			<p id="error_para"> Enter a number and click OK:</p>
+			<p id="error_para" name="error_para"> Enter a number and click OK:</p>
 
         </form>
         

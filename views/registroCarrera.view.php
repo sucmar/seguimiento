@@ -5,12 +5,14 @@
     <fieldset>
     <legend>REGISTRO DE CARRERA:</legend>
         
-        <form action="" method="POST">
-            
+        <form action="" method="POST" onsubmit="return validate()">
             <div class="form-group col-sm-6">
-                <label>(*) Facultad:</label>
-                <input class="form-control input-global" type="number" id="idFacultad" name="idFacultad" required>
-            
+                <label>(*) Carrera:</label>
+                <select class="form-control input-global" name="nombreFacultad">
+                    <?php foreach ($facultades as $facultad):?>
+                        <option><?php echo $facultad['NOMBRE_FACULTAD'] ?></option>
+                    <?php endforeach;?>
+                </select>    
             </div>
             
             <div class="form-group col-sm-6">
@@ -41,9 +43,49 @@
 			
 			
 			
-			<p> Enter a number and click OK:</p>
+			<p id="error_de"> Enter a number and click OK:</p>
 
         </form>
         
     </fieldset>
 </div>
+
+<script>
+function validate()
+    {
+        var error="";
+        var nombres = document.getElementById( "nombreCarrera" );
+        var letters = /^[A-Za-z]+$/;
+                
+        if( nombres.value == "" || !nombres.value.match(letters))
+        {
+            error = " Nombre de carrera no deberia contener numeros o caracteres especiales ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        var sigla = document.getElementById( "siglaCarrera" );
+        if( sigla.value == "" || !sigla.value.match(letters) )
+        {
+            error = " Tienes que escribir una sigla para la Carrera ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        var dpto = document.getElementById( "dptoCarrera" );
+        if( dpto.value == "" || !dpto.value.match(letters) )
+        {
+            error = " Tienes que escribir una sigla para la Carrera ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        else
+        {
+            error = " Datos insertados correctamente ";
+            document.getElementById( "error_de" ).style.color = "blue";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return true;
+        }
+    }
+</script>

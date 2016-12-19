@@ -19,9 +19,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
             echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
         } else {
-            $query = "INSERT INTO facultad(NOMBRE_FACULTAD, UBICACION_FACULTAD)
+            $consultaIdDuplicado = "SELECT ID_FACULTAD FROM facultad WHERE NOMBRE_FACULTAD LIKE '%$nombreFacultad%'"; 
+            $result = mysqli_query($enlace,$consultaIdDuplicado);
+            $idDuplicado = mysqli_fetch_object($result);
+            
+            if($idDuplicado != null && isset($_POST['nombreFacultad']) ) {
+                echo " <p align='center'>El nombre que ingreso ya esta registrado.</p> ";
+            } else {
+                $query = "INSERT INTO facultad(NOMBRE_FACULTAD, UBICACION_FACULTAD)
                        VALUES('$nombreFacultad','$ubicacionFacultad')";
-            mysqli_query($enlace,$query);
+                mysqli_query($enlace,$query);
+            }
         }
         mysqli_close($enlace);
     }
