@@ -5,7 +5,6 @@
 
 
 
-
     <div class="container nt-form-aulab">
 
         <form name="fm-aula" id="fm-aula" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate(); ">
@@ -44,7 +43,7 @@
                     <tbody class="tbody-aula">
                     <?php  $cont=1;
                        while ($row=$resultado->fetch_assoc()) { ?>
-                    <tr>
+                    <tr id="<?php echo "".$row['ID_AULA']?>">
                         <td><?php echo "".$cont++; ?></td>
                         <td><?php echo $row['NOMBRE_AULA'] ?></td>
                         <td><?php echo $row['DESCRIPCION_AULA'] ?></td>
@@ -52,7 +51,8 @@
                         <td><button  onclick="seleccionar()" class="btnSelect">selecionar</button> </td>
 
                     </tr>
-                <?php } ?>               
+                <?php } ?>  
+
                     </tbody>
                   </table>
                  </div>
@@ -60,7 +60,7 @@
             </fieldset>
 
             <div class=" form-group ">
-               
+                
                 <button type="submit" class="btn registrar btn-global" name="modificar" value="Modificar">Modificar</button>
                 <button type="submit" class="btn registrar btn-global" name="eliminar" value="Eliminar">Eliminar</button>
                 <button tipe="submit" onclick="salir()" class="btn cancelar btn-global"  >Salir</button>
@@ -71,28 +71,48 @@
 
         </form>
 	</div>
-
-<script>
-
-$(document).ready(function(){
-    // code to read selected table row cell data (values).
-    $(".btnSelect").on('click',function(){
-         var currentRow=$(this).closest("tr");
-         var col1=currentRow.find("td:eq(0)").html();
-         var col2=currentRow.find("td:eq(1)").html();
-         var col3=currentRow.find("td:eq(2)").html();
-         var col4=currentRow.find("td:eq(3)").html();
-         var data=col1+"\n"+col2+"\n"+col3+"\n"+col4;
-        alert(data);
-         
+<!-- -->
+    <script>
+    $(document).ready(function(){   
+        // code to read selected table row cell data (values).
+        $(".btnSelect").on('click',function(){
+             var currentRow=$(this).closest("tr");
+             var nom=currentRow.find("td:eq(1)").html();
+             var des=currentRow.find("td:eq(2)").html();
+             var id=currentRow.find("td:eq(3)").html();
+             var data=nom+"\n"+des+"\n"+id;
+             alert(data);
+            document.getElementById("nom-aula").value = nom;
+            document.getElementById("des-aula").value = des;             
+        });
     });
-});
 
-</script>
 
-<script type="text/javascript">
-    function salir() {
-        window.location = "http://localhost/tis/seguimiento/espacioSecretaria.php";
-    }
-</script>
-	
+    </script>
+
+    <script type="text/javascript">
+        function salir() {
+            window.location = "http://localhost/tis/seguimiento/espacioSecretaria.php";
+        }
+        </script>
+
+
+  <!--    captura el id de toda la fila 
+       
+        <script type="text/javascript">
+              $(document).ready(function(){
+                $("div.tabla-aula").delegate('tr', 'click', function() {
+                alert($(this).text());
+                var miCelda =getElementsByTagName("td")[2]
+                var col3=currentRow.find("td:eq(2)").text();
+                var col4=currentRow.find("td:eq(3)").text();
+                document.getElementById("nom-aula").value = micelda;
+                document.getElementById("des-aula").value = col3; 
+                
+         //get <td> element values here!!??
+            });
+        });
+                
+    </script> 
+    -->
+      
