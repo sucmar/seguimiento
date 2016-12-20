@@ -52,8 +52,6 @@
 
 <script>
 	
-	
-	
 function validate()
     {
         var error="";
