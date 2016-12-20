@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                                         CELULAR_DOC='$celular',NACIMIENTO_DOC='$fechaNacimiento',
                                                         CIEXPEDIDO_DOC='$expedido',DIRECCION_DOC='$direcDomicilio',
                                                         DEDICACION_DOC='$cargo',CORREO_DOC='$correoElectronico',
-                                                        PROFECION_DOC='$titulo',GENERO_DOC='$sexo' WHERE ID_DOCENTE='$id'";
+                                                        PROFESION_DOC='$titulo',GENERO_DOC='$sexo' WHERE ID_DOCENTE='$id'";
 
         $statement = $conexion->prepare($sql);
         $statement->execute();

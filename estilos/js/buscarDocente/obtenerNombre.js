@@ -3,7 +3,7 @@
  */
 $(document).ready(function(){
     //cuando haga click
-    $("tr").click(function(){
+    $("#seleccionar").click(function(){
         //obtemos la variable
         var nombre = "";
         $(this).find("#nombre").each(function(){

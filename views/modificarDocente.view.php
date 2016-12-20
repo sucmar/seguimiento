@@ -174,7 +174,7 @@
 
                 <div class="form-group div-form-pro col-md-3">
                     <label for="formGroupExampleInput2">(*) Profesion:</label>
-                    <input type="text" class="form-control in-tit input-global" id="profesion" name="profesion" placeholder="profesion"  value="<?php echo $docentes['PROFECION_DOC']; ?>" >
+                    <input type="text" class="form-control in-tit input-global" id="profesion" name="profesion" placeholder="profesion"  value="<?php echo $docentes['PROFESION_DOC']; ?>" >
                 </div>
 
                 <div class="form-group div-form-ded col-md-3">

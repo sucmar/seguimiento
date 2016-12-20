@@ -10,8 +10,6 @@ if (isset($_SESSION['usuario'])){
     header('Location: login.php');
 }
 
-
-
 $statement = $conexion->prepare("SELECT ID_DOCENTE, NOMBRE_DOC, APELLPATERNO_DOC, APELLMATERNO_DOC, DEDICACION_DOC FROM docente ");
 $statement->execute();
 $docentes = $statement->fetchAll();
@@ -21,11 +19,9 @@ $statement->execute();
 $materias = $statement->fetchAll();
 
 
-$siglaMateria;
     $idMateria = null;
-    $nombreMateria;
     $grupos= array();
-    $isSelected;
+
     if(isset($_POST['sigla_post']) && $_POST['sigla_post'] != "" ){
         $siglaMateria=$_POST['sigla_post'];
         $materiaSeleccionada = $conexion->prepare("SELECT ID_MATERIA,NOMBRE_MATERIA FROM materia WHERE SIGLA_MATERIA = $siglaMateria ");
