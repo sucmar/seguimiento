@@ -41,6 +41,7 @@
     <script src="estilos/js/buscaMaterias.js"></script>
     <script src="estilos/js/buscarDocente.js"></script>
     <script src="estilos/js/buscarDocente/obtener.js"></script>
+    <script src="estilos/js/buscarDocente/eliminarAula.js"></script>
 
     <script type="text/javascript" src="estilos/js/jquery.min.js"></script>
     <script type="text/javascript" src="estilos/js/bootstrap.min.js"></script>

@@ -21,17 +21,10 @@
                     <input type="text" class="form-control input-global " id="des-aula" name="des-aula" placeholder="Ubicacion del aula" required="required" >
                 </div>
 
-                <div class=" col-md-offset-4 ">
-                <button href="registrarAula.php" htype="submit" class="btn registrar btn-global" name="registrar" value="Registrar">Registrar</button>
-
-                </div>
-            </fieldset>
-        </form>
-        <form>
-            <fieldset>        
+                       
                 <legend>Lista de Aulas:</legend>
                  <div class="tabla-aula table-hover table-responsive ">
-                <table class="table table-hover">  
+                <table class="table table-hover" id="tablaAula" class="tablaAula">  
                     <thead>
                         <tr>
                             <th name=""><strong>Nro</strong> </th>
@@ -47,9 +40,9 @@
                         <td><?php echo "".$cont++; ?></td>
                         <td><?php echo $row['NOMBRE_AULA'] ?></td>
                         <td><?php echo $row['DESCRIPCION_AULA'] ?></td>
-                        <td> <?php echo "".$row['ID_AULA'];?>  </td>
-                        <td><button  onclick="seleccionar()" class="btnSelect">selecionar</button> </td>
-
+                        <td class="idAula"><?php $row['ID_AULA'];?>  </td>
+                        <td><a href="modificarAula.php?id=<?php echo $row['ID_AULA'] ?>" >Modificar</a></td>
+                        <td><a href="eliminarAula.php?id=<?php echo $row['ID_AULA'] ?>" >Eliminar</a></td>
                     </tr>
                 <?php } ?>  
 
@@ -59,10 +52,9 @@
                  <label>Llenar todos los campos con (*) </labes>
             </fieldset>
 
-            <div class=" form-group ">
+            <div class=" form-group col-md-offset-4">
+                <button href="registrarAula.php" htype="submit" class="btn registrar btn-global" name="registrar" value="Registrar">Registrar</button>
                 
-                <button type="submit" class="btn registrar btn-global" name="modificar" value="Modificar">Modificar</button>
-                <button type="submit" class="btn registrar btn-global" name="eliminar" value="Eliminar">Eliminar</button>
                 <button tipe="submit" onclick="salir()" class="btn cancelar btn-global"  >Salir</button>
 
             </div>
@@ -81,7 +73,6 @@
              var des=currentRow.find("td:eq(2)").html();
              var id=currentRow.find("td:eq(3)").html();
              var data=nom+"\n"+des+"\n"+id;
-             alert(data);
             document.getElementById("nom-aula").value = nom;
             document.getElementById("des-aula").value = des;             
         });
@@ -94,7 +85,7 @@
         function salir() {
             window.location = "http://localhost/tis/seguimiento/espacioSecretaria.php";
         }
-        </script>
+    </script>
 
 
   <!--    captura el id de toda la fila 

@@ -57,6 +57,11 @@
             $resultado=$mysqli->query($query);
 
 
+
+
+
+
+
     if (isset($_SESSION['usuario'])){
         require 'views/registrarAula.view.php';
     } else {
