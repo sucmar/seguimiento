@@ -22,7 +22,7 @@
   <div class="container text-center nt">
       <ul class="breadcrumb center-block">
           <li><a href="#">Inicio</a></li>
-          <li><a href="listaDocentes.php">Docentes</a></li>
+          <li><a href="#">Docentes</a></li>
           <li><a href="#">Informacion</a></li>
       </ul>
     <button id="button" class="btn btn-global">Ingresar</button>

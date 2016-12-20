@@ -18,20 +18,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $correoElectronico = $_POST['correo'];
     $cargo = $_POST['dedicacion'];
 
-    $conexion = conexion('bd_seguimiento', 'root', '');
-    if (!$conexion) {
-        die();
-    }
-    $sql = "UPDATE docente SET CI_DOCENTE='8714114',NOMBRE_DOC='$nombres',APELLPATERNO_DOC=' $apellidoPaterno',
+    try{
+        $conexion = conexion('bd_seguimiento', 'root', '');
+        if (!$conexion) {
+            die();
+        }
+        $sql = "UPDATE docente SET CI_DOCENTE='8714114',NOMBRE_DOC='$nombres',APELLPATERNO_DOC=' $apellidoPaterno',
                                                         APELLMATERNO_DOC='$apellidoMaterno',TELEFONO_DOC='$telFijo',
                                                         CELULAR_DOC='$celular',NACIMIENTO_DOC='$fechaNacimiento',
                                                         CIEXPEDIDO_DOC='$expedido',DIRECCION_DOC='$direcDomicilio',
                                                         DEDICACION_DOC='$cargo',CORREO_DOC='$correoElectronico',
                                                         PROFECION_DOC='$titulo',GENERO_DOC='$sexo' WHERE ID_DOCENTE='$id'";
 
-    $statement = $conexion->prepare($sql);
-    $statement->execute();
-    echo $statement->rowCount(). 'record update';
+        $statement = $conexion->prepare($sql);
+        $statement->execute();
+        echo $statement->rowCount(). 'record update';
+    } catch (PDOException $e){
+        echo $e->getMessage();
+    }
+    $conexion = null;
 
     //echo $id,$nombres;
 }

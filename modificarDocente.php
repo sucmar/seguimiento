@@ -16,11 +16,15 @@ if (!$conexion) {
 
 $id = $_REQUEST['id'];
 //echo $id;
-$statement = $conexion->prepare("SELECT * FROM docente WHERE ID_DOCENTE = '$id'");
-$statement->execute();
-$docentes = $statement->fetch(PDO::FETCH_ASSOC); // capturar datos cada columna de una consulta dada
+try{
+    $statement = $conexion->prepare("SELECT * FROM docente WHERE ID_DOCENTE = '$id'");
+    $statement->execute();
+    $docentes = $statement->fetch(PDO::FETCH_ASSOC); // capturar datos cada columna de una consulta dada
 
-
+}catch(PDOException $e) {
+    echo $e->getMessage();
+}
+$conexion = null;
 
 
 /*$ciDocente = $docentes['CI_DOCENTE'];

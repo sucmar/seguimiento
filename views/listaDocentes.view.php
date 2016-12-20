@@ -89,7 +89,7 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
               <td><?php echo $docente['APELLPATERNO_DOC'] ?></td>
               <td><?php echo $docente['APELLMATERNO_DOC'] ?></td>
               <td><a href="modificarDocente.php?id=<?php echo $docente['ID_DOCENTE'] ?>" >modificar</a></td>
-              <td><a class="eliminar">eliminar</a></td>
+              <td><a href="eliminarDocente.php?id=<?php echo $docente['ID_DOCENTE'] ?>" class="eliminar">eliminar</a></td>
             </tr>
         <?php endforeach;?>
       </tbody>

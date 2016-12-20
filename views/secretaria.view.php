@@ -53,7 +53,7 @@
 
                     <span class="caret"></span>
                     <ul class="dropdown-menu inline-block" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">Docente</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="listaDocentes.php"">Docente</a></li>
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="">Auxliar</a></li>
 

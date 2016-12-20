@@ -30,7 +30,7 @@
         } else {
             $query = "INSERT INTO docente(CI_DOCENTE,NOMBRE_DOC,APELLPATERNO_DOC,APELLMATERNO_DOC,
                                           TELEFONO_DOC,CELULAR_DOC,NACIMIENTO_DOC,CIEXPEDIDO_DOC,DIRECCION_DOC,DEDICACION_DOC,
-                                            CORREO_DOC,PROFECION_DOC,GENERO_DOC)
+                                            CORREO_DOC,PROFESION_DOC,GENERO_DOC)
                        VALUES('$ci','$nombres','$apellidoPaterno','$apellidoMaterno','$telFijo','$celular',
                                 '$fechaNacimiento','$expedido','$direcDomicilio','$cargo','$correoElectronico','$titulo','$sexo')";
             mysqli_query($enlace,$query);

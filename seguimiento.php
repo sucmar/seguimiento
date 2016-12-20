@@ -20,21 +20,8 @@ $statement = $conexion->prepare("SELECT NOMBRE_MATERIA, SIGLA_MATERIA FROM mater
 $statement->execute();
 $materias = $statement->fetchAll();
 
-/*$grupos = array();
-if(isset($_COOKIE['sigla_cookie'])) {
-    $sigla = $_COOKIE['sigla_cookie'];
 
-    $materia1 = $conexion->prepare("SELECT ID_MATERIA FROM materia WHERE SIGLA_MATERIA = $sigla ");
-    $materia1->execute();
-    $materiaSeleccionada = $materia1->fetch();
-
-    $idMateria = $materiaSeleccionada["ID_MATERIA"];
-    $statement = $conexion->prepare("SELECT NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria");
-    $statement->execute();
-    global $grupos;
-    $grupos = $statement->fetchAll();
-}
-*/$siglaMateria;
+$siglaMateria;
     $idMateria = null;
     $nombreMateria;
     $grupos= array();
