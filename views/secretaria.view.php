@@ -69,16 +69,17 @@
                     <ul class="dropdown-menu inline-block" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroDocente.php">Registro Docente</a></li>
 
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registroAuxiliar.php">Registro Auxiliar</a></li>
-
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="cargos.php">Registro Roles</a></li>
+
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registroSecretaria.php">Registro secretaria</a></li>
+
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registroFacultad.php">Registro Facultad</a></li>
+
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registroCarrera.php">Registro Carrera</a></li>
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroMaterias.php">Registro Materias</a></li>
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroGrupos.php">Registro Grupos</a></li>
-
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registroSecretaria.php">Registro secretaria</a></li>
-
                     </ul>
 
                 </div>
