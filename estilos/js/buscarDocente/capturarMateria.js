@@ -1,15 +1,12 @@
 /**
- * Created by ESTALIN on 12/11/2016.
+ * Created by ESTALIN on 12/21/2016.
  */
-//esperamos a que carge el dom
-//esperamos a que carge el dom
-//esperamos a que carge el dom
 $(document).ready(function(){
     //cuando haga click
     $("tr").click(function(){
         //obtemos la variable
         var var_js = "";
-        $(this).find("#ide").each(function(){
+        $(this).find("#materiaId").each(function(){
             var_js=$(this).html()+"\n";
             console.log("ese"+var_js);
         });
@@ -18,12 +15,12 @@ $(document).ready(function(){
         //creamos una peticion get via ajax a js2php.php
         $.ajax({
             type: 'GET',
-            url: "capturado.php?var_js="+ var_js,
+            url: "capturadoDos.php?materia="+ var_js,
             success: function(data){
-                $("#resp") .html(data)
+                $("#idMateria") .html(data)
             },
             error: function(data){
-                $("#resp") .html(data)
+                $("#idMateria") .html(data)
             }
         });
     })

@@ -13,8 +13,9 @@
 					<label class="lab control-label" > Nombre del Docente</label>
 				</div>
 				<div class="col-md-3 form-group">
-					<input type="text" disabled='disabled' class="input-global form-group form-control" value="<?php echo "hols"?>" name="nom">
+                    <!--<div id="resp"></div>-->
 				</div>
+
                     
                     
 				<div class="container col-md-2 form-group">
@@ -54,7 +55,7 @@
                                                     <tr id="seleccionar">
                                                         <td id="ide"><?php echo $docente['ID_DOCENTE'] ?></td>
                                                         <td id="nombre"><?php echo $docente['NOMBRE_DOC'] ?></td>
-                        0                                <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
+                                                        <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
                                                         <td id="apellidoM"><?php echo $docente['APELLMATERNO_DOC'] ?></td>
                                                     </tr>
                                                 <?php endforeach;?>
@@ -62,7 +63,6 @@
                                             </table>
                                         </div>
                                     </form>
-                                    <div id='response'></div>
                                     <p><b>Los campos con (*) deben ser llenados obligatoriamente.</b></p>
                                 </div>
                             </div>

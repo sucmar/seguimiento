@@ -15,11 +15,8 @@
     $statement = $conexion->prepare("SELECT SIGLA_MATERIA,NOMBRE_MATERIA FROM materia ");
     $statement->execute();
     $materias = $statement->fetchAll();
-	$siglaMateria;
 	$idMateria = null;
-	$nombreMateria;
 	$grupos= array();
-	$isSelected;
 	if(isset($_POST['sigla_post']) && $_POST['sigla_post'] != "" ){
 		$siglaMateria=$_POST['sigla_post'];
 		$materiaSeleccionada = $conexion->prepare("SELECT ID_MATERIA,NOMBRE_MATERIA FROM materia WHERE SIGLA_MATERIA = $siglaMateria ");

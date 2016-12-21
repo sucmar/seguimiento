@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/seguimiento.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/nombramiento.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registroMaterias.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/asignarMateriaDocente.css">
     <!--FIN HOJAS DE ESTILO-->
 
     <!--INICIO JAVA SCRIPT-->
@@ -39,6 +40,7 @@
     <script src="estilos/js/buscaMaterias.js"></script>
     <script src="estilos/js/buscarDocente.js"></script>
     <script src="estilos/js/buscarDocente/obtener.js"></script>
+    <script src="estilos/js/buscarDocente/capturarMateria.js"></script>
     <!--FIN JAVA SCRIPT-->
 
 

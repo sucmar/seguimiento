@@ -25,7 +25,7 @@ $materias = $statement->fetchAll();
     if(isset($_POST['sigla_post']) && $_POST['sigla_post'] != "" ){
         $siglaMateria=$_POST['sigla_post'];
         $materiaSeleccionada = $conexion->prepare("SELECT ID_MATERIA,NOMBRE_MATERIA FROM materia WHERE SIGLA_MATERIA = $siglaMateria ");
-    $materiaSeleccionada->execute();
+        $materiaSeleccionada->execute();
     
     $materiaEncontrada = $materiaSeleccionada->fetch();
     global $idMateria;
