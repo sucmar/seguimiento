@@ -98,6 +98,8 @@
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
+
+	
 	if(isset($_POST['salir'])) {
 		 header('Location: espacioSecretaria.php');
 	}

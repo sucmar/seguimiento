@@ -28,8 +28,15 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/registroFacultad.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registroCarrera.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registroMaterias.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/registrarHorario.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/registrarAula.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/asignarMateriaDocente.css">
     <!--FIN HOJAS DE ESTILO-->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <!--INICIO JAVA SCRIPT-->
     <link rel="stylesheet" href="estilos/css/jquery-ui.css">    
     <script src="estilos/js/jquery.min.js"></script>
@@ -41,7 +48,19 @@
     <script src="estilos/js/buscaMaterias.js"></script>
     <script src="estilos/js/buscarDocente.js"></script>
     <script src="estilos/js/buscarDocente/obtener.js"></script>
+    <script src="estilos/js/buscarDocente/eliminarAula.js"></script>
+
+    <script type="text/javascript" src="estilos/js/jquery.min.js"></script>
+    <script type="text/javascript" src="estilos/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="estilos/js/bootstrap-timepicker.min.js"></script>
     <!--FIN JAVA SCRIPT-->
+
+
+    <!-- -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="estilos/css/bootstrap.min.css" />
+    <link type="text/css" href="estilos/css/bootstrap-timepicker.min.css" />
+
 
 
     <script>
@@ -60,3 +79,39 @@
         });
     </script>
 </head>
+
+<style type="text/css">
+
+    * {
+        border: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background-color: #F5F5F5;
+    }
+    div.horaT {
+        color: white;
+        float: left;
+        margin-left: -20px;
+    }
+
+    div.nt-menu-titulo {
+        background-color: #3949AB;
+        border-bottom: 1px solid #BDBDBD;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+        width: 100%;
+    }
+
+    img {
+        margin-left: 50px;
+        width: 60px;
+    }
+
+    div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
+        font-family: verdana, arial, helvetica, sans-serif;
+        margin-top: 25px;
+        text-align: center;
+        color: white;
+    }
+</style>
