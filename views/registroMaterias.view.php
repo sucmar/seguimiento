@@ -6,7 +6,6 @@
     <legend>REGISTRO DE MATERIAS:</legend>
         
         <form action="" method="POST" onsubmit="return validate();">
-            <!--
             <div class="form-group col-sm-12">
                 <label>(*) Carrera:</label>
                 <select class="form-control select-global" name="nombreCarrera">
@@ -16,13 +15,6 @@
                 </select>
             
             </div>
--->
-            <div class="form-group col-sm-12">
-                <label>(*) Carrera:</label>
-                <input class="form-control input-global" type="number" id="idCarrera" name="idCarrera" required>
-            
-            </div>
-            
             <div class="form-group col-sm-6">
                 <label>(*) Nombre Materia:</label>
                 <input class="form-control input-global" type="text" id="nombreMateria" name="nombreMateria" required>
