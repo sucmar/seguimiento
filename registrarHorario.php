@@ -25,7 +25,7 @@ $enlace = mysqli_connect("localhost", "root", "", "bd_seguimiento");
     		$hora_final=strtotime($hr_final);
     		$per_seg=$periodo*60;
         		
-            if ($hora_inicial!=$hora_final) 
+            if ($hora_inicial!=$hora_final && $hora_inicial<$hora_final) 
             {                    
                 if (!$enlace) 
                 {
@@ -62,9 +62,7 @@ $enlace = mysqli_connect("localhost", "root", "", "bd_seguimiento");
             }
             else
             {
-                echo "La hora inicio debe ser distinto a la hora final";
-                echo "<br>";
-                echo "El registro fallo!";
+                echo "La hora inicio debe ser distinto a la hora final <br> El registro fallo!";
             }
 
         }

@@ -50,6 +50,7 @@
                   </table>
                  </div>
                  <label>Llenar todos los campos con (*) </labes>
+                 <p id="error_de"> Enter a number and click OK:</p>
             </fieldset>
 
             <div class=" form-group col-md-offset-4">
@@ -87,23 +88,27 @@
         }
     </script>
 
-
-  <!--    captura el id de toda la fila 
-       
-        <script type="text/javascript">
-              $(document).ready(function(){
-                $("div.tabla-aula").delegate('tr', 'click', function() {
-                alert($(this).text());
-                var miCelda =getElementsByTagName("td")[2]
-                var col3=currentRow.find("td:eq(2)").text();
-                var col4=currentRow.find("td:eq(3)").text();
-                document.getElementById("nom-aula").value = micelda;
-                document.getElementById("des-aula").value = col3; 
-                
-         //get <td> element values here!!??
-            });
-        });
-                
-    </script> 
-    -->
+    <script>
+        
+    function validate()
+    {
+        var error="";
+        var aula = /^[A-Za-z-1-9-0]+$/;
+        var nombres = document.getElementById( "nom-aula" );      
+        if( nombres.value == "" || !nombres.value.match(aula))
+        {
+            error = " Nombre de aula no deberia contener caracteres especiales y espacio ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        else
+        {
+            error = " Datos insertados correctamente ";
+            document.getElementById( "error_de" ).style.color = "blue";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return true;
+        }
+    }
+    </script>
       

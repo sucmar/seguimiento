@@ -26,11 +26,15 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/seguimiento.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/nombramiento.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registroMaterias.css">
-        <link rel="stylesheet" type="text/css" href="estilos/css/registrarHorario.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/registrarHorario.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registrarAula.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/asignarMateriaDocente.css">
     <!--FIN HOJAS DE ESTILO-->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <!--INICIO JAVA SCRIPT-->
     <link rel="stylesheet" href="estilos/css/jquery-ui.css">    
     <script src="estilos/js/jquery.min.js"></script>

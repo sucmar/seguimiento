@@ -20,13 +20,12 @@
                     <label>(*) Descripcion del Aula:</label>
                     <input type="text" class="form-control input-global " id="des-aula" name="des-aula" placeholder="Ubicacion del aula" required="required"  value="<?php echo $aulas['DESCRIPCION_AULA']; ?>" >
                 </div>
-
-              
+                <label>Llenar todos los campos con (*) </labes>
+                <p id="error_de">click OK:</p>
             </fieldset>
         
        
             <div class=" form-group ">
-                
                 <button type="submit" class="btn registrar btn-global" name="guardar" >Guardar</button>
                 <button tipe="submit" onclick="salir()" class="btn cancelar btn-global"  >Cancelar</button>
 
@@ -36,8 +35,32 @@
         </form>
 	</div>
 
-<script type="text/javascript">
+    <script type="text/javascript">
         function salir() {
-            window.location = "http://localhost/tis/seguimiento/espacioSecretaria.php";
+            window.location = "http://localhost/tis/seguimiento/registarAula.php";
         }
-</script>
+    </script>
+
+    <script>
+        
+    function validate()
+    {
+        var error="";
+        var aula = /^[A-Za-z- -.]+$/;
+        var nombres = document.getElementById( "nom-aula" );      
+        if( nombres.value == "" || nombres.value.match(aula))
+        {
+            error = " Nombre de aula no deberia contener caracteres especiales y espacio ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        else
+        {
+            error = " Datos insertados correctamente ";
+            document.getElementById( "error_de" ).style.color = "blue";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return true;
+        }
+    }
+    </script>

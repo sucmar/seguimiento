@@ -7,3 +7,17 @@ div.asignarMateria{
 	border-radius: 6px;
 	box-shadow: 0px 5px 10px #B5C1C5,0 0 0 10px #EEF5F7 inset;
 }
+
+div.tabla-aula
+{
+	overflow: scroll;
+	border: 1px solid #CED5D7;
+	height: 170px;
+	background-color: white;
+}
+
+div.div-select
+{
+	
+	overflow: auto;
+}

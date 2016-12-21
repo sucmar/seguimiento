@@ -23,6 +23,12 @@ try{
 }
 $conexion = null;
 
-require 'views/modificarAula.view.php';
 
 
+  if (isset($_SESSION['usuario'])){
+        require 'views/modificarAula.view.php';
+    } else {
+        header('Location: login.php');
+    }
+
+?>
