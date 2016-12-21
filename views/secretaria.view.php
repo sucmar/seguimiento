@@ -57,6 +57,8 @@
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="listaFacultades.php">Facultades</a></li>
 
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="listaCarreras.php">Carreras</a></li>
+
                     </ul>
 
                 </div>
