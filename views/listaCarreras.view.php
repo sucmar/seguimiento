@@ -75,6 +75,10 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
             <tr>
               <td class="idCarrera"><?php echo $carrera['ID_CARRERA'] ?></td>
               <td><?php echo $carrera['NOMBRE_CARRERA'] ?></td>
+
+              <td><a href="modificarCarrera.php?id=<?php echo $carrera['ID_CARRERA'] ?>" >modificar</a></td>
+              
+              <td><a href="eliminarCarrera.php?id=<?php echo $carrera['ID_CARRERA'] ?>" class="eliminar">eliminar</a></td>
               
             </tr>
         <?php endforeach;?>
