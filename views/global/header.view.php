@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/registroMaterias.css">
         <link rel="stylesheet" type="text/css" href="estilos/css/registrarHorario.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registrarAula.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/asignarMateriaDocente.css">
     <!--FIN HOJAS DE ESTILO-->
 
     <!--INICIO JAVA SCRIPT-->
