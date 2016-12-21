@@ -28,11 +28,11 @@
             echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
             echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
         } else {
-            $query = "INSERT INTO docente(CI_DOC,NOMBRE_DOC,APELLPA_DOC,APELLMA_DOC,
-                                            TITULO_DOC,FECHA_NACIMIENTO_DOC	,TELEFONO_DOC,CELULAR_DOC,EXPEDIDO_CI_DOC,
-                                            CORREO_DOC,GENERO_DOC,DIRECCION_DOC,TIPO_DOC)
-                       VALUES('$ci','$nombres','$apellidoPaterno','$apellidoMaterno','$titulo','$fechaNacimiento','$telFijo','$celular',
-                                '$expedido','$correoElectronico','$sexo','$direcDomicilio','$cargo')";
+            $query = "INSERT INTO docente(CI_DOCENTE,NOMBRE_DOC,APELLPATERNO_DOC,APELLMATERNO_DOC,
+                                          TELEFONO_DOC,CELULAR_DOC,NACIMIENTO_DOC,CIEXPEDIDO_DOC,DIRECCION_DOC,DEDICACION_DOC,
+                                            CORREO_DOC,PROFESION_DOC,GENERO_DOC)
+                       VALUES('$ci','$nombres','$apellidoPaterno','$apellidoMaterno','$telFijo','$celular',
+                                '$fechaNacimiento','$expedido','$direcDomicilio','$cargo','$correoElectronico','$titulo','$sexo')";
             mysqli_query($enlace,$query);
         }
         mysqli_close($enlace);

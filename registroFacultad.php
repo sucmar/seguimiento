@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $idDuplicado = mysqli_fetch_object($result);
             
             if($idDuplicado != null && isset($_POST['nombreFacultad']) ) {
-                echo " <p align='center'>El nombre que ingreso ya esta registrado.</p> ";
+                echo " <h4 align='center' style='color:red;'>El nombre que ingreso ya esta registrado.</h4> ";
             } else {
                 $query = "INSERT INTO facultad(NOMBRE_FACULTAD, UBICACION_FACULTAD)
                        VALUES('$nombreFacultad','$ubicacionFacultad')";

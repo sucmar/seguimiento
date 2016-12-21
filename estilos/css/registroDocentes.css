@@ -120,8 +120,7 @@
 }
 */
 #error_para{
-	color: red;
-	font-size: medium;
+	color: black;
 }
 div.contenedor {
 	width: 100%;

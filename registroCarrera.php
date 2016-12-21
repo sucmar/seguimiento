@@ -1,9 +1,9 @@
-<?php session_start();
-	function console_log( $data ){
-			echo '<script>';
-			echo 'console.log('. json_encode( $data ) .')';
-			echo '</script>';
-		};
+<?p<?php session_start();
+    function console_log( $data ){
+            echo '<script>';
+            echo 'console.log('. json_encode( $data ) .')';
+            echo '</script>';
+        };
    require 'funciones.php';
 
     $conexion = conexion('bd_seguimiento','root','');
@@ -20,9 +20,9 @@ if (isset($_SESSION['usuario'])){
     header('Location: login.php');
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $nombreCarrera   		= $_POST['nombreCarrera'];
-		$siglaCarrera   		= $_POST['siglaCarrera'];
-        $dptoCarrera			= $_POST['dptoCarrera'];
+        $nombreCarrera          = $_POST['nombreCarrera'];
+        $siglaCarrera           = $_POST['siglaCarrera'];
+        $dptoCarrera            = $_POST['dptoCarrera'];
 
         $enlace = mysqli_connect("localhost", "root", "", "bd_seguimiento");
         if (!$enlace) {
@@ -31,22 +31,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
         } else {
             $consultaIdDuplicado = "SELECT ID_CARRERA FROM carrera WHERE NOMBRE_CARRERA LIKE '%$nombreCarrera%' OR SIGLA_CARRERA LIKE '%$siglaCarrera%'"; 
-            $result = mysqli_query($enlace,$consultaIdDuplicado);
-            $idDuplicado = mysqli_fetch_object($result);
-             if($idDuplicado != null) {
-                echo " <p align='center'>El nombre o sigla  que ingreso ya esta registrado.</p> ";
+            $result         = mysqli_query($enlace,$consultaIdDuplicado);
+            $idDuplicado    = mysqli_fetch_object($result);
+             
+            if($idDuplicado != null) {
+                echo " <h4 align='center' style='color:red;'>El nombre o sigla  que ingreso ya esta registrado.</h4> ";
             } else {
                 if(isset($_POST['nombreFacultad'])) {
                     console_log('hola');
-                     console_log($_POST['nombreFacultad']);
-                     console_log('none');
-                    $nombreFacultad   		= $_POST['nombreFacultad'];
+                    console_log($_POST['nombreFacultad']);
+                    console_log('none');
+                $nombreFacultad     = $_POST['nombreFacultad'];
                 $consultaIdFacultad = "SELECT ID_FACULTAD FROM facultad WHERE NOMBRE_FACULTAD LIKE '%$nombreFacultad%'"; 
-                $result = mysqli_query($enlace,$consultaIdFacultad);
-                $idFacultad = mysqli_fetch_assoc($result);
-                $id = $idFacultad['ID_FACULTAD'];
-                $query = "INSERT INTO carrera(ID_CARRERA, ID_FACULTAD, NOMBRE_CARRERA, SIGLA_CARRERA, DPTO_CARRERA)
-                        VALUES(null,'$id','$nombreCarrera','$siglaCarrera','$dptoCarrera')";
+                
+                $result             = mysqli_query($enlace,$consultaIdFacultad);
+                $idFacultad         = mysqli_fetch_assoc($result);
+                $id                 = $idFacultad['ID_FACULTAD'];
+                $query              = "INSERT INTO carrera(ID_CARRERA,ID_FACULTAD,NOMBRE_CARRERA, SIGLA_CARRERA,                      DPTO_CARRERA)
+                            VALUES(null,'$id','$nombreCarrera','$siglaCarrera','$dptoCarrera')";
+                
                 mysqli_query($enlace,$query);
                 }
             }

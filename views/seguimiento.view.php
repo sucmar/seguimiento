@@ -13,7 +13,7 @@
 					<label class="lab control-label" > Nombre del Docente</label>
 				</div>
 				<div class="col-md-3 form-group">
-					<input type="text" disabled='disabled' class="input-global form-group form-control" name="nom" >
+					<input type="text" disabled='disabled' class="input-global form-group form-control" value="<?php echo "hols"?>" name="nom">
 				</div>
                     
                     
@@ -31,7 +31,6 @@
 
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">BUSQUEDA DOCENTE</h4>
                                 </div>
 
                                 <div class="modal-body">
@@ -52,12 +51,11 @@
                                                 </thead>
                                                 <tbody>
                                                 <?php foreach ($docentes as $docente):?>
-                                                    <tr>
-                                                        <td id="ide"><?php echo $docente['ID_DOC'] ?></td>
-                                                        <td><?php echo $docente['NOMBRE_DOC'] ?></td>
-                                                        <td><?php echo $docente['APELLPA_DOC'] ?></td>
-                                                        <td><?php echo $docente['APELLMA_DOC'] ?></td>
-                                                        <td><a class="btn btn-primary btn-xs" id="boton">seleccionar</a></td>
+                                                    <tr id="seleccionar">
+                                                        <td id="ide"><?php echo $docente['ID_DOCENTE'] ?></td>
+                                                        <td id="nombre"><?php echo $docente['NOMBRE_DOC'] ?></td>
+                        0                                <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
+                                                        <td id="apellidoM"><?php echo $docente['APELLMATERNO_DOC'] ?></td>
                                                     </tr>
                                                 <?php endforeach;?>
                                                 </tbody>

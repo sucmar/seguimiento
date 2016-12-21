@@ -21,6 +21,7 @@
             
             
             <p>NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</p>
+			<p id="error_para" name="error_para"> Enter a number and click OK:</p>
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
@@ -30,7 +31,6 @@
 			
 			
 			
-			<p id="error_para" name="error_para"> Enter a number and click OK:</p>
 
         </form>
         
@@ -41,7 +41,7 @@
     {
         var error="";
         var nombres = document.getElementById( "nombreFacultad" );
-        var letters = /^[A-Za-z]+$/;
+        var letters = /^[A-Za-z- -.]+$/;
                 
         if( nombres.value == "" || !nombres.value.match(letters))
         {

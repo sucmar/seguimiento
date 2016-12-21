@@ -5,7 +5,7 @@
         <div class="row">
 
             <div class="col-sm-4">
-                <img src="images/logo2.png" class="img-responsive">  
+                <img src="images/logo2.png" class="img-responsive">
             </div>
 
             <div class="col-sm-4">
@@ -13,14 +13,14 @@
             </div>
 
             <div class="col-sm-4">
-                
+
                 <form action="./espacioSecretaria.php" class="navbar-form navbar-right" >
-                <p style="color: white">        
+                <p style="color: white">
                     <i class="fax" aria-hidden="true"></i>
                 </p>
                 <input type="submit" style="margin-top:15px" class="btn btn-success" name="" value="atras">
                 </form>
-                
+
             </div>
 
         </div>
@@ -61,7 +61,7 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
 
  <div class="container nt-plantel-doc ">
     <div class="container col-md-12 table table-hover">
-    <table class="table table-hover">
+    <table class="table table-hover" id="tablaDocente">
       <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
         <!--<tbody>
           <tr>  <th scope="row">  1 </th> <td>  Ing. Ayoroa Cardozo Jose Richard  </td> </tr>
@@ -76,6 +76,7 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
         </tbody>-->
       <tbody>
       <tr>
+          <td><strong>CODIGO </strong></td>
           <td><strong>NOMBRE </strong></td>
           <td> <strong>APELLIDO PATERNO</strong></td>
           <td><strong>APELLIDO MATERNO</strong></td>
@@ -83,13 +84,17 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
         <?php foreach ($docentes as $docente):?>
 
             <tr>
-              <td><?php echo $docente['NOMBRE_DOC'] ?></td>
-              <td><?php echo $docente['APELLPA_DOC'] ?></td>
-              <td><?php echo $docente['APELLMA_DOC'] ?></td>
+              <td class="idDocente"><?php echo $docente['ID_DOCENTE'] ?></td>
+              <td ><?php echo $docente['NOMBRE_DOC'] ?></td>
+              <td><?php echo $docente['APELLPATERNO_DOC'] ?></td>
+              <td><?php echo $docente['APELLMATERNO_DOC'] ?></td>
+              <td><a href="modificarDocente.php?id=<?php echo $docente['ID_DOCENTE'] ?>" >modificar</a></td>
+              <td><a href="eliminarDocente.php?id=<?php echo $docente['ID_DOCENTE'] ?>" class="eliminar">eliminar</a></td>
             </tr>
         <?php endforeach;?>
       </tbody>
       </table>
       </div>
       <br><br>
-  </div>
+  </div>    
+<div id='respuesta'></div>

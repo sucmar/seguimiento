@@ -7,8 +7,8 @@
         
         <form action="" method="POST" onsubmit="return validate()">
             <div class="form-group col-sm-6">
-                <label>(*) Carrera:</label>
-                <select class="form-control input-global" name="nombreFacultad">
+                <label>(*) Facultad:</label>
+                <select class="form-control select-global" name="nombreFacultad">
                     <?php foreach ($facultades as $facultad):?>
                         <option><?php echo $facultad['NOMBRE_FACULTAD'] ?></option>
                     <?php endforeach;?>
@@ -34,6 +34,7 @@
             
             
             <p>NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</p>
+			<p id="error_de"> Enter a number and click OK:</p>
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
@@ -43,7 +44,6 @@
 			
 			
 			
-			<p id="error_de"> Enter a number and click OK:</p>
 
         </form>
         
@@ -51,11 +51,13 @@
 </div>
 
 <script>
+	
 function validate()
     {
         var error="";
         var nombres = document.getElementById( "nombreCarrera" );
-        var letters = /^[A-Za-z]+$/;
+        var letters = /^[A-Za-z- -.]+$/;
+        var numbers = /^[1-9-0]+$/;
                 
         if( nombres.value == "" || !nombres.value.match(letters))
         {
@@ -65,9 +67,9 @@ function validate()
             return false;
         }
         var sigla = document.getElementById( "siglaCarrera" );
-        if( sigla.value == "" || !sigla.value.match(letters) )
+        if( sigla.value == "" || !sigla.value.match(numbers) )
         {
-            error = " Tienes que escribir una sigla para la Carrera ";
+            error = " Tienes que escribir una sigla numeral para la Carrera ";
             document.getElementById( "error_de" ).style.color = "red";
             document.getElementById( "error_de" ).innerHTML = error;
             return false;
@@ -75,7 +77,7 @@ function validate()
         var dpto = document.getElementById( "dptoCarrera" );
         if( dpto.value == "" || !dpto.value.match(letters) )
         {
-            error = " Tienes que escribir una sigla para la Carrera ";
+            error = " Tienes que escribir un dpto para la Carrera ";
             document.getElementById( "error_de" ).style.color = "red";
             document.getElementById( "error_de" ).innerHTML = error;
             return false;
