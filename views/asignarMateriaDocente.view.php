@@ -173,7 +173,10 @@
 					</div>
 
 					<br><br><br><br><br><br><br><br><br>
+					
+					<div class="col-md-offset-2">
 					<?php //escoges el dia para horario?>
+					
 					<div class="col-md-2 ">
 						<div class="col-md-12 form-group">
 							<label class="control-label"> Dia:</label>

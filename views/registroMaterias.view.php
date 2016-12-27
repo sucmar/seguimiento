@@ -5,17 +5,25 @@
     <fieldset>
     <legend>REGISTRO DE MATERIAS:</legend>
         
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
+        <form action="" method="POST" onsubmit="return validate();">
+            <div class="form-group col-sm-12">
+                <label>(*) Carrera:</label>
+                <select class="form-control select-global" name="nombreCarrera">
+                    <?php foreach ($carreras as $carrera):?>
+                        <option><?php echo $carrera['NOMBRE_CARRERA'] ?></option>
+                    <?php endforeach;?>
+                </select>
             
+            </div>
             <div class="form-group col-sm-6">
                 <label>(*) Nombre Materia:</label>
-                <input class="form-control input-global" type="text" id="nombreMateria" name="nombreMateria">
+                <input class="form-control input-global" type="text" id="nombreMateria" name="nombreMateria" required>
             
             </div>
             
             <div class="form-group col-sm-6">
                 <label>(*) Sigla Materia:</label>
-                <input class="form-control input-global" type="text" id="siglaMateria" name="siglaMateria">
+                <input class="form-control input-global" type="text" id="siglaMateria" name="siglaMateria" required>
             </div>
             
             <div class="form-group col-sm-6">
@@ -27,23 +35,27 @@
             </div>
             
             <div class="form-group col-sm-6">
-                <label>(*) Nivel Materia:</label>
+                <label>(*) Nivel Semestral Materia:</label>
                 <select class="form-control select-global" id="nivelMateria" name="nivelMateria">
-                    <option>A</option>
-                    <option>B</option>
-                    <option>C</option>
-                    <option>D</option>
-                    <option>E</option>
-                    <option>F</option>
-                    <option>G</option>
-                    <option>H</option>
-                    <option>I</option>
-                    <option>J</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="I">I</option>
+                    <option value="J">J</option>
 
                 </select>
             </div>
             
+            
+            
             <p>NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</p>
+            <p id="error_de"> Enter a number and click OK:</p>
+
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
@@ -56,3 +68,56 @@
         
     </fieldset>
 </div>
+
+<script>
+
+function validate()
+    {
+        var error="";
+        var nombres = document.getElementById( "nombreMateria" );
+        var letters = /^[A-Za-z- -]+$/;
+        var numbers = /^[1-9-0]+$/;
+                
+        if( nombres.value == "" || !nombres.value.match(letters))
+        {
+            error = " Nombre de carrera no deberia contener numeros o caracteres especiales ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        var sigla = document.getElementById( "siglaMateria" );
+        if( sigla.value == "" || !sigla.value.match(numbers) )
+        {
+            error = " Tienes que escribir una sigla numeral para la Carrera ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        var tipo = document.getElementById( "tipoMateria" );
+        if( tipo.value == "" || !tipo.value.match(letters) )
+        {
+            error = " Tienes que escribir una sigla para la Carrera ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        var nivel = document.getElementById( "nivelMateria" );
+        if( nivel.value == "" || !nivel.value.match(letters) )
+        {
+            error = " Tienes que escribir una sigla para la Carrera ";
+            document.getElementById( "error_de" ).style.color = "red";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return false;
+        }
+        else
+        {
+            error = " Datos insertados correctamente ";
+            document.getElementById( "error_de" ).style.color = "blue";
+            document.getElementById( "error_de" ).innerHTML = error;
+            return true;
+        }
+    }
+</script>
+
+
+
