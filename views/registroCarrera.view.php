@@ -28,7 +28,11 @@
 			
 			<div class="form-group col-sm-6">
                 <label>(*) Departamento Carrera:</label>
-                <input class="form-control input-global" type="text" id="dptoCarrera" name="dptoCarrera" required>
+                <select class="form-control select-global" name="nombreFacultad">
+                    <?php foreach ($dptos as $dpto):?>
+                        <option><?php echo $dpto['NOMBRE_DPTO'] ?></option>
+                    <?php endforeach;?>
+                </select>
             
             </div>
             

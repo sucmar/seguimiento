@@ -15,11 +15,8 @@
     $statement = $conexion->prepare("SELECT SIGLA_MATERIA,NOMBRE_MATERIA FROM materia ");
     $statement->execute();
     $materias = $statement->fetchAll();
-	$siglaMateria;
 	$idMateria = null;
-	$nombreMateria;
 	$grupos= array();
-	$isSelected;
 	if(isset($_POST['sigla_post']) && $_POST['sigla_post'] != "" ){
 		$siglaMateria=$_POST['sigla_post'];
 		$materiaSeleccionada = $conexion->prepare("SELECT ID_MATERIA,NOMBRE_MATERIA FROM materia WHERE SIGLA_MATERIA = $siglaMateria ");
@@ -46,8 +43,10 @@
 	}
 
 	if(isset($_POST['insert']) && isset($_COOKIE['idMateria']) && isset($_COOKIE['nomMateria'])) {
+		
 		$idMateria1 = $_COOKIE['idMateria'];
 		$nom_grupo = $_POST['nom_grupo'];
+		
 		$insert_query = 'INSERT INTO grupo (ID_GRUPO, ID_MATERIA, NOM_GRUPO) VALUES (NULL, :ID_MATERIA, :NOM_GRUPO)';
 	    $statements = $conexion->prepare($insert_query);
         $statements->execute(array(
@@ -55,10 +54,10 @@
             ':NOM_GRUPO'=>$nom_grupo
         ));
 		global $nombreMateria;
-	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
-	$statementgrupo->execute();
-    $grupos = $statementgrupo->fetchAll();
+		$nombreMateria = $_COOKIE['nomMateria'];
+		$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
+		$statementgrupo->execute();
+	    $grupos = $statementgrupo->fetchAll();
 	}
 
 	if(isset($_COOKIE['idGrupo']) && $_COOKIE['idGrupo'] != ""  && isset($_COOKIE['connected'])) {

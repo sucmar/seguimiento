@@ -14,6 +14,12 @@
     $statement = $conexion->prepare("SELECT NOMBRE_FACULTAD FROM facultad");
     $statement->execute();
     $facultades = $statement->fetchAll();
+
+    $statement = $conexion->prepare("SELECT NOMBRE_DPTO FROM departamento");
+    $statement->execute();
+    $dptos = $statement->fetchAll();
+
+
 if (isset($_SESSION['usuario'])){
     require 'views/registroCarrera.view.php';
 } else {

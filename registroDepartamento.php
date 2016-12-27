@@ -11,7 +11,7 @@ $conexion = conexion('bd_seguimiento','root','');
     if (!$conexion) {
         die();
     }
-    $statement = $conexion->prepare("SELECT NOMBRE_CARRERA FROM carreras");
+    $statement = $conexion->prepare("SELECT NOMBRE_CARRERA FROM carrera");
     $statement->execute();
     $carreras = $statement->fetchAll();
 
