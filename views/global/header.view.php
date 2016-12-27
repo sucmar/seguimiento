@@ -27,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/nombramiento.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registroMaterias.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/asignarMateriaDocente.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/materiaDocente.css">
+
     <!--FIN HOJAS DE ESTILO-->
 
     <!--INICIO JAVA SCRIPT-->
