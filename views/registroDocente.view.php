@@ -1,15 +1,295 @@
 <?php include("views/global/header.view.php")?>
 
 <?php include('views/global/title.view.php')?>
+<script type="text/javascript">
+    function myFunction(){
+        var x = document.getElementById('miDiv');
 
+        x.style.display = 'none';
+
+    }
+</script>
+<script type="text/javascript">
+    function miFunction(){
+        var x = document.getElementById('miDiv');
+        if(x.style.display === 'none'){
+            x.style.display = 'block';
+        }
+    }
+</script>
 <div>
     <form name="importar" method="post" action="./importar.php" enctype="multipart/form-data" >
         <input id="file" type="file" name="file"/>
         <input type='submit' name='enviar'  value="Importar"  />
     </form>
 </div>
+<div>
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
 
-<div class="contenedor">
+        <fieldset>
+            <LEGEND>Registro de Docentes</LEGEND>
+            <div>
+                <label>(*) Nombres:</label>
+                <input type="text" id="nombres" name="nombre" style="text-transform:uppercase" placeholder="nombres">
+            </div>
+
+            <div>
+                <label>(*) Apellido Paterno</label>
+                <input type="text" id="ape-pat" name="apePaterno" style="text-transform:uppercase" placeholder="apellido paterno">
+            </div>
+            <div >
+                <label>Apellido Materno</label>
+                <input type="text" id="ape-mat" name="apeMaterno" style="text-transform:uppercase" placeholder="apellido materno">
+            </div>
+
+            <div>
+                <div>
+                    <label> (*) C.I.:</label>
+                    <input id="ci" name="ci" placeholder="carnet">
+                </div>
+
+                <div>
+                    <label>Expedido:</label>
+                    <select name='departamento' id='departamento'>
+                        <option value='LPZ'>LPZ</option>
+                        <option value='CBBA'>CBBA</option>
+                        <option value='SCZ'>SCZ</option>
+                        <option value='PTS'>PTS</option>
+                        <option value='TRJ'>TJA</option>
+                        <option value='ORU'>ORU</option>
+                        <option value='BEN'>BEN</option>
+                        <option value='PDO'>PDO</option>
+                        <option value='CHQ'>CHQ</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label>(*) Fecha de Nacimiento:</label>
+                <input type="text" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
+            </div>
+
+            <div >
+                <label for="lab-sexo">Sexo:</label>
+                <select name='sexo'>
+                    <option>F</option>
+                    <option>M</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Teléfono Fijo</label>
+                <input id="tel-fij-doc" name="telf" placeholder="telefono">
+            </div>
+
+            <div>
+                <label>(*) Celular:</label>
+                <input type="text" id="celular-doc" name="cel" placeholder="celular">
+            </div>
+
+            <div>
+                <label>(*) Dirección Domiciliaria:</label>
+                <input type="text" id="direccion" name="direccion" style="text-transform:uppercase" placeholder="domicilio">
+            </div>
+
+            <div>
+                <label>(*) Correo Electrónico</label>
+                <input type="text" id="email" name="correo" placeholder="xyz@dominio.com">
+            </div>
+
+            <div>
+                <label>(*) Profesion:</label>
+                <input type="text" id="profesion" name="profesion" style="text-transform:uppercase" placeholder="profesion">
+            </div>
+
+            <div>
+                <label>Dedicación:</label>
+                <select name="dedicacion">
+                    <option value="PARCIAL" onclick="myFunction()">Parcial</option>
+                    <option value="EXCLUSIVO" onclick="miFunction()">Exclusivo</option>
+                </select>
+            </div>
+
+            <div>
+                <br>
+                <label>NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</label>
+
+            </div>
+        </fieldset>
+
+        <div id="miDiv">
+            <div>
+                <label>
+                    ACTIVIDAD DOCENTE
+                </label>
+            </div>
+            <div>
+                <div>
+                    <label >Hrs. Teoria</label>
+                </div>
+                <div>
+                    <input  type="text" name="horaTeoria">
+                </div>
+
+                <div>
+                    <label>Hrs. Investigacion:</label>
+                </div>
+                <div>
+                    <input type="text" name="horaInvestigacion">
+                </div>
+
+                <div>
+                    <label>Hrs. Extencion:</label>
+                </div>
+                <div>
+                    <input type="text" name="horaExtencion">
+                </div>
+                <div>
+                    <label>Hrs. Servicio:</label>
+                </div>
+                <div >
+                    <input type="text" name="horaServicio">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label >Hrs. practica :</label>
+                </div>
+                <div>
+                    <input  type="text" name="horaPractica">
+                </div>
+
+                <div>
+                    <label>RCF No:</label>
+                </div>
+                <div>
+                    <input type="text" name="rfcUno">
+                </div>
+
+                <div>
+                    <label>RCF No:</label>
+                </div>
+                <div>
+                    <input type="text" name="rfcDos">
+                </div>
+                <div>
+                    <label>RCF No:</label>
+                </div>
+                <div>
+                    <input type="text" name="rfcTres">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label >Hrs. Produccion:</label>
+                </div>
+                <div>
+                    <input  type="text" name="horaProduccion">
+                </div>
+
+                <div>
+                    <label>Hrs. Servicio Acad:</label>
+                </div>
+                <div>
+                    <input type="text" name="horaServicioAcademico">
+                </div>
+
+                <div>
+                    <label>Hrs. Produccion Acad:</label>
+                </div>
+                <div>
+                    <input type="text" name="horaProduccionAcademica">
+                </div>
+                <div>
+                    <label>Hrs: administracion Acad:</label>
+                </div>
+                <div>
+                    <input type="text" name="horaAdministracionAcademica">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>RCF No:</label>
+                </div>
+                <div>
+                    <input type="text" name="rfcCuatro">
+                </div>
+
+                <div>
+                    <label>RCF No:</label>
+                </div>
+                <div>
+                    <input type="text" name="rfcCinco">
+                </div>
+                <div>
+                    <label>RCF No:</label>
+                </div>
+                <div>
+                    <input type="text" name="rfcSeis">
+                </div>
+                <div>
+                    <label>RCF No:</label>
+                </div>
+                <div>
+                    <input type="text" name="rfcSiete">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>TOTAL HORAS TRABAJADAS SEMANA:</label>
+                </div>
+                <div>
+                    <input type="text" name="totalHorasSemana">
+                </div>
+
+                <div>
+                    <label>TOTAL HORAS TRABAJADAS MENSUAL:</label>
+                </div>
+                <div>
+                    <input type="text" name="totalHorasMes">
+                </div>
+                <div>
+                    <label>TOTLA HORAS AUTORIZADAS:</label>
+                </div>
+                <div>
+                    <input type="text" name="totalHorasAutorizadas" value="160">
+                </div>
+                <div>
+                    <label>TIEMPO PARCIAL:</label>
+                </div>
+                <div>
+                    <input type="text" name="tiempoParcial">
+                </div>
+                <div>
+                    <label>DEDICACION EXCLUSIVA:</label>
+                </div>
+                <div>
+                    <input type="text" name="dedicacionExclusiva">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label>Observaciones:</label>
+                </div>
+                <div>
+                    <input type="text" style="text-transform:uppercase" name="observaciones">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit">Registrar</button>
+            <button type="reset">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+<!--<div class="contenedor">
     <div class="container nt-form-docente ">
 
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
@@ -111,7 +391,7 @@
             </div>
         </form>
     </div>
-</div>
+</div>-->
 <script type="text/javascript">
     function salir() {
         window.location = "http://localhost/seguimiento/espacioSecretaria.php";
