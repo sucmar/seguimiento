@@ -1,6 +1,5 @@
 <?php include("views/global/header.view.php")?>
 <?php include("views/global/title.view.php")?>
-
     <div class="contenedor-principal">
         <div class="container nt-menu-cuerpo">
             <div class="row navbar">

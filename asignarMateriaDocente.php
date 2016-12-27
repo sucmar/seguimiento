@@ -7,17 +7,24 @@
     if (!$conexion) {
         die();
     }
-    $statement = $conexion->prepare("SELECT INICIO_HORARIO FROM horario");
+
+    $statement = $conexion->prepare("SELECT ID_DOCENTE, NOMBRE_DOC, APELLPATERNO_DOC, APELLMATERNO_DOC, DEDICACION_DOC FROM docente ");
     $statement->execute();
-    $inicioHoras = $statement->fetchAll();
+    $docentes = $statement->fetchAll();
 
-    $statement2 = $conexion->prepare("SELECT FIN_HORARIO FROM horario");
+    $statement = $conexion->prepare("SELECT ID_MATERIA,NOMBRE_MATERIA, SIGLA_MATERIA FROM materia ");
+    $statement->execute();
+    $materias = $statement->fetchAll();
+
+
+$statement = $conexion->prepare("SELECT INICIO_HORARIO FROM horario WHERE ");
+    $statement->execute();
+    $hrsInicio = $statement->fetchAll();
+
+    $statement2 = $conexion->prepare("SELECT INICIO_HORARIO FROM horario");
     $statement2->execute();
-    $finHoras = $statement2->fetchAll();
+    $hrsFin = $statement2->fetchAll();
 
-    $statement3 = $conexion->prepare("SELECT NOMBRE_AULA FROM aula");
-    $statement3->execute();
-    $aulas = $statement3->fetchAll();
 
 
 

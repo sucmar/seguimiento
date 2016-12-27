@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (!$conexion) {
             die();
         }
-        $sql = "UPDATE docente SET CI_DOCENTE='8714114',NOMBRE_DOC='$nombres',APELLPATERNO_DOC=' $apellidoPaterno',
+        $sql = "UPDATE docente SET CI_DOCENTE='$ci',NOMBRE_DOC='$nombres',APELLPATERNO_DOC=' $apellidoPaterno',
                                                         APELLMATERNO_DOC='$apellidoMaterno',TELEFONO_DOC='$telFijo',
                                                         CELULAR_DOC='$celular',NACIMIENTO_DOC='$fechaNacimiento',
                                                         CIEXPEDIDO_DOC='$expedido',DIRECCION_DOC='$direcDomicilio',
@@ -32,7 +32,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $statement = $conexion->prepare($sql);
         $statement->execute();
-        echo $statement->rowCount(). 'record update';
+        header ("Location: listaDocentes.php");
+        //echo $statement->rowCount(). 'record update';
     } catch (PDOException $e){
         echo $e->getMessage();
     }
@@ -41,19 +42,3 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //echo $id,$nombres;
 }
 
-
-
-/*':id'=>$id,
-        ':ci' =>$ci,
-        ':nombre'=>$nombres,
-        ':apellP'=>$apellidoPaterno,
-        ':apellM'=>$apellidoMaterno,
-        ':tel'=>$telFijo,
-        ':cel'=>$celular,
-        ':nacimiento'=>$fechaNacimiento,
-        ':ciExp'=>$expedido,
-        ':direcc'=>$direcDomicilio,
-        ':dedicacion'=>$cargo,
-        ':correo'=>$correoElectronico,
-        ':profecion'=>$titulo,
-        ':genero'=>$sexo*/

@@ -31,24 +31,30 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/registrarHorario.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/registrarAula.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/asignarMateriaDocente.css">
-    <link rel="stylesheet" type="text/css" href="estilos/css/reporteDocente.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/materiaDocente.css">
+ <!--   <link rel="stylesheet" type="text/css" href="estilos/js/select-bootstrap.css"></link>
+    <script type="text/javascript" src="estilos/js/select-bootstrap.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="estilos/css/reporteDocente.css">	
+    <script src="estilos/js/marcus-jquery.js"></script>
+    <script src="estilos/js/marcus-bootstrap.js"></script>
+    <link href="estilos/js/marcus-bootstrap.css" rel="stylesheet"/>
+    <link href="estilos/js/select-bootstrap.css" rel="stylesheet"/>
+    <script src="estilos/js/select/bootstrap.js"></script>
+
     <!--FIN HOJAS DE ESTILO-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+   
     <!--INICIO JAVA SCRIPT-->
     <link rel="stylesheet" href="estilos/css/jquery-ui.css">
     <script src="estilos/js/jquery.min.js"></script>
     <script src="estilos/js/jquery-ui.min.js"></script>
     <script src="estilos/js/cookie/jquery.cookie.js" ></script>
     <script src="estilos/js/moment.js"></script>
-
+    
     <script src="estilos/js/timer.js"></script>
     <script src="estilos/js/buscaMaterias.js"></script>
     <script src="estilos/js/buscarDocente.js"></script>
     <script src="estilos/js/buscarDocente/obtener.js"></script>
+<script src="estilos/js/buscarDocente/capturarMateria.js"></script>
     <script src="estilos/js/buscarDocente/eliminarAula.js"></script>
 
     <script type="text/javascript" src="estilos/js/jquery.min.js"></script>
