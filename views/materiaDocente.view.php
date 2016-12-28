@@ -77,4 +77,4 @@
 
             <button tipe="submit" onclick="salir()" class="btn cancelar btn-global"  >Salir</button>
 
-        </div>
+        </div
