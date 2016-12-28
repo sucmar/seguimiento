@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/materiaDocente.css">
  <!--   <link rel="stylesheet" type="text/css" href="estilos/js/select-bootstrap.css"></link>
     <script type="text/javascript" src="estilos/js/select-bootstrap.js"></script>-->
-
+    <link rel="stylesheet" type="text/css" href="estilos/css/reporteDocente.css">	
     <script src="estilos/js/marcus-jquery.js"></script>
     <script src="estilos/js/marcus-bootstrap.js"></script>
     <link href="estilos/js/marcus-bootstrap.css" rel="stylesheet"/>
@@ -44,7 +44,7 @@
     <!--FIN HOJAS DE ESTILO-->
    
     <!--INICIO JAVA SCRIPT-->
-    <link rel="stylesheet" href="estilos/css/jquery-ui.css">    
+    <link rel="stylesheet" href="estilos/css/jquery-ui.css">
     <script src="estilos/js/jquery.min.js"></script>
     <script src="estilos/js/jquery-ui.min.js"></script>
     <script src="estilos/js/cookie/jquery.cookie.js" ></script>

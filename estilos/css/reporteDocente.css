@@ -1,0 +1,18 @@
+div.nt-reporteDocente {
+  margin: auto;
+  margin-top: 30px;
+  padding: 30px;
+  width: 60%;
+  border: 1px solid #CED5D7;
+  border-radius: 6px;
+  box-shadow: 0px 5px 10px #B5C1C5,0 0 0 10px #EEF5F7 inset;
+}
+
+div.tabla-cont{
+	background-color: white;
+	overflow:scroll;
+	border: 1px solid #CED5D7;
+	height: 170px
+}
+
+ 
