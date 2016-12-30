@@ -1,6 +1,7 @@
 <?php include("views/global/header.view.php")?>
 
 <?php include('views/global/title.view.php')?>
+
 <script type="text/javascript">
     function myFunction(){
         var x = document.getElementById('miDiv');

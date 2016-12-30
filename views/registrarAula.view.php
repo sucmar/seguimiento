@@ -49,7 +49,7 @@
                     </tbody>
                   </table>
                  </div>
-                 <label>Llenar todos los campos con (*) </labes>
+                 <label>Llenar todos los campos con (*) </label>
                  <p id="error_de"> Enter a number and click OK:</p>
             </fieldset>
 
