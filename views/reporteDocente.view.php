@@ -1,18 +1,6 @@
 <?php include("views/global/header.view.php")?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="nt-reporteDocente" >
     <fieldset>
     <legend>REPORTE DOCENTE:</legend>

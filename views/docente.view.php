@@ -116,7 +116,7 @@
     </div>
     <div class="form-group">
         <div>
-            <input type="submit" class="btn btn-primary" value="Enviar">
+            <input type="submit" class="btn btn-primary" value="asignar materia">
         </div>
     </div>
 </form>

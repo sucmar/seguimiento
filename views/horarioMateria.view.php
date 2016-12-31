@@ -4,9 +4,9 @@
 
       <div class="container nt-form-materiaDocente">
         
-        <form name="fm-hor-mat" id="fm-hor-mat" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate(); ">
+        <form name="fm-hor-mat" id="fm-hor-mat" action="horarioMateria.php?id=<?php echo $idGrupo ?>" method="POST" onsubmit="return validate(); ">
 
-              <legend>Nombre Materia</legend>
+              <legend><?php echo $materia['NOMBRE_MATERIA'] ?></legend>
               <div class="col-md-12">
                 <?php //escoges el dia para horario?>
                 
@@ -17,12 +17,12 @@
 
                   <div class=" form-group col-md-12"> 
                             <select class="form-control select-global" name='dia' id='dia'>
-                                <option value='Lunes'>Lunes</option>
-                                <option value='Martes'>Martes</option>
-                                <option value='Miercoles'>Miercoles</option>  
-                                <option value='Jueves'>Jueves</option>
-                                <option value='Viernes'>Viernes</option> 
-                                <option value='Sabado'>Sabado</option>
+                                <option value='1'>Lunes</option>
+                                <option value='2'>Martes</option>
+                                <option value='3'>Miercoles</option>  
+                                <option value='4'>Jueves</option>
+                                <option value='5'>Viernes</option> 
+                                <option value='6'>Sabado</option>
                             </select>
                           </div>
                 </div>
@@ -34,9 +34,9 @@
                   </div>
                   
                   <div class=" form-group col-md-12"> 
-                            <select class="form-control select-global " >
+                            <select class="form-control select-global " name="hrini" id="hrini" >
                                 <?php foreach ($inicioHoras as $inicioHora): $hor=substr("".$inicioHora['INICIO_HORARIO'], 0, -3);?>
-                                    <option  value="<?php echo  $inicioHora['INICIO_HORARIO'] ?>"><?php echo  $hor ?></option>
+                                    <option  value="<?php echo  $inicioHora['ID_HORARIO'] ?>"><?php echo  $hor ?></option>
                                 <?php endforeach;?>
                             </select>   
                           </div>
@@ -48,9 +48,9 @@
                   </div>
                   
                   <div class=" form-group col-md-12 div-select "> 
-                            <select class="form-control select-global" name="" >
+                            <select class="form-control select-global" name="hrfin" id="hrfin" >
                                 <?php foreach ($finHoras as $finHora): $horf=substr("".$finHora['FIN_HORARIO'], 0, -3);?>
-                                    <option value="<?php echo  $finHora['FIN_HORARIO'] ?>"><?php echo  $horf ?></option>
+                                    <option value="<?php echo  $finHora['ID_HORARIO'] ?>"><?php echo  $horf ?></option>
                                 <?php endforeach;?>
                             </select>
                           </div>
@@ -61,9 +61,9 @@
                     <label class="control-label" > Aula:</label>
                   </div>
                   <div class=" form-group col-md-12 div-select "> 
-                            <select class="form-control select-global " data-live-search="true" name="" >
+                            <select class="form-control select-global " data-live-search="true" name="aula" >
                                 <?php foreach ($aulas as $aula):?>
-                                    <option value="<?php echo  $aula['NOMBRE_AULA'] ?>"><?php echo $aula['NOMBRE_AULA'] ?></option>
+                                    <option value="<?php echo  $aula['ID_AULA'] ?>"><?php echo $aula['NOMBRE_AULA'] ?></option>
                                 <?php endforeach;?>
                             </select>
                           </div>
@@ -73,30 +73,60 @@
 
               <div class="form-group col-md-8 table-hover tab-hora col-md-offset-2">
                 <table class="table table-hover tabla-hora ">
+                    
                     <thead>
                       <tr>
-                        <th>Hor</th>
-                        <th>Lun</th>
-                        <th>Mar</th>
-                        <th>Mie</th>
-                        <th>Jue</th>
-                        <th>Vie</th>
-                        <th>Sab</th>
-                        <th></th>
+                        <th align='center' >Hora</th>
+                        <th align='center' >Lunes</th>
+                        <th align='center' >Martes</th>
+                        <th align='center' >Miercoles</th>
+                        <th align='center' >Jueves</th>
+                        <th align='center' >Viernes</th>
+                        <th align='center' >Sababado</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>06:45</td>
-                        <td></td>
-                        <td></td>
-                        <td>X</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="">Eliminar</a></td>
-                      </tr>
-                    </tbody>
+                       <?php
+                            foreach ($horaInicial as $inicial):  $cont2=1;?>
+                        <tr>
+                        <td><?php  echo substr("".$inicial['INICIO_HORARIO'], 0, -3)."-".substr("".$inicial['FIN_HORARIO'], 0, -3)?></td>
+                        <?php 
+                             $cont3;
+                            foreach ($horasGrupo as $horasG):
+                            
+                              if ($inicial['INICIO_HORARIO']==$horasG['INICIO_HORARIO']) {
+                                   $encontro=false;
+                                  
+                                  $cont=$cont2;
+                                  //condicion para mostar X en los dias
+                                  while($cont<=6 && !$encontro)
+                                  {
+                                    if($horasG['NOM_DIA']==$cont){//if**?> <td align='center'><a href="eliminarHorarioMateria.php?id=<?php echo $horasG['ID_DIA'] ?>"> <?php echo "X".$cont ;?></a> </td> <?php $encontro=true; /*fin if** */  } else { ?> <td align='center' ></td> <?php }//fin else 
+                                      $cont++;
+                                      $cont2++;
+                                  }
+                                  $cont3=$cont;   
+                              }
+
+                            endforeach;
+                            //llena
+                            if($cont3<=6)
+                              {
+                                while ($cont3<=6) 
+                                {
+                                    ?> <td align='center' > </td> <?php 
+                                    $cont3++; 
+                                }
+                              }
+                        ?>
+
+                         </tr>                      
+                        <?php 
+                        
+                          endforeach; 
+
+                        ?>
+            </tbody>
                 </table>
               </div>
 

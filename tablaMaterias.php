@@ -25,6 +25,7 @@ echo '<table class="table table-bordered">
     echo '<tr>
         <td>'.$row['NOMBRE_MATERIA'].'</td>
         <td><a href="asignarGrupo.php?id='.$row['ID_DOCMATERIA'].'&idMateria='.$row['ID_MATERIA'].'&idDoc='.$row['ID_DOCENTE'].'" class="btn btn-link">Asignar Grupo</a></td>
+        <td><a href="gruposAsignados.php?id='.$row['ID_DOCMATERIA'].'&idMateria='.$row['ID_MATERIA'].'&idDoc='.$row['ID_DOCENTE'].'" class="btn btn-link">ver grupos Asignados</a></td>
     </tr>';
     }
 echo '</table>';
