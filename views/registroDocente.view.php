@@ -19,39 +19,39 @@
     }
 </script>
 <div>
-    <form name="importar" method="post" action="./importar.php" enctype="multipart/form-data" >
+    <form role="form" name="importar" method="post" action="./importar.php" enctype="multipart/form-data" >
         <input id="file" type="file" name="file"/>
-        <input type='submit' name='enviar'  value="Importar"  />
+        <input type='submit' name='enviar'  value="Importar"/>
     </form>
 </div>
 <div>
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
+    <form role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate();">
 
         <fieldset>
             <LEGEND>Registro de Docentes</LEGEND>
-            <div>
+            <div class="form-group col-xs-3">
                 <label>(*) Nombres:</label>
-                <input type="text" id="nombres" name="nombre" style="text-transform:uppercase" placeholder="nombres">
+                <input type="text" class="form-control" id="nombres" name="nombre" style="text-transform:uppercase" placeholder="nombres">
             </div>
 
-            <div>
+            <div class="form-group col-xs-3" >
                 <label>(*) Apellido Paterno</label>
-                <input type="text" id="ape-pat" name="apePaterno" style="text-transform:uppercase" placeholder="apellido paterno">
+                <input type="text" class="form-control" id="ape-pat" name="apePaterno" style="text-transform:uppercase" placeholder="apellido paterno">
             </div>
-            <div >
+            <div class="form-group col-xs-3">
                 <label>Apellido Materno</label>
-                <input type="text" id="ape-mat" name="apeMaterno" style="text-transform:uppercase" placeholder="apellido materno">
+                <input type="text" class="form-control" id="ape-mat" name="apeMaterno" style="text-transform:uppercase" placeholder="apellido materno">
             </div>
 
-            <div>
-                <div>
+            <div class="form-group col-xs-4">
+                <div class="form-group col-xs-3">
                     <label> (*) C.I.:</label>
-                    <input id="ci" name="ci" placeholder="carnet">
+                    <input class="form-control" id="ci" name="ci" placeholder="carnet">
                 </div>
 
-                <div>
+                <div class="form-group col-xs-3">
                     <label>Expedido:</label>
-                    <select name='departamento' id='departamento'>
+                    <select class="form-control" name='departamento' id='departamento'>
                         <option value='LPZ'>LPZ</option>
                         <option value='CBBA'>CBBA</option>
                         <option value='SCZ'>SCZ</option>
@@ -65,53 +65,53 @@
                 </div>
             </div>
 
-            <div>
+            <div class="form-group col-xs-2">
                 <label>(*) Fecha de Nacimiento:</label>
-                <input type="text" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
+                <input type="text" class="form-control" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
             </div>
 
-            <div >
+            <div class="form-group col-xs-2">
                 <label for="lab-sexo">Sexo:</label>
-                <select name='sexo'>
+                <select class="form-control" name='sexo'>
                     <option>F</option>
                     <option>M</option>
                 </select>
             </div>
 
-            <div>
+            <div class="form-group col-xs-2">
                 <label>Teléfono Fijo</label>
-                <input id="tel-fij-doc" name="telf" placeholder="telefono">
+                <input class="form-control" id="tel-fij-doc" name="telf" placeholder="telefono">
             </div>
 
-            <div>
+            <div class="form-group col-xs-2">
                 <label>(*) Celular:</label>
-                <input type="text" id="celular-doc" name="cel" placeholder="celular">
+                <input type="text" class="form-control" id="celular-doc" name="cel" placeholder="celular">
             </div>
 
-            <div>
+            <div class="form-group col-xs-3">
                 <label>(*) Dirección Domiciliaria:</label>
-                <input type="text" id="direccion" name="direccion" style="text-transform:uppercase" placeholder="domicilio">
+                <input type="text" class="form-control" id="direccion" name="direccion" style="text-transform:uppercase" placeholder="domicilio">
             </div>
 
-            <div>
+            <div  class="form-group col-xs-3">
                 <label>(*) Correo Electrónico</label>
-                <input type="text" id="email" name="correo" placeholder="xyz@dominio.com">
+                <input type="text" class="form-control" id="email" name="correo" placeholder="xyz@dominio.com">
             </div>
 
-            <div>
+            <div class="form-group col-xs-3">
                 <label>(*) Profesion:</label>
-                <input type="text" id="profesion" name="profesion" style="text-transform:uppercase" placeholder="profesion">
+                <input type="text" class="form-control" id="profesion" name="profesion" style="text-transform:uppercase" placeholder="profesion">
             </div>
 
-            <div>
+            <div class="form-group col-xs-2">
                 <label>Dedicación:</label>
-                <select name="dedicacion">
+                <select class="form-control" name="dedicacion">
                     <option value="PARCIAL" onclick="myFunction()">Parcial</option>
                     <option value="EXCLUSIVO" onclick="miFunction()">Exclusivo</option>
                 </select>
             </div>
 
-            <div>
+            <div class="form-group">
                 <br>
                 <label>NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</label>
 
@@ -119,173 +119,174 @@
         </fieldset>
 
         <div id="miDiv">
-            <div>
+            <div class="form-group">
                 <label>
                     ACTIVIDAD DOCENTE
                 </label>
             </div>
-            <div>
+            <div  class="form-group col-xs-2">
+                
                 <div>
                     <label >Hrs. Teoria</label>
                 </div>
                 <div>
-                    <input  type="text" name="horaTeoria">
+                    <input  type="text" class="form-control"  name="horaTeoria">
                 </div>
 
                 <div>
                     <label>Hrs. Investigacion:</label>
                 </div>
                 <div>
-                    <input type="text" name="horaInvestigacion">
+                    <input type="text"  class="form-control" name="horaInvestigacion">
                 </div>
 
                 <div>
                     <label>Hrs. Extencion:</label>
                 </div>
                 <div>
-                    <input type="text" name="horaExtencion">
+                    <input type="text" class="form-control" name="horaExtencion">
                 </div>
                 <div>
                     <label>Hrs. Servicio:</label>
                 </div>
                 <div >
-                    <input type="text" name="horaServicio">
+                    <input type="text" class="form-control" name="horaServicio">
                 </div>
             </div>
 
-            <div>
+            <div class="form-group col-xs-2">
                 <div>
                     <label >Hrs. practica :</label>
                 </div>
                 <div>
-                    <input  type="text" name="horaPractica">
+                    <input  type="text" class="form-control" name="horaPractica">
                 </div>
 
                 <div>
                     <label>RCF No:</label>
                 </div>
                 <div>
-                    <input type="text" name="rfcUno">
+                    <input type="text" class="form-control" name="rfcUno">
                 </div>
 
                 <div>
                     <label>RCF No:</label>
                 </div>
                 <div>
-                    <input type="text" name="rfcDos">
+                    <input type="text" class="form-control" name="rfcDos">
                 </div>
                 <div>
                     <label>RCF No:</label>
                 </div>
                 <div>
-                    <input type="text" name="rfcTres">
+                    <input type="text"  class="form-control" name="rfcTres">
                 </div>
             </div>
 
-            <div>
+            <div class="form-group col-xs-2">
                 <div>
                     <label >Hrs. Produccion:</label>
                 </div>
                 <div>
-                    <input  type="text" name="horaProduccion">
+                    <input  type="text" class="form-control" name="horaProduccion">
                 </div>
 
                 <div>
                     <label>Hrs. Servicio Acad:</label>
                 </div>
                 <div>
-                    <input type="text" name="horaServicioAcademico">
+                    <input type="text" class="form-control" name="horaServicioAcademico">
                 </div>
 
                 <div>
                     <label>Hrs. Produccion Acad:</label>
                 </div>
                 <div>
-                    <input type="text" name="horaProduccionAcademica">
+                    <input type="text" class="form-control" name="horaProduccionAcademica">
                 </div>
                 <div>
                     <label>Hrs: administracion Acad:</label>
                 </div>
                 <div>
-                    <input type="text" name="horaAdministracionAcademica">
+                    <input type="text"  class="form-control"name="horaAdministracionAcademica">
                 </div>
             </div>
 
-            <div>
+            <div  class="form-group col-xs-2">
                 <div>
                     <label>RCF No:</label>
                 </div>
                 <div>
-                    <input type="text" name="rfcCuatro">
+                    <input type="text" class="form-control" name="rfcCuatro">
                 </div>
 
                 <div>
                     <label>RCF No:</label>
                 </div>
                 <div>
-                    <input type="text" name="rfcCinco">
+                    <input type="text" class="form-control" name="rfcCinco">
                 </div>
                 <div>
                     <label>RCF No:</label>
                 </div>
                 <div>
-                    <input type="text" name="rfcSeis">
+                    <input type="text" class="form-control" name="rfcSeis">
                 </div>
                 <div>
                     <label>RCF No:</label>
                 </div>
                 <div>
-                    <input type="text" name="rfcSiete">
+                    <input type="text" class="form-control" name="rfcSiete">
                 </div>
             </div>
 
-            <div>
+            <div class="form-group col-xs-2">
                 <div>
                     <label>TOTAL HORAS TRABAJADAS SEMANA:</label>
                 </div>
                 <div>
-                    <input type="text" name="totalHorasSemana">
+                    <input type="text" class="form-control" name="totalHorasSemana">
                 </div>
 
                 <div>
                     <label>TOTAL HORAS TRABAJADAS MENSUAL:</label>
                 </div>
                 <div>
-                    <input type="text" name="totalHorasMes">
+                    <input type="text" class="form-control" name="totalHorasMes">
                 </div>
                 <div>
                     <label>TOTLA HORAS AUTORIZADAS:</label>
                 </div>
                 <div>
-                    <input type="text" name="totalHorasAutorizadas" value="160">
+                    <input type="text" class="form-control" name="totalHorasAutorizadas" value="160">
                 </div>
                 <div>
                     <label>TIEMPO PARCIAL:</label>
                 </div>
                 <div>
-                    <input type="text" name="tiempoParcial">
+                    <input type="text" class="form-control" name="tiempoParcial">
                 </div>
                 <div>
                     <label>DEDICACION EXCLUSIVA:</label>
                 </div>
                 <div>
-                    <input type="text" name="dedicacionExclusiva">
+                    <input type="text" class="form-control" name="dedicacionExclusiva">
                 </div>
             </div>
 
-            <div>
+            <div class="form-group col-xs-4">
                 <div>
                     <label>Observaciones:</label>
                 </div>
                 <div>
-                    <input type="text" style="text-transform:uppercase" name="observaciones">
+                    <input type="text" class="form-control" style="text-transform:uppercase" name="observaciones">
                 </div>
             </div>
         </div>
 
-        <div>
-            <button type="submit">Registrar</button>
-            <button type="reset">Cancelar</button>
+        <div  class="form-group">
+            <button type="submit" class="btn registrar btn-global">Registrar</button>
+            <button type="reset" class="btn cancelar btn-global">Cancelar</button>
         </div>
     </form>
 </div>
@@ -386,7 +387,7 @@
 
                 </div>
             </fieldset>
-            <div class=" form-group col-mod-4 col-md-offset-4">
+            <div class=" form-group col-xs-4">
                 <button type="submit" class="btn registrar btn-global" >Registrar</button>
                 <button type="submit" onclick="salir()" class="btn cancelar btn-global" >Cancelar</button>
             </div>

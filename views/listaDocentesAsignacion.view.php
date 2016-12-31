@@ -32,7 +32,7 @@
 
 
         <div class="col-md-2  col-md-offset-4">
-          <button class="btn btn-info btn-global btn-bs" href="espacioSecretaria.php"> Salir </button>
+          <button class="btn btn-info btn-global btn-bs" onClick="location.href='espacioSecretaria.php'"> Salir </button>
         </div>
       </div>
 
