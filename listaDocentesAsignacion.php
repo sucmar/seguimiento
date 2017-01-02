@@ -9,6 +9,12 @@
     $statement->execute();
     $docentes = $statement->fetchAll();
 
+    $statement2 = $conexion->prepare("SELECT * FROM grupo ");
+    $statement2->execute();
+    $listaGrupos = $statement2->fetchAll();
+
+    //print_r($listaGrupos);
+
   if (isset($_SESSION['usuario'])){
     require 'views/listaDocentesAsignacion.view.php';
 } else {

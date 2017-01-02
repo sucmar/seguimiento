@@ -30,104 +30,104 @@
                     <div class="form-group col-xs-2 div-form-sel">
                         <label for="lab-expendido">Expedido:</label>
                         <select class="form-control sel-expendido select-global" name='departamento' id='departamento' >
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "lpz"): ?>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option>
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>
-                                <option value='chq'>CHQ</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "LPZ"): ?>
+                                <option value='LPZ'>LPZ</option>
+                                <option value='CBBA'>CBBA</option>
+                                <option value='SCZ'>SCZ</option>
+                                <option value='PTS'>PTS</option>
+                                <option value='TJA'>TJA</option>
+                                <option value='ORU'>ORU</option>
+                                <option value='BEN'>BEN</option>
+                                <option value='PDO'>PDO</option>
+                                <option value='CHQ'>CHQ</option>
                             <?php endif;?>
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "cbba"): ?>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option>
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>
-                                <option value='chq'>CHQ</option>
-                                <option value='lpz'>LPZ</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "CBBA"): ?>
+                                <option value='CBBA'>CBBA</option>
+                                <option value='SCZ'>SCZ</option>
+                                <option value='PTS'>PTS</option>
+                                <option value='TJA'>TJA</option>
+                                <option value='ORU'>ORU</option>
+                                <option value='BEN'>BEN</option>
+                                <option value='PDO'>PDO</option>
+                                <option value='CHQ'>CHQ</option>
+                                <option value='LPZ'>LPZ</option>
                             <?php endif;?>
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "scz"): ?>
-                                <option value='scz'>SCZ</option>
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option>
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>
-                                <option value='chq'>CHQ</option>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "SCZ"): ?>
+                                <option value='SCZ'>SCZ</option>
+                                <option value='PTS'>PTS</option>
+                                <option value='TJA'>TJA</option>
+                                <option value='ORU'>ORU</option>
+                                <option value='BEN'>BEN</option>
+                                <option value='PDO'>PDO</option>
+                                <option value='CHQ'>CHQ</option>
+                                <option value='LPZ'>LPZ</option>
+                                <option value='CBBA'>CBBA</option>
                             <?php endif;?>
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "pts"): ?>
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option>
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>
-                                <option value='chq'>CHQ</option>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "PTS"): ?>
+                                <option value='PTS'>PTS</option>
+                                <option value='TJA'>TJA</option>
+                                <option value='ORU'>ORU</option>
+                                <option value='BEN'>BEN</option>
+                                <option value='PDO'>PDO</option>
+                                <option value='CHQ'>CHQ</option>
+                                <option value='LPZ'>LPZ</option>
+                                <option value='CBBA'>CBBA</option>
+                                <option value='SCZ'>SCZ</option>
                             <?php endif;?>
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "tja"): ?>
-                                <option value='tja'>TJA</option>
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>
-                                <option value='chq'>CHQ</option>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>
-                                <option value='pts'>PTS</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "TJA"): ?>
+                                <option value='TJA'>TJA</option>
+                                <option value='ORU'>ORU</option>
+                                <option value='BEN'>BEN</option>
+                                <option value='PDO'>PDO</option>
+                                <option value='CHQ'>CHQ</option>
+                                <option value='LPZ'>LPZ</option>
+                                <option value='CBBA'>CBBA</option>
+                                <option value='SCZ'>SCZ</option>
+                                <option value='PTS'>PTS</option>
                             <?php endif;?>
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "oru"): ?>
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>
-                                <option value='chq'>CHQ</option>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "ORU"): ?>
+                                <option value='ORU'>ORU</option>
+                                <option value='BEN'>BEN</option>
+                                <option value='PDO'>PDO</option>
+                                <option value='CHQ'>CHQ</option>
+                                <option value='LPZ'>LPZ</option>
+                                <option value='CBBA'>CBBA</option>
+                                <option value='SCZ'>SCZ</option>
+                                <option value='PTS'>PTS</option>
+                                <option value='TJA'>TJA</option>
                             <?php endif;?>
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "ben"): ?>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>
-                                <option value='chq'>CHQ</option>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option>
-                                <option value='oru'>ORU</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "BEN"): ?>
+                                <option value='BEN'>BEN</option>
+                                <option value='PDO'>PDO</option>
+                                <option value='CHQ'>CHQ</option>
+                                <option value='LPZ'>LPZ</option>
+                                <option value='CBBA'>CBBA</option>
+                                <option value='SCZ'>SCZ</option>
+                                <option value='PTS'>PTS</option>
+                                <option value='TJA'>TJA</option>
+                                <option value='ORU'>ORU</option>
                             <?php endif;?>
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "pdo"): ?>
-                                <option value='pdo'>PDO</option>
-                                <option value='chq'>CHQ</option>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option>
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "PDO"): ?>
+                                <option value='PDO'>PDO</option>
+                                <option value='CHQ'>CHQ</option>
+                                <option value='LPZ'>LPZ</option>
+                                <option value='CBBA'>CBBA</option>
+                                <option value='SCZ'>SCZ</option>
+                                <option value='PTS'>PTS</option>
+                                <option value='TJA'>TJA</option>
+                                <option value='ORU'>ORU</option>
+                                <option value='BEN'>BEN</option>
                             <?php endif;?>
-                            <?php if($docentes['CIEXPEDIDO_DOC'] == "chq"): ?>
-                                <option value='chq'>CHQ</option>
-                                <option value='lpz'>LPZ</option>
-                                <option value='cbba'>CBBA</option>
-                                <option value='scz'>SCZ</option>
-                                <option value='pts'>PTS</option>
-                                <option value='tja'>TJA</option>
-                                <option value='oru'>ORU</option>
-                                <option value='ben'>BEN</option>
-                                <option value='pdo'>PDO</option>
+                            <?php if($docentes['CIEXPEDIDO_DOC'] == "CHQ"): ?>
+                                <option value='CHQ'>CHQ</option>
+                                <option value='LPZ'>LPZ</option>
+                                <option value='CBBA'>CBBA</option>
+                                <option value='SCZ'>SCZ</option>
+                                <option value='PTS'>PTS</option>
+                                <option value='TJA'>TJA</option>
+                                <option value='ORU'>ORU</option>
+                                <option value='BEN'>BEN</option>
+                                <option value='PDO'>PDO</option>
                             <?php endif;?>
                         </select>
                     </div>
@@ -180,13 +180,13 @@
                 <div class="form-group div-form-ded col-md-3">
                     <label for="lab-ded">Dedicación:</label>
                     <select class="form-control select-global" name="dedicacion">
-                        <?php if($docentes['DEDICACION_DOC'] == "Parcial"): ?>
-                        <option value="Parcial" >Parcial</option>
-                        <option value="exclusivo">Exclusivo</option>
+                        <?php if($docentes['DEDICACION_DOC'] == "PARCIAL"): ?>
+                        <option value="PARCIAL" >Parcial</option>
+                        <option value="EXCLUSIVO">Exclusivo</option>
                         <?php endif;?>
-                        <?php if($docentes['DEDICACION_DOC'] == "exclusivo"):  ?>
-                            <option value="exclusivo">Exclusivo</option>
-                            <option value="Parcial" >Parcial</option>
+                        <?php if($docentes['DEDICACION_DOC'] == "EXCLUSIVO"):  ?>
+                            <option value="EXCLUSIVO">Exclusivo</option>
+                            <option value="PARCIAL" >Parcial</option>
                         <?php endif;?>
                     </select>
                 </div>

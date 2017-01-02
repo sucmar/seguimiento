@@ -1,7 +1,14 @@
 <?php include("views/global/header.view.php")?>
 <?php include('views/global/title.view.php')?>
 
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select[name=post_materia]").change(function(){
+            alert($('select[name=post_materia]').val());
+            $('input[name=materia]').val($(this).val());
+        });
+    });
+</script>
 
 <div class="container nt-form-materiaDocente">
 
@@ -19,7 +26,7 @@
                     <div class=" form-group col-md-12">
                         <select class="form-control select-global " name="post_materia" id="post_materia" >
                             <?php foreach ($listaMaterias as $listaMateria): ?>
-                                <option  value="<?php echo  $listaMateria['ID_MATERIA'] ?>"><?php  echo  $listaMateria['NOMBRE_MATERIA'] ?></option>
+                                <option  value="<?php echo  $listaMateria['ID_MATERIA']?>"><?php  echo  $listaMateria['NOMBRE_MATERIA'] ?></option>
                             <?php endforeach;?>
                         </select>
                     </div>
@@ -39,9 +46,6 @@
                     </div>
                 </div>
             </div>
-            <!—                          —>
-
-
             <legend>Lista Materias:</legend>
             <div class="tabla-aula table-hover table-responsive ">
                 <table class="table table-hover" id="tablaAula" class="tablaAula">
@@ -54,11 +58,9 @@
                     </thead>
 
                     <tbody class="tbody-aula">
-                    <?php // $cont=1;
-                    //while ($row=$resultado->fetch_assoc()) { ?>
-                    <tr id="<?php //echo "".$row['ID_AULA']?>">
+                    <tr>
                         <td><?php //echo "".$cont++; ?></td>
-                        <td><?php //echo $row['NOMBRE_AULA'] ?></td>
+                        <td><input type="text" disabled='disabled' name="materia" value=""></td>
                         <td><?php ///echo $row['DESCRIPCION_AULA'] ?></td>
                         <td class="idAula"><?php //$row['ID_AULA'];?>  </td>
                         <td><a href="    ?id=<?php //echo $row['ID_AULA'] ?>" >Horarior</a></td>
@@ -71,10 +73,12 @@
             </div>
             <p id="error_de"> Enter a number and click OK:</p>
         </fieldset>
-
         <div class=" form-group col-md-offset-4">
             <button href=" " htype="submit" class="btn registrar btn-global" name="registrarMateria" value="registrarMateria">Registrar</button>
 
             <button tipe="submit" onclick="salir()" class="btn cancelar btn-global"  >Salir</button>
 
         </div>
+    </form>
+</div>
+

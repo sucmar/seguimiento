@@ -16,9 +16,8 @@ class nombramientodocente_model
         while ($filas = $consulta->fetch_assoc()) {
             $this->arregloDocente[] = $filas;
         }
-
+        print_r($filas);
         return $this->arregloDocente;
-
     }
 }
 

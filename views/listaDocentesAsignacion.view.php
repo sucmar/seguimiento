@@ -20,10 +20,11 @@
         <?php foreach ($docentes as $docente):?>
 
             <tr>
+                <td><?php $docente['ID_DOCENTE'] ?></td>
               <td><?php echo $docente['NOMBRE_DOC'] ?></td>
               <td><?php echo $docente['APELLPATERNO_DOC'] ?></td>
               <td><?php echo $docente['APELLMATERNO_DOC'] ?></td>
-              <td><a href="materiaDocente.php?id=<?php echo $docente['ID_DOCENTE'] ?>" >AsignarMateria</a></td>
+              <td><a href="docente.php?id=<?php echo $docente['ID_DOCENTE']?>" >AsignarMateria</a></td>
             </tr>
         <?php endforeach;?>
       </tbody>
@@ -31,7 +32,7 @@
 
 
         <div class="col-md-2  col-md-offset-4">
-          <button class="btn btn-info btn-global btn-bs" href="espacioSecretaria.php"> Salir </button>
+          <button class="btn btn-info btn-global btn-bs" onClick="location.href='espacioSecretaria.php'"> Salir </button>
         </div>
       </div>
 
