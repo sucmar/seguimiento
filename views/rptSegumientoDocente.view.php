@@ -81,17 +81,20 @@
                             ?>
 
                             <tr>
-                                <td rowspan="2" width="10%"><h6>DOCENTE</h6></td>
+                                <td class="text-center"><h6>DOCENTE:  </h6></td>
+                                <td class="text-center"><h6></h6></td>
                                 <td class="text-center"><h6><?= $Docente['NOMBRE_DOC'] ?></h6></td>
                                 <td class="text-center"><h6><?= $Docente['APELLPATERNO_DOC'] ?></h6></td>
                                 <td class="text-center"><h6><?= $Docente['APELLMATERNO_DOC'] ?></h6></td>
                                 <td class="text-center"><h6></h6></td>
-                                <td rowspan="2"><h6><b>CI</b></h6></td>
+                                <td  width="10%"><h6><b>CI:  </b></h6></td>
                                 <td><h6><?= $Docente['CI_DOCENTE'] ?> <?= $Docente['CIEXPEDIDO_DOC'] ?></h6></td>
                             </tr>
                      <?php  } 
                                                  ?>
                         <tr>
+                            <td class="text-center" width="10%"><h6></h6></td>
+                            <td class="text-center" width="10%"><h6></h6></td>
                             <td class="text-center"><h6><b>NOMBRE(S)</b></h6></td>
                             <td class="text-center"><h6><b>AP. PATERNO</b></h6></td>
                             <td class="text-center"><h6><b>AP. MATERNO</b></h6></td>
@@ -120,16 +123,18 @@
                         </tr>
                         </thead>
                         <tbody>
+                         <?php
+                        foreach ($arregloFacultades as $facultad) { ?>
                         <tr>
-                            <td>1.-</td>
-                            <td width="10%" height="5"><h6>CIENCIAS Y TECNOLOGIA</h6></td>
-                            <td>1.-</td>
-                            <td width="10%" height="5"><h6>INF-SIS</h6></td>
-                            <td>1.-</td>
-                            <td width="15%" height="2"><h6>INFORMATICA-SISTEMAS</h6></td>
-                            <td>1.-</td>
-                            <td width="20%" height="2"><h6>MATEMATICA COMPUTACIONAL II</h6></td>
-                            <th width="10%" height="2"><h6>2008214</h6>
+                            <td></td>
+                            <td width="10%" height="5"><h6><?= $facultad->NOMBRE_FACULTAD ?></h6></td>
+                            <td></td>
+                            <td width="10%" height="5"><h6><?= $facultad->NOMBRE_DPTO ?></h6></td>
+                            <td></td>
+                            <td width="15%" height="2"><h6><?= $facultad->NOMBRE_CARRERA ?></h6></td>
+                            <td class="counterCell">.-</td>
+                            <td width="20%" height="2"><h6><?= $facultad->NOMBRE_MATERIA ?></h6></td>
+                            <th width="10%" height="2"><h6><?= $facultad->SIGLA_MATERIA ?></h6>
                             </td>
                             <th width="5%" height="2"><h6>0</h6>
                             </td>
@@ -138,129 +143,10 @@
                             <td><input type="checkbox"></td>
                             <td><input type="checkbox" checked></td>
                         </tr>
-                        <tr>
-                            <td>2.-</td>
-                            <td width="10%" height="5"><h6>CIENCIAS Y TECNOLOGIA</h6></td>
-                            <td>2.-</td>
-                            <td width="10%" height="5"><h6>INF-SIS</h6></td>
-                            <td>2.-</td>
-                            <td width="15%" height="2"><h6>INFORMATICA-SISTEMAS</h6></td>
-                            <td>2.-</td>
-                            <td width="20%" height="2"><h6>BASE DE DATOS DISTRIBUIDAS</h6></td>
-                            <td width="10%" height="2"><h6>155555</h6></td>
-                            <th width="5%" height="2"><h6>0</h6>
-                            </td>
-                            <th width="5%" height="2"><h6>0</h6>
-                            </td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox" checked></td>
-                        </tr>
-                        <tr>
-                            <td>3.-</td>
-                            <td width="10%"><h6></h6></td>
-                            <td>3.-</td>
-                            <td width="10%"><h6></h6></td>
-                            <td>3.-</td>
-                            <td width="15%"><h6></h6></td>
-                            <td>3.-</td>
-                            <td width="20%"><h6></h6></td>
-                            <td><h6></h6></td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>4.-</td>
-                            <td width="30%"><h6></h6></td>
-                            <td>4.-</td>
-                            <td width="10%"><h6></h6></td>
-                            <td>4.-</td>
-                            <td width="20%"><h6></h6></td>
-                            <td>4.-</td>
-                            <td width="40%"><h6></h6></td>
-                            <td><h6></h6></td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>5.-</td>
-                            <td width="30%"><h6></h6></td>
-                            <td>5.-</td>
-                            <td width="10%"><h6></h6></td>
-                            <td>5.-</td>
-                            <td width="20%"><h6></h6></td>
-                            <td>5.-</td>
-                            <td width="40%"><h6></h6></td>
-                            <td><h6></h6></td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>6.-</td>
-                            <td width="30%"><h6></h6></td>
-                            <td>6.-</td>
-                            <td width="10%"><h6></h6></td>
-                            <td>6.-</td>
-                            <td width="20%"><h6></h6></td>
-                            <td>6.-</td>
-                            <td width="40%"><h6></h6></td>
-                            <td><h6></h6></td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>7.-</td>
-                            <td width="30%"><h6></h6></td>
-                            <td>7.-</td>
-                            <td width="10%"><h6></h6></td>
-                            <td>7.-</td>
-                            <td width="20%"><h6></h6></td>
-                            <td>7.-</td>
-                            <td width="40%"><h6></h6></td>
-                            <td><h6></h6></td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                        </tr>
-                        <tr>
-                            <td>8.-</td>
-                            <td width="30%"><h6></h6></td>
-                            <td>8.-</td>
-                            <td width="10%"><h6></h6></td>
-                            <td>8.-</td>
-                            <td width="20%"><h6></h6></td>
-                            <td>8.-</td>
-                            <td width="40%"><h6></h6></td>
-                            <td><h6></h6></td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <th width="5%"><h6></h6>
-                            </td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                        </tr>
+
+                            <?php  } ?>
                         </tbody>
-
                     </table>
-
                 </div>
 
 
@@ -581,5 +467,13 @@
             </div>
         </div>
     </div>
-
+<style type="text/css">
+    table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
+}
+</style>
 <?php include('views/global/footer.view.php') ?>

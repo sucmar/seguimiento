@@ -12,7 +12,6 @@
                     <ul class="dropdown-menu inline-block" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="nombramiento.php">Docente</a></li>
 
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">Auxliar</a></li>
                     </ul>
                 </div>
 
@@ -25,7 +24,6 @@
                     <ul class="dropdown-menu inline-block" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="seguimiento.php">Docente</a></li>
 
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">Auxliar</a></li>
 
                     </ul>
 
@@ -40,7 +38,6 @@
                     <ul class="dropdown-menu inline-block" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="reporteDocente.php">Docente</a></li>
 
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">Auxliar</a></li>
 
                     </ul>
 

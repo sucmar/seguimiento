@@ -8,12 +8,12 @@ if (isset($_SESSION['usuario'])) {
     //cargado el modelo
     $seguimientoDocente = new seguimientodocente_model();
 
-    $arregloDocentes = $seguimientoDocente->get_docentes();
+    $arregloDocentes = $seguimientoDocente->get_docente();
 //    $arregloFacultad = $seguimientoDocente->get_facultad()
 
 //    $ID_DOC = $_GET['ID_DOCENTE'];
   //  echo $ID_DOC;
-
+    $arregloFacultades = $seguimientoDocente->get_facultadDocente();
 
 
 
