@@ -5,7 +5,7 @@ if (isset($_SESSION['usuario'])){
     $conexion = conexion('bd_seguimiento','root','');
     $idMateria = $_REQUEST['idMateria'];
     $idDocMateria = $_REQUEST['id'];
-    $idDoc=$_REQUEST['idDoc'];
+    $idDoc=     $_REQUEST['idDoc'];
 
     $sql="SELECT *
           FROM doc_materia

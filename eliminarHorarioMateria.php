@@ -4,8 +4,8 @@
 require 'funciones.php';
 
 
-$idDia =  $_REQUEST['id'];
- 
+$idDia =  	$_REQUEST['id'];
+$idGrupo= 	$_REQUEST['grupo'];
 
 $conexion = conexion('bd_seguimiento','root','');
 
@@ -18,7 +18,7 @@ if (!$conexion) {
     $statement->execute();
     $dias = $statement->fetchAll();
 	
-	header('Location: materiaDocente.php');
+	header('Location: listaDocentesAsignacion.php');
     
 
 }

@@ -23,7 +23,7 @@ $enlace = mysqli_connect("localhost", "root", "", "bd_seguimiento");
 
     		$hora_inicial=strtotime($hr_inicial);
     		$hora_final=strtotime($hr_final);
-    		$per_seg=$periodo*60;
+    		$per_seg=($periodo*60)+($periodo*60);
         		
             if ($hora_inicial!=$hora_final && $hora_inicial<$hora_final) 
             {                    
