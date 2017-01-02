@@ -4,9 +4,9 @@
 
       <div class="container nt-form-materiaDocente">
         
-        <form name="fm-hor-mat" id="fm-hor-mat" action="horarioMateria.php?id=<?php echo $idGrupo ?>" method="POST" onsubmit="return validate(); ">
+        <form name="fm-hor-mat" id="fm-hor-mat" action="horarioMateria.php?idDoc=<?php echo $idDocente?>&idMateria=<?php echo $idMateria?>&grupo=<?php echo $idGrupo?>" method="POST" onsubmit="return validate(); ">
 
-              <legend><?php echo $materia['NOMBRE_MATERIA'] ?></legend>
+              <legend><?php echo "Materia:".$materia['NOMBRE_MATERIA']." Grupo: ".$grupo['GRUPO']?></legend>
               <div class="col-md-12">
                 <?php //escoges el dia para horario?>
                 
@@ -82,7 +82,7 @@
                         <th align='center' >Miercoles</th>
                         <th align='center' >Jueves</th>
                         <th align='center' >Viernes</th>
-                        <th align='center' >Sababado</th>
+                        <th align='center' >Sabado</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -101,7 +101,7 @@
                                   //condicion para mostar X en los dias
                                   while($cont<=6 && !$encontro)
                                   {
-                                    if($horasG['NOM_DIA']==$cont){//if**?> <td align='center'><a href="eliminarHorarioMateria.php?id=<?php echo $horasG['ID_DIA'] ?>"> <?php echo "X".$cont ;?></a> </td> <?php $encontro=true; /*fin if** */  } else { ?> <td align='center' ></td> <?php }//fin else 
+                                    if($horasG['NOM_DIA']==$cont){//if**?> <td align='center'><a href="eliminarHorarioMateria.php?id=<?php echo $horasG['ID_DIA'] ?>&grupo=<?php echo $idGrupo?> "> <?php echo "X".$cont ;?></a> </td> <?php $encontro=true; /*fin if** */  } else { ?> <td align='center' ></td> <?php }//fin else 
                                       $cont++;
                                       $cont2++;
                                   }
