@@ -13,7 +13,7 @@ if (isset($_SESSION['usuario'])){
           ON doc_materia.ID_DOCMATERIA=grupos.ID_DOCMATERIA
           INNER JOIN materia
           ON doc_materia.ID_MATERIA=materia.ID_MATERIA
-          WHERE doc_materia.ID_DOCENTE='$idDoc'";
+          WHERE doc_materia.ID_DOCENTE='$idDoc' AND materia.ID_MATERIA='$idMateria'";
     $statement = $conexion->prepare($sql);
     $statement->execute();
     $materiasAsignadas = $statement->fetchAll();
