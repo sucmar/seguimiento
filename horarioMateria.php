@@ -94,11 +94,16 @@
                                  echo "registro corecto";
                                  ///---
 
-                                    $sqlHr = "SELECT * FROM hrs_academicas WHERE ID_GRUP=$idGrupo";
+                                    $sqlHr = "SELECT * FROM hrs_academicas,dia WHERE dia.ID_DIA=hrs_academicas.ID_DIA AND dia.ID_GRUP=$idGrupo";
 
                                     $conHr  = mysqli_query($enlace,$sqlHr);
                                     $conHora   = mysqli_num_rows($conHr);
-                                    echo "tiene clases: ".$conHora;
+
+                                    $idD = $conexion->prepare("SELECT MAX(ID_DIA) AS id FROM dia");
+                                    $idD->execute();
+                                    $idultimo = $idD->fetch();
+                                    $idUltDia=$idultimo['id'];
+                                    echo "   ------------ tiene clases--------: ".$conHora."".$idultimo['id'];
                                  //--
                                 if($conHora<2)
                                 {
@@ -106,8 +111,8 @@
                                     $hr_teo_mes=$hr_sem*2;
                                     $hr_pra_mes=$hr_sem*2;
                                     $hr_mes=$hr_sem*4;
-                                    $insertarHoras=$query = "INSERT INTO hrs_academicas(ID_GRUP,HRS_SEMANA,HRS_TEORIA_MES,HRS_PRACTICA_MES,HRS_MES_MATERIA,HRS_MES_AUTORIDAD)
-                                    VALUES('$idGrupo','$hr_sem','$hr_teo_mes','$hr_pra_mes','$hr_mes','0')";
+                                    $insertarHoras=$query = "INSERT INTO hrs_academicas(ID_DIA,HRS_SEMANA,HRS_TEORIA_MES,HRS_PRACTICA_MES,HRS_MES_MATERIA,HRS_MES_AUTORIDAD)
+                                    VALUES('$idUltDia','$hr_sem','$hr_teo_mes','$hr_pra_mes','$hr_mes','0')";
                                     mysqli_query($enlace,$insertarHoras);
                                 }else
                                 {
@@ -119,8 +124,8 @@
                                     $hr_teo_mes=$hr_sem*4;
                                     $hr_pra_mes=0;
                                     $hr_mes=$hr_sem*4;
-                                    $insertarHoras=$query = "INSERT INTO hrs_academicas(ID_GRUP,HRS_SEMANA,HRS_TEORIA_MES,HRS_PRACTICA_MES,HRS_MES_MATERIA,HRS_MES_AUTORIDAD)
-                                    VALUES('$idGrupo','$hr_sem','$hr_teo_mes','$hr_pra_mes','$hr_mes','0')";
+                                    $insertarHoras=$query = "INSERT INTO hrs_academicas(ID_DIA,HRS_SEMANA,HRS_TEORIA_MES,HRS_PRACTICA_MES,HRS_MES_MATERIA,HRS_MES_AUTORIDAD)
+                                    VALUES('$idUltDia','$hr_sem','$hr_teo_mes','$hr_pra_mes','$hr_mes','0')";
                                     mysqli_query($enlace,$insertarHoras);
                                     /*if($hrs_aca['HRS_PRACTICA_MES']<8)
                                     {
@@ -147,6 +152,9 @@
                                 }
                                 
 
+                                    
+                                
+
                     }else 
                     {
                         echo " <h4 align='center' style='color:red;'> El docente tiene clases a esta hora </h4> ";
@@ -163,6 +171,10 @@
             
         }
             
+            $horasAcademicas = $conexion->prepare("SELECT hrs_academicas.HRS_SEMANA, hrs_academicas.HRS_TEORIA_MES, hrs_academicas.HRS_PRACTICA_MES, hrs_academicas.HRS_MES_MATERIA, hrs_academicas. HRS_MES_AUTORIDAD FROM hrs_academicas,dia WHERE dia.ID_DIA=hrs_academicas.ID_DIA AND dia.ID_GRUP=$idGrupo");
+                                $horasAcademicas->execute();
+                                $horasA = $horasAcademicas->fetchAll();
+                            
             //LISTA DE HORARIOS 
            
             $statement6 = $conexion->prepare("SELECT DISTINCT  horario.INICIO_HORARIO, horario.FIN_HORARIO FROM dia,horario WHERE  dia.ID_GRUP=$idGrupo AND horario.ID_HORARIO=dia.ID_HORARIO ORDER BY horario.INICIO_HORARIO ASC");
@@ -170,6 +182,10 @@
             $horaInicial = $statement6->fetchAll();
 
             $statement7=$conexion->prepare("SELECT horario.INICIO_HORARIO,dia.NOM_DIA,dia.ID_DIA FROM dia INNER JOIN horario ON dia.ID_HORARIO=horario.ID_HORARIO WHERE dia.ID_GRUP=$idGrupo ORDER by  horario.INICIO_HORARIO ASC,dia.NOM_DIA ASC ");
+            $statement7->execute();
+            $horasGrupo=$statement7->fetchAll();
+
+            $statement7=$conexion->prepare("SELECT * FROM dia INNER JOIN horario ON dia.ID_HORARIO=horario.ID_HORARIO WHERE dia.ID_GRUP=$idGrupo ORDER by  horario.INICIO_HORARIO ASC,dia.NOM_DIA ASC ");
             $statement7->execute();
             $horasGrupo=$statement7->fetchAll();
 

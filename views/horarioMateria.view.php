@@ -71,7 +71,7 @@
 
               </div>
 
-              <div class="form-group col-md-8 table-hover tab-hora col-md-offset-2">
+              <div class="form-group col-md-8 table-hover tab-hora">
                 <table class="table table-hover tabla-hora ">
                     
                     <thead>
@@ -128,6 +128,64 @@
                         ?>
             </tbody>
                 </table>
+              </div>
+
+              <div class="form-group col-md-4 form-hora d-borde  ">
+                <div class="col-md-8 col-md-offset-2">
+                <?php $hrSema=0; $hrTeoMes=0; $hrPraMes=0; $hrMesMat=0; $hrAutMes=0;
+                    
+                ?>
+                  <label class=" lab-p-m" for="hr-se">Horas Academicas</label>
+                </div>
+                <div class="col-md-9">
+                  <label class="lab-s" for="hr-se">Hrs. Semana:</label>
+                </div>
+                <div class="col-md-3">
+                  <input class="form-hh input-global" id="hr-s" type="text" name="hr-sema" disabled="disabled" value="<?php foreach ($horasA as $listaH): $hrSema=$hrSema+$listaH['HRS_SEMANA']; endforeach ; echo $hrSema; ?>">
+                </div>
+
+                <div class="col-md-9">
+                  <label class=" lab-t-m" for="hr-">Hrs. Teoria Mes:</label>
+                </div>
+                <div class="col-md-3">
+                  <input class="form-hh input-global" id="hr-t-mes" type="text" name="hr-teo-mes" disabled="disabled" value="<?php foreach ($horasA as $listaH): $hrTeoMes=$hrTeoMes+$listaH['HRS_TEORIA_MES']; endforeach ; echo $hrTeoMes; ?>" >
+                </div>
+
+                <div class="col-md-9">
+                  <label class=" lab-p-m" for="hr-se">Hrs. Practica Mes:</label>
+                </div>
+                <div class="col-md-3">
+                  <input class="form-hh input-global" id="hr-p-mes" type="text" name="hr-pra-mes" disabled="disabled" value="<?php foreach ($horasA as $listaH): $hrPraMes=$hrPraMes+$listaH['HRS_PRACTICA_MES']; endforeach ; echo $hrPraMes; ?>" >
+                </div>
+
+                <div class="col-md-9" >
+                  <label class=" lab-p-m" for="hr-se">Hrs. Mes Materia:</label>
+                </div>
+                <div class="col-md-3">
+                  <input class="form-hh input-global" id="hr-p-mes" type="text" name="hr-mes-mat" disabled="disabled" value="<?php foreach ($horasA as $listaH): $hrMesMat=$hrMesMat+$listaH['HRS_MES_MATERIA']; endforeach ; echo $hrMesMat; ?>">
+                </div>
+                <div class="col-md-9">
+                  <label class=" lab-p-m" for="hr-se">Hrs. Autorizadas Mes:</label>
+                </div>
+                <div class="col-md-3">
+                  <input class="form-hh input-global" id="hr-p-mes" type="text" name="hr-pra-mes" disabled="disabled" value="<?php foreach ($horasA as $listaH): $hrAutMes=$hrAutMes+$listaH['HRS_MES_AUTORIDAD']; endforeach ; echo $hrAutMes; ?>">
+                </div>
+                <div class="col-md-9">
+                  <label class=" lab-p-m" for="hr-se">Exclusividad:</label>
+                </div>
+                <div class="col-md-3">
+                  <input class="form-hh input-global" id="hr-p-mes" type="text" name="hr-pra-mes" disabled="disabled">
+                </div>
+                <?php  ?>
+                <div class="col-md-9">
+                  <label class=" lab-p-m" for="hr-se"></label>
+                </div>
+                <div class="col-md-9">
+                  <label class=" lab-p-m" for="hr-se"></label>
+                </div>
+                <div class="col-md-9">
+                  <label class=" lab-p-m" for="hr-se"></label>
+                </div>
               </div>
 
               <div class=" form-group col-md-4 col-md-offset-4">
