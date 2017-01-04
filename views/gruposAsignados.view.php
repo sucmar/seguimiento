@@ -15,8 +15,10 @@
             <td id="ideMateria"><?php echo $materia['NOMBRE_MATERIA'] ?></td>
             <td id="nombreMateria"><?php echo $materia['GRUPO'] ?></td>
             <td><a href="horarioMateria.php?idDoc=<?php echo $materia['ID_DOCENTE']?>&idMateria=<?php echo $materia['ID_MATERIA']?>&grupo= <?php echo $materia['ID_GRUP']?>" class="btn btn-link">asignar horario</a></td>
+            <td><a href="eliminarGrupo.php?idDocMateria=<?php echo $materia['ID_DOCMATERIA']?>&idMateria=<?php echo $materia['ID_MATERIA']?>&grupo= <?php echo $materia['ID_DOCENTE']?>" class="btn btn-link">Eliminar Grupo</a></td>
         </tr>
     <?php endforeach;?>
 </table>
+<td><a href="docente.php?id=<?php echo $idDoc?>" class="btn btn-link">Volver</a></td>
 
 

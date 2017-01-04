@@ -83,6 +83,10 @@
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registroGrupos.php">Registro Grupos</a></li>
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="listaDocentesAsignacion.php">asignacion docente grupo</a></li>
+
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registrarHorario.php">registrar periodos</a></li>
+
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registrarAula.php">registro aulas</a></li>
                     </ul>
 
                 </div>

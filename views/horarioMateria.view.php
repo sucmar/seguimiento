@@ -133,7 +133,7 @@
               <div class=" form-group col-md-4 col-md-offset-4">
                 <button href=" " htype="submit" class="btn registrar btn-global" name="registrarMateria" value="registrarMateria">Registrar</button>
                 
-                <button tipe="submit" onclick="salir()" class="btn cancelar btn-global"  >Salir</button>
+                <button type="button" onClick="location.href='listaDocentesAsignacion.php'" class="btn cancelar btn-global"  >Salir</button>
 
             </div>
 

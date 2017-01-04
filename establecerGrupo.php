@@ -1,6 +1,6 @@
 <?php 
  require 'funciones.php';
- $idDocMateria=$_REQUEST['idDoc'];
+ $idDocMateria=$_REQUEST['idDoc'];//ID DEL DOCENTE CON LA MATERIA
  $Idgrupo = $_REQUEST['grup'];
  $idMateria=$_REQUEST['idMa'];
  $idDocente=$_REQUEST['idDocente'];

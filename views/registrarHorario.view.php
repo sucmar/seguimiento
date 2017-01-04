@@ -78,7 +78,7 @@
 
 	<script type="text/javascript">
         function salir() {
-            window.location = "http://localhost/tis/seguimiento/espacioSecretaria.php";
+            window.location = "http://localhost/seguimiento/espacioSecretaria.php";
         }
     </script>
 

@@ -56,7 +56,7 @@
             <div class=" form-group col-md-offset-4">
                 <button href="registrarAula.php" htype="submit" class="btn registrar btn-global" name="registrar" value="Registrar">Registrar</button>
                 
-                <button tipe="submit" onclick="salir()" class="btn cancelar btn-global"  >Salir</button>
+                <button tipe="button" value="SALIR" onClick="location.href='espacioSecretaria.php'" class="btn cancelar btn-global"  >Salir</button>
 
             </div>
 
