@@ -11,13 +11,6 @@
     $statement->execute();
     $carreras = $statement->fetchAll();
 
-    if(!isset($_GET['var_js']) || empty($_GET['var_js'])){
-        echo "Error!!!";
-    } else{
-        echo "Exito!!!";
-        $idCarrera = $_GET['var_js'];
-        print_r($idCarrera);
-    }
-
+    
     require 'views/listaCarreras.view.php';
 

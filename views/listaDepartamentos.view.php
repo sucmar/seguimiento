@@ -62,34 +62,24 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
  <div class="container nt-plantel-doc ">
     <div class="container col-md-12 table table-hover">
     <table class="table table-hover" id="tablaDocente">
-      <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
-        <!--<tbody>
-          <tr>  <th scope="row">  1 </th> <td>  Ing. Ayoroa Cardozo Jose Richard  </td> </tr>
-          <tr>  <th scope="row">  2 </th> <td>  Msc. Costas Jáuregui Vladimir </td> </tr>
-          <tr>  <th scope="row">  3 </th> <td>  Msc. Lic. Jaldin Rosales K. Rolando </td> </tr>
-          <tr>  <th scope="row">  4 </th> <td>  Msc. Lic. Montecinos Choque Marco Antonio </td> </tr>
-          <tr>  <th scope="row">  5 </th> <td>  Msc. Ing. Orellana Araoz Jorge Walter </td> </tr>
-          <tr>  <th scope="row">  6 </th> <td>  Msc. Lic. Rodriguez Bilbao Erika Patricia </td> </tr>
-          <tr>  <th scope="row">  7 </th> <td>  Msc. Lic. Salazar Serrudo Carla </td> </tr>
-          <tr>  <th scope="row">  8 </th> <td>  Msc. Lic. Torrico Bascopé Rosemary  </td> </tr>
-          <tr>  <th scope="row">  9 </th> <td>  Ing. Villarroel Novillo Jimmy </td> </tr>
-        </tbody>-->
-      <tbody>
-      <tr>
+      <LEGEND> <strong>LISTA DE DEPARTAMENTOS</strong></LEGEND>
+       
+	  <thead>
+	  <tr>
           <td><strong>CODIGO </strong></td>
-          <td><strong>NOMBRE </strong></td>
-          <td> <strong>APELLIDO PATERNO</strong></td>
-          <td><strong>APELLIDO MATERNO</strong></td>
-      </tr>
-        <?php foreach ($docentes as $docente):?>
+          <td><strong>NOMBRE DEPARTAMENTO</strong></td>
+
+	  </tr>
+	  </thead>
+      <tbody>
+        <?php foreach ($departamentos as $departamento):?>
 
             <tr>
-              <td class="idDocente"><?php echo $docente['ID_DOCENTE'] ?></td>
-              <td ><?php echo $docente['NOMBRE_DOC'] ?></td>
-              <td><?php echo $docente['APELLPATERNO_DOC'] ?></td>
-              <td><?php echo $docente['APELLMATERNO_DOC'] ?></td>
-              <td><a href="modificarDocente.php?id=<?php echo $docente['ID_DOCENTE'] ?>" >modificar</a></td>
-              <td><a href="eliminarDocente.php?id=<?php echo $docente['ID_DOCENTE'] ?>" class="eliminar">eliminar</a></td>
+              <td class="idDepartamento"><?php echo $departamento['ID_DPTO'] ?></td>
+              <td><?php echo $departamento['NOMBRE_DPTO'] ?></td>
+
+              <td><a href="eliminarDepartamento.php?id=<?php echo $departamento['ID_DPTO'] ?>" class="eliminar">eliminar</a></td>
+              
             </tr>
         <?php endforeach;?>
       </tbody>

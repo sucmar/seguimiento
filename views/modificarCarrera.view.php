@@ -8,7 +8,12 @@
         <form action="actualizarCarrera.php?id=<?php echo $carreras['ID_CARRERA'] ?>" method="POST" onsubmit="return validate()">
            
             
-            <div class="form-group col-sm-12">
+			<div class="form-group col-sm-6">
+                <label>(*) Facultad:</label>
+                <input class="form-control input-global" type="text" id="nombreFacultad" name="nombreFacultad" value="<?php echo $facultades['NOMBRE_FACULTAD']; ?>" required>
+            </div>
+			
+            <div class="form-group col-sm-6">
                 <label>(*) Nombre Carrera:</label>
                 <input class="form-control input-global" type="text" id="nombreCarrera" name="nombreCarrera" value="<?php echo $carreras['NOMBRE_CARRERA']; ?>" required>
             </div>

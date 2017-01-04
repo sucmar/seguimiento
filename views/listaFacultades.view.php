@@ -20,7 +20,7 @@
                 <p style="color: white">
                     <i class="fax" aria-hidden="true"></i>
                 </p>
-                <input type="submit" style="margin-top:15px" class="btn btn-success" name="" value="atras">
+                <input type="submit" style="margin-top:15px" class="btn btn-global" name="" value="atras">
                 </form>
 
             </div>
@@ -66,12 +66,14 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
     <table class="table table-hover" id="tablaDocente">
       <LEGEND> <strong>LISTA DE FACULTADES</strong></LEGEND>
         
-      <tbody>
-      <tr>
-          <td><strong>CODIGO </strong></td>
-          <td><strong>NOMBRE FACULTAD</strong></td>
+		<thead>
+		  <tr>
+			  <td><strong>CODIGO </strong></td>
+			  <td><strong>NOMBRE FACULTAD</strong></td>
 
-      </tr>
+		  </tr>
+		</thead>
+      <tbody>
         <?php foreach ($facultades as $facultad):?>
 
             <tr >
