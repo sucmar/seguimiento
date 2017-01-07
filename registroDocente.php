@@ -5,9 +5,7 @@ if (isset($_SESSION['usuario'])){
 } else {
     header('Location: login.php');
 }
-
-
-
+global $nombres,$apellidoPaterno,$apellidoMaterno,$titulo,$ci,$expedido,$fechaNacimiento,$sexo;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -24,6 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $direcDomicilio  = $_POST['direccion'];
     $correoElectronico=$_POST['correo'];
     $cargo            =$_POST['dedicacion'];
+    $estado           =$_POST['estado'];
 
     $conexion = conexion('bd_seguimiento','root','');
 
@@ -64,19 +63,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $statement->execute();
         $docente = $statement->fetch(PDO::FETCH_ASSOC);
         $id = $docente['ID_DOCENTE'];
-
+        echo  $id;
         $statement = $conexion->prepare("INSERT INTO seguimiento(ID_DOCENTE,ASIS,ADJ,CAT,
-                                                        OTROCARGO,HRSTEORIA,HRSINVESTIGACION,HRSEXTENCION,HRSSERVICIO,HRSPRACTICA,
-                                            RCF1,RCF2,RCF3,HRSPRODUCCION,HRSSERVICIOACADEMICO,HRSPRODUCACAD,HRSADMINACAD,RCF4,RCF5,RCF6,RCF7,HRSTRABSEMANA,HRSTRABMES,HRSAUTORIZADAS,TIEMPOPARCIAL,DEDICACIONEXCLUSIVA,OBSERVACIONES)
-                                            VALUES('$id','null','null','null','null','$horaTeoria','$horaInvestigacion','$horaExtencion','$horaServicio','$horaPractica',
-                                                        '$rfcUno','$rfcDos','$rfcTres','$horaProduccion','$horaServicioAcademico','$horaProduccionAcademica','$horaAdministracionAcademica','$rfcCuatro','$rfcCinco','$rftSeis','$rfcSiete','$totalHorasSemana','$totalHorasMes','$totalHorasAutorizadas','$tiempoParcial','$dedicacionExclusiva','$observaciones')");
+                      OTROCARGO,HRSTEORIA,HRSINVESTIGACION,HRSEXTENCION,HRSSERVICIO,HRSPRACTICA,
+                      RCF1,RCF2,RCF3,HRSPRODUCCION,HRSSERVICIOACADEMICO,HRSPRODUCACAD,HRSADMINACAD,RCF4,RCF5,
+                      RCF6,RCF7,HRSTRABSEMANA,HRSTRABMES,HRSAUTORIZADAS,TIEMPOPARCIAL,DEDICACIONEXCLUSIVA,OBSERVACIONES)
+                                       VALUES('$id','null','null','null','null','$horaTeoria','$horaInvestigacion','$horaExtencion',
+                                                    '$horaServicio','$horaPractica','$rfcUno','$rfcDos','$rfcTres','$horaProduccion',
+                                                    '$horaServicioAcademico','$horaProduccionAcademica','$horaAdministracionAcademica',
+                                                    '$rfcCuatro','$rfcCinco','$rftSeis','$rfcSiete','$totalHorasSemana','$totalHorasMes',
+                                                    '$totalHorasAutorizadas','$tiempoParcial','$dedicacionExclusiva','$observaciones')");
         $statement->execute();
     } else{
         $statement = $conexion->prepare("INSERT INTO docente(CI_DOCENTE,NOMBRE_DOC,APELLPATERNO_DOC,APELLMATERNO_DOC,
                                                         TELEFONO_DOC,CELULAR_DOC,NACIMIENTO_DOC,CIEXPEDIDO_DOC,DIRECCION_DOC,DEDICACION_DOC,
-                                            CORREO_DOC,PROFESION_DOC,GENERO_DOC)
+                                            CORREO_DOC,PROFESION_DOC,GENERO_DOC,ESTADO_DOC)
                                             VALUES('$ci','$nombres','$apellidoPaterno','$apellidoMaterno','$telFijo','$celular',
-                                                        '$fechaNacimiento','$expedido','$direcDomicilio','$cargo','$correoElectronico','$titulo','$sexo')");
+                                                        '$fechaNacimiento','$expedido','$direcDomicilio','$cargo','$correoElectronico','$titulo','$sexo','$estado')");
         $statement->execute();
         $docentes = $statement->fetchAll();
     }

@@ -1,9 +1,29 @@
 <?php include("views/global/header.view.php")?>
+<script>
+    $(document).ready(function() {
+        $("#fec-nac").datepicker();
+    });
+</script>
+<script type="text/javascript">
+    function myFunction(){
+        var x = document.getElementById('miDiv');
 
+        x.style.display = 'none';
+
+    }
+</script>
+<script type="text/javascript">
+    function miFunction(){
+        var x = document.getElementById('miDiv');
+        if(x.style.display === 'none'){
+            x.style.display = 'block';
+        }
+    }
+</script>
 <div class="contenedor">
     <div class="container nt-form-docente ">
 
-        <form action="actualizarDocente.php?id=<?php echo $docentes['ID_DOCENTE'] ?>" method="POST" onsubmit="return validate();">
+        <form action="actualizarDocente.php?id=<?php echo $docentes['ID_DOCENTE'] ?>&idSeg=<?php echo $seguimiento['IDSEGUIMIENTO'] ?>" method="POST" onsubmit="return validate();">
             <fieldset class="form-group ">
                 <LEGEND>Registro de Docentes</LEGEND>
                 <div class="form-group div-form-nom col-md-3">
@@ -181,15 +201,194 @@
                     <label for="lab-ded">Dedicación:</label>
                     <select class="form-control select-global" name="dedicacion">
                         <?php if($docentes['DEDICACION_DOC'] == "PARCIAL"): ?>
-                        <option value="PARCIAL" >Parcial</option>
-                        <option value="EXCLUSIVO">Exclusivo</option>
+                        <option value="PARCIAL" onclick="myFunction()">Parcial</option>
+                        <option value="EXCLUSIVO" onclick="miFunction()">Exclusivo</option>
                         <?php endif;?>
                         <?php if($docentes['DEDICACION_DOC'] == "EXCLUSIVO"):  ?>
-                            <option value="EXCLUSIVO">Exclusivo</option>
-                            <option value="PARCIAL" >Parcial</option>
+                            <option value="EXCLUSIVO" onclick="myFunction()">Exclusivo</option>
+                            <option value="PARCIAL" onclick="miFunction()">Parcial</option>
                         <?php endif;?>
                     </select>
                 </div>
+
+
+                <div class="form-group div-form-ded col-md-3">
+                    <label for="lab-ded">Estado:</label>
+                    <select class="form-control select-global" name="estado">
+                        <?php if($docentes['ESTADO_DOC'] == "ACTIVO"): ?>
+                            <option value="ACTIVO">ACTIVO</option>
+                            <option value="INACTIVO">INACTIVO</option>
+                        <?php endif;?>
+                        <?php if($docentes['ESTADO_DOC'] == "INACTIVO"):  ?>
+                            <option value="INACTIVO">INACTIVO</option>
+                            <option value="ACTIVO">ACTIVO</option>
+                        <?php endif;?>
+                    </select>
+                </div>
+
+
+
+                <div id="miDiv">
+                    <div class="form-group">
+                        <label>
+                            ACTIVIDAD DOCENTE
+                        </label>
+                    </div>
+                    <div  class="form-group col-xs-2">
+
+                        <div>
+                            <label >Hrs. Teoria</label>
+                            <input  type="text" class="form-control"  name="horaTeoria" value="<?php echo $seguimiento['HRSTEORIA']; ?>">
+                        </div>
+
+                        <div>
+                            <label>Hrs. Investigacion:</label>
+                            <input type="text"  class="form-control" name="horaInvestigacion" value="<?php echo $seguimiento['HRSINVESTIGACION']; ?>">
+                        </div>
+
+                        <div>
+                            <label>Hrs. Extencion:</label>
+                            <input type="text" class="form-control" name="horaExtencion" value="<?php echo $seguimiento['HRSEXTENCION']; ?>">
+                        </div>
+                        <div>
+                            <label>Hrs. Servicio:</label>
+                        </div>
+                        <div >
+                            <input type="text" class="form-control" name="horaServicio" value="<?php echo $seguimiento['HRSSERVICIO']; ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-2">
+                        <div>
+                            <label >Hrs. practica :</label>
+                        </div>
+                        <div>
+                            <input  type="text" class="form-control" name="horaPractica" value="<?php echo $seguimiento['HRSPRACTICA']; ?>">
+                        </div>
+
+                        <div>
+                            <label>RCF No:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="rfcUno" value="<?php echo $seguimiento['RCF1']; ?>">
+                        </div>
+
+                        <div>
+                            <label>RCF No:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="rfcDos" value="<?php echo $seguimiento['RCF2']; ?>">
+                        </div>
+                        <div>
+                            <label>RCF No:</label>
+                        </div>
+                        <div>
+                            <input type="text"  class="form-control" name="rfcTres" value="<?php echo $seguimiento['RCF3']; ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-2">
+                        <div>
+                            <label >Hrs. Produccion:</label>
+                        </div>
+                        <div>
+                            <input  type="text" class="form-control" name="horaProduccion" value="<?php echo $seguimiento['HRSPRODUCCION']; ?>">
+                        </div>
+
+                        <div>
+                            <label>Hrs. Servicio Acad:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="horaServicioAcademico" value="<?php echo $seguimiento['HRSSERVICIOACADEMICO']; ?>">
+                        </div>
+
+                        <div>
+                            <label>Hrs. Produccion Acad:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="horaProduccionAcademica" value="<?php echo $seguimiento['HRSPRODUCACAD']; ?>">
+                        </div>
+                        <div>
+                            <label>Hrs: administracion Acad:</label>
+                        </div>
+                        <div>
+                            <input type="text"  class="form-control"name="horaAdministracionAcademica" value="<?php echo $seguimiento['HRSADMINACAD']; ?>">
+                        </div>
+                    </div>
+
+                    <div  class="form-group col-xs-2">
+                        <div>
+                            <label>RCF No:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="rfcCuatro" value="<?php echo $seguimiento['RCF4']; ?>">
+                        </div>
+
+                        <div>
+                            <label>RCF No:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="rfcCinco" value="<?php echo $seguimiento['RCF5']; ?>">
+                        </div>
+                        <div>
+                            <label>RCF No:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="rfcSeis" value="<?php echo $seguimiento['RCF6']; ?>">
+                        </div>
+                        <div>
+                            <label>RCF No:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="rfcSiete" value="<?php echo $seguimiento['RCF7']; ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-2">
+                        <div>
+                            <label>TOTAL HORAS TRABAJADAS SEMANA:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="totalHorasSemana" value="<?php echo $seguimiento['HRSTRABSEMANA']; ?>">
+                        </div>
+
+                        <div>
+                            <label>TOTAL HORAS TRABAJADAS MENSUAL:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="totalHorasMes" value="<?php echo $seguimiento['HRSTRABMES']; ?>">
+                        </div>
+                        <div>
+                            <label>TOTLA HORAS AUTORIZADAS:</label>
+                        </div>
+                        <div>
+                            <input type="text" disabled="disabled" class="form-control" name="totalHorasAutorizadas" value="<?php echo $seguimiento['HRSAUTORIZADAS']; ?>">
+                        </div>
+                        <div>
+                            <label>TIEMPO PARCIAL:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="tiempoParcial" value="<?php echo $seguimiento['TIEMPOPARCIAL']; ?>">
+                        </div>
+                        <div>
+                            <label>DEDICACION EXCLUSIVA:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="dedicacionExclusiva" value="<?php echo $seguimiento['DEDICACIONEXCLUSIVA']; ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-4">
+                        <div>
+                            <label>Observaciones:</label>
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" style="text-transform:uppercase" name="observaciones" value="<?php echo $seguimiento['OBSERVACIONES']; ?>">
+                        </div>
+                    </div>
+                </div>
+
+
 
                 <div class="col-md-8 div-form-nota">
                     <br>
@@ -199,7 +398,7 @@
             </fieldset>
             <div class=" form-group col-mod-4 col-md-offset-4">
                 <button type="submit" class="btn registrar btn-global" >Registrar</button>
-                <button type="submit" onclick="salir()" class="btn cancelar btn-global" >Cancelar</button>
+                <button type="button" onClick="location.href='listaDocentes.php'" class="btn cancelar btn-global" >Cancelar</button>
             </div>
         </form>
         <div id="res"></div>

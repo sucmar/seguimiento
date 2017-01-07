@@ -20,27 +20,20 @@
                     <label>(*) Descripcion del Aula:</label>
                     <input type="text" class="form-control input-global " id="des-aula" name="des-aula" placeholder="Ubicacion del aula" required="required"  value="<?php echo $aulas['DESCRIPCION_AULA']; ?>" >
                 </div>
-                <label>Llenar todos los campos con (*) </labes>
+                <label>Llenar todos los campos con (*) </label>
                 <p id="error_de">click OK:</p>
             </fieldset>
         
        
             <div class=" form-group ">
                 <button type="submit" class="btn registrar btn-global" name="guardar" >Guardar</button>
-                <button tipe="submit" onclick="salir()" class="btn cancelar btn-global"  >Cancelar</button>
+                <button type="button" value="SALIR" onClick="location.href='registrarAula.php'" class="btn cancelar btn-global"  >Salir</button>
 
             </div>
             <p id="error_para" ></p>
 
         </form>
 	</div>
-
-    <script type="text/javascript">
-        function salir() {
-            window.location = "http://localhost/tis/seguimiento/registarAula.php";
-        }
-    </script>
-
     <script>
         
     function validate()

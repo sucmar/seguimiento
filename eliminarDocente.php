@@ -6,8 +6,12 @@ $conexion = conexion('bd_seguimiento','root','');
 if (!$conexion) {
     die();
 } else {
-$statement = $conexion->prepare("DELETE FROM docente WHERE ID_DOCENTE = '$id'");
+$statement = $conexion->prepare("SELECT * FROM docente WHERE ID_DOCENTE = '$id' AND ESTADO_DOC='ACTIVO'");
 $statement->execute();
 $docentes = $statement->fetchAll();
-header ('Location: listaDocentes.php');
+if($docentes){
+    echo 'hoaldfsaas';
+    header ('Location: listaDocentes.php');
+}
+
 }
