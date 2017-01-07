@@ -81,16 +81,18 @@
                 <tbody>
                 <p>1.- Nombre del Profesional para quien se solicita Nombramiento como Docente Extraordinario en la
                     Universidad Mayor de San Simón</p>
+				<p>PATRICIA RODRIGUEZ BILBAO</p>
                 <table>
                     <tbody>
 
                     </tbody>
                 </table>
                 <p>2.-CARRERA QUE SOLICITA LA NOMINACION:</p>
-                <p></p>
+                <p></p><p>ING. SISTEMAS</p>
                 <p>3.-DEPARTAMENTO:</p>
-                <p></p>
+                <p></p><p>INFORMATICA-SISTEMAS</p>
                 <p>4.-FACULTAD:</p>
+					<p>FACULTAD DE CIENCIAS Y TECNOLOGIA</p>
 <!--                --><?php
 //                foreach ($arregloFacultad as $Facultad) {
 //                ?>

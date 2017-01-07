@@ -25,7 +25,7 @@
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
-                    <button class="btn btn-default btn-global" type="submit" >Cancelar</button>
+                    <a class="btn btn-default btn-global" href="espacioSecretaria.php">Cancelar</a>
                     </div>
             </center>
 			

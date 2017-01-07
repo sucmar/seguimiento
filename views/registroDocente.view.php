@@ -291,7 +291,7 @@
             <div class=" form-group col-mod-4 col-md-offset-4">
                 <input type="hidden" name="ajax">
                 <button type="submit" class="btn registrar btn-global" >Registrar</button>
-                <button type="submit" onclick="salir()" class="btn cancelar btn-global" >Cancelar</button>
+                <a type="submit" onclick="salir()" href="espacioSecretaria.php" class="btn cancelar btn-global" >Cancelar</a>
             </div>
         </form>
     </div>

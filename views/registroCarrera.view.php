@@ -28,7 +28,7 @@
 			
 			<div class="form-group col-sm-6">
                 <label>(*) Departamento Carrera:</label>
-                <select class="form-control select-global" name="nombreFacultad">
+                <select class="form-control select-global" name="dptoCarrera">
                     <?php foreach ($dptos as $dpto):?>
                         <option><?php echo $dpto['NOMBRE_DPTO'] ?></option>
                     <?php endforeach;?>
@@ -42,7 +42,7 @@
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
-                    <button class="btn btn-default btn-global" type="submit" >Cancelar</button>
+                    <a class="btn btn-default btn-global" href="espacioSecretaria.php">Cancelar</a>
                     </div>
             </center>
 			

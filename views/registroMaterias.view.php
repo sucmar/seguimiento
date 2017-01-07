@@ -6,7 +6,8 @@
     <legend>REGISTRO DE MATERIAS:</legend>
         
         <form action="" method="POST" onsubmit="return validate();">
-            <div class="form-group col-sm-12">
+           			
+			<div class="form-group col-sm-12">
                 <label>(*) Carrera:</label>
                 <select class="form-control select-global" name="nombreCarrera">
                     <?php foreach ($carreras as $carrera):?>
@@ -15,7 +16,7 @@
                 </select>
             
             </div>
-            <div class="form-group col-sm-6">
+           <div class="form-group col-sm-6">
                 <label>(*) Nombre Materia:</label>
                 <input class="form-control input-global" type="text" id="nombreMateria" name="nombreMateria" required>
             
@@ -25,8 +26,22 @@
                 <label>(*) Sigla Materia:</label>
                 <input class="form-control input-global" type="text" id="siglaMateria" name="siglaMateria" required>
             </div>
+			
+			<div class="form-group col-sm-12">
+                <label>(*) Nombre Departamento:</label>
+                <select class="form-control select-global" name="nombreDpto">
+                    <?php foreach ($departamentos as $departamento):?>
+                        <option><?php echo $departamento['NOMBRE_DPTO'] ?></option>
+                    <?php endforeach;?>
+                </select>
+            </div>
+			
+			<div class="form-group col-sm-4">
+                <label>(*) Carga Horaria:</label>
+                <input class="form-control input-global" type="text" id="cargaHorariaMateria" name="cargaHorariaMateria" required>
+            </div>
             
-            <div class="form-group col-sm-6">
+            <div class="form-group col-sm-4">
                 <label>(*) Tipo Materia:</label>
                 <select class="form-control select-global" id="tipoMateria" name="tipoMateria">
                     <option>CURRICULAR</option>
@@ -34,7 +49,7 @@
                 </select>
             </div>
             
-            <div class="form-group col-sm-6">
+            <div class="form-group col-sm-4">
                 <label>(*) Nivel Semestral Materia:</label>
                 <select class="form-control select-global" id="nivelMateria" name="nivelMateria">
                     <option value="A">A</option>
@@ -59,7 +74,7 @@
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
-                    <button class="btn btn-default btn-global" type="submit" >Cancelar</button>
+                    <a class="btn btn-default btn-global" href="espacioSecretaria.php">Cancelar</a>
                     </div>
             </center>
             

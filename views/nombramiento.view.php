@@ -8,7 +8,8 @@
 	<div class="container nombramiento">
 		<form>
 			<fieldset>
-			<legend>Nombramiento de Docente</legend>
+			<legend>Nombramiento de Docente
+				patricia rodriguez bilbao</legend>
 				<div class="col-md-12">
 					<div class="col-md-3">
 						<label for="nombre" class="control-label">Nombre del Docente</label>

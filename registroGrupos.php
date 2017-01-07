@@ -55,7 +55,7 @@
         ));
 		global $nombreMateria;
 		$nombreMateria = $_COOKIE['nomMateria'];
-		$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
+		$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1  ORDER BY CAST(NOM_GRUPO AS INTEGER) ASC");
 		$statementgrupo->execute();
 	    $grupos = $statementgrupo->fetchAll();
 	}
@@ -65,7 +65,7 @@
 	$idMateria1 = $_COOKIE['idMateria'];
 	global $nombreMateria;
 	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1  ORDER BY CAST(NOM_GRUPO AS INTEGER) ASC");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
@@ -78,7 +78,7 @@
 			$idMateria1 = $_COOKIE['idMateria'];
 	global $nombreMateria;
 	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1  ORDER BY CAST(NOM_GRUPO AS INTEGER) ASC");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
@@ -93,7 +93,7 @@
 			$idMateria1 = $_COOKIE['idMateria'];
 	global $nombreMateria;
 	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1  ORDER BY CAST(NOM_GRUPO AS INTEGER) ASC");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}

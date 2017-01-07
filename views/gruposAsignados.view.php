@@ -1,7 +1,7 @@
 <?php include('views/global/header.view.php')?>
 <?php include('views/global/title.view.php')?>
 
-
+<div class="container nt-form-grupos-asignados">
 <table  class="table table-bordered table-hover" id="table">
     <thead class="thead-inverse">
     <tr class="header">
@@ -18,5 +18,4 @@
         </tr>
     <?php endforeach;?>
 </table>
-
-
+</div>
