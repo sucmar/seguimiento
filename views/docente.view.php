@@ -81,7 +81,8 @@
     setInterval(tiempoReal, 1000)
 </script>
 <?php ?>
-  <div class="alert alert-dismissible alert-info "><strong><p id="respa"></p></strong></div>
+<div class="alert alert-dismissible alert-info "><strong><p id="respa"></p></strong></div>
+<legend><strong><?php echo $docente['NOMBRE_DOC']."  ".$docente['APELLPATERNO_DOC']."  ".$docente['APELLMATERNO_DOC']?></strong></legend>
 <div class="container nt-form-docs">
 <!-- MOSTRAMOS LAS MATERIAS QUE SE REGISTRARON POR FORMULARIO -->
     
