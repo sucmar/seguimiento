@@ -62,25 +62,23 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
  <div class="container nt-plantel-doc ">
     <div class="container col-md-12 table table-hover">
     <table class="table table-hover" id="tablaDocente">
-      <LEGEND> <strong>LISTA DE CARRERAS</strong></LEGEND>
-        
-		<thead>
-      <tr>
+      <LEGEND> <strong>LISTA DE MATERIAS</strong></LEGEND>
+       
+	  <thead>
+	  <tr>
           <td><strong>CODIGO </strong></td>
-          <td><strong>NOMBRE CARRERA</strong></td>
+          <td><strong>NOMBRE MATERIAS</strong></td>
 
-      </tr>
-		</thead>
+	  </tr>
+	  </thead>
       <tbody>
-        <?php foreach ($carreras as $carrera):?>
+        <?php foreach ($materias as $materia):?>
 
             <tr>
-              <td class="idCarrera"><?php echo $carrera['ID_CARRERA'] ?></td>
-              <td><?php echo $carrera['NOMBRE_CARRERA'] ?></td>
+              <td class="idMateria"><?php echo $materia['ID_MATERIA'] ?></td>
+              <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
 
-              <td><a href="modificarCarrera.php?id=<?php echo $carrera['ID_CARRERA'] ?>" >modificar</a></td>
-              
-              <td><a href="eliminarCarrera.php?id=<?php echo $carrera['ID_CARRERA'] ?>" class="eliminar">eliminar</a></td>
+              <td><a href="eliminarMateria.php?id=<?php echo $materia['ID_MATERIA'] ?>" class="eliminar">eliminar</a></td>
               
             </tr>
         <?php endforeach;?>

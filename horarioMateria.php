@@ -1,11 +1,3 @@
-<?php  session_start();
-    
-	require 'funciones.php';
-    function console_log( $data ){
-            echo '<script>';
-            echo 'console.log('. json_encode( $data ) .')';
-            echo '</script>';
-        };
 
     $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
     $idDocente=     $_REQUEST['idDoc'];
@@ -70,6 +62,7 @@
                 $consulta2  = mysqli_query($enlace,$sql2);
                 $contador   = mysqli_num_rows($consulta2);
                 echo "TIENE :".$contador;
+              
 
                 echo "repetido ";
                 echo $contador;

@@ -34,10 +34,15 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/materiaDocente.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/asignarGrupo.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/docente.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/asignarGrupo.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/gruposAsignados.css">
+	<link rel="stylesheet" type="text/css" href="estilos/css/registroGrupos.css">
+
+	
+	
  <!--   <link rel="stylesheet" type="text/css" href="estilos/js/select-bootstrap.css"></link>
     <script type="text/javascript" src="estilos/js/select-bootstrap.js"></script>-->
-    <link rel="stylesheet" type="text/css" href="estilos/css/reporteDocente.css">	
+    <link rel="stylesheet" type="text/css" href="estilos/css/reporteDocente.css">
     <script src="estilos/js/marcus-jquery.js"></script>
     <script src="estilos/js/marcus-bootstrap.js"></script>
     <link href="estilos/js/marcus-bootstrap.css" rel="stylesheet"/>
@@ -45,14 +50,14 @@
     <script src="estilos/js/select/bootstrap.js"></script>
 
     <!--FIN HOJAS DE ESTILO-->
-   
+
     <!--INICIO JAVA SCRIPT-->
     <link rel="stylesheet" href="estilos/css/jquery-ui.css">
     <script src="estilos/js/jquery.min.js"></script>
     <script src="estilos/js/jquery-ui.min.js"></script>
     <script src="estilos/js/cookie/jquery.cookie.js" ></script>
     <script src="estilos/js/moment.js"></script>
-    
+
     <script src="estilos/js/timer.js"></script>
     <script src="estilos/js/buscaMaterias.js"></script>
     <script src="estilos/js/buscarDocente.js"></script>

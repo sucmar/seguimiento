@@ -4,6 +4,7 @@ require 'funciones.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $id                 = $_REQUEST['id'];
+    $nombreFacultad      = $_POST['nombreFacultad'];
     $nombreCarrera      = $_POST['nombreCarrera'];
     $siglaCarrera       = $_POST['siglaCarrera'];
     $dptoCarrera        = $_POST['dptoCarrera'];
@@ -13,7 +14,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (!$conexion) {
             die();
         }
-        $sql = "UPDATE carrera SET NOMBRE_CARRERA='$nombreCarrera',SIGLA_CARRERA=' $siglaCarrera', DPTO_CARRERA=$dptoCarrera WHERE ID_CARRERA='$id'";
+        $sql = "UPDATE carrera, facultad SET 
+		NOMBRE_FACULTAD='$nombreFacultad',NOMBRE_CARRERA='$nombreCarrera',SIGLA_CARRERA=' $siglaCarrera', DPTO_CARRERA='$dptoCarrera' WHERE ID_CARRERA='$id'";
 
         $statement = $conexion->prepare($sql);
         $statement->execute();
