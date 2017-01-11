@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = hash('sha512', $password);
     // echo "$usuario - $password";
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=bd_seguimiento','root','');
+        $conexion = new PDO('mysql:host=localhost;dbname=bd_seguimiento','seg_user','seg_pass');
     } catch(PDOException $e) {
         echo "ERROR:". $e->getMessage();;
     }

@@ -20,6 +20,41 @@ if (isset($_SESSION['usuario'])){
         echo $e->getMessage();
     }
     $conexion = null;
+
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        echo 'hola';
+        $idMon          = $_POST['idMon'];
+        $interino       = $_POST['interino'];
+        $invitado       = $_POST['invitado'];
+        $asistente      = $_POST['asistente'];
+        $adjunto        = $_POST['adjunto'];
+        $catedratico    = $_POST['catedratico'];
+        $parcial        = $_POST['parcial'];
+        $exclusivo      = $_POST['exclusivo'];
+        $inicio         = $_POST['inicio'];
+        $gestion        = $_POST['gestion'];
+        $fin            = $_POST['fin'];
+        echo $idMon;
+        if (!$conexion) {
+            die();
+        }
+        try {
+            $statement3 = $conexion->prepare("INSERT INTO nombramiento (ID_DOCENTE,INTERINO_NOM,INVITADO_NOM,ASISTENTE_NOM,
+                                          ADJUNTO_NOM,CATEDRATICO_NOM,TIEMPO_PARCIAL_NOM,TIEMPO_EXCLUSIVO_NOM,TIEMPO_DURACION,
+                                          FECHA_SOLICITUD,INICIO_NOM)
+                                          VALUES ('$idMon','$interino','$invitado','$asistente','$adjunto','$catedratico','$parcial','$exclusivo',
+                                          '$gestion','$inicio','$fin')");
+            $statement3->execute();
+            //$docentes = $statement3->fetchAll();
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        $conexion = null;
+        header("Location: nombramiento.php");
+
+    }
     require 'views/nombramiento.view.php';
 } else {
     header('Location: login.php');

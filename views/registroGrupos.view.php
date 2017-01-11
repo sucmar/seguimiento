@@ -32,7 +32,7 @@
             </div>
         <legend>GRUPOS:</legend>
         		<div class="form-group">
-                    <label class:"form-control">(*) Nombre Grupo:</label>
+                    <label class="form-control">(*) Nombre Grupo:</label>
                     <input name="nom_grupo" class="form-control" type="text" pattern="[1-9A-Z]{1,2}" placeholder="grupo a asignar" style="width:50%;">
                     <input id="sig" type="hidden" name="sigla_post">
                 </div>
