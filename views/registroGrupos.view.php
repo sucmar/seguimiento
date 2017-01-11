@@ -4,61 +4,73 @@
      <fieldset>
         <legend>MATERIAS:</legend>
             <form action="registroGrupos.php"  method="post">
-        	<div class="form-group  tabla-cont table-hover">
-				<table class="table table-hover ta-mat">  
-					 <tr>
-                        <td> <strong>CODIGO</strong> </td>
-                        <td><strong>MATERIA </strong></td>
+
+                <div class="form-group">
+                    <label class=" control-label" >Buscar Materia</label>
+                    <input type="text" class="input-global form-group form-control" name="campoBuscador" id="buscarMateria" onkeyup="doSearch()" placeholder="busqueda rapida" style="width:50%;">
+                </div>
+
+        	<div class="form-group tbl">
+                <table class="table tabla-hover" id="tablaMateria">  
+                     <tr>
+                        <th class="titulo">SIGLA</th>
+                        <th class="titulo">MATERIA</th>
+                        <th class="titulo"></th>
+
                     </tr>
                    <tbody>
-					 
-					<?php foreach ($materias as $materia):?>
-						 <tr>
-						  <td name="sigla" id="sigla"><?php echo $materia['SIGLA_MATERIA'] ?></td>
-						  <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
-						  <td><button class="seleccionar">selecionar</button></td>
-						</tr>
-					<?php endforeach;?>
-			       </tbody>
-	            </table>
-		 </div>
+                     
+                    <?php foreach ($materias as $materia):?>
+                         <tr>
+                          <td name="sigla" id="sigla"><?php echo $materia['SIGLA_MATERIA'] ?></td>
+                          <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
+                          <td><button class="seleccionar btn">selecionar</button></td>
+                        </tr>
+                    <?php endforeach;?>
+                   </tbody>
+                </table>
+            </div>
         <legend>GRUPOS:</legend>
+        		<div class="form-group">
+                    <label class:"form-control">(*) Nombre Grupo:</label>
+                    <input name="nom_grupo" class="form-control" type="text" pattern="[1-9A-Z]{1,2}" placeholder="grupo a asignar" style="width:50%;">
+                    <input id="sig" type="hidden" name="sigla_post">
+                </div>
         <div class="form-group  tabla-cont table-hover">
 				<table class="table table-hover ta-mat">  
-				    <tbody>
+					<thead>
                     <tr>
                     <th name="materia"><strong>MATERIA</strong> </th>
-                    <th name="materia"><strong>ID</strong> </th>
-                    <td name="grupo"><strong>GRUPO</strong></td>
+                    <th name="materia"><strong></strong> </th>
+                    <th name="grupo"><strong>GRUPO</strong></th>
+					<th></th>
+					<th></th>
                     </tr>
+					</thead>
+				    <tbody>
 		<?php foreach ($grupos as $grupo):?>
              <tr>
               <td><?php echo $nombreMateria ?></td>
-              <td><?php echo $grupo['ID_GRUPO'] ?></td>
+              <td><?php $grupo['ID_GRUPO'] ?></td>
               <td><?php echo $grupo['NOM_GRUPO'] ?></td>
-              <td><button  class="seleccionarGrupo">selecionar</button></td> 
+              <td></td>
+		   	  <td><a href="eliminarGrupos.php?id=<?php echo $grupo['ID_GRUPO'] ?>" class="eliminar">eliminar</a></td> 
+
             </tr>
         <?php endforeach;?>
 				    </tbody>
 				  </table>
 				 </div>
 
-        <div class="form-group col-sm-12" >
-            <label class:"form-control">Asignar grupo</label>
-                </div>
+				
+				<p>NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</p>
                 
-                <div class="form-group col-sm-6" >
-                    <label class:"form-control">Nombre Grupo:</label>
-                    <input name="nom_grupo" class="form-control" type="text">
-                    <input id="sig" type="hidden" name="sigla_post">
-                </div>
-                
-                <div class="btn-group col-sm-12" method="post">
-                        <button type="submit" name="insert" class="btn btn-cargo col-sm-3 btn-global" >Insertar</button>
-                        <button name="modify" class="btn btn-cargo col-sm-3 btn-global" type="submit" >Modificar</button>
-                        <button name="delete" class="btn btn-cargo col-sm-3 btn-global" type="submit" >Eliminar</button>
-                        <button name="salir" class="btn btn-cargo col-sm-3 btn-global" type="submit" >Salir</button>
-                </div>
+				<center>
+                		<div class="btn-inline" method="post">
+                        <button type="submit" name="insert" class="btn btn-cargo  btn-global" style="width:15%;">Insertar</button>
+                        <button name="salir" class="btn btn-cargo btn-global" type="submit" style="width:15%;">Salir</button>
+						</div>
+				</center>
             </form>
      </fieldset>
 </div>
@@ -71,6 +83,11 @@
     background-color : white;
     font-weight: bold;
 }
+.eliminarGrupo {
+    background-color : white;
+    font-weight: bold;
+}
+	
 </style>
 <script>
 $('.seleccionar').click(function () {
