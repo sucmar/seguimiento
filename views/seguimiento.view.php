@@ -111,11 +111,6 @@
 		</form>
 		<form class="form-inline" action="seguimiento.php" method="post">
 			<div class=" col-md-12">
-				
-				
-				
-				
-				
 				<div class="form-group  tabla-cont table-hover col-sm-4">
 				<table class="table table-hover ta-mat" id="tablaMateria">  
 					 <tr>
@@ -123,7 +118,6 @@
                         <td><strong>MATERIA </strong></td>
                     </tr>
                    <tbody>
-					 
 					<?php foreach ($materias as $materia):?>
 						 <tr>
 						  <td name="sigla" id="sigla"><?php echo $materia['SIGLA_MATERIA'] ?></td>
@@ -134,8 +128,6 @@
 			       </tbody>
 	            </table>
 		 		</div>
-                
-				
 				<div class="btn-group input-group-btn-vertical col-sm-1" method="post">
                     <input name="nom_grupo" class="form-control input-global" type="text" style="width:60px;">
                     <input id="sig" type="hidden" name="sigla_post">

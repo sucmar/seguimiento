@@ -4,7 +4,7 @@
     $idMateria=$_REQUEST['idMateria'];
     $grupo=$_REQUEST['grupo'];
 
-    $conexion = conexion('bd_seguimiento','root','');
+    $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
     $sql = "DELETE grupos,dia,hrs_academicas
             FROM doc_materia
             INNER JOIN grupos

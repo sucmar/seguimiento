@@ -8,7 +8,7 @@
 			echo '</script>';
 		};
 
-    $conexion = conexion('bd_seguimiento','root','');
+    $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
     if (!$conexion) {
         die();
     }
@@ -36,11 +36,12 @@
 	setcookie($cookie_nom_materia, $cookie_nomMateria);
 	setcookie('connected', false);
 
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria ORDER BY NOM_GRUPO ASC");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 
 	}
+	
 
 	if(isset($_POST['insert']) && isset($_COOKIE['idMateria']) && isset($_COOKIE['nomMateria'])) {
 		
@@ -55,7 +56,7 @@
         ));
 		global $nombreMateria;
 		$nombreMateria = $_COOKIE['nomMateria'];
-		$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
+		$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ORDER BY NOM_GRUPO");
 		$statementgrupo->execute();
 	    $grupos = $statementgrupo->fetchAll();
 	}
@@ -65,11 +66,13 @@
 	$idMateria1 = $_COOKIE['idMateria'];
 	global $nombreMateria;
 	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
+	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1");
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
+		
+		
 	}
-
+	/*
 	if(isset($_POST['delete']) && isset($_COOKIE['idGrupo'])) {
 		$idGrupo = $_COOKIE['idGrupo'];
      	$sql = "DELETE FROM grupo WHERE ID_GRUPO= $idGrupo";
@@ -97,7 +100,7 @@
 	$statementgrupo->execute();
     $grupos = $statementgrupo->fetchAll();
 	}
-
+	*/
 	
 	if(isset($_POST['salir'])) {
 		 header('Location: espacioSecretaria.php');

@@ -4,7 +4,7 @@ require 'funciones.php';
 if(!isset($_GET['var_js']) || empty($_GET['var_js'])){
     echo "";
 } else{
-    $conexion = conexion('bd_seguimiento','root','');
+    $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
     //echo "Exito!!!";
     $idDocente = $_GET['var_js'];
     //print_r($idDocente);

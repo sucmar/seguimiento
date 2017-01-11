@@ -4,7 +4,7 @@
 
 
 
-    $enlace = mysqli_connect("localhost", "root", "", "bd_seguimiento");
+    $enlace = mysqli_connect("localhost", 'seg_user', 'seg_pass', "bd_seguimiento");
     $lista=array();
 
 
@@ -52,7 +52,7 @@
         } 
 
 
-            $mysqli=new mysqli("localhost","root","","bd_seguimiento");
+            $mysqli=new mysqli("localhost",'seg_user', 'seg_pass',"bd_seguimiento");
             $query="SELECT * FROM aula  ORDER BY NOMBRE_AULA ASC ";
             $resultado=$mysqli->query($query);
 

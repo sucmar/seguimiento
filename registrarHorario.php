@@ -1,4 +1,4 @@
-<?php session_start();
+a<?php session_start();
 
 if (isset($_SESSION['usuario'])){
     require 'views/registrarHorario.view.php';
@@ -6,7 +6,7 @@ if (isset($_SESSION['usuario'])){
     header('Location: login.php');
 }
 
-$enlace = mysqli_connect("localhost", "root", "", "bd_seguimiento");
+$enlace = mysqli_connect("localhost", 'seg_user', 'seg_pass', "bd_seguimiento");
 
 
         if($_SERVER['REQUEST_METHOD'] == 'POST')

@@ -78,33 +78,37 @@
 
         document.getElementById("miTabla").innerHTML = tabla;
     }
-    setInterval(tiempoReal, 1000)
+    setInterval(tiempoReal, 10000)
 </script>
 <?php ?>
 <div class="alert alert-dismissible alert-info "><strong><p id="respa"></p></strong></div>
-<legend><strong><?php echo $docente['NOMBRE_DOC']."  ".$docente['APELLPATERNO_DOC']."  ".$docente['APELLMATERNO_DOC']?></strong></legend>
+<legend><strong><?php echo $docente['NOMBRE_DOC']."  ".$docente['APELLPATERNO_DOC']."  "
+            .$docente['APELLMATERNO_DOC']?></strong></legend>
 <div class="container nt-form-docs">
-<!-- MOSTRAMOS LAS MATERIAS QUE SE REGISTRARON POR FORMULARIO -->
-    
+    <!-- MOSTRAMOS LAS MATERIAS QUE SE REGISTRARON POR FORMULARIO -->
+
     <div class="table-hover col-md-12">
-    <legend>Lista de materia</legend>
-    <table  class="table table-bordered table-hover" id="table">
-        <thead class="thead-inverse">
-        <tr class="header">
-            <th >ID_MATERIA</th>
-            <th >NOMBRE_MATERIA</th>
-        </tr>
-        </thead>
-        <?php foreach ($materias as $materia):?>
-            <tr class="active">
-                <td id="ideMateria"><?php echo $materia['ID_MATERIA'] ?></td>
-                <td id="nombreMateria"><?php echo $materia['NOMBRE_MATERIA'] ?></td>
+        <legend>Lista de materia</legend>
+        <input type="text" class="input-global form-group form-control" name="campoBuscador" id="buscarMateria"
+               onkeyup="doSearch()">
+
+        <table  class="table table-bordered table-hover" id="tablaMateria">
+            <thead class="thead-inverse">
+            <tr class="header">
+                <th >ID_MATERIA</th>
+                <th >NOMBRE_MATERIA</th>
             </tr>
-        <?php endforeach;?>
-    </table>
+            </thead>
+            <?php foreach ($materias as $materia):?>
+                <tr class="active">
+                    <td id="ideMateria"><?php echo $materia['ID_MATERIA'] ?></td>
+                    <td id="nombreMateria"><?php echo $materia['NOMBRE_MATERIA'] ?></td>
+                </tr>
+            <?php endforeach;?>
+        </table>
     </div>
     <div class="col-md-12">
-    <form class="form-inline" role="form"" method="post" onsubmit="return enviar();">
+        <form class="form-inline" role="form"" method="post" onsubmit="return enviar();">
         <div class="form-group">
             <div>
                 <input type="text" class="form-control" disabled="disabled" name="valIdMateria" id="valIdMateria">
@@ -117,7 +121,9 @@
         </div>
         <div class="form-group">
             <div>
-                <input type="text" class="form-control" name="valIdDoc" disabled="disabled" id="valIdDoc" value="<?php echo $valor ?>">
+                <input type="text" class="form-control" name="valIdDoc" disabled="disabled" id="valIdDoc"
+                       value="<?php echo $valor ?>">
+
             </div>
         </div>
         <div class="form-group">
@@ -125,13 +131,13 @@
                 <input type="submit" class="btn btn-primary" value="asignar materia">
             </div>
         </div>
-    </form>
+        </form>
 
-    <h3>Lista de materia asignadas al docente</h3>
+        <h3>Lista de materia asignadas al docente</h3>
     </div>
 
     <section id="miTabla" class="col-md-12"></section>
     <div class="col-md-2 col-md-offset-5" >
-        <input type="button" class="btn btn-primary" value="SALIR" onClick="location.href='listaDocentesAsignacion.php'" />
+        <input type="button" class="btn btn-primary" value="SALIR" onClick="location.href='listaDocentesAsignacion.php'"/>
     </div>
 </div>

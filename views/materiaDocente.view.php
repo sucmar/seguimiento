@@ -1,6 +1,5 @@
 <?php include("views/global/header.view.php")?>
 <?php include('views/global/title.view.php')?>
-
 <script type="text/javascript">
     $(document).ready(function(){
         $("select[name=post_materia]").change(function(){
@@ -9,7 +8,6 @@
         });
     });
 </script>
-
 <div class="container nt-form-materiaDocente">
 
     <form name="fm-mat-doc" id="fm-mat-doc" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" onsubmit="return validate(); ">

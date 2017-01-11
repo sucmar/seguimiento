@@ -46,7 +46,7 @@
 			//echo $errores;
 		} else {
 			try {
-				$conexion = new PDO('mysql:host=localhost;dbname=bd_seguimiento','root','');
+				$conexion = new PDO('mysql:host=localhost;dbname=bd_seguimiento','seg_user', 'seg_pass');
 			}catch(PDOExeption $e){
 				echo "Error: " . $e->getMessage();
 			}

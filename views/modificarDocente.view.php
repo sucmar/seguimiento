@@ -4,22 +4,22 @@
         $("#fec-nac").datepicker();
     });
 </script>
-<script type="text/javascript">
-    function myFunction(){
-        var x = document.getElementById('miDiv');
-
-        x.style.display = 'none';
-
-    }
-</script>
-<script type="text/javascript">
-    function miFunction(){
-        var x = document.getElementById('miDiv');
-        if(x.style.display === 'none'){
-            x.style.display = 'block';
-        }
-    }
-</script>
+<!--<script type="text/javascript">-->
+<!--    function myFunction(){-->
+<!--        var x = document.getElementById('miDiv');-->
+<!---->
+<!--        x.style.display = 'none';-->
+<!---->
+<!--    }-->
+<!--</script>-->
+<!--<script type="text/javascript">-->
+<!--    function miFunction(){-->
+<!--        var x = document.getElementById('miDiv');-->
+<!--        if(x.style.display === 'none'){-->
+<!--            x.style.display = 'block';-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
 <div class="contenedor">
     <div class="container nt-form-docente ">
 
@@ -197,16 +197,21 @@
                     <input type="text" class="form-control in-tit input-global" id="profesion" name="profesion" placeholder="profesion"  value="<?php echo $docentes['PROFESION_DOC']; ?>" >
                 </div>
 
+                <div class="form-group div-form-pro col-md-3">
+                    <label for="formGroupExampleInput2">(*) Profesion:</label>
+                    <input type="text" class="form-control in-tit input-global" id="profesion" name="profesion" placeholder="profesion"  value="<?php echo $docentes['DIPLOMA_ACAD']; ?>" >
+                </div>
+
                 <div class="form-group div-form-ded col-md-3">
                     <label for="lab-ded">Dedicación:</label>
                     <select class="form-control select-global" name="dedicacion">
                         <?php if($docentes['DEDICACION_DOC'] == "PARCIAL"): ?>
-                        <option value="PARCIAL" onclick="myFunction()">Parcial</option>
-                        <option value="EXCLUSIVO" onclick="miFunction()">Exclusivo</option>
+                            <option value="PARCIAL" onclick="myFunction()">Parcial</option>
+                            <option value="EXCLUSIVO" onclick="miFunction()">Exclusivo</option>
                         <?php endif;?>
                         <?php if($docentes['DEDICACION_DOC'] == "EXCLUSIVO"):  ?>
-                            <option value="EXCLUSIVO" onclick="myFunction()">Exclusivo</option>
-                            <option value="PARCIAL" onclick="miFunction()">Parcial</option>
+                            <option value="EXCLUSIVO">Exclusivo</option>
+                            <option value="PARCIAL">Parcial</option>
                         <?php endif;?>
                     </select>
                 </div>
@@ -225,7 +230,7 @@
                         <?php endif;?>
                     </select>
                 </div>
-
+                <div class="clearfix"></div><br>
 
 
                 <div id="miDiv">
@@ -238,7 +243,7 @@
 
                         <div>
                             <label >Hrs. Teoria</label>
-                            <input  type="text" class="form-control"  name="horaTeoria" value="<?php echo $seguimiento['HRSTEORIA']; ?>">
+                            <input  type="text" class="form-control"  name="horaTeoria" value="<?php echo $total['hrsTeoriaMes']; ?>">
                         </div>
 
                         <div>
@@ -263,7 +268,7 @@
                             <label >Hrs. practica :</label>
                         </div>
                         <div>
-                            <input  type="text" class="form-control" name="horaPractica" value="<?php echo $seguimiento['HRSPRACTICA']; ?>">
+                            <input  type="text" class="form-control" name="horaPractica" value="<?php echo $total['hrsPracMes']; ?>">
                         </div>
 
                         <div>
@@ -343,23 +348,23 @@
                             <input type="text" class="form-control" name="rfcSiete" value="<?php echo $seguimiento['RCF7']; ?>">
                         </div>
                     </div>
-
+                    <!--mostrar los datos que se registran del docente total-->
                     <div class="form-group col-xs-2">
                         <div>
                             <label>TOTAL HORAS TRABAJADAS SEMANA:</label>
                         </div>
                         <div>
-                            <input type="text" class="form-control" name="totalHorasSemana" value="<?php echo $seguimiento['HRSTRABSEMANA']; ?>">
+                            <input type="text" class="form-control" name="totalHorasSemana" value="<?php echo $total['hrssemana']; ?>">
                         </div>
 
                         <div>
                             <label>TOTAL HORAS TRABAJADAS MENSUAL:</label>
                         </div>
                         <div>
-                            <input type="text" class="form-control" name="totalHorasMes" value="<?php echo $seguimiento['HRSTRABMES']; ?>">
+                            <input type="text" class="form-control" name="totalHorasMes" value="<?php echo $total['hrsMesMat']; ?>">
                         </div>
                         <div>
-                            <label>TOTLA HORAS AUTORIZADAS:</label>
+                            <label>TOTAL HORAS AUTORIZADAS:</label>
                         </div>
                         <div>
                             <input type="text" disabled="disabled" class="form-control" name="totalHorasAutorizadas" value="<?php echo $seguimiento['HRSAUTORIZADAS']; ?>">
@@ -374,7 +379,7 @@
                             <label>DEDICACION EXCLUSIVA:</label>
                         </div>
                         <div>
-                            <input type="text" class="form-control" name="dedicacionExclusiva" value="<?php echo $seguimiento['DEDICACIONEXCLUSIVA']; ?>">
+                            <input type="text" class="form-control" name="dedicacionExclusiva" value="<?php echo $totalExclusivo ?>">
                         </div>
                     </div>
 

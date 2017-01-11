@@ -5,7 +5,7 @@
 	$valor = $_REQUEST['valIdDoc'];//ID DEL DOCENTE
 	$valIdMateria = $_REQUEST['valIdMateria'];//ID DE LA MATERIA
 
-    $conexion = conexion('bd_seguimiento','root','');
+    $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
 
     $statement1 = $conexion->prepare("SELECT * FROM doc_materia WHERE ID_MATERIA='$valIdMateria' AND ID_DOCENTE='$valor'");
     $statement1->execute();

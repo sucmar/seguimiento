@@ -5,42 +5,42 @@
 
 
 
-    <div class="container nt-form-aulab">
+<div class="container nt-form-aulab">
 
-        <form name="fm-aula" id="fm-aula" action="actualizarAula.php?id=<?php echo $aulas['ID_AULA'] ?>" method="POST" onsubmit="return validate(); ">
+    <form name="fm-aula" id="fm-aula" action="actualizarAula.php?id=<?php echo $aulas['ID_AULA'] ?>" method="POST" onsubmit="return validate(); ">
 
-            <fieldset class="form-group ">
-                <LEGEND>Aula</LEGEND>
+        <fieldset class="form-group ">
+            <LEGEND>Aula</LEGEND>
 
-                <div class="form-group col-md-5">
-                    <label>(*) Nombre Aula:</label>
-                    <input type="text" class="form-control input-global " id="nom-aula" name="nom-aula" placeholder="624 B" required="required"  value="<?php echo $aulas['NOMBRE_AULA']; ?>" >
-                </div>
-                <div class="form-group col-md-7">
-                    <label>(*) Descripcion del Aula:</label>
-                    <input type="text" class="form-control input-global " id="des-aula" name="des-aula" placeholder="Ubicacion del aula" required="required"  value="<?php echo $aulas['DESCRIPCION_AULA']; ?>" >
-                </div>
-                <label>Llenar todos los campos con (*) </label>
-                <p id="error_de">click OK:</p>
-            </fieldset>
-        
-       
-            <div class=" form-group ">
-                <button type="submit" class="btn registrar btn-global" name="guardar" >Guardar</button>
-                <button type="button" value="SALIR" onClick="location.href='registrarAula.php'" class="btn cancelar btn-global"  >Salir</button>
-
+            <div class="form-group col-md-5">
+                <label>(*) Nombre Aula:</label>
+                <input type="text" class="form-control input-global " id="nom-aula" name="nom-aula" placeholder="624 B" required="required"  value="<?php echo $aulas['NOMBRE_AULA']; ?>" >
             </div>
-            <p id="error_para" ></p>
+            <div class="form-group col-md-7">
+                <label>(*) Descripcion del Aula:</label>
+                <input type="text" class="form-control input-global " id="des-aula" name="des-aula" placeholder="Ubicacion del aula" required="required"  value="<?php echo $aulas['DESCRIPCION_AULA']; ?>" >
+            </div>
+            <label>Llenar todos los campos con (*) </label>
+            <p id="error_de">click OK:</p>
+        </fieldset>
 
-        </form>
-	</div>
-    <script>
-        
+
+        <div class=" form-group ">
+            <button type="submit" class="btn registrar btn-global" name="guardar" >Guardar</button>
+            <button type="button" value="SALIR" onClick="location.href='registrarAula.php'" class="btn cancelar btn-global"  >Salir</button>
+
+        </div>
+        <p id="error_para" ></p>
+
+    </form>
+</div>
+<script>
+
     function validate()
     {
         var error="";
         var aula = /^[A-Za-z- -.]+$/;
-        var nombres = document.getElementById( "nom-aula" );      
+        var nombres = document.getElementById( "nom-aula" );
         if( nombres.value == "" || nombres.value.match(aula))
         {
             error = " Nombre de aula no deberia contener caracteres especiales y espacio ";
@@ -56,4 +56,4 @@
             return true;
         }
     }
-    </script>
+</script>

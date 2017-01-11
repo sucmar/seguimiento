@@ -4,7 +4,7 @@ include("views/global/header.view.php");
 
 $idDoc=$_REQUEST['valor'];
 
-$mysqli=new mysqli("localhost","root","","bd_seguimiento");
+$mysqli=new mysqli("localhost",'seg_user', 'seg_pass',"bd_seguimiento");
 //$query="SELECT * FROM doc_materia WHERE ID_DOCENTE='$idDoc'";
 $query="SELECT * 
         FROM doc_materia

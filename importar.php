@@ -3,7 +3,7 @@ include ('funciones.php');
 
 extract($_POST);
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=seg','root','');
+        $conexion = new PDO('mysql:host=localhost;dbname=seg','seg_user', 'seg_pass');
     }catch(PDOExeption $e){
         echo "Error: " . $e->getMessage();
     }

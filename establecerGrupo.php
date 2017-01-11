@@ -7,7 +7,7 @@
 
  //echo 'este es el ide materia    '.$idMateria.'</br>';
 
- $conexion = conexion('bd_seguimiento','root','');
+ $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
  $statement = $conexion->prepare("SELECT * FROM grupo WHERE ID_GRUPO='$Idgrupo'"); //selcciono el grupo con ese id
  $statement->execute();
  $grupos = $statement->fetch(PDO::FETCH_ASSOC); 

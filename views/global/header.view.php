@@ -32,6 +32,9 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/registrarAula.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/asignarMateriaDocente.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/materiaDocente.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/asignarGrupo.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/docente.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/gruposAsignados.css">
  <!--   <link rel="stylesheet" type="text/css" href="estilos/js/select-bootstrap.css"></link>
     <script type="text/javascript" src="estilos/js/select-bootstrap.js"></script>-->
     <link rel="stylesheet" type="text/css" href="estilos/css/reporteDocente.css">	

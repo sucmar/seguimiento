@@ -3,7 +3,7 @@
 
 if (isset($_SESSION['usuario'])){
     require 'funciones.php';
-    $conexion = conexion('bd_seguimiento', 'root', '');
+    $conexion = conexion('bd_seguimiento', 'seg_user', 'seg_pass');
     $valor = $_REQUEST['id'];
 
     if (!$conexion) {
@@ -21,6 +21,7 @@ if (isset($_SESSION['usuario'])){
         $statement3 = $conexion->prepare("SELECT * FROM docente WHERE ID_DOCENTE='$valor'");
         $statement3->execute();
         $docente = $statement3->fetch(PDO::FETCH_ASSOC);
+
     }catch(PDOException $e) {
         echo $e->getMessage();
     }

@@ -1,0 +1,15 @@
+div.tbl{
+  background-color: #F5F5F5;
+  border: 1px solid #CED5D7;
+  height: 86px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+table.table tr th.titulo {
+  background-color: #F5F5F5;
+
+}
+
+div.tb-materia {
+}

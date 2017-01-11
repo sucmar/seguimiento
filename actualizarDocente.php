@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $cargo            =$_POST['dedicacion'];
     $estado           =$_POST['estado'];
 
-    $conexion = conexion('bd_seguimiento','root','');
+    $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
 
     if($cargo == 'EXCLUSIVO'){
         $horaTeoria         = $_POST['horaTeoria'];
@@ -45,9 +45,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $tiempoParcial            =$_POST['tiempoParcial'];
         $dedicacionExclusiva        =$_POST['dedicacionExclusiva'];
         $observaciones           =$_POST['observaciones'];
-
-
-
 
         try{
             if (!$conexion) {
