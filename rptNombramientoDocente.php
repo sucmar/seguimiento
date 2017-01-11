@@ -16,7 +16,7 @@ if (isset($_SESSION['usuario'])) {
     $arregloHorasTotalesMes = $nombramientoDocente->get_horasTotalMes();
 
 //Llamada a la vista
-    require_once 'views/rptNombramientoDocente.view.php';
+    require 'views/rptNombramientoDocente.view.php';
 } else {
     header('Location: login.php');
 } ?>

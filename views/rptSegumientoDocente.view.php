@@ -68,6 +68,7 @@
 
         <div class="container">
             <button type="button" onclick="imprSelec('contenido');">Imprimir</button>
+            <button type="button" onClick="location.href='reporteDocente.php'">Salir</button>
             <fieldset>
 
                 <script src="estilos/js/jQuery.print.js"></script>
@@ -279,7 +280,7 @@
                             <tr>
                                 <td width="3%">Hrs. Teoria: <?= strtoupper($segui['sum(HRSTEORIA)']) ?></td>
                                 <td width="3%">Hrs. Práctica: <?= strtoupper($segui['sum(HRSPRACTICA)']) ?></td>
-                                <td width="3%">Hrs. Producción: <?= strtoupper($segui['HRSPRODUCCION_']) ?></td>
+                                <td width="3%">Hrs. Producción: <?= strtoupper($segui['HRSPRODUCCION']) ?></td>
                                 <td width="3%">R.C.F.Nº: <?= strtoupper($segui['RCF1']) ?></td>
                                 <td width="3%">RESUMEN: </td>
                             </tr>

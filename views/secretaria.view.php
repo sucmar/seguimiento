@@ -97,28 +97,28 @@
                 <ul>
 
                     <li>
-                        <a href="#" onclick="window.open('manualPDF.pdf')">
+                        <a href="#" onclick="window.open('ManualdelSistemaWeb.pdf')">
                             <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
                             ManualPDF
                         </a>
                     </li>
 
                     <li>
-                        <a href="">
+                        <a href="ManualdelSistemaWeb.docx" target="_blank">
                             <i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i>
                             ManualDOC
                         </a>
                     </li>
 
                     <li>
-                        <a href="">
+                        <a href="contactos.php">
                             <i class="fa fa-users fa-2x" aria-hidden="true"></i>
                             Contacto
                         </a>
                     </li>
 
                     <li>
-                        <a href="">
+                        <a href="varios.php">
                             <i class="fa fa-question-circle fa-2x" aria-hidden="true"></i>
                             Varios
                         </a>

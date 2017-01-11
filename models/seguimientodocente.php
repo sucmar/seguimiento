@@ -94,7 +94,18 @@ class seguimientodocente_model
         if (isset($_GET['ID_DOCENTE'])) {
             $ID_DOCE = $_GET['ID_DOCENTE'];
         }
-        $consulta = $this->db->query("select * , sum(HRSTEORIA), sum(HRSPRACTICA), (HRSTEORIA+HRSPRACTICA)TOTALSEM, ((HRSTEORIA+HRSPRACTICA)*4)TOTALMES from SEGUIMIENTO where ID_DOCENTE=" . $ID_DOCE);
+        $consulta = $this->db->query("select ASIS,ADJ,CAT,OTROCARGO,HRSPRODUCCION,
+					                          HRSINVESTIGACION,HRSEXTENCION,HRSSERVICIO,HRSPRACTICA,
+					                          RCF1,RCF2,RCF3,HRSPRODUCCION,HRSSERVICIOACADEMICO,HRSPRODUCACAD,HRSADMINACAD,
+					                          RCF4,RCF5,RCF6,RCF7,HRSTRABSEMANA,HRSTRABMES,sum(HRSTEORIA),sum(HRSPRACTICA),
+					                          (HRSTEORIA+HRSPRACTICA)TOTALSEM,((HRSTEORIA+HRSPRACTICA)*4)TOTALMES,
+					                          HRSAUTORIZADAS,OBSERVACIONES,TIEMPOPARCIAL,DEDICACIONEXCLUSIVA  
+		                              from seguimiento 
+		                              where ID_DOCENTE='$ID_DOCE'
+		                              GROUP BY ASIS,ADJ,CAT,OTROCARGO,HRSPRODUCCION,HRSINVESTIGACION,HRSEXTENCION,
+							                  HRSSERVICIO,HRSPRACTICA,RCF1,RCF2,RCF3,HRSPRODUCCION,HRSSERVICIOACADEMICO,HRSPRODUCACAD,
+							                  HRSADMINACAD,RCF4,RCF5,RCF6,RCF7,HRSTRABSEMANA,HRSTRABMES,HRSTEORIA,HRSPRACTICA,TOTALSEM,
+							                  TOTALMES,HRSAUTORIZADAS,OBSERVACIONES,TIEMPOPARCIAL,DEDICACIONEXCLUSIVA ");
        // console_log("HOLAAAAA".$consulta->fetch_assoc());
         while ($filas = $consulta->fetch_assoc()) {
             $this->arregloSeguimiento[] = $filas;

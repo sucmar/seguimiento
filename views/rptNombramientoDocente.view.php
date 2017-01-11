@@ -62,6 +62,7 @@
     <div class=container>
 
         <button type="button" onclick="imprSelec('contenido');" class="btn-primary">Imprimir</button>
+        <button type="button" onClick="location.href='reporteDocente.php'">Salir</button>
         <fieldset>
 
             <script src="estilos/js/jQuery.print.js"></script>
