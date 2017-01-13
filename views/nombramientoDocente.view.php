@@ -3,7 +3,7 @@
 
 <div class="nt-reporteDocente" >
     <fieldset>
-        <legend>Seguimiento de Docentes:</legend>
+        <legend>Nombramiento de Docentes:</legend>
 
         <form action="" method="POST" onsubmit="return validate()">
             <div class="form-group col-sm-12">
@@ -28,10 +28,8 @@
                             <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
                             <td id="apellidoM"><?php echo $docente['APELLMATERNO_DOC'] ?></td>
 
-                            <td><a href="rptSeguimientoDocente.php?ID_DOCENTE=<?= $docente['ID_DOCENTE']?>"
-                                   class="btn btn-primary btn-xs" id="btn_ver_reporte">ver Seguimiento</a></td>
-                            <!--<td><a href="rptNombramientoDocente.php?ID_DOCENTE=
-                                   class="btn btn-primary btn-xs" id="btn_ver_nombramiento">ver Nombramiento</a></td>-->
+                            <td><button class="btn btn-primary btn-xs" type="button" 
+                            onclick="location.href='nombramiento.php'">Seleccionar</button></td>
 
                         </tr>
                     <?php endforeach;?>

@@ -3,7 +3,7 @@
 
 if (isset($_SESSION['usuario'])){
     require 'funciones.php';
-    $conexion = conexion('bd_seguimiento', 'seg_user', 'seg_pass');
+    $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
     $valor = $_REQUEST['id'];
 
     if (!$conexion) {

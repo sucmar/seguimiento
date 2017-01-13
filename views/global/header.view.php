@@ -76,23 +76,6 @@
     <link type="text/css" href="estilos/css/bootstrap.min.css" />
     <link type="text/css" href="estilos/css/bootstrap-timepicker.min.css" />
 
-
-
-    <script>
-        $('document').ready(function () {
-            function hora() {
-                $.ajax({
-                    type: 'GET',
-                    url: 'funciones.php',
-                    success: function ($hora) {
-                        $('#hora').html($hora);
-                        setTimeout(hora(),1000);
-                    }
-                });
-            }
-            setTimeout(hora(),1000);
-        });
-    </script>
 </head>
 
 <style type="text/css">

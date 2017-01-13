@@ -6,7 +6,7 @@ if (isset($_SESSION['usuario'])){
     header('Location: login.php');
 }
 
-$enlace = mysqli_connect("localhost", 'seg_user', 'seg_pass', "bd_seguimiento");
+$enlace = mysqli_connect('localhost','seg_user', 'seg_pass','bd_seguimiento');
 
 
         if($_SERVER['REQUEST_METHOD'] == 'POST')

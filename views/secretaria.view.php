@@ -10,7 +10,7 @@
 
                     <span class="caret"></span>
                     <ul class="dropdown-menu inline-block" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="nombramiento.php">Docente</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="nombramientoDocente.php">Docente</a></li>
 
                     </ul>
                 </div>
@@ -86,8 +86,6 @@
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="listaDocentesAsignacion.php">asignacion docente grupo</a></li>
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registrarAula.php">Registro aulas</a></li>
-
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="registrarHorario.php">Registro periodo</a></li>
                     </ul>
 
                 </div>

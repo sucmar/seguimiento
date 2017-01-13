@@ -220,11 +220,11 @@
                 <div class="form-group div-form-ded col-md-3">
                     <label for="lab-ded">Estado:</label>
                     <select class="form-control select-global" name="estado">
-                        <?php if($docentes['ESTADO_DOC'] == "ACTIVO"): ?>
+                        <?php if($docentes['ACTIVIDAD'] == "ACTIVO"): ?>
                             <option value="ACTIVO">ACTIVO</option>
                             <option value="INACTIVO">INACTIVO</option>
                         <?php endif;?>
-                        <?php if($docentes['ESTADO_DOC'] == "INACTIVO"):  ?>
+                        <?php if($docentes['ACTIVIDAD'] == "INACTIVO"):  ?>
                             <option value="INACTIVO">INACTIVO</option>
                             <option value="ACTIVO">ACTIVO</option>
                         <?php endif;?>
@@ -367,7 +367,7 @@
                             <label>TOTAL HORAS AUTORIZADAS:</label>
                         </div>
                         <div>
-                            <input type="text" disabled="disabled" class="form-control" name="totalHorasAutorizadas" value="<?php echo $seguimiento['HRSAUTORIZADAS']; ?>">
+                            <input type="text" disabled="disabled" class="form-control" name="totalHorasAutorizadas" value="160">
                         </div>
                         <div>
                             <label>TIEMPO PARCIAL:</label>

@@ -12,34 +12,35 @@
             <LEGEND>Registro de Secreteria</LEGEND>                
                 <div class="form-group div-form-nom col-md-3">
                     <label for="lab-nombre">(*) Nombres:</label>
-                    <input type="text" class="form-control input-global" id="nombres" name="nombre" placeholder="nombres">
+                    <input type="text" class="form-control input-global" id="nombre" name="nombre" placeholder="nombres">
                 </div>
 
                 <div class="form-group div-form-ape-pat col-md-3">
                     <label for="lab-ape-pat">(*) Apellido Paterno</label>
-                    <input type="text" class="form-control input-global" id="ape-pat" name="apePaterno" placeholder="apellido paterno">
+                    <input type="text" class="form-control input-global" id="apePat" name="apePat" placeholder="apellido paterno">
                 </div>
 
                 <div class="form-group div-form-ape-mat col-md-3">
                     <label for="lab-ape-mat" >Apellido Materno</label>
-                    <input type="text" class="form-control input-global" id="ape-mat" name="apeMaterno" placeholder="apellido materno">
+                    <input type="text" class="form-control input-global" id="apeMat" name="apeMat" placeholder="apellido materno">
                 </div>
                 <div class="form-group div-from-sexo col-md-3">
                     <label for="lab-sexo">Sexo:</label>
-                    <select class="form-control sel-sexo select-global" name='sexo'>
-                        <option>FEMENINO</option>
-                        <option>MASCULINO</option>
+                    <select class="form-control sel-sexo select-global" name='sexo' id="sexo">
+                        <option value="F">FEMENINO</option>
+                        <option value="M">MASCULINO</option>
                     </select>
                 </div>
                 
 
                  <div class="form-group div-from-sexo col-md-3">
                     <label for="lab-sexo">Carrera :</label>
-                    <select class="form-control select-global" id="carrera" name="carrera" placeholder="carrera">
-                        <option>ING. SISTEMAS</option>
-                        <option>ING. QUIMICA</option>
-                        <option>ING. CIVIL</option>
+                    <select class="form-control select-global" name="carrera">
+                    <?php foreach ($carreras as $carrera):?>
+                        <option value="<?php echo $carrera['ID_CARRERA'] ?>"><?php echo $carrera['NOMBRE_CARRERA'] ?></option>
+                    <?php endforeach;?>
                     </select>
+                    
                 </div>
                 <div class="form-group div-form-tel-fij col-md-3">
                     <label for="lab-tel-fij-doc">(*) Cuenta</label>
@@ -48,12 +49,12 @@
 
                 <div class="form-group form-doc-celular col-md-3">
                     <label for="lab-celular">(*) Contraseña :</label>
-                    <input type="password" class="form-control input-global" id="pass1" name="password1" placeholder="password">
+                    <input type="password" class="form-control input-global" id="pass1" name="pass1" placeholder="password">
                 </div>
 
                 <div class="form-group form-doc-celular col-md-3">
                     <label for="lab-celular">(*) Repetir Contraseña :</label>
-                    <input type="password" class="form-control input-global" id="pass2" name="password2" placeholder="password">
+                    <input type="password" class="form-control input-global" id="pass2" name="pass2" placeholder="password">
                 </div>
 
 

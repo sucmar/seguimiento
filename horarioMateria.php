@@ -1,4 +1,10 @@
-
+<?php session_start();
+require 'funciones.php';
+function console_log( $data ){
+			echo '<script>';
+			echo 'console.log('. json_encode( $data ) .')';
+			echo '</script>';
+		};
     $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
     $idDocente=     $_REQUEST['idDoc'];
     $idMateria=     $_REQUEST['idMateria'];
@@ -46,7 +52,7 @@
             $hrIni  =$_POST['hrini'];
             $hrFin  =$_POST['hrfin'];
             $aula    =$_POST['aula'];
-            $enlace = mysqli_connect("localhost", "root", "", "bd_seguimiento");
+            $enlace = mysqli_connect('localhost','seg_user', 'seg_pass','bd_seguimiento');
             if (!$enlace) 
             {
                 echo "Error: No se pudo conectar a MySQL." . PHP_EOL;

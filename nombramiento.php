@@ -1,6 +1,6 @@
 <?php session_start();
 require 'funciones.php';
-$conexion = conexion('bd_seguimiento', 'seg_user', 'seg_pass');
+$conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
 if (isset($_SESSION['usuario'])){
 
     if (!$conexion) {

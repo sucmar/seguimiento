@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $nombreDpto      		= $_POST['nombreDpto'];
         $ubicacionDpto   		= $_POST['ubicacionDpto'];
 
-        $enlace = mysqli_connect("localhost", 'seg_user', 'seg_pass', "bd_seguimiento");
+        $enlace = mysqli_connect('localhost','seg_user', 'seg_pass','bd_seguimiento');
 
         if (!$enlace) {
             echo "Error: No se pudo conectar a MySQL." . PHP_EOL;

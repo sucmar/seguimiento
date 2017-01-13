@@ -3,7 +3,7 @@
     require 'funciones.php';
     if ($_SESSION['usuario']){
         //print_r($_SESSION['privilegio']);
-        $conexion = conexion('bd_seguimiento', 'seg_user', 'seg_pass');
+        $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
         if (!$conexion) {
             die();
         }

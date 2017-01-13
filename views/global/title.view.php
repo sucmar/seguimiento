@@ -3,8 +3,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <img src="images/logo2.png" class="img-responsive">
-                <div class="col-sm-4 horaT" id="hora"></div>
-
+              
             </div>
 
             <div class="col-sm-4">

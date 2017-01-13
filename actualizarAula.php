@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $descripcion = strtoupper($descripcion);
     echo "".$nombre ." ".$descripcion;
 
-    $conexion = conexion('bd_seguimiento', 'seg_user', 'seg_pass');
+    $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
     if (!$conexion) {
         die();
     }
