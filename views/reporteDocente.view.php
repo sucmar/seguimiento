@@ -44,7 +44,7 @@
           <center>
             <div class="btn-inline">
               
-              <button class="btn btn-default btn-global" type="submit" >Salir</button>
+              <button class="btn btn-default btn-global" type="button" onClick="location.href='espacioSecretaria.php'" >Salir</button>
             </div>
           </center>
 
