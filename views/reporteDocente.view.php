@@ -1,49 +1,93 @@
-<?php include("views/global/header.view.php")?>
+<?php include('views/global/header.view.php')?>
 
 
-<div class="nt-reporteDocente" >
-    <fieldset>
-        <legend>REPORTE DOCENTE:</legend>
+<div class="container nt-menu-titulo">
+    <div class="row">
 
-        <form action="" method="POST" onsubmit="return validate()">
-            <div class="form-group col-sm-12">
-                <label>(*) Criterio:</label>
-                <input class="form-control input-global" type="text" id="buscado" onkeyup="buscar()">
-            </div>
-            <div class="container col-sm-12">
-                <table class="table table-hover" id="data">
-                    <thead>
-                    <tr>
-                        <th>ID DOCENTE</th>
-                        <th>NOMBRE</th>
-                        <th>APELLIDO PATERNO</th>
-                        <th>APELLIDO MATERNO</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach ($docentes as $docente):?>
-                        <tr id="seleccionar">
-                            <td id="ide"><?php echo $docente['ID_DOCENTE'] ?></td>
-                            <td id="nombre"><?php echo $docente['NOMBRE_DOC'] ?></td>
-                            <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
-                            <td id="apellidoM"><?php echo $docente['APELLMATERNO_DOC'] ?></td>
+        <div class="col-sm-4">
+            <img src="images/logo2.png" class="img-responsive">
+        </div>
 
-                            <td><a href="rptSeguimientoDocente.php?ID_DOCENTE=<?= $docente['ID_DOCENTE']?>"
-                                   class="btn btn-primary btn-xs" id="btn_ver_reporte">ver Seguimiento</a></td>
-                            <td><a href="rptNombramientoDocente.php?ID_DOCENTE=<?= $docente['ID_DOCENTE']?>"
-                                   class="btn btn-primary btn-xs" id="btn_ver_nombramiento">ver Nombramiento</a></td>
+        <div class="col-sm-4">
+            <h4 class="titulo"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
+        </div>
 
-                        </tr>
-                    <?php endforeach;?>
-                    </tbody>
-                </table>
-            </div>
-            <center>
-                <div class="btn-inline">
+        <div class="col-sm-4">
 
-                    <button class="btn btn-default btn-global" type="button" onclick="location.href='espacioSecretaria.php'">Salir</button>
-                </div>
-            </center>
-        </form>
-    </fieldset>
+            <form action="./espacioSecretaria.php" class="navbar-form navbar-right" >
+                <p style="color: white">
+                    <i class="fax" aria-hidden="true"></i>
+                </p>
+                <input type="submit" style="margin-top:15px" class="btn btn-success" name="" value="atrás">
+            </form>
+
+        </div>
+
+    </div>
 </div>
+
+<style type="text/css">
+    .fax {
+        height: 15px;
+    }
+    * {
+        border: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background-color: #F5F5F5;
+    }
+
+    div.nt-menu-titulo {
+        background-color: #3949AB;
+        border-bottom: 1px solid #BDBDBD;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+        width: 100%;
+    }
+
+    img {
+        margin-left: 50px;
+        width: 60px;
+    }
+
+    div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
+        font-family: verdana, arial, helvetica, sans-serif;
+        margin-top: 25px;
+        text-align: center;
+        color: white;
+    }
+</style>
+
+<div class="container nt-plantel-doc ">
+    <div class="container col-md-12 table table-hover">
+        <table class="table table-hover" id="tablaDocente">
+            
+            <LEGEND> 
+            <strong> Reporte Docente  <button class="btn btn-primary btn-xs" type="button" 
+            style="position:absolute; top:13px; right:25px;" onclick="window.open('ListaDocentes.xlsx')">ver Reporte</button>
+            </strong>
+            </LEGEND>
+          
+
+            <tbody>
+            <tr>
+                <td><strong>Nro. </strong></td>
+                <td><strong>Docentes </strong></td>
+                <td> <strong>Diploma Académico </strong></td>
+            </tr>
+            <?php foreach ($docentes as $docente):?>
+
+                <tr>
+                    <td class="idDocente"><?php echo $docente['ID_DOCENTE'] ?></td>
+                    <td ><?php echo $docente['APELLPATERNO_DOC']; echo "   " ; echo $docente['APELLMATERNO_DOC'] ; 
+                    echo " " ;echo $docente['NOMBRE_DOC']  ?></td>
+                    <td><?php echo $docente['PROFESION_DOC'] ?></td>
+                </tr>
+            <?php endforeach;?>
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+</div>
+<div id='respuesta'></div>

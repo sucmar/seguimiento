@@ -2,16 +2,13 @@
 require 'funciones.php';
 
 $id = $_REQUEST['id'];
-$conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
+$conexion = conexion('bd_seguimiento','seg_user','seg_pass');
 if (!$conexion) {
     die();
 } else {
-$statement = $conexion->prepare("SELECT * FROM docente WHERE ID_DOCENTE = '$id' AND ESTADO_DOC='ACTIVO'");
+$statement = $conexion->prepare("DELETE FROM docente WHERE ID_DOCENTE = '$id' AND ACTIVIDAD='ACTIVO'");
 $statement->execute();
 $docentes = $statement->fetchAll();
-if($docentes){
-    echo 'hoaldfsaas';
-    header ('Location: listaDocentes.php');
-}
+header ('Location: listaDocentes.php');
 
 }
