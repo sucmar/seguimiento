@@ -28,8 +28,7 @@
                             <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
                             <td id="apellidoM"><?php echo $docente['APELLMATERNO_DOC'] ?></td>
 
-                            <td><button class="btn btn-primary btn-xs" type="button" 
-                            onclick="location.href='nombramiento.php'">Seleccionar</button></td>
+                            <td><a class="btn btn-primary btn-xs" type="button" href="nombramiento.php?id=<?= $docente['ID_DOCENTE']?>">Seleccionar</a></td>
 
                         </tr>
                     <?php endforeach;?>

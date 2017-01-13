@@ -68,8 +68,8 @@
         </fieldset>
             <div class=" form-group div-btn col-md-offset-4">    
                 <button type="submit" id="button" value="aceptar" class="btn registrar btn-global">Registrar</button>
-            
-                 <button href="registroDocente.php" onclick="salir()" class="btn cancelar btn-global" >Cancelar</button>
+
+                <input type="button" class="btn btn-primary" value="SALIR" onClick="location.href='espacioSecretaria.php'"/>
             </div>  
             <p id="error_para" ></p>
         </form>

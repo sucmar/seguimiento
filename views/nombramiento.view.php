@@ -74,86 +74,40 @@
     });
 </script>
 
-<div class=" form-group col-md-4">
-    <button type="button" class="btn btn-default btn-global" data-toggle="modal" data-target="#myModal">Buscar</button>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <div class="modal-body">
-                <form>
-                    <div class="form-group col-sm-12">
-                        <label>(*) Criterio:</label>
-                        <input class="form-control input-global" type="text" id="buscado" onkeyup="buscar()">
-                    </div>
-                    <div class="container col-sm-12">
-                        <table class="table table-hover" id="data">
-                            <thead>
-                            <tr>
-                                <th>ID DOCENTE</th>
-                                <th>NOMBRE</th>
-                                <th>APELLIDO PATERNO</th>
-                                <th>APELLIDO MATERNO</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php foreach ($docentes as $docente):?>
-                                <tr id="seleccionar">
-                                    <td id="ide"><?php echo $docente['ID_DOCENTE'] ?></td>
-                                    <td id="nombreDoc"><?php echo $docente['NOMBRE_DOC'] ?></td>
-                                    <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
-                                    <td id="apellidoM"><?php echo $docente['APELLMATERNO_DOC'] ?></td>
-                                </tr>
-                            <?php endforeach;?>
-                            </tbody>
-                        </table>
-                    </div>
-                </form>
-                <p><b>Los campos con (*) deben ser llenados obligatoriamente.</b></p>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Fin Modal -->
-
+<?php ?>
 <div class="container nombramiento">
-    <form role="form" id="form_ajax" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
-        <fieldset>
+    <form role="form" id="form_ajax" action="registroNombramiento.php?id=<?php echo $docente['ID_DOCENTE'] ?>" method="POST" onsubmit="return verificaRadios(this)">
             <legend>Nombramiento de Docente</legend>
-            <div>
+            <div class="col-md-12">
+                <div class="col-md-3">
                     <label for="nombre" class="control-label">Nombre del Docente</label>
-                    <input type="text" class="form-control col-sm-4" id="idMon" name="idMon"/>
-                    <input class="form-control col-sm-4" disabled="disabled" id="nombre" type="text" name="nombre"/>
-                    <input class="form-control col-sm-4" disabled="disabled" id="apellido" type="text" name="apellido"/>
-            </div>
+                </div>
+                <?php $nombre="".$docente['NOMBRE_DOC']." ".$docente['APELLPATERNO_DOC']." ".$docente['APELLMATERNO_DOC'];?>
+                <div class=" form-group col-md-9">
+                    <input class="form-control" value="<?php echo $nombre; ?> " disabled="disabled" id="nombre" type="text" name="nombre"/>
+                </div>
+
 
             <div class="d-borde col-md-12">
-                <div class=" col-md-10">
+                <div class=" col-md-12">
                     <label class="">Categoria del Nombramiento Solicitado</label>
                 </div>
 
-                <div class="form-group col-md-6">
-                        <input type="radio" name="interino" value="X">Interino:<br>
-                        <input type="radio"   name="invitado" value="X"> Invitado:
-                </div>
-                <div class="checkbox col-md-6">
-                        <input type="radio" name="x" value="asistente"> Asistente (A):<br>
-                        <input type="radio" name="x" value="adjunto"> Adjunto(B):<br>
-                        <input type="radio" name="x" value="catedratico"> Catedratico(C):
+                <div class="form-group col-md-offset-5">
+                        <input type="radio" name="categoria" value="1">Interino:<br>
+                        <input type="radio" name="categoria" value="2"> Invitado:<br>
+                        <input type="radio" name="categoria" value="3"> Asistente (A):<br>
+                        <input type="radio" name="categoria" value="4"> Adjunto(B):<br>
+                        <input type="radio" name="categoria" value="5"> Catedratico(C):
                 </div>
             </div>
 
             <div>
-                    <label class="control-label">Tiempo de Dedicacion:</label>
-                    <input  type="radio" name="y" value="parcial"> Parcial
-                    <input  type="radio" name="y" value="exclusivo"> Exclusivo
+                    <label class="control-label">Tiempo de Dedicacion:</label> <br>
+            </div>
+            <div class="col-md-offset-3">
+                    <input class="col-md-offset-" type="radio" name="tiempo" value="1"> Parcial
+                    <input  type="radio" name="tiempo" value="2"> Exclusivo
             </div>
 
             <br>
@@ -169,11 +123,41 @@
                 <label>Fecha de Solicitud:</label>
                 <input class="form-hh input-global" type="text" name="fin" placeholder="AAAA-DD-MM">
             </div>
-        </fieldset>
-            <div class="btn-inline col-md-12">
-            <button type="submit" class="btn registrar btn-global" >Registrar</button>
-            <button type="button" class="btn btn-info btn-global btn-bs" onClick="location.href='espacioSecretaria.php'"> Salir</button>
+            <br>
+            <br>
+            <br>
+            <div class=" col-md-offset-4">
+                <button type="submit" class="btn registrar btn-global" >Registrar</button>
+                <button type="button" class="btn btn-info btn-global btn-bs" onClick="location.href='espacioSecretaria.php'"> Salir</button>
             </div>
-
     </form>
 </div>
+
+
+<script type="text/javascript">
+    function verificaRadios(form){
+        marcado=false;
+        marcado2=false;
+        for ( var i = 0; i < form.categoria.length; i++ ) {
+            if (form.categoria[i].checked)
+            {
+                
+                marcado = true;
+            }
+          
+        }
+        
+        if(!marcado ){
+            alert("Por favor, debe elegir una opción de categoria del nombramiento!");
+           
+                return false;
+             
+        }
+        else{
+            return true;
+        }
+
+        
+
+    }
+    </script>
