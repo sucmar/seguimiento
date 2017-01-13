@@ -11,7 +11,14 @@ if (isset($_SESSION['usuario'])){
     header('Location: login.php');
 }
 
-$statement = $conexion->prepare("SELECT ID_DOCENTE, NOMBRE_DOC, APELLPATERNO_DOC, APELLMATERNO_DOC, DEDICACION_DOC FROM docente ");
+$statement = $conexion->prepare("SELECT doc_materia.ID_DOCENTE,NOMBRE_DOC,APELLPATERNO_DOC,APELLMATERNO_DOC
+                                  FROM docente
+                                  INNER JOIN nombramiento
+                                  ON docente.ID_DOCENTE=nombramiento.ID_DOCENTE
+                                  INNER JOIN doc_materia
+                                  ON docente.ID_DOCENTE=doc_materia.ID_DOCENTE
+                                  GROUP BY docente.ID_DOCENTE; 
+                                 ");
 $statement->execute();
 $docentes = $statement->fetchAll();
 
