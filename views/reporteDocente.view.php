@@ -29,7 +29,7 @@
                                                     <tr id="seleccionar">
                                                         <td id="ide"><?php echo $docente['ID_DOCENTE'] ?></td>
                                                         <td id="nombre"><?php echo $docente['NOMBRE_DOC'] ?></td>
-                        0                                <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
+                                                        <td id="apellidoP"><?php echo $docente['APELLPATERNO_DOC'] ?></td>
                                                         <td id="apellidoM"><?php echo $docente['APELLMATERNO_DOC'] ?></td>
 
                                                         <td><a href="rptSeguimientoDocente.php?ID_DOCENTE=<?= $docente['ID_DOCENTE']?>" class="btn btn-primary btn-xs" id="btn_ver_reporte">ver Seguimiento</a></td>
