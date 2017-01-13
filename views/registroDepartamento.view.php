@@ -6,6 +6,16 @@
     <legend>REGISTRO DE DEPARTAMENTO:</legend>
         
         <form action="" method="POST" onsubmit="return validate()">
+			<div class="form-group col-sm-12">
+                <label>(*) Nombre Facultad:</label>
+                <select class="form-control select-global" name="nombreFacultad">
+                    <?php foreach ($facultades as $facultad):?>
+                        <option><?php echo $facultad['NOMBRE_FACULTAD'] ?></option>
+                    <?php endforeach;?>
+                </select> 
+            
+            </div>
+			
 			<div class="form-group col-sm-6">
                 <label>(*) Nombre de Departamento:</label>
                 <input class="form-control input-global" type="text" id="nombreDpto" name="nombreDpto" required>

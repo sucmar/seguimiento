@@ -29,6 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $query = "INSERT INTO facultad(NOMBRE_FACULTAD, UBICACION_FACULTAD)
                        VALUES('$nombreFacultad','$ubicacionFacultad')";
                 mysqli_query($enlace,$query);
+				echo " <h4 align='center' style='color:blue;'>registro completo.</h4> ";
             }
         }
         mysqli_close($enlace);

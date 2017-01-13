@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             die();
         }
         $sql = "UPDATE carrera, facultad SET 
-		NOMBRE_FACULTAD='$nombreFacultad',NOMBRE_CARRERA='$nombreCarrera',SIGLA_CARRERA=' $siglaCarrera', DPTO_CARRERA='$dptoCarrera' WHERE ID_CARRERA='$id'";
+		NOMBRE_FACULTAD='$nombreFacultad',NOMBRE_CARRERA='$nombreCarrera',SIGLA_CARRERA='$siglaCarrera', DPTO_CARRERA='$dptoCarrera' WHERE ID_CARRERA='$id'";
 
         $statement = $conexion->prepare($sql);
         $statement->execute();
