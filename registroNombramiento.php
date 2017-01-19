@@ -10,13 +10,12 @@ if (isset($_SESSION['usuario']))
     $invitado="";
     $asistente="";
     $adjunto="";
-    $catedratico=""; 
+    $catedratico="";
     $parcial="";
-    $exclusivo=""; 
-   
-    if($_SERVER['REQUEST_METHOD'] == 'POST') 
+    $exclusivo="";
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        echo 'hola';
         //$idMon          = $_POST['idMon'];
         $categoria     =$_POST['categoria'];
         $tiempo        = $_POST['tiempo'];
@@ -24,78 +23,76 @@ if (isset($_SESSION['usuario']))
         $inicio         = $_POST['inicio'];
         $gestion        = $_POST['gestion'];
         $fin            = $_POST['fin'];
-       // echo $idMon;
+        // echo $idMon;
         if (!$conexion) {
             die();
         }
         try {
-                if($categoria==1)
+            if($categoria==1)
+            {
+                $interino="x";
+
+            }else
+            {
+                if($categoria==2)
                 {
-                      $interino="x";
-                      
+                    $invitado="x";
+
                 }else
                 {
-                    if($categoria==2)
+                    if($categoria==3)
                     {
-                          $invitado="x";
-                          
+
+                        $asistente="x";
+
                     }else
                     {
-                        if($categoria==3)
+                        if($categoria==4)
                         {
-                             
-                              $asistente="x";
-                              
+
+                            $adjunto="x";
+
                         }else
                         {
-                            if($categoria==4)
+                            if($categoria==5)
                             {
-                                  
-                                  $adjunto="x";
-                                
-                            }else
-                            {
-                                if($categoria==5)
-                                {
-                                      
-                                      $catedratico="x"; 
-                                } 
+
+                                $catedratico="x";
                             }
                         }
                     }
                 }
+            }
 
-                if($tiempo==1)
-                {   
-                    $parcial    = "x";
-                    $exclusivo  = "";    
-                }else
+            if($tiempo==1)
+            {
+                $parcial    = "x";
+                $exclusivo  = "";
+            }else
+            {
+                if($tiempo==2)
                 {
-                    if($tiempo==2)
-                    {
-                        $parcial    = "";
-                        $exclusivo  = "x";
-                    }
+                    $parcial    = "";
+                    $exclusivo  = "x";
                 }
-                
-            
+            }
+
+
             $statement3 = $conexion->prepare("INSERT INTO nombramiento (ID_DOCENTE,INTERINO_NOM,INVITADO_NOM,ASISTENTE_NOM,
                                           ADJUNTO_NOM,CATEDRATICO_NOM,TIEMPO_PARCIAL_NOM,TIEMPO_EXCLUSIVO_NOM,TIEMPO_DURACION,
                                           FECHA_SOLICITUD,INICIO_NOM)
                                           VALUES ('$idDocente','$interino','$invitado','$asistente','$adjunto','$catedratico','$parcial','$exclusivo',
-                                          '$gestion','$inicio','$fin')"); 
+                                          '$gestion','$inicio','$fin')");
             $statement3->execute();
             $docentes = $statement3->fetchAll();
             //header('Location: espacioSecretaria.php');
-             //header("Location: espacioSecretaria.php");
-            
+            //header("Location: espacioSecretaria.php");
+
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-}
-        $conexion = null;
     }
-if (isset($_SESSION['usuario'])){
+    $conexion = null;
     header( 'Location: espacioSecretaria.php');
 } else {
     header('Location: login.php');
