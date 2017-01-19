@@ -53,6 +53,7 @@ class seguimientodocente_model
 
     public function get_docente()
     {
+
         function console_log($data)
         {
             echo '<script>';
@@ -60,18 +61,18 @@ class seguimientodocente_model
             echo '</script>';
         }
 
-        ;
+        //;
         if (isset($_GET['ID_DOCENTE'])) {
             $ID_DOCE = $_GET['ID_DOCENTE'];
         }
-        $consulta = $this->db->query("select * from DOCENTE where ID_DOCENTE=" . $ID_DOCE);
-        console_log($consulta);
-        if ($consulta) {
+        $consulta = $this->db->query("select * from docente where ID_DOCENTE=" . $ID_DOCE);
+        //console_log($consulta);
+        if ($consulta->num_rows) {
             while($filas = $consulta->fetch_assoc()){
                 $this->arDocentes[] = $filas;
             }
         }
-        print_r($filas);
+        //print_r($filas);
         return $this->arDocentes;
     }
 
@@ -80,13 +81,14 @@ class seguimientodocente_model
         if (isset($_GET['ID_DOCENTE'])) {
             $ID_DOCE = $_GET['ID_DOCENTE'];
         }
-        $consulta = $this->db->query("select ID_MATERIA from DOC_MATERIA where ID_DOCENTE=" . $ID_DOCE);
-        if ($consulta) {
+        $consulta = $this->db->query("select ID_MATERIA from doc_materia where ID_DOCENTE=" . $ID_DOCE);
+        if ($consulta->num_rows) {
 
             while ($filas = $consulta->fetch_assoc()) {
                 $obj = $filas['ID_MATERIA'];
-                console_log($obj);
-                $this->arregloIdMateria[] = $obj;
+                //console_log($obj);
+                
+		$this->arregloIdMateria[] = $obj;
                 console_log($this->arregloIdMateria);
             }
         }
@@ -113,7 +115,7 @@ class seguimientodocente_model
 							                  HRSADMINACAD,RCF4,RCF5,RCF6,RCF7,HRSTRABSEMANA,HRSTRABMES,HRSTEORIA,HRSPRACTICA,TOTALSEM,
 							                  TOTALMES,HRSAUTORIZADAS,OBSERVACIONES,TIEMPOPARCIAL,DEDICACIONEXCLUSIVA ");
         // console_log("HOLAAAAA".$consulta->fetch_assoc());
-        if ($consulta) {
+        if ($consulta->num_rows) {
             while ($filas = $consulta->fetch_assoc()) {
                 $this->arregloSeguimiento[] = $filas;
             }
@@ -130,7 +132,7 @@ class seguimientodocente_model
         }
         $consulta = $this->db->query("SELECT s.HRSTEORIA, s.HRSPRACTICA FROM seguimiento s JOIN docente d ON s.ID_DOCENTE=d.ID_DOCENTE WHERE d.ID_DOCENTE =" . $ID_DOCE);
         console_log($consulta);
-        if ($consulta) {
+        if ($consulta->num_rows) {
             while ($filas = $consulta->fetch_assoc()){
             $this->arreglohora[] = $filas;
             }
@@ -155,8 +157,8 @@ class seguimientodocente_model
         }
 
 
-        $consulta = $this->db->query("select ID_MATERIA from DOC_MATERIA where ID_DOCENTE=" . $ID_DOCE);
-        if ($consulta) {
+        $consulta = $this->db->query("select ID_MATERIA from doc_materia where ID_DOCENTE=" . $ID_DOCE);
+        if ($consulta->num_rows) {
             while ($filas = $consulta->fetch_assoc()) {
                 $obj = $filas['ID_MATERIA'];
                 //console_log($obj);
@@ -168,8 +170,8 @@ class seguimientodocente_model
             //MATERIAS
             foreach ($this->arregloIdMateria as &$idMateria) {
                 //  console_log($idMateria);
-                $consulta = $this->db->query("select ID_CARRERA, NOMBRE_MATERIA, SIGLA_MATERIA from MATERIA where ID_MATERIA=" . $idMateria);
-                if ($consulta) {
+                $consulta = $this->db->query("select ID_CARRERA, NOMBRE_MATERIA, SIGLA_MATERIA from materia where ID_MATERIA=" . $idMateria);
+                if ($consulta->num_rows) {
                     while ($filas = $consulta->fetch_assoc()){
                     $obj = $filas['ID_CARRERA'];
                     $this->arregloMateriass[] = $filas;
@@ -181,8 +183,8 @@ class seguimientodocente_model
 
             //CARRERA
             foreach ($this->arregloIdCarrera as &$idCarrera) {
-                $consulta = $this->db->query("select ID_FACULTAD, ID_DPTO, NOMBRE_CARRERA from CARRERA where ID_CARRERA=" . $idCarrera);
-                if ($consulta) {
+                $consulta = $this->db->query("select ID_FACULTAD, ID_DPTO, NOMBRE_CARRERA from carrera where ID_CARRERA=" . $idCarrera);
+                if ($consulta->num_rows) {
                     while ($filas = $consulta->fetch_assoc()){
                     $obj = $filas['ID_FACULTAD'];
                     $obj2 = $filas['ID_DPTO'];
@@ -197,8 +199,8 @@ class seguimientodocente_model
 
             //FACULTAD
             foreach ($this->arregloFacultad as &$idFacultad) {
-                $consulta = $this->db->query("select NOMBRE_FACULTAD from FACULTAD where ID_FACULTAD=" . $idFacultad);
-                if ($consulta) {
+                $consulta = $this->db->query("select NOMBRE_FACULTAD from facultad where ID_FACULTAD=" . $idFacultad);
+                if ($consulta->num_rows) {
                     while ($filas = $consulta->fetch_assoc()){
                     $obj = $filas['NOMBRE_FACULTAD'];
                     $this->arregloFacultadess[] = $filas;
@@ -210,8 +212,8 @@ class seguimientodocente_model
             }
             //DEPARTAMENTO
             foreach ($this->arregloDpto as &$idDpto) {
-                $consulta = $this->db->query("select NOMBRE_DPTO from DEPARTAMENTO where ID_DPTO=" . $idDpto);
-                if ($consulta) {
+                $consulta = $this->db->query("select NOMBRE_DPTO from departamento where ID_DPTO=" . $idDpto);
+                if ($consulta->num_rows) {
                     while ($filas = $consulta->fetch_assoc()){
                     $obj = $filas['NOMBRE_DPTO'];
                     $this->arregloDepartamentos[] = $filas;
@@ -221,20 +223,6 @@ class seguimientodocente_model
                 }
             }
 
-//            //seguimiento-horas semana
-//            //print_r($this->arreglohrsT);
-//            foreach ($this->arreglohrs as &$total) {
-//                $consulta = $this->db->query("select HRSTEORIA, HRSPRACTICA from SEGUIMIENTO where ID_DOCENTE=" . $total);
-//                if ($consulta) {                     $filas = $consulta->fetch_assoc();
-//                    $obj1 = $filas['HRSTEORIA'];
-//                    $obj2 = $filas['HRSPRACTICA'];
-//                    $this->arreglohrsTo[] = $filas;
-//                    $this->arreglohrsT[] = $obj1;
-//                    $this->arreglohrsT[] = $obj2;
-//                    console_log($obj1);
-//                    console_log($obj2);
-//                }
-//            }
             $arr_length = count($this->arregloIdMateria);
             for ($i = 0; $i < $arr_length; $i++) {
                 //

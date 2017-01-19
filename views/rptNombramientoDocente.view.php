@@ -209,11 +209,12 @@
                     </div>
                     <?php
                     foreach ($arregloNombramientoS as $nombramientos) { ?>
+			<?php } ?>
                         <p>10.-Nombramiento apartir de: &nbsp; <b><?= ($nombramientos['FECHA_SOLICITUD']) ?></b></p>
                         <p>11.-Tiempo de Duración del Nombramiento: &nbsp;
                             <b><?= strtoupper($nombramientos['TIEMPO_DURACION']) ?></b></p>
                         <p>12.-Fecha de Solicitud: &nbsp; <b><?= ($nombramientos['FECHA_SOLICITUD']) ?></b></p>
-                    <?php } ?>
+                    
 
                 </div>
 

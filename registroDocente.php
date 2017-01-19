@@ -9,21 +9,21 @@ if (isset($_SESSION['usuario'])){
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    $nombres         = $_POST['nombre'];
-    $apellidoPaterno = $_POST['apePaterno'];
-    $apellidoMaterno = $_POST['apeMaterno'];
-    $profesion          = $_POST['profesion'];
+    $nombres         = strtoupper($_POST['nombre']);
+    $apellidoPaterno = strtoupper($_POST['apePaterno']);
+    $apellidoMaterno = strtoupper($_POST['apeMaterno']);
+    $profesion          = strtoupper($_POST['profesion']);
     $ci              = $_POST['ci'];
     $expedido        = $_POST['departamento'];
     $fechaNacimiento = $_POST['fecNacimiento'];
     $sexo            = $_POST['sexo'];
     $telFijo         = $_POST['telf'];
     $celular         = $_POST['cel'];
-    $direcDomicilio  = $_POST['direccion'];
+    $direcDomicilio  = strtoupper($_POST['direccion']);
     $correoElectronico=$_POST['correo'];
     $cargo            =$_POST['dedicacion'];
     $estado           =$_POST['estado'];
-    $titulo           =$_POST['titulo'];
+    $titulo           = strtoupper($_POST['titulo']);
 
     $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
 
