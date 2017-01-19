@@ -1,5 +1,6 @@
 <?php include("views/global/header.view.php")?>
 <?php include('views/global/title.view.php')?>
+
 <script>
     $(document).ready(function() {
         $("#fec-nac").datepicker();
@@ -21,6 +22,7 @@
         }
     }
 </script>
+
 <div>
     <form role="form" name="importar" method="post" action="./importar.php" enctype="multipart/form-data" >
         <input id="file" type="file" name="file"/>
@@ -40,18 +42,18 @@
 
                 <div class="form-group div-form-ape-pat col-md-3">
                     <label for="lab-ape-pat">(*) Apellido Paterno</label>
-                    <input type="text" REQUIRED class="form-control input-global" id="ape-pat" name="apePaterno" placeholder="apellido paterno"  >
+                    <input type="text" required class="form-control input-global" id="ape-pat" name="apePaterno" placeholder="apellido paterno"  >
                 </div>
 
                 <div class="form-group div-form-ape-mat col-md-3">
                     <label for="lab-ape-mat" >Apellido Materno</label>
-                    <input type="text" REQUIRED class="form-control input-global" id="ape-mat" name="apeMaterno" placeholder="apellido materno">
+                    <input type="text" required class="form-control input-global" id="ape-mat" name="apeMaterno" placeholder="apellido materno">
                 </div>
 
                 <div class="col-md-3">
                     <div class="form-group col-xs-2 div-form-ci">
                         <label for="lab-ci"> (*) C.I.:</label>
-                        <input type="text" REQUIRED class="form-control input-global" id="ci" name="ci" placeholder="carnet">
+                        <input type="text" required class="form-control input-global" id="ci" name="ci" placeholder="carnet">
                     </div>
 
                     <div class="form-group col-xs-2 div-form-sel">
@@ -72,7 +74,7 @@
 
                 <div class="form-group div-form-fec-nac col-md-3">
                     <label for="lab-fec-nac">(*) Fecha de Nacimiento:</label>
-                    <input type="text" REQUIRED class="form-control input-global" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
+                    <input type="text" required class="form-control input-global" id="fec-nac" name="fecNacimiento" placeholder="dd/mm/aa">
                 </div>
 
                 <div class="form-group div-from-sexo col-md-2">
@@ -85,32 +87,32 @@
 
                 <div class="form-group div-form-tel-fij col-md-2">
                     <label for="lab-tel-fij-doc">Teléfono Fijo</label>
-                    <input type="text" class="form-control input-global" id="tel-fij-doc" name="telf" placeholder="telefono">
+                    <input type="text" required class="form-control input-global" id="tel-fij-doc" name="telf" placeholder="telefono">
                 </div>
 
                 <div class="form-group form-doc-celular col-md-2">
                     <label for="lab-celular">(*) Celular:</label>
-                    <input type="text" REQUIRED class="form-control input-global" id="celular-doc" name="cel" placeholder="celular">
+                    <input type="text" required class="form-control input-global" id="celular-doc" name="cel" placeholder="celular">
                 </div>
 
                 <div class="form-group div-form-dir-dom col-md-3">
                     <label for="formGroupExampleInput2">(*) Dirección Domiciliaria:</label>
-                    <input type="text" REQUIRED class="form-control input-global" id="direccion" name="direccion" placeholder="domicilio">
+                    <input type="text" required class="form-control input-global" id="direccion" name="direccion" placeholder="domicilio">
                 </div>
 
                 <div class="form-group div-form-cor-elc col-md-3">
                     <label for="formGroupExampleInput2">(*) Correo Electrónico</label>
-                    <input type="text" REQUIRED class="form-control input-global" id="email" name="correo" placeholder="xyz@dominio.com">
+                    <input type="text" required class="form-control input-global" id="email" name="correo" placeholder="xyz@dominio.com">
                 </div>
 
                 <div class="form-group div-form-pro col-md-3">
                     <label for="formGroupExampleInput2">(*) Profesion:</label>
-                    <input type="text" REQUIRED class="form-control in-tit input-global" id="profesion" name="profesion" placeholder="profesion">
+                    <input type="text" required class="form-control in-tit input-global" id="profesion" name="profesion" placeholder="profesion">
                 </div>
 
                 <div class="form-group div-form-pro col-md-3">
                     <label for="formGroupExampleInput2">(*) Titulo academico:</label>
-                    <input type="text" REQUIRED class="form-control in-tit input-global" id="titulo" name="titulo" placeholder="titulo">
+                    <input type="text" required class="form-control in-tit input-global" id="titulo" name="titulo" placeholder="titulo">
                 </div>
 
                 <div class="form-group div-form-ded col-md-3">
@@ -297,7 +299,7 @@
 
             <div class=" form-group col-mod-4 col-md-offset-4">
                 <input type="hidden" name="ajax">
-                <button type="submit" class="btn registrar btn-global" >Registrar</button>
+                <button type="submit" class="btn registrar btn-global" id="btn">Registrar</button>
                 <button type="button" onClick="location.href='espacioSecretaria.php'" class="btn cancelar btn-global" >Cancelar</button>
             </div>
         </form>

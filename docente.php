@@ -1,6 +1,4 @@
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
 <?php session_start();
-
 if (isset($_SESSION['usuario'])){
     require 'funciones.php';
     $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
@@ -30,3 +28,5 @@ if (isset($_SESSION['usuario'])){
 } else {
     header('Location: login.php');
 }
+
+?>
