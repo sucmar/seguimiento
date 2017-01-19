@@ -132,7 +132,7 @@
                             <tbody>
                             <?php
                             foreach ($arregloNombramientoS as $nombramientos) { ?>
-
+                            <?php } ?>
                                 <tr>
                                     <td width="300" class="text-center"><p>INTERINO:
                                             <b><?= ($nombramientos['INTERINO_NOM']) ?></b></p></td>
@@ -151,7 +151,7 @@
                                             <b><?= ($nombramientos['CATEDRATICO_NOM']) ?></b></p>:
                                     </td>
                                 </tr>
-                            <?php } ?>
+
                             </tbody>
                         </table>
 
