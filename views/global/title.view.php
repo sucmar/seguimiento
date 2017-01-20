@@ -21,7 +21,55 @@
 
 
         </div>
-    </div>
+ </div>
+
+
+<div class="container menu-rapido">
+	<ul class="nav nav-tabs nav-justified">
+	  <li><a href="espacioSecretaria.php">Inicio</a></li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Nombramiento<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="nombramientoDocente.php">Docente</a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Seguimiento<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="seguimiento.php">Docente</a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reportes<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="reporteDocente.php">Docente</a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Historicos<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="listaDocentes.php">Docentes</a></li>
+		  <li><a href="listaFacultades.php">Facultades</a></li>
+		  <li><a href="listaCarreras.php">Carreras</a></li>
+		  <li><a href="listaMaterias.php">Materias</a></li>
+		  <li><a href="listaDepartamentos.php">Departamentos</a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Registros<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="registroDocente.php">Registro Docente</a></li>
+		  <li><a href="registroSecretaria.php">Registro Secretaria</a></li>
+		  <li><a href="registroFacultad.php">Registro Facultad</a></li>
+		  <li><a href="registroCarrera.php">Registro Carrera</a></li>
+		  <li><a href="registroMaterias.php">Registro Materias</a></li>
+		  <li><a href="registroDepartamento.php">Registro Departamentos</a></li>
+		  <li><a href="registroGrupos.php">Registro Grupos</a></li>
+		  <li><a href="registrarAula.php">Registro Aulas</a></li>
+		  <li><a href="registrarHorario.php">Registro Horario</a></li>
+		  <li><a href="listaDocentesAsignacion.php">Asignacion Docente Grupo</a></li>
+
+		</ul>
+	  </li>
+	</ul>
+</div>
+
+
 <style type="text/css">
 
     * {
@@ -32,6 +80,11 @@
     body {
         background-color: #F5F5F5;
     }
+	
+	.menu-rapido {
+		margin: auto;
+		width: 50%;
+	}
     div.horaT {
         color: white;
         float: left;

@@ -18,7 +18,7 @@
                 <p style="color: white">
                     <i class="fax" aria-hidden="true"></i>
                 </p>
-                <button type="button" style="margin-top:15px" class="btn btn-success"onclick="location.href='index.php'">atrás</button>
+                
                 
             </form>
 
@@ -59,9 +59,17 @@
         color: white;
     }
 </style>
-
+<div class="container text-center nt">
+      <ul class="breadcrumb center-block">
+          <li><a onclick="location.href='index.php'">Inicio</a></li>
+          <li><a onclick="location.href='btDocente.php'">Docentes</a></li>
+          <li><a onclick="location.href='informacionIndex.php'">Información</a></li>
+      </ul>
+   
+</div>
 <div class="container nt-plantel-doc ">
     <div class="container col-md-12 table table-hover">
+
         <table class="table table-hover" id="tablaDocente">
             
             <LEGEND><strong> Lista Docentes</strong></LEGEND>

@@ -1,5 +1,6 @@
-<?php
-
+<?php session_start();
+if(isset($_SESSION['usuario'])){
+	
     require 'funciones.php';
 
     $conexion = conexion('bd_seguimiento','seg_user', 'seg_pass');
@@ -12,4 +13,7 @@
     $materias = $statement->fetchAll();
 
     require 'views/listaMaterias.view.php';
+} else {
+	header('Location: login.php');
+}
 

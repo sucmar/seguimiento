@@ -1,6 +1,34 @@
 <?php include("views/global/header.view.php")?>
-<?php include("views/global/title.view.php")?>
-    <div class="contenedor-principal">
+
+
+
+<div class="container nt-menu-titulo">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="images/logo2.png" class="img-responsive">
+              
+            </div>
+
+            <div class="col-sm-4">
+                <h4 class="titulo"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
+            </div>
+            <div class="col-sm-4">
+                <form action="./cerrar.php" class="navbar-form navbar-right" >
+                <p id="nombre-usuario" style="color: white"><?php echo $_SESSION['usuario']?>
+                    <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                </p>
+                <input type="submit" class="btn btn-global" name="" value="salir">
+                </form>
+
+            </div>
+
+
+        </div>
+ </div>
+
+
+
+<div class="contenedor-principal">
         <div class="container nt-menu-cuerpo">
             <div class="row navbar">
 
@@ -86,6 +114,9 @@
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="listaDocentesAsignacion.php">asignacion docente grupo</a></li>
 
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="registrarAula.php">Registro aulas</a></li>
+							
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="registrarHorario.php">Registro Horario</a></li>
+						
                     </ul>
 
                 </div>

@@ -1,6 +1,8 @@
 <?php include("views/global/header.view.php")?>
 <?php include('views/global/title.view.php')?>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <div class="container nt-plantel-doc ">
     <div class="container col-md-6 col-md-offset-3">
         <label>Asignar Materia a un Docente</label>

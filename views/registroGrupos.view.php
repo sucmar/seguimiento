@@ -1,4 +1,7 @@
 <?php include('views/global/header.view.php')?>
+<?php include('views/global/title.view.php')?>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="nt-cargo">
      <fieldset>

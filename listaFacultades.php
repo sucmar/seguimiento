@@ -1,5 +1,6 @@
-<?php
+<?php session_start();
 
+if (isset($_SESSION['usuario'])){
     require 'funciones.php';
         function console_log( $data ){
             echo '<script>';
@@ -27,18 +28,12 @@
     setcookie("idFacultad", "");    
     }
 
-  
-    
-
-/*
-$sql =
-"
-SELECT c.NOMBRE_CARRERA
-FROM carrera c
-WHERE ID_FACULTAD = 2
-"
-*/
 require 'views/listaFacultades.view.php';
+} else {
+    header('Location: login.php');
+}
+
+
 
 
 
