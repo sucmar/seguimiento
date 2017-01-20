@@ -1,7 +1,31 @@
 <?php include("views/global/header.view.php")?>
 
-<body>
-	<div class="container">
+<div class="container nt-menu-titulo">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="images/logo2.png" class="img-responsive">
+              
+            </div>
+
+            <div class="col-sm-4">
+                <h4 class="titulo"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
+            </div>
+            <div class="col-sm-4">
+                <form action="./cerrar.php" class="navbar-form navbar-right" >
+                <p id="nombre-usuario" style="color: white"><?php echo $_SESSION['usuario']?>
+                    <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                </p>
+                <input type="submit" class="btn btn-global" name="" value="salir">
+                </form>
+
+            </div>
+
+
+        </div>
+ </div>
+
+
+	<div class="container varios">
 		<div class="title">
 			<h1 class="title-text"><i class="fa fa-check-square-o" aria-hidden="true"></i>
 Agradecimientos</h1>
@@ -14,31 +38,23 @@ Agradecimientos</h1>
 		</div>
 		<div>
 			<ul>
-				<li>A nuestros Docentes de FCYT UMSS por compartirnos su conocimientos.</li>
-				<li>A nuestros amigos por su colaboracion.</li>
-				<li>A nuestra familias por brindarnos siempre su apoyo incondicional.</li>
-				<li>A Dios por estar siempre en nuestro largo recorrido de la vida.</li>
+				<li class="varios">A nuestros Docentes de FCYT UMSS por compartirnos su conocimientos.</li>
+				<li class="varios">A nuestros amigos por su colaboracion.</li>
+				<li class="varios">A nuestra familias por brindarnos siempre su apoyo incondicional.</li>
+				<li class="varios">A Dios por estar siempre en nuestro largo recorrido de la vida.</li>
 			</ul>
 		</div>
 		
 		<div class="button-container">
-			<a href="espacioSecretaria.php" class="btn-a btn btn-global">Salir</a>
+			<a href="espacioSecretaria.php" class="btn-a btn btn-global">Atrás</a>
 		</div>
 		
 	</div>
-</body>
 
 <style>
-	
-	body {
-    font-weight: normal;
-    font: message-box;
-    color: var(--in-content-page-color);
 
-}
 	.container {
 		margin: auto;
-		margin-top: 10%;
 		width: 50%;
 	}
 	
@@ -57,18 +73,18 @@ Agradecimientos</h1>
 }
 	
 	.title {
-    font-size: 3.5em;
+    font-size: 2.5em;
 }
 	p {
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
 	
 	ul > li, ol > li {
     margin-bottom: .5em;
 }
 	
-	li {
-		font-size: 1.5em;
+	li.varios {
+		font-size: 1.2em;
 	}
 	
 	.button-container {
@@ -77,7 +93,10 @@ Agradecimientos</h1>
 	a.btn-a {
 		padding: 3px;
 		font: inherit;
-		font-size: 1.5em;
+		font-size: 1.1em;
 		width: 15%;
 	}
 </style>
+
+<?php include('views/global/subtitle.view.php')?>
+<?php include('views/global/footer.view.php')?>

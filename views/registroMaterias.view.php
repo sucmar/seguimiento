@@ -1,5 +1,8 @@
 <?php include("views/global/header.view.php")?>
+<?php include('views/global/title.view.php')?>
 
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="nt-registroMaterias" >
     <fieldset>
@@ -37,8 +40,12 @@
             </div>
 			
 			<div class="form-group col-sm-4">
-                <label>(*) Carga Horaria:</label>
-                <input class="form-control input-global" type="text" id="cargaHorariaMateria" name="cargaHorariaMateria" required>
+                <label>(*) Carga Horaria Mes:</label>
+                <select class="form-control select-global" id="cargaHorariaMateria" name="cargaHorariaMateria">
+                    <option>16</option>
+                    <option>24</option>
+                    <option>32</option>
+                </select>
             </div>
             
             <div class="form-group col-sm-4">

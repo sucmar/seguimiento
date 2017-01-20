@@ -1,4 +1,6 @@
-<?php
+<?php session_start();
+if(isset($_SESSION['usuario'])){
+	
 
     require 'funciones.php';
 
@@ -13,4 +15,6 @@
 
     
     require 'views/listaCarreras.view.php';
-
+} else {
+	header('Location: login.php');
+}

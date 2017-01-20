@@ -1,4 +1,7 @@
-<?php
+<?php session_start();
+
+if (isset($_SESSION['usuario'])){
+	
 	//header('Content-type: text/html; charset=utf-8');
 	require 'funciones.php';
 	
@@ -72,39 +75,14 @@
 		
 		
 	}
-	/*
-	if(isset($_POST['delete']) && isset($_COOKIE['idGrupo'])) {
-		$idGrupo = $_COOKIE['idGrupo'];
-     	$sql = "DELETE FROM grupo WHERE ID_GRUPO= $idGrupo";
-	    $statements = $conexion->prepare($sql);
-        $statements->execute();
-			$idMateria1 = $_COOKIE['idMateria'];
-	global $nombreMateria;
-	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
-	$statementgrupo->execute();
-    $grupos = $statementgrupo->fetchAll();
-	}
 
-	if(isset($_POST['modify']) && isset($_COOKIE['idGrupo']) && isset($_POST['nom_grupo'])) {
-		$idGrupo = $_COOKIE['idGrupo'];
-		$nom_grupo = $_POST['nom_grupo'];
-     	$sql = "UPDATE grupo SET NOM_GRUPO = $nom_grupo WHERE ID_GRUPO = $idGrupo";
-	    $statements = $conexion->prepare($sql);
-        $statements->execute();
-
-			$idMateria1 = $_COOKIE['idMateria'];
-	global $nombreMateria;
-	$nombreMateria = $_COOKIE['nomMateria'];
-	$statementgrupo = $conexion->prepare("SELECT ID_GRUPO, NOM_GRUPO FROM grupo WHERE ID_MATERIA = $idMateria1 ");
-	$statementgrupo->execute();
-    $grupos = $statementgrupo->fetchAll();
-	}
-	*/
 	
 	if(isset($_POST['salir'])) {
 		 header('Location: espacioSecretaria.php');
 	}
     require 'views/registroGrupos.view.php';
 
+}else{
+	    header('Location: login.php');
+}
 ?>	

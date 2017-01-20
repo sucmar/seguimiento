@@ -21,7 +21,7 @@
         }
     </script>
     <input type="button" value="Imprimir" onclick="javascript:imprSelec('seleccion')" />
-    <button type="button" onClick="location.href='reporteDocente.php'" class="btn btn-danger btn-sm">Salir</button>
+    <button type="button" onClick="location.href='seguimiento.php'" class="btn btn-danger btn-sm">Salir</button>
 <!--    <a href="javascript:imprSelec('seleccion')" >Imprimir texto</a>-->
 
     <!--    <script type="text/javascript">-->

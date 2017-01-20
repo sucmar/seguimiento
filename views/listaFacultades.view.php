@@ -1,32 +1,8 @@
 <?php include('views/global/header.view.php')?>
+<?php include('views/global/title.view.php')?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<div class="container nt-menu-titulo">
-        <div class="row">
-
-            <div class="col-sm-4">
-                <img src="images/logo2.png" class="img-responsive">
-            </div>
-
-            <div class="col-sm-4">
-                <h4 class="titulo"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
-            </div>
-
-            <div class="col-sm-4">
-
-                <form action="./espacioSecretaria.php" class="navbar-form navbar-right" >
-                <p style="color: white">
-                    <i class="fax" aria-hidden="true"></i>
-                </p>
-                <input type="submit" style="margin-top:15px" class="btn btn-global" name="" value="atras">
-                </form>
-
-            </div>
-
-        </div>
-    </div>
 
 <style type="text/css">
 .fax {
@@ -134,8 +110,5 @@ function accionMenu( cual )
 }*/
 
 </script>
-   <script src="estilos/js/jquery.min.js"></script>
-    <script src="estilos/js/jquery-ui.min.js"></script>
-    <script src="estilos/js/cookie/jquery.cookie.js" ></script>
-    <script src="estilos/js/moment.js"></script>
+
  
