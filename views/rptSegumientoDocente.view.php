@@ -9,77 +9,116 @@
     <meta charset="UTF-8">
     <script type="text/javascript" src="estilos/js/jquery.min.js"></script>
     <link rel="stylesheet" href="estilos/css/reporte.css" >
+
+    <script language="Javascript">
+        function imprSelec(nombre) {
+            var ficha = document.getElementById(nombre);
+            var ventimp = window.open(' ', 'popimpr');
+            ventimp.document.write( ficha.innerHTML );
+            ventimp.document.close();
+            ventimp.print( );
+            ventimp.close();
+        }
+    </script>
+    <input type="button" value="Imprimir" onclick="javascript:imprSelec('seleccion')" />
+    <button type="button" onClick="location.href='reporteDocente.php'" class="btn btn-danger btn-sm">Salir</button>
+<!--    <a href="javascript:imprSelec('seleccion')" >Imprimir texto</a>-->
+
+    <!--    <script type="text/javascript">-->
+<!--        function imprSelec(muestra)-->
+<!--        {var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}-->
+<!--    </script>-->
+<!--    <a href="javascript:imprSelec('muestra')">Imprimir</a>-->
+<!--    <input type="button" value="Imprimir" onclick="javascript:window.print()" />-->
+
 </head>
 <body>
 
-<style type="text/css">
-    td {
-        font-size: 12px;
-    }
-
-    body {
-        text-align: left;
-    }
-
-    #contenido {
-        width: 1200px;
-        margin: 0 auto 0 auto;
-        text-align: left;
-    }
-
-    .tableHorario {
-        border: 1px solid #000;
-    }
-
-    .tableHorario tr, .tableHorario td {
-        border: 1px solid #000;
-    }
-
-    /*div{*/
-    /*width: 200px;*/
-    /*padding: 25px 0;*/
-    /*margin: 0;*/
-    /*}*/
-
-</style>
-
-<script>
 
 
-    function imprSelec(areaImpresion) {
-        //$('#' + areaImpresion).printThis();
 
-        $('.cls-ocultar').hide();
-        var estilos = '';
-        $("link[rel=stylesheet]").each(function () {
-            var href = $(this).attr("href");
-            if (href) {
-                var media = $(this).attr("media") || "all";
-                estilos = estilos + '<link type="text/css" rel="stylesheet" href="' + href + '" media="' + media + '">';
+
+
+<!--<input type="button" value="Imprimir" onclick="javascript:window.print()" />-->
+
+
+
+<!--<script>-->
+<!---->
+<!---->
+<!--    function imprSelec(areaImpresion) {-->
+<!--        //$('#' + areaImpresion).printThis();-->
+<!---->
+<!--        $('.cls-ocultar').hide();-->
+<!--        var estilos = '';-->
+<!--        $("link[rel=stylesheet]").each(function () {-->
+<!--            var href = $(this).attr("href");-->
+<!--            if (href) {-->
+<!--                var media = $(this).attr("media") || "all";-->
+<!--                estilos = estilos + '<link type="text/css" rel="stylesheet" href="' + href + '" media="' + media + '">';-->
+<!--            }-->
+<!--        });-->
+<!---->
+<!--        var ficha = $('#' + areaImpresion);-->
+<!--        var ventimp = window.open(' ', 'popimpr');-->
+<!---->
+<!--        ventimp.document.write('');-->
+<!--        ventimp.document.write('<html><head>' + estilos + '</head><body>');-->
+<!--        ventimp.document.write(ficha.html());-->
+<!--        ventimp.document.write('</body>');-->
+<!--        ventimp.document.write('</html>');-->
+<!--        ventimp.document.close();-->
+<!--        ventimp.print();-->
+<!--        ventimp.close();-->
+<!--        $('.cls-ocultar').show();-->
+<!--    }-->
+<!--</script>-->
+<!--<div class="main">-->
+    <div id='seleccion'>
+
+        <style type="text/css">
+            td {
+                font-size: 10px;
             }
-        });
 
-        var ficha = $('#' + areaImpresion);
-        var ventimp = window.open(' ', 'popimpr');
+            body {
+                text-align: left;
+            }
 
-        ventimp.document.write('');
-        ventimp.document.write('<html><head>' + estilos + '</head><body>');
-        ventimp.document.write(ficha.html());
-        ventimp.document.write('</body>');
-        ventimp.document.write('</html>');
-        ventimp.document.close();
-        ventimp.print();
-        ventimp.close();
-        $('.cls-ocultar').show();
-    }
-</script>
-<div class="main">
 
+            #contenido {
+                width: 1200px;
+                margin: 0 auto 0 auto;
+                text-align: left;
+            }
+
+            .tableHorario {
+                border: 1px solid #000;
+            }
+
+            .tableHorario tr, .tableHorario td {
+                border: 1px solid #000;
+            }
+
+            imprSelec() {
+                display:none;
+
+            }
+
+            /*div{*/
+            /*width: 200px;*/
+            /*padding: 25px 0;*/
+            /*margin: 0;*/
+            /*}*/
+
+        </style>
 
     <div class="container">
-        <button type="button" onclick="imprSelec('contenido');" class="btn btn-primary btn-sm">Imprimir</button>
-        <button type="button" onClick="location.href='reporteDocente.php'" class="btn btn-danger btn-sm">Salir</button>
-        <fieldset>
+<!--    <div class="main">-->
+
+<!--        <button type="button" onclick="imprSelec('contenido');" class="btn btn-primary btn-sm">Imprimir</button>-->
+<!--        <button type="button" onClick="location.href='reporteDocente.php'" class="btn btn-danger btn-sm">Salir</button>-->
+<!--        <fieldset>-->
 
 
 
@@ -154,9 +193,9 @@
                                 <td></td>
                                 <td width="30%" height="5"><?= strtoupper($facultad->NOMBRE_FACULTAD) ?></td>
                                 <td></td>
-                                <td width="20%" height="5"><?= strtoupper($facultad->NOMBRE_DPTO) ?></td>
+                                <td width="20%" height="5"><?= strtoupper($facultad->NOMBRE_CARRERA) ?></td>
                                 <td></td>
-                                <td width="20%" height="2"><?= strtoupper($facultad->NOMBRE_CARRERA) ?></td>
+                                <td width="20%" height="2"><?= strtoupper($facultad->NOMBRE_DPTO) ?></td>
                                 <td class="counterCell">.-</td>
                                 <td width="20%" height="2"><?= strtoupper($facultad->NOMBRE_MATERIA) ?></td>
                                 <td width="10%" height="2"><?= strtoupper($facultad->SIGLA_MATERIA) ?></td>
@@ -380,19 +419,20 @@
 
             </div>
     </div>
-</div>
-<style type="text/css">
-    table {
-        counter-reset: tableCount;
-    }
+        <style type="text/css">
+            table {
+                counter-reset: tableCount;
+            }
 
-    .counterCell:before {
-        content: counter(tableCount);
-        counter-increment: tableCount;
-    }
-</style>
+            .counterCell:before {
+                content: counter(tableCount);
+                counter-increment: tableCount;
+            }
+        </style>
+</div>
+
 </body>
 </html>
 
 
-<?php //include('views/global/footer.view.php') ?>
+<?php include('views/global/footer.view.php') ?>

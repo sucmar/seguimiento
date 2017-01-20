@@ -9,8 +9,8 @@ if (isset($_SESSION['usuario'])){
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        $nombreFacultad      = $_POST['nombreFacultad'];
-        $ubicacionFacultad   = $_POST['ubicacionFacultad'];
+        $nombreFacultad      = strtoupper($_POST['nombreFacultad']);
+        $ubicacionFacultad   = strtoupper($_POST['ubicacionFacultad']);
 
         $enlace = mysqli_connect('localhost','seg_user', 'seg_pass','bd_seguimiento');
 

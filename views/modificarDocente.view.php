@@ -1,25 +1,10 @@
 <?php include("views/global/header.view.php")?>
+<?php include("views/global/title.view.php")?>
 <script>
     $(document).ready(function() {
         $("#fec-nac").datepicker();
     });
 </script>
-<!--<script type="text/javascript">-->
-<!--    function myFunction(){-->
-<!--        var x = document.getElementById('miDiv');-->
-<!---->
-<!--        x.style.display = 'none';-->
-<!---->
-<!--    }-->
-<!--</script>-->
-<!--<script type="text/javascript">-->
-<!--    function miFunction(){-->
-<!--        var x = document.getElementById('miDiv');-->
-<!--        if(x.style.display === 'none'){-->
-<!--            x.style.display = 'block';-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
 <div class="contenedor">
     <div class="container nt-form-docente ">
 

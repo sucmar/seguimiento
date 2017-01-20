@@ -26,7 +26,7 @@ if (isset($_SESSION['usuario'])){
     header('Location: login.php');
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $nombreCarrera          = $_POST['nombreCarrera'];
+        $nombreCarrera          = strtoupper($_POST['nombreCarrera']);
         $siglaCarrera           = $_POST['siglaCarrera'];
         $dptoCarrera            = $_POST['dptoCarrera'];
 
