@@ -1,21 +1,19 @@
-div.nt-form-materiaDocente {
-	width: 60%;
+div.form-doc-asig
+{
+	margin: auto;
+	width:50%;
+	height: auto;
 	margin-top: 50px;
 	border: 1px solid #CED5D7;
 	border-radius: 6px;
 	box-shadow: 0px 5px 10px #B5C1C5,0 0 0 10px #EEF5F7 inset;
-	font-size: 12px;
-
 }
 
-
-div.tab-hora{
-	overflow:scroll;
+div.tabla-lista-docente
+{
+	overflow: scroll;
 	border: 1px solid #CED5D7;
-	height: 170px;
+	height: 60%;
+	background-color: white;
 }
 
-
-table.tabla-hora{
-	font-size: 12px;
-}

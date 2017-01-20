@@ -40,6 +40,8 @@
     <link rel="stylesheet" type="text/css" href="estilos/css/asignarGrupo.css">
     <link rel="stylesheet" type="text/css" href="estilos/css/gruposAsignados.css">
 	<link rel="stylesheet" type="text/css" href="estilos/css/registroGrupos.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/listaDocenteAsignacion.css">
+    <link rel="stylesheet" type="text/css" href="estilos/css/reporte.css">
 
 	
 	

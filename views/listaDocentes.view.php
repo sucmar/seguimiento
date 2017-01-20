@@ -59,14 +59,15 @@
     }
 </style>
 
-<div class="container nt-plantel-doc ">
-    <div class="container col-md-12 table table-hover">
-        <input type="text" class="input-global form-group form-control" name="campoBuscador" id="buscarMateria" onkeyup="doSearch()">
-        <table class="table table-hover" id="tablaMateria">
-            <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
-            <tbody>
+<?php ?>
+<div class="container from-lista-reporte  ">
+    <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
+    <div class="container col-md-12 table table-hover tabla-lista-reporte">
+     <input type="text" class="input-global form-group form-control" name="campoBuscador" id="buscarMateria" onkeyup="doSearch()">
+        <table class="table table-hover" id="tablaDocente">
+            
             <tr>
-                <td><strong>CODIGO </strong></td>
+               <td><strong>NRO. </strong></td>
                 <td><strong>NOMBRE </strong></td>
                 <td> <strong>APELLIDO PATERNO</strong></td>
                 <td><strong>APELLIDO MATERNO</strong></td>

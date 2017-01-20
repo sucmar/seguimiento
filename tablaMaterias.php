@@ -15,7 +15,7 @@ $resultado=$mysqli->query($query);
 
 
 
-echo '<table class="table table-bordered">
+echo '<div class="col-md-12"> <table class="table table-bordered col-md-12">
 
     <tr>
         <th>ID_MATERIA</th>
@@ -28,4 +28,4 @@ while ($row=$resultado->fetch_array(MYSQLI_BOTH)) {
         <td><a href="gruposAsignados.php?id='.$row['ID_DOCMATERIA'].'&idMateria='.$row['ID_MATERIA'].'&idDoc='.$row['ID_DOCENTE'].'" class="btn btn-link">ver grupos Asignados</a></td>
     </tr>';
 }
-echo '</table>';
+echo '</table></div>';

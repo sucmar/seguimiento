@@ -199,6 +199,9 @@ function console_log( $data ){
             $statement7->execute();
             $horasGrupo=$statement7->fetchAll();
 
+            $statement41 = $conexion->prepare("SELECT  NOMBRE_DOC , APELLPATERNO_DOC ,APELLMATERNO_DOC FROM docente WHERE ID_DOCENTE='$idDocente'");
+            $statement41->execute();
+            $doc = $statement41->fetch();
 	
         require 'views/horarioMateria.view.php';
 ?>

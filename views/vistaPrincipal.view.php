@@ -9,7 +9,7 @@
             </div>
 
             <div class="col-sm-4">
-            <h4 class="titulo"><strong>Sistema de Seguimiento y Nombramiento Docente</strong></h4>
+            <h4 class="titulo"><strong>Sistema de Seguimientossssss y Nombramiento Docente</strong></h4>
             </div>
 
             
@@ -21,7 +21,7 @@
     
   <div class="container text-center nt">
       <ul class="breadcrumb center-block">
-          <li><a onclick="location.href='login.php'">Inicio</a></li>
+          <li><a onclick="location.href='index.php'">Inicio</a></li>
           <li><a onclick="location.href='btDocente.php'">Docentes</a></li>
           <li><a onclick="location.href='contactos.php'">Información</a></li>
       </ul>

@@ -5,8 +5,8 @@
 <div class="container nt-form-materiaDocente">
 
     <form name="fm-hor-mat" id="fm-hor-mat" action="horarioMateria.php?idDoc=<?php echo $idDocente?>&idMateria=<?php echo $idMateria?>&grupo=<?php echo $idGrupo?>&idDocMateria=<?php echo $idDocMateria?>" method="POST" onsubmit="return validate();">
-
-        <legend><?php echo "Materia:".$materia['NOMBRE_MATERIA']." Grupo: ".$grupo['GRUPO']?></legend>
+        
+        <legend><?php echo "*DOCENTE: ".$doc['NOMBRE_DOC']." ".$doc['APELLPATERNO_DOC']." ".$doc['APELLMATERNO_DOC']." <br> *MATERIA: ".$materia['NOMBRE_MATERIA']."  **GRUPO: ".$grupo['GRUPO']?></legend>
         <div class="col-md-12">
             <?php //escoges el dia para horario?>
 

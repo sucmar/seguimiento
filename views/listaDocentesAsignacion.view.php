@@ -1,18 +1,19 @@
 <?php include("views/global/header.view.php")?>
 <?php include('views/global/title.view.php')?>
 
-<div class="container nt-plantel-doc ">
+<div class="container nt-plantel-doc form-doc-asig ">
     <div class="container col-md-6 col-md-offset-3">
         <label>Asignar Materia a un Docente</label>
-    </div>
-    <div class="container col-md-12 table table-hover">
+    </div><br>
+    <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
+    <td><strong>NOMBRES Y APELLIDOS </strong></td>
+    <div class="container col-md-12 table table-hover tabla-lista-docente">
         <table class="table table-hover">
-            <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
+            
             <tbody>
             <tr>
-                <td><strong>NOMBRE </strong></td>
-                <td> <strong>APEL. PATERNO</strong></td>
-                <td><strong>APEL. MATERNO</strong></td>
+                <td><strong> </strong></td>
+            
                 <td></td>
                 <td></td>
 
@@ -20,10 +21,9 @@
             <?php foreach ($docentes as $docente):?>
 
                 <tr>
+                    <td><?php echo $docente['NOMBRE_DOC']."  " ?><?php echo $docente['APELLPATERNO_DOC']."  " ?><?php echo $docente['APELLMATERNO_DOC'] ?></td>
+                   
                     <td><?php $docente['ID_DOCENTE'] ?></td>
-                    <td><?php echo $docente['NOMBRE_DOC'] ?></td>
-                    <td><?php echo $docente['APELLPATERNO_DOC'] ?></td>
-                    <td><?php echo $docente['APELLMATERNO_DOC'] ?></td>
                     <td><a href="docente.php?id=<?php echo $docente['ID_DOCENTE']?>" >AsignarMateria</a></td>
                 </tr>
             <?php endforeach;?>
