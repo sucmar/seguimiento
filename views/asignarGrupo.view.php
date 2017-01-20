@@ -15,9 +15,11 @@
         </div>
         <br>
         <br>
-        <div class="col-md-8 col-md-offset-2" >
-            <input type="submit" class="btn registrar btn-global" name="" value="selecionar">
+        <div class="col-md-10 col-md-offset-2" >
+            <input type="submit" class="btn registrar btn-global" name="" value="Selecionar">
             <button type="button" onclick="history.back()" class="btn cancelar btn-global" >Cancelar</button>
         </div>
+        <br>
+        <br>
     </form>
 </div>

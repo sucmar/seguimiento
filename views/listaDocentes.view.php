@@ -59,13 +59,15 @@
     }
 </style>
 
-<div class="container nt-plantel-doc ">
-    <div class="container col-md-12 table table-hover">
+<?php ?>
+<div class="container from-lista-reporte  ">
+    <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
+     
+    <div class="container col-md-12 table table-hover tabla-lista-reporte">
         <table class="table table-hover" id="tablaDocente">
-            <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
             <tbody>
             <tr>
-                <td><strong>CODIGO </strong></td>
+               <td><strong>NRO. </strong></td>
                 <td><strong>NOMBRE </strong></td>
                 <td> <strong>APELLIDO PATERNO</strong></td>
                 <td><strong>APELLIDO MATERNO</strong></td>

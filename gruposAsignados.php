@@ -18,6 +18,11 @@ if (isset($_SESSION['usuario'])){
     $statement->execute();
     $materiasAsignadas = $statement->fetchAll();
 
+    $statement1 = $conexion->prepare("SELECT  NOMBRE_DOC , APELLPATERNO_DOC ,APELLMATERNO_DOC FROM docente WHERE ID_DOCENTE='$idDoc'");
+  $statement1->execute();
+  $doc = $statement1->fetch();
+
+
     require 'views/gruposAsignados.view.php';
 } else {
     header('Location: login.php');

@@ -82,17 +82,17 @@
 </script>
 <?php ?>
 <div class="alert alert-dismissible alert-info "><strong><p id="respa"></p></strong></div>
-<legend><strong><?php echo $docente['NOMBRE_DOC']."  ".$docente['APELLPATERNO_DOC']."  "
-            .$docente['APELLMATERNO_DOC']?></strong></legend>
+
 <div class="container nt-form-docs">
     <!-- MOSTRAMOS LAS MATERIAS QUE SE REGISTRARON POR FORMULARIO -->
-
-    <div class="table-hover col-md-12">
+    <legend><strong><?php echo "Docente: ".$docente['NOMBRE_DOC']."  ".$docente['APELLPATERNO_DOC']."  "
+            .$docente['APELLMATERNO_DOC']?></strong></legend>
+    <div class="table-hover col-md-12 ">
         <legend>Lista de materia</legend>
         <input type="text" class="input-global form-group form-control" name="campoBuscador" id="buscarMateria"
                onkeyup="doSearch()">
-
-        <table  class="table table-bordered table-hover" id="tablaMateria">
+        <div class="tabla-docente1  ">
+        <table  class="table table-bordered table-hover " id="tablaMateria">
             <thead class="thead-inverse">
             <tr class="header">
                 <th >ID_MATERIA</th>
@@ -106,6 +106,7 @@
                 </tr>
             <?php endforeach;?>
         </table>
+        </div>
     </div>
     <div class="col-md-12">
         <form class="form-inline" role="form"" method="post" onsubmit="return enviar();">

@@ -60,9 +60,10 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
 </style>
 
  <div class="container nt-plantel-doc ">
-    <div class="container col-md-12 table table-hover">
-    <table class="table table-hover" id="tablaDocente">
       <LEGEND> <strong>LISTA DE DEPARTAMENTOS</strong></LEGEND>
+ 
+    <div class="container col-md-12 table table-hover tabla-lista-reporte">
+    <table class="table table-hover" id="tablaDocente">
        
 	  <thead>
 	  <tr>
