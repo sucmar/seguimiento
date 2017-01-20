@@ -16,10 +16,7 @@
                 </p>
                 <input type="submit" class="btn btn-global" name="" value="salir">
                 </form>
-
             </div>
-
-
         </div>
  </div>
 <body >
