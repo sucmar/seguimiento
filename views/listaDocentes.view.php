@@ -64,7 +64,7 @@
     <LEGEND> <strong>LISTA DE DOCENTES</strong></LEGEND>
     <div class="container col-md-12 table table-hover tabla-lista-reporte">
      <input type="text" class="input-global form-group form-control" name="campoBuscador" id="buscarMateria" onkeyup="doSearch()">
-        <table class="table table-hover" id="tablaDocente">
+        <table class="table table-hover" id="tablaMateria">
             
             <tr>
                <td><strong>NRO. </strong></td>
