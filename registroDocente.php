@@ -49,7 +49,7 @@ if (isset($_SESSION['usuario'])){
             $horasTotal= $horaTeoria+$horaInvestigacion+$horaExtencion+$horaServicio+$horaPractica+$horaProduccion+
                 $horaServicioAcademico+$horaProduccionAcademica+$horaAdministracionAcademica;
 
-            $dedicacionExclusiva=$totalHorasAutorizadas-$horasTotal;
+//            $dedicacionExclusiva=$totalHorasAutorizadas-$horasTotal;
 
 
             if($horasTotal <= 160){

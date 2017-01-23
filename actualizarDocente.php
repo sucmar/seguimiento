@@ -49,10 +49,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $horasTotal= $horaInvestigacion+$horaExtencion+$horaServicio+$horaProduccion+
             $horaServicioAcademico+$horaProduccionAcademica+$horaAdministracionAcademica;
 
-        $dedicacionExclusiva=160-$horasTotal;
+        //$dedicacionExclusiva=160-$horasTotal;
 
 
-        if($horasTotal <= 160 and $dedicacionExclusiva>0){
+        if($horasTotal <= 160){
             try{
                 if (!$conexion) {
                     die();

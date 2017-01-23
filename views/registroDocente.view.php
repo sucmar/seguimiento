@@ -343,7 +343,7 @@
             return false;
         }
         var fechaNac = document.getElementById( "fec-nac" ).value;
-        if( !moment(fechaNac, 'MM/DD/YYYY',true).isValid() )
+        if( !moment(fechaNac, 'DD/MM/YYYY',true).isValid() )
         {
             error = " Tienes que escribir una correcta fecha. ";
             document.getElementById( "error_para" ).innerHTML = error;
