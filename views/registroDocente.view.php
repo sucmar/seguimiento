@@ -144,23 +144,23 @@
 
                     <div>
                         <label >Hrs. Teoria</label>
-                        <input  type="text" required class="form-control input-global"  name="horaTeoria" id="horaTeoria">
+                        <input  type="text" class="form-control input-global"  name="horaTeoria" id="horaTeoria">
                     </div>
 
                     <div>
                         <label>Hrs. Investigacion:</label>
-                        <input type="text"  required class="form-control input-global" name="horaInvestigacion" id="horaInvestigacion">
+                        <input type="text" class="form-control input-global" name="horaInvestigacion" id="horaInvestigacion">
                     </div>
 
                     <div>
                         <label>Hrs. Extencion:</label>
-                        <input type="text" required class="form-control input-global" name="horaExtencion" id="horaExtencion">
+                        <input type="text" class="form-control input-global" name="horaExtencion" id="horaExtencion">
                     </div>
                     <div>
                         <label>Hrs. Servicio:</label>
                     </div>
                     <div >
-                        <input type="text" required class="form-control input-global" name="horaServicio" id="horaServicio">
+                        <input type="text" class="form-control input-global" name="horaServicio" id="horaServicio">
                     </div>
                 </div>
 
