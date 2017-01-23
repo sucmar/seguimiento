@@ -3,7 +3,7 @@
 require 'funciones.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $idSeg=$_REQUEST['idSeg'];
+//    $idSeg=$_REQUEST['idSeg'];
     $id = $_REQUEST['id'];
     $nombres         = strtoupper($_POST['nombre']);
     $apellidoPaterno = strtoupper($_POST['apePaterno']);
@@ -41,25 +41,49 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $rfcSiete            =$_POST['rfcSiete'];
         $totalHorasSemana     =$_POST['totalHorasSemana'];
         $totalHorasMes            =$_POST['totalHorasMes'];
-        $totalHorasAutorizadas   =$_POST['totalHorasAutorizadas'];
+        $totalHorasAutorizadas   =$_POST['totalHorasAutorizadas'];// horas total 160 de entrada para exclusivo
         $tiempoParcial            =$_POST['tiempoParcial'];
-        $dedicacionExclusiva        =$_POST['dedicacionExclusiva'];
+        $dedicacionExclusiva        =$_POST['dedicacionExclusiva'];// hora que le quedan se va disminuyendo
         $observaciones           =$_POST['observaciones'];
 
-        try{
-            if (!$conexion) {
-                die();
-            }
-            $sql = "UPDATE docente SET CI_DOCENTE='$ci',NOMBRE_DOC='$nombres',APELLPATERNO_DOC=' $apellidoPaterno',
+        $horasTotal= $horaInvestigacion+$horaExtencion+$horaServicio+$horaProduccion+
+            $horaServicioAcademico+$horaProduccionAcademica+$horaAdministracionAcademica;
+
+        $dedicacionExclusiva=160-$horasTotal;
+
+
+        if($horasTotal <= 160 and $dedicacionExclusiva>0){
+            try{
+                if (!$conexion) {
+                    die();
+                }
+
+                $statement3= $conexion->prepare("SELECT sum(HRS_SEMANA) AS hrssemana ,sum(HRS_TEORIA_MES) AS hrsTeoriaMes,
+                                                sum(HRS_PRACTICA_MES) AS hrsPracMes,sum(HRS_MES_MATERIA) AS hrsMesMat
+                                         FROM doc_materia
+                                         INNER JOIN grupos
+                                         ON doc_materia.ID_DOCMATERIA=grupos.ID_DOCMATERIA
+                                         INNER JOIN dia
+                                         ON grupos.ID_GRUP=dia.ID_GRUP
+                                         INNER JOIN hrs_academicas
+                                         ON dia.ID_DIA=hrs_academicas.ID_DIA
+                                         WHERE doc_materia.ID_DOCENTE='$id'
+                                         GROUP BY doc_materia.ID_DOCENTE");
+                $statement3->execute();
+                $total= $statement3->fetch(PDO::FETCH_ASSOC);
+
+                $dedicacionExclusiva = $dedicacionExclusiva-$total['hrsMesMat'];
+
+                $sql = "UPDATE docente SET CI_DOCENTE='$ci',NOMBRE_DOC='$nombres',APELLPATERNO_DOC=' $apellidoPaterno',
                                                         APELLMATERNO_DOC='$apellidoMaterno',TELEFONO_DOC='$telFijo',
                                                         CELULAR_DOC='$celular',NACIMIENTO_DOC='$fechaNacimiento',
                                                         CIEXPEDIDO_DOC='$expedido',DIRECCION_DOC='$direcDomicilio',
                                                         DEDICACION_DOC='$cargo',CORREO_DOC='$correoElectronico',
                                                         PROFESION_DOC='$titulo',GENERO_DOC='$sexo' WHERE ID_DOCENTE='$id'";
-            $statement = $conexion->prepare($sql);
-            $statement->execute();
+                $statement = $conexion->prepare($sql);
+                $statement->execute();
 
-            $sql2 = "UPDATE seguimiento SET HRSTEORIA='$horaTeoria',HRSINVESTIGACION='$horaInvestigacion',HRSEXTENCION='$horaExtencion',
+                $sql2 = "UPDATE seguimiento SET HRSTEORIA='$horaTeoria',HRSINVESTIGACION='$horaInvestigacion',HRSEXTENCION='$horaExtencion',
                                             HRSSERVICIO='$horaServicio',HRSPRACTICA='$horaPractica',
                                             RCF1='$rfcUno',RCF2='$rfcDos',RCF3='$rfcTres',HRSPRODUCCION='$horaProduccion',
                                             HRSSERVICIOACADEMICO='$horaServicioAcademico',HRSPRODUCACAD='$horaProduccionAcademica',
@@ -68,17 +92,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                             HRSTRABMES='$totalHorasMes',HRSAUTORIZADAS='$totalHorasAutorizadas',
                                             TIEMPOPARCIAL='$tiempoParcial',DEDICACIONEXCLUSIVA='$dedicacionExclusiva',
                                             OBSERVACIONES='$observaciones'
-                      WHERE ID_DOCENTE='$id' AND IDSEGUIMIENTO='$idSeg'";
+                      WHERE ID_DOCENTE='$id'";
 
 
-            $statement = $conexion->prepare($sql2);
-            $statement->execute();
+                $statement = $conexion->prepare($sql2);
+                $statement->execute();
 
-            header ("Location: listaDocentes.php");
-        } catch (PDOException $e){
-            echo $e->getMessage();
+                header ("Location: listaDocentes.php");
+            } catch (PDOException $e){
+                echo $e->getMessage();
+            }
+            $conexion = null;
+        } else {
+            echo "<h4><strong>las horas de tiempo exclusivo sobrepasan el tiempo establecido de 160 horas
+                                o ya se cumplieron las horas para este docente</strong></h4>";
         }
-        $conexion = null;
 
     } else{
         try{
