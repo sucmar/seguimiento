@@ -64,7 +64,6 @@
     <script src="estilos/js/cookie/jquery.cookie.js" ></script>
     <script src="estilos/js/moment.js"></script>
 
-    <script src="estilos/js/timer.js"></script>
     <script src="estilos/js/buscaMaterias.js"></script>
     <script src="estilos/js/buscarDocente.js"></script>
     <script src="estilos/js/buscarDocente/obtener.js"></script>
