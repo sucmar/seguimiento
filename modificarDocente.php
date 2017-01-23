@@ -32,11 +32,13 @@ if (isset($_SESSION['usuario'])){
         $statement2->execute();
         $seguimiento = $statement2->fetch(PDO::FETCH_ASSOC);
 
-        if($docentes['DEDICACION_DOC'] == "EXCLUSIVO"){
-            $totalExclusivo=$seguimiento['HRSAUTORIZADAS']-$total['hrsMesMat'];
-        } else{
-            $totalExclusivo=0;
-        }
+//        if($docentes['DEDICACION_DOC'] == "EXCLUSIVO"){
+//            $totalExclusivo=$seguimiento['HRSAUTORIZADAS']-$total['hrsMesMat'];
+//        } else{
+//            $totalExclusivo=0;
+//        }
+
+
 
     }catch(PDOException $e) {
         echo $e->getMessage();

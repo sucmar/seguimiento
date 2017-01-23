@@ -41,15 +41,15 @@ if (isset($_SESSION['usuario'])){
             $rfcSiete            =$_POST['rfcSiete'];
             $totalHorasSemana     =$_POST['totalHorasSemana'];
             $totalHorasMes            =$_POST['totalHorasMes'];
-            $totalHorasAutorizadas   =$_POST['totalHorasAutorizadas'];
+            $totalHorasAutorizadas   =$_POST['totalHorasAutorizadas'];// horas total 160 de entrada para exclusivo
             $tiempoParcial            =$_POST['tiempoParcial'];
-            $dedicacionExclusiva        =$_POST['dedicacionExclusiva'];
+            $dedicacionExclusiva        =$_POST['dedicacionExclusiva'];// hora que le quedan se va disminuyendo
             $observaciones           =$_POST['observaciones'];
 
             $horasTotal= $horaTeoria+$horaInvestigacion+$horaExtencion+$horaServicio+$horaPractica+$horaProduccion+
                 $horaServicioAcademico+$horaProduccionAcademica+$horaAdministracionAcademica;
 
-            $totalHorasAutorizadas=$totalHorasAutorizadas-$horasTotal;
+            $dedicacionExclusiva=$totalHorasAutorizadas-$horasTotal;
 
 
             if($horasTotal <= 160){

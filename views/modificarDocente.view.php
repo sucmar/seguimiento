@@ -191,8 +191,8 @@
                     <label for="lab-ded">Dedicación:</label>
                     <select class="form-control select-global" name="dedicacion">
                         <?php if($docentes['DEDICACION_DOC'] == "PARCIAL"): ?>
-                            <option value="PARCIAL" onclick="myFunction()">Parcial</option>
-                            <option value="EXCLUSIVO" onclick="miFunction()">Exclusivo</option>
+                            <option value="PARCIAL">Parcial</option>
+                            <option value="EXCLUSIVO">Exclusivo</option>
                         <?php endif;?>
                         <?php if($docentes['DEDICACION_DOC'] == "EXCLUSIVO"):  ?>
                             <option value="EXCLUSIVO">Exclusivo</option>
@@ -352,7 +352,7 @@
                             <label>TOTAL HORAS AUTORIZADAS:</label>
                         </div>
                         <div>
-                            <input type="text" disabled="disabled" class="form-control" name="totalHorasAutorizadas" value="160">
+                            <input type="text" class="form-control" name="totalHorasAutorizadas" value="160">
                         </div>
                         <div>
                             <label>TIEMPO PARCIAL:</label>
@@ -364,7 +364,7 @@
                             <label>DEDICACION EXCLUSIVA:</label>
                         </div>
                         <div>
-                            <input type="text" class="form-control" name="dedicacionExclusiva" value="<?php echo $totalExclusivo ?>">
+                            <input type="text" class="form-control" name="dedicacionExclusiva" value="<?php echo $seguimiento['DEDICACIONEXCLUSIVA']; ?>">
                         </div>
                     </div>
 
