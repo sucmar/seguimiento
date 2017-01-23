@@ -79,6 +79,7 @@
     <form role="form" id="form_ajax" action="registroNombramiento.php?id=<?php echo $docente['ID_DOCENTE'] ?>" method="POST" onsubmit="return verificaRadios(this)">
             <legend>Nombramiento de Docente</legend>
             <div class="col-md-12">
+                                    <p id="error_para" ></p>
                 <div class="col-md-3">
                     <label for="nombre" class="control-label">Nombre del Docente</label>
                 </div>
@@ -113,15 +114,15 @@
             <br>
             <div class="col-md-4">
                 <label>Nombramiento a Partir del:</label>
-                <input  class="form-hh input-global" type="text" name="inicio" placeholder="AAAA-DD-MM">
+                <input  class="form-hh input-global" type="text" name="inicio" id="inicio" placeholder="AAAA-DD-MM">
             </div>
             <div class="col-md-4">
                 <label>Tiempo de Duracion:</label>
-                <input class="form-hh input-global" type="text" name="gestion"  placeholder="II/2016">
+                <input class="form-hh input-global" type="text" name="gestion" id="gestion" placeholder="II/2016">
             </div>
             <div class="col-md-4">
                 <label>Fecha de Solicitud:</label>
-                <input class="form-hh input-global" type="text" name="fin" placeholder="AAAA-DD-MM">
+                <input class="form-hh input-global" type="text" name="fin" id="fin" placeholder="AAAA-DD-MM">
             </div>
             <br>
             <br>
@@ -132,7 +133,14 @@
             </div>
     </form>
 </div>
-
+    <style>
+        #error_para {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+    </style>
 
 <script type="text/javascript">
     function verificaRadios(form){
@@ -153,11 +161,34 @@
                 return false;
              
         }
-        else{
-            return true;
+        var inicio = document.getElementById( "inicio" ).value;
+        if( !moment(inicio, 'YYYY-DD-MM',true).isValid() )
+        {
+            error = " Tienes que escribir una fecha correcta de nombramiento. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
         }
-
+        var fin = document.getElementById( "fin" ).value;
+        if( !moment(fin, 'YYYY-DD-MM',true).isValid() )
+        {
+            error = " Tienes que escribir una correcta fecha de solicitud. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+        var gestion = document.getElementById( "gestion" ).value;
+        if( gestion == "" )
+        {
+            error = " Tienes que escribir la gestion para el nombramiento. ";
+            document.getElementById( "error_para" ).innerHTML = error;
+            return false;
+        }
+                 else
+                        {
+                            error = " Datos insertados correctamente ";
+                            document.getElementById( "error_para" ).style.color = "blue"
+                            document.getElementById( "error_para" ).innerHTML = error;
+                            return true;
+                        }
         
-
     }
     </script>
