@@ -78,6 +78,14 @@
         </form>
     </div>
 </div>
+    <style>
+        #error_para {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+    </style>
  <script type="text/javascript">    
   function salir() {
          window.location = "http://localhost/seguimiento/registroSecretaria.php";
@@ -85,34 +93,28 @@
 function validate()
 {
     var error="";
-    var nombres = document.getElementById( "nombres" );
+    var nombres = document.getElementById( "nombre" );
     if( nombres.value == "" )
     {
         error = " Tienes que escribir un nombre. ";
         document.getElementById( "error_para" ).innerHTML = error;
         return false;
     }
-    var apePat = document.getElementById( "ape-pat" );
+    var apePat = document.getElementById( "apePat" );
     if( apePat.value == "" )
     {
         error = " Tienes que escribir un apellido paterno. ";
         document.getElementById( "error_para" ).innerHTML = error;
         return false;
     }    
-    var apeMat = document.getElementById( "ape-mat" );
+    var apeMat = document.getElementById( "apeMat" );
     if( apeMat.value == "" )
     {
         error = " Tienes que escribir un apellido materno. ";
         document.getElementById( "error_para" ).innerHTML = error;
         return false;
     } 
-    var carrera = document.getElementById( "carrera" ).value;
-    if( carrera == "" )
-    {
-        error = " Tienes que escribir una carrera. ";
-        document.getElementById( "error_para" ).innerHTML = error;
-        return false;
-    }     
+
     var cuenta = document.getElementById( "cuenta" ).value;
     if( cuenta == "" )
     {

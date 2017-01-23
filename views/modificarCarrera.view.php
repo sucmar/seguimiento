@@ -20,13 +20,13 @@
 			
 			<div class="form-group col-sm-6">
                 <label>(*) Sigla Carrera:</label>
-                <input class="form-control input-global" type="text" id="siglaCarrera" name="siglaCarrera" value="<?php echo $carreras['SIGLA_CARRERA']; ?>" required>
+                <input class="form-control input-global" type="text" id="siglaCarrera" name="siglaCarrera" value="<?php echo $carreras['SIGLA']; ?>" required>
             
             </div>
 			
 			<div class="form-group col-sm-6">
                 <label>(*) Departamento Carrera:</label>
-                <input class="form-control input-global" type="text" id="dptoCarrera" name="dptoCarrera" value="<?php echo $carreras['DPTO_CARRERA']; ?>" required>
+                <input class="form-control input-global" type="text" id="dptoCarrera" name="dptoCarrera" value="<?php echo $departamentos['NOMBRE_DPTO']; ?>" required>
             
             </div>
             
@@ -36,7 +36,7 @@
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
-                    <button class="btn btn-default btn-global" type="submit" >Cancelar</button>
+                    <button type="button" onClick="location.href='listaCarreras.php'" class="btn cancelar btn-global" >Cancelar</button>
                     </div>
             </center>
 			
