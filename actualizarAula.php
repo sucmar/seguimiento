@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $sql = "UPDATE aula SET NOMBRE_AULA='$nombre' , DESCRIPCION_AULA='$descripcion' WHERE ID_AULA='$id'";
                      $statement = $conexion->prepare($sql);
   					 $statement->execute();
-    				echo $statement->rowCount(). 'record update';
+    				//echo $statement->rowCount(). 'record update';
 
 
                 }   
