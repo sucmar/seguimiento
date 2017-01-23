@@ -36,7 +36,7 @@
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
-                    <button class="btn btn-default btn-global" type="submit" >Cancelar</button>
+                    <button type="button" onClick="location.href='listaCarreras.php'" class="btn cancelar btn-global" >Cancelar</button>
                     </div>
             </center>
 			
