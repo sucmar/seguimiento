@@ -1,5 +1,7 @@
 <?php include("views/global/header.view.php")?>
+<?php include('views/global/title.view.php')?>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="nt-registroCarrera" >
     <fieldset>
@@ -36,7 +38,11 @@
             <center>
                     <div class="btn-inline">
                     <button class="btn btn-default btn-global" type="submit">Guardar</button>
+<<<<<<< HEAD
                     <button type="button" onClick="location.href='listaCarreras.php'" class="btn cancelar btn-global" >Cancelar</button>
+=======
+                   	<a class="btn btn-default btn-global" href="listaCarreras.php">Cancelar</a>
+>>>>>>> ab090c4eb7854e97292566bd901a8f860f885cd4
                     </div>
             </center>
 			
