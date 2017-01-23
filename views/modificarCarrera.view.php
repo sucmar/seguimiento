@@ -20,7 +20,7 @@
 			
 			<div class="form-group col-sm-6">
                 <label>(*) Sigla Carrera:</label>
-                <input class="form-control input-global" type="text" id="siglaCarrera" name="siglaCarrera" value="<?php echo $carreras['SIGLA']; ?>" required>
+                <input class="form-control input-global" type="text" id="siglaCarrera" name="siglaCarrera" value="<?php echo $carreras['SIGLA_CARRERA']; ?>" required>
             
             </div>
 			
