@@ -1,6 +1,5 @@
 <?php include('views/global/header.view.php')?>
 
-
 <div class="container nt-menu-titulo">
         <div class="row">
 
