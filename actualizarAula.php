@@ -34,13 +34,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                      $statement = $conexion->prepare($sql);
   					 $statement->execute();
     				echo $statement->rowCount(). 'record update';
-    				 header('Location: registrarAula.php');
+
 
                 }   
                
     }
-    
-   
+
+    header('Location: registrarAula.php');
 
     //echo $id,$nombres;
 }
