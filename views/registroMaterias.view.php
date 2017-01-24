@@ -21,13 +21,13 @@
             </div>
            <div class="form-group col-sm-6">
                 <label>(*) Nombre Materia:</label>
-                <input class="form-control input-global" type="text" id="nombreMateria" name="nombreMateria" required>
+                <input class="form-control input-global" type="text" id="nombreMateria" name="nombreMateria" placeholder="INTRODUCCION A LA PROGRAMACION" required>
             
             </div>
             
             <div class="form-group col-sm-6">
                 <label>(*) Sigla Materia:</label>
-                <input class="form-control input-global" type="text" id="siglaMateria" name="siglaMateria" required>
+                <input class="form-control input-global" type="text" id="siglaMateria" name="siglaMateria" placeholder="123456" required>
             </div>
 			
 			<div class="form-group col-sm-12">

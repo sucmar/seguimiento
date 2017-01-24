@@ -21,13 +21,13 @@
 			
 			<div class="form-group col-sm-6">
                 <label>(*) Nombre de Departamento:</label>
-                <input class="form-control input-global" type="text" id="nombreDpto" name="nombreDpto" required>
+                <input class="form-control input-global" type="text" id="nombreDpto" name="nombreDpto" placeholder="DPTO. MATEMATICAS" required>
             
             </div>
             
 			<div class="form-group col-sm-6">
                 <label>(*) Ubicacion Departamento :</label>
-                 <input class="form-control input-global" type="text" id="ubicacionDpto" name="ubicacionDpto" required>
+                 <input class="form-control input-global" type="text" id="ubicacionDpto" name="ubicacionDpto" placeholder="ubicacion del departamento" required>
             </div>
             
 			<p>NOTA: Todos los campos con (*) deben ser llenados obligatoriamente</p>

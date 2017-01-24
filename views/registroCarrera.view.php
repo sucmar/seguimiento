@@ -19,12 +19,12 @@
             
             <div class="form-group col-sm-6">
                 <label>(*) Nombre Carrera:</label>
-                <input class="form-control input-global" type="text" id="nombreCarrera" name="nombreCarrera" required>
+                <input class="form-control input-global" type="text" id="nombreCarrera" name="nombreCarrera" placeholder="LIC. EN INGENIERIA CIVIL" required>
             </div>
 			
 			<div class="form-group col-sm-6">
                 <label>(*) Sigla Carrera:</label>
-                <input class="form-control input-global" type="text" id="siglaCarrera" name="siglaCarrera" required>
+                <input class="form-control input-global" type="text" id="siglaCarrera" name="siglaCarrera" placeholder="123456" required>
             
             </div>
 			

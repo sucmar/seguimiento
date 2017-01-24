@@ -11,13 +11,13 @@
             
             <div class="form-group col-sm-6">
                 <label>(*) Nombre Facultad:</label>
-                <input class="form-control input-global" type="text" id="nombreFacultad" name="nombreFacultad" required>
+                <input class="form-control input-global" type="text" id="nombreFacultad" name="nombreFacultad" placeholder="FACULTAD DE CIENCIAS Y TECNOLOGIA" required>
             
             </div>
             
             <div class="form-group col-sm-6">
                 <label>(*) Ubicacion Facultad:</label>
-                <input class="form-control input-global" type="text" id="ubicacionFacultad" name="ubicacionFacultad" required>
+                <input class="form-control input-global" type="text" id="ubicacionFacultad" name="ubicacionFacultad" placeholder="ubicacion de la facultad" required>
             </div>
             
             
