@@ -55,9 +55,12 @@ div.nt-menu-titulo div.row div.col-sm-4 h4.titulo {
             <tr>
               <td class="idMateria"><?php echo $materia['ID_MATERIA'] ?></td>
               <td><?php echo $materia['NOMBRE_MATERIA'] ?></td>
+				
+			  <td><a href="modificarMateria.php?id=<?php echo $materia['ID_MATERIA'] ?>" class="modificar">modificar</a></td>
 
               <td><a href="eliminarMateria.php?id=<?php echo $materia['ID_MATERIA'] ?>" class="eliminar">eliminar</a></td>
-              
+
+				
             </tr>
         <?php endforeach;?>
       </tbody>

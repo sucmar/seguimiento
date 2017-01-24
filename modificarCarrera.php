@@ -14,11 +14,15 @@ try{
     $statement = $conexion->prepare("SELECT * FROM carrera WHERE ID_CARRERA = '$id'");
     $statement->execute();
     $carreras = $statement->fetch(PDO::FETCH_ASSOC); // capturar datos cada columna de una consulta dada
+	
 	$statement2 = $conexion->prepare("SELECT ID_FACULTAD FROM carrera WHERE ID_CARRERA = '$id'");
     $statement2->execute();
     $idfacu = $statement2->fetch(PDO::FETCH_ASSOC); // capturar datos cada columna de una consulta 
     $idf=$idfacu['ID_FACULTAD'];
-
+	
+	$statement5 = $conexion->prepare("SELECT * FROM facultad WHERE ID_FACULTAD = '$idf'");
+    $statement5->execute();
+    $facultades = $statement5->fetch(PDO::FETCH_ASSOC); // capturar datos cada columna 
 
     $statement3 = $conexion->prepare("SELECT ID_DPTO FROM carrera WHERE ID_CARRERA = '$id'");
     $statement3->execute();
@@ -29,9 +33,6 @@ try{
     $statement4->execute();
     $departamentos = $statement4->fetch(PDO::FETCH_ASSOC); // capturar datos cada columna de una consulta 
 
-	$statement5 = $conexion->prepare("SELECT * FROM facultad WHERE ID_FACULTAD = '$idf'");
-    $statement5->execute();
-    $facultades = $statement5->fetch(PDO::FETCH_ASSOC); // capturar datos cada columna 
 
 }catch(PDOException $e) {
     echo $e->getMessage();

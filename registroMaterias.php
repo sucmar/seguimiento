@@ -55,8 +55,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $result             = mysqli_query($enlace,$consultaIdMateria);
                 $idMateria         = mysqli_fetch_assoc($result);
                 $id                 = $departamento["ID_DPTO"];
-                $query = "INSERT INTO materia(ID_MATERIA,ID_CARRERA,NOMBRE_MATERIA, SIGLA_MATERIA, CARGA_HORARIA_MATERIA, TIPO_MATERIA,NIVEL_MATERIA)
-                       VALUES(null,'$id','$nombreMateria','$siglaMateria','$cargaHorariaMateria','$tipoMateria','$nivelMateria')";
+                $query = "INSERT INTO materia(ID_MATERIA,ID_CARRERA,NOMBRE_MATERIA, SIGLA_MATERIA, NOMBRE_DPTO ,CARGA_HORARIA_MATERIA, TIPO_MATERIA,NIVEL_MATERIA)
+                       VALUES(null,'$id','$nombreMateria','$siglaMateria','$nombreDpto','$cargaHorariaMateria','$tipoMateria','$nivelMateria')";
                 mysqli_query($enlace,$query);
             }
             mysqli_close($enlace);
