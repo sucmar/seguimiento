@@ -74,7 +74,7 @@ if (isset($_SESSION['usuario'])){
                       OTROCARGO,HRSTEORIA,HRSINVESTIGACION,HRSEXTENCION,HRSSERVICIO,HRSPRACTICA,
                       RCF1,RCF2,RCF3,HRSPRODUCCION,HRSSERVICIOACADEMICO,HRSPRODUCACAD,HRSADMINACAD,RCF4,RCF5,
                       RCF6,RCF7,HRSTRABSEMANA,HRSTRABMES,HRSAUTORIZADAS,TIEMPOPARCIAL,DEDICACIONEXCLUSIVA,OBSERVACIONES)
-                                       VALUES('$id',null,null,null,null,'$horaTeoria','$horaInvestigacion','$horaExtencion',
+                                       VALUES('$ids',null,null,null,null,'$horaTeoria','$horaInvestigacion','$horaExtencion',
                                                     '$horaServicio','$horaPractica','$rfcUno','$rfcDos','$rfcTres','$horaProduccion',
                                                     '$horaServicioAcademico','$horaProduccionAcademica','$horaAdministracionAcademica',
                                                     '$rfcCuatro','$rfcCinco','$rftSeis','$rfcSiete','$totalHorasSemana','$totalHorasMes',
